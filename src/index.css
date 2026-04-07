@@ -10,11 +10,20 @@
     --background: 30 20% 96%;
     --foreground: 25 30% 14%;
 
-    /* Marketing theme tokens (RadiatingHope-inspired) */
-    --marketing-navy: 220 40% 16%;
-    --marketing-blue: 209 75% 56%;
-    --marketing-surface: 220 20% 97%;
-    --marketing-border: 220 15% 90%;
+    /* Marketing theme tokens — warm Ignatian palette */
+    --marketing-deep: 25 35% 18%;
+    --marketing-brown: 25 28% 29%;
+    --marketing-gold: 30 29% 43%;
+    --marketing-gold-light: 38 42% 51%;
+    --marketing-muted: 28 13% 47%;
+    --marketing-tan: 30 18% 69%;
+    --marketing-surface: 30 25% 97%;
+    --marketing-cream: 30 33% 92%;
+    --marketing-border: 30 18% 80%;
+
+    /* Legacy aliases (used by 38+ marketing components) */
+    --marketing-navy: var(--marketing-deep);
+    --marketing-blue: var(--marketing-gold);
 
     /* Cards & Surfaces */
     --card: 35 25% 98%;
@@ -160,6 +169,17 @@
   h4, h5, h6 {
     @apply font-serif font-normal tracking-tight uppercase;
   }
+}
+
+/* Marketing scroll reveal */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @layer components {
