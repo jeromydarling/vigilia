@@ -21,12 +21,8 @@ export const OperatorTestimoniumPage = lazy(() => import('@/pages/operator/Opera
 export const ScenarioLabPage = lazy(() => import('@/pages/operator/ScenarioLabPage'));
 export const TourRunnerPage = lazy(() => import('@/pages/operator/TourRunnerPage'));
 export const OperatorHowToPage = lazy(() => import('@/pages/operator/OperatorHowToPage'));
-export const OperatorMetrosPage = lazy(() => import('@/pages/operator/OperatorMetrosPage'));
-export const OperatorPartnersPage = lazy(() => import('@/pages/operator/OperatorPartnersPage'));
-export const OperatorPartnerDetailPage = lazy(() => import('@/pages/operator/OperatorPartnerDetailPage'));
+// VIGILIA: removed — OperatorMetrosPage, OperatorPartnersPage, OperatorOutreachPage, OperatorCampaignBuilder
 export const OperatorSchedulingPage = lazy(() => import('@/pages/operator/OperatorSchedulingPage'));
-export const OperatorOutreachPage = lazy(() => import('@/pages/operator/OperatorOutreachPage'));
-export const OperatorCampaignBuilder = lazy(() => import('@/pages/operator/OperatorCampaignBuilder'));
 export const OperatorTimeMachinePage = lazy(() => import('@/pages/operator/OperatorTimeMachinePage'));
 export const OperatorOverridesPage = lazy(() => import('@/pages/operator/OperatorOverridesPage'));
 export const OperatorAnnouncementsPage = lazy(() => import('@/pages/operator/OperatorAnnouncementsPage'));

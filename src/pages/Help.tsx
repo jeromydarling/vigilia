@@ -2,7 +2,7 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MainLayout } from '@/components/layout/MainLayout';
 import { generateHelpPdf } from '@/lib/helpPdf';
-import { generateOpportunityCardsPdf } from '@/lib/opportunityCardsPdf';
+// VIGILIA: removed — import { generateOpportunityCardsPdf } from '@/lib/opportunityCardsPdf';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';

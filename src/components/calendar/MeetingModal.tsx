@@ -18,7 +18,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useContacts } from '@/hooks/useContacts';
-import { useMetros } from '@/hooks/useMetros';
+// VIGILIA: removed — import { useMetros } from '@/hooks/useMetros';
 import { useCreateActivity, useUpdateActivity } from '@/hooks/useActivities';
 import { Loader2, Calendar, User, MapPin } from 'lucide-react';
 import { format } from 'date-fns';

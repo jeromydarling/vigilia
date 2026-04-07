@@ -5,8 +5,8 @@ import { useTenantPath } from '@/hooks/useTenantPath';
 import { MainLayout } from '@/components/layout/MainLayout';
 import { useEvents, useDuplicateEvent } from '@/hooks/useEvents';
 import { useEventContactsCount } from '@/hooks/useEventContactsCount';
-import { useMetros } from '@/hooks/useMetros';
-import { useMetroIntelligence } from '@/hooks/useMetroIntelligence';
+// VIGILIA: removed — import { useMetros } from '@/hooks/useMetros';
+// VIGILIA: removed — import { useMetroIntelligence } from '@/hooks/useMetroIntelligence';
 
 import {
   Search, 

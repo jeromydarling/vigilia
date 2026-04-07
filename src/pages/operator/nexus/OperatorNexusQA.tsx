@@ -6,7 +6,7 @@
  * WHY: Operators need a single view of platform stability and quick repair tools.
  */
 import { useQuery } from '@tanstack/react-query';
-import ImportReadinessNoticeCard from '@/components/relatio/ImportReadinessNoticeCard';
+// VIGILIA: removed — import ImportReadinessNoticeCard from '@/components/relatio/ImportReadinessNoticeCard';
 import { supabase } from '@/integrations/supabase/client';
 import { untypedTable } from '@/lib/untypedTable';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';

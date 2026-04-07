@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
-import { useOpportunities } from './useOpportunities';
+// VIGILIA: removed — import { useOpportunities } from './useOpportunities';
 import { useAnchors } from './useAnchors';
 import { useEvents } from './useEvents';
-import { useMetros } from './useMetros';
+// VIGILIA: removed — import { useMetros } from './useMetros';
 import { useRegions } from './useRegions';
 import { useAnchorPipeline } from './useAnchorPipeline';
-import { useProvisions } from './useProvisions';
+// VIGILIA: removed — import { useProvisions } from './useProvisions';
 import { CHAPTER_COLORS } from '@/lib/journeyChapters';
 import { toChapterLabel, JOURNEY_KANBAN_CHAPTERS, type Chapter } from '@/lib/journeyChapters';
 import { subDays, parseISO, isAfter, format } from 'date-fns';

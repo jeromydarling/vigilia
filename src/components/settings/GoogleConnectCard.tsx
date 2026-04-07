@@ -17,7 +17,7 @@ import { Loader2, CheckCircle2, AlertTriangle, ExternalLink, Sparkles, Calendar,
 import { HelpTooltip } from '@/components/ui/help-tooltip';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthContext';
-import { useGmailConnectionStatus } from '@/hooks/useGmailCampaignSend';
+// VIGILIA: removed — import { useGmailConnectionStatus } from '@/hooks/useGmailCampaignSend';
 import { useAIUserSettings, useEnableGmailAI } from '@/hooks/useAIUserSettings';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';

@@ -51,7 +51,7 @@ import { toast } from '@/components/ui/sonner';
 import { supabase } from '@/integrations/supabase/client';
 import { Database } from '@/integrations/supabase/types';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { useImpulsusCapture } from '@/hooks/useImpulsusCapture';
+// VIGILIA: removed — import { useImpulsusCapture } from '@/hooks/useImpulsusCapture';
 
 type ActivityOutcome = Database['public']['Enums']['activity_outcome'];
 

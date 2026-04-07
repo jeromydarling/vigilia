@@ -11,7 +11,7 @@ import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { useTenant } from '@/contexts/TenantContext';
 import { useMetroIntelligence } from './useMetroIntelligence';
-import { useProvisionMode } from './useProvisionMode';
+// VIGILIA: removed — import { useProvisionMode } from './useProvisionMode';
 import { useEntitlements } from './useEntitlements';
 import { getFeaturesForPlan } from '@/lib/features';
 

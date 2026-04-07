@@ -10,7 +10,7 @@ import { lazy, Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useTabPersistence } from '@/hooks/useTabPersistence';
 import { GuidedAssistanceBlock } from '@/components/integrations/GuidedAssistanceBlock';
-import { SyncSettingsPanel } from '@/components/relatio/SyncSettingsPanel';
+// VIGILIA: removed — import { SyncSettingsPanel } from '@/components/relatio/SyncSettingsPanel';
 
 const RelatioAdmin = lazy(() => import('@/pages/admin/RelatioAdmin'));
 const HubSpotAdmin = lazy(() => import('@/pages/admin/HubSpotAdmin'));

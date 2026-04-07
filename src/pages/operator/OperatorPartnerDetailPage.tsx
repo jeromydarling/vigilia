@@ -34,7 +34,7 @@ import { cn } from '@/lib/utils';
 import { OrgKnowledgePanel } from '@/components/org-knowledge/OrgKnowledgePanel';
 import { NeighborhoodInsightsCard } from '@/components/insights/NeighborhoodInsightsCard';
 import { OrgInsightsPanel } from '@/components/insights/OrgInsightsPanel';
-import { OpportunityEnrichmentTimeline } from '@/components/opportunity/OpportunityEnrichmentTimeline';
+// VIGILIA: removed — import { OpportunityEnrichmentTimeline } from '@/components/opportunity/OpportunityEnrichmentTimeline';
 
 const STAGES = [
   'Researching', 'Contacted', 'Discovery Scheduled', 'Discovery Held',

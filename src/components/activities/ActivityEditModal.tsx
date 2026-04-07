@@ -18,8 +18,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { ContactSearchSelect } from '@/components/contacts/ContactSearchSelect';
-import { OpportunitySearchSelect } from '@/components/opportunities/OpportunitySearchSelect';
-import { useMetros } from '@/hooks/useMetros';
+// VIGILIA: removed — import { OpportunitySearchSelect } from '@/components/opportunities/OpportunitySearchSelect';
+// VIGILIA: removed — import { useMetros } from '@/hooks/useMetros';
 import { useCreateActivity, useUpdateActivity, useDeleteActivity } from '@/hooks/useActivities';
 import {
   Loader2,

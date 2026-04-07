@@ -18,7 +18,7 @@ import type {
 } from '@/types/weekly-plan';
 import { differenceInDays, parseISO, isAfter, isBefore, addDays } from 'date-fns';
 import type { Json } from '@/integrations/supabase/types';
-import { calculateOrderScore, type OpportunityOrderSignals } from '@/hooks/useOpportunityOrders';
+// VIGILIA: removed — import { calculateOrderScore, type OpportunityOrderSignals } from '@/hooks/useOpportunityOrders';
 
 // ============================================================================
 // QUERY HOOKS

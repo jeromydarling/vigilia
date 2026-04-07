@@ -3,7 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Briefcase, Target, Handshake, Award, Lightbulb, AlertTriangle, Loader2 } from 'lucide-react';
-import { GrantAlignmentPanel } from '@/components/opportunity/GrantAlignmentPanel';
+// VIGILIA: removed — import { GrantAlignmentPanel } from '@/components/opportunity/GrantAlignmentPanel';
 
 interface ProspectPack {
   org_summary?: string;

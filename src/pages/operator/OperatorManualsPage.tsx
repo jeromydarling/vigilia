@@ -21,7 +21,7 @@ import {
   type RouteEntry, type RoleEntry, type ModuleEntry, type WorkflowEntry,
   type SidebarGroup, type SignalEntry, type NexusWorkflowEntry,
 } from '@/lib/manualData';
-import { downloadTechnicalDocPdf } from '@/lib/buildTechnicalDocPdf';
+// VIGILIA: removed — import { downloadTechnicalDocPdf } from '@/lib/buildTechnicalDocPdf';
 
 // ── PDF helpers ──
 

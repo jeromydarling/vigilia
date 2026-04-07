@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { FindPage } from '@/components/discovery/FindPage';
-import { LocalPulseSection } from '@/components/events/LocalPulseSection';
+// VIGILIA: removed — import { LocalPulseSection } from '@/components/events/LocalPulseSection';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Search, Radio } from 'lucide-react';
 import { useTabPersistence } from '@/hooks/useTabPersistence';

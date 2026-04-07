@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useRegionsWithLeads, useCreateRegion, useUpdateRegion, useDeleteRegion, RegionWithLead } from '@/hooks/useRegions';
-import { useMetrosWithComputed, useCreateMetro, useUpdateMetro, useDeleteMetro, MetroWithComputed } from '@/hooks/useMetros';
+// VIGILIA: removed — import { useMetrosWithComputed, useCreateMetro, useUpdateMetro, useDeleteMetro, MetroWithComputed } from '@/hooks/useMetros';
 import { useGlobalModal } from '@/contexts/GlobalModalContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';

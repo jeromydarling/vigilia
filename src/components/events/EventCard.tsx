@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
-import { useMetroIntelligence } from '@/hooks/useMetroIntelligence';
+// VIGILIA: removed — import { useMetroIntelligence } from '@/hooks/useMetroIntelligence';
 import { parseISO, startOfToday } from 'date-fns';
 import { 
   Calendar,

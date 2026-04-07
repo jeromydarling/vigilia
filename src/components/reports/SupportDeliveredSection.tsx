@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Heart, HandHeart } from 'lucide-react';
 import type { SupportDeliveredData } from '@/hooks/useHumanImpactData';
-import { useProvisionMode } from '@/hooks/useProvisionMode';
+// VIGILIA: removed — import { useProvisionMode } from '@/hooks/useProvisionMode';
 
 interface SupportDeliveredSectionProps {
   data: SupportDeliveredData;

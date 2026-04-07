@@ -10,90 +10,15 @@ import { MainLayout } from '@/components/layout/MainLayout';
 
 // Marketing layout + pages (public)
 import PublicLayout from '@/components/marketing/PublicLayout';
-import Landing from '@/pages/marketing/Landing';
 import VigiliaLanding from '@/pages/marketing/VigiliaLanding';
-import Manifesto from '@/pages/marketing/Manifesto';
-import Pricing from '@/pages/marketing/Pricing';
-import ArchetypesPage from '@/pages/marketing/Archetypes';
-import Security from '@/pages/marketing/Security';
 import Contact from '@/pages/marketing/Contact';
-import NRI from '@/pages/marketing/NRI';
-import CROSFeature from '@/pages/marketing/CROSFeature';
-import ProfundaPage from '@/pages/marketing/Profunda';
-import UniversalCaseStudy from '@/pages/marketing/UniversalCaseStudy';
-import ImpulsusFeature from '@/pages/marketing/ImpulsusFeature';
-import TestimoniumFeature from '@/pages/marketing/TestimoniumFeature';
-import CommunioFeature from '@/pages/marketing/CommunioFeature';
-import SignumFeature from '@/pages/marketing/SignumFeature';
-import VoluntariumFeature from '@/pages/marketing/VoluntariumFeature';
-import ProvisioFeature from '@/pages/marketing/ProvisioFeature';
-import RelatioCampaigns from '@/pages/marketing/RelatioCampaigns';
-import Proof from '@/pages/marketing/Proof';
-import Compare from '@/pages/marketing/Compare';
-import Roles from '@/pages/marketing/Roles';
-import RoleShepherd from '@/pages/marketing/RoleShepherd';
-import RoleCompanion from '@/pages/marketing/RoleCompanion';
-import RoleVisitor from '@/pages/marketing/RoleVisitor';
-import ChurchWeek from '@/pages/marketing/archetypes/ChurchWeek';
-import NonprofitWeek from '@/pages/marketing/archetypes/NonprofitWeek';
-import SocialEnterpriseWeek from '@/pages/marketing/archetypes/SocialEnterpriseWeek';
-import CommunityNetworkWeek from '@/pages/marketing/archetypes/CommunityNetworkWeek';
-import MinistryOutreachWeek from '@/pages/marketing/archetypes/MinistryOutreachWeek';
-import CaregiverSoloWeek from '@/pages/marketing/archetypes/CaregiverSoloWeek';
-import CaregiverAgencyWeek from '@/pages/marketing/archetypes/CaregiverAgencyWeek';
-import MissionaryOrgWeek from '@/pages/marketing/archetypes/MissionaryOrgWeek';
-import InsightsIndex from '@/pages/marketing/InsightsIndex';
-import InsightPage from '@/pages/marketing/InsightPage';
-import ArchetypeDeepPage from '@/pages/marketing/ArchetypeDeepPage';
-import StoryPage from '@/pages/marketing/StoryPage';
-import CompareSlugRouter from '@/pages/marketing/CompareSlugRouter';
-import RoleSteward from '@/pages/marketing/RoleSteward';
-import RoleGuidePage from '@/pages/marketing/RoleGuidePage';
-import RoleStoryPage from '@/pages/marketing/RoleStoryPage';
-import MetroPublicPage from '@/pages/marketing/MetroPublicPage';
-import MetroArchetypePage from '@/pages/marketing/MetroArchetypePage';
-import RolePathwayPage from '@/pages/marketing/RolePathwayPage';
-import CallingPage from '@/pages/marketing/CallingPage';
-import LibraryIndexPage from '@/pages/marketing/LibraryIndexPage';
-import LibraryConceptPage from '@/pages/marketing/LibraryConceptPage';
-import CommunioNetworkPage from '@/pages/marketing/CommunioNetworkPage';
-import TenantPublicMirror from '@/pages/marketing/TenantPublicMirror';
-import WeekNarrativePage from '@/pages/marketing/WeekNarrativePage';
-import MissionAtlas from '@/pages/marketing/MissionAtlas';
-import MissionAtlasDetail from '@/pages/marketing/MissionAtlasDetail';
-import Lexicon from '@/pages/marketing/Lexicon';
-import LexiconTerm from '@/pages/marketing/LexiconTerm';
-import FieldJournal from '@/pages/marketing/FieldJournal';
-import FieldJournalEntryPage from '@/pages/marketing/FieldJournalEntry';
-import RelationalFundraising from '@/pages/marketing/RelationalFundraising';
-import DonorHumanity from '@/pages/marketing/DonorHumanity';
-import WhyCros from '@/pages/marketing/WhyCros';
-import NetworkDirectory from '@/pages/marketing/NetworkDirectory';
-import CommunioProfileSetupWizard from '@/components/communio/CommunioProfileSetupWizard';
-import PublicPresencePage from '@/pages/marketing/PublicPresencePage';
-import Authority from '@/pages/marketing/Authority';
-import SeePeople from '@/pages/marketing/SeePeople';
-import ImagineThis from '@/pages/marketing/ImagineThis';
-import AuthorityCategory from '@/pages/marketing/AuthorityCategory';
-import AuthorityArticle from '@/pages/marketing/AuthorityArticle';
+import Security from '@/pages/marketing/Security';
 import LegalTerms from '@/pages/marketing/legal/LegalTerms';
 import LegalPrivacy from '@/pages/marketing/legal/LegalPrivacy';
 import LegalDPA from '@/pages/marketing/legal/LegalDPA';
 import LegalAcceptableUse from '@/pages/marketing/legal/LegalAcceptableUse';
 import LegalAITransparency from '@/pages/marketing/legal/LegalAITransparency';
-import PublicEventPage from '@/pages/marketing/PublicEventPage';
-import Integrations from '@/pages/marketing/Integrations';
-import Features from '@/pages/marketing/Features';
-import SitemapRoute from '@/pages/marketing/SitemapRoute';
-import EssaysIndex from '@/pages/marketing/EssaysIndex';
-import EssayPage from '@/pages/marketing/EssayPage';
-import FieldNotesIndex from '@/pages/marketing/FieldNotesIndex';
-import ReflectionsIndex from '@/pages/marketing/ReflectionsIndex';
-import ForCaregivers from '@/pages/marketing/ForCaregivers';
-import TheModel from '@/pages/marketing/TheModel';
-import RetreatCenters from '@/pages/marketing/RetreatCenters';
-import Diocese from '@/pages/marketing/Diocese';
-import CaregiverGuide from '@/pages/help/CaregiverGuide';
+import CommunioProfileSetupWizard from '@/components/communio/CommunioProfileSetupWizard';
 
 // Auth pages
 import Login from '@/pages/Login';
@@ -107,53 +32,32 @@ import NotFound from '@/pages/NotFound';
 import DemoGatePage from '@/pages/DemoGatePage';
 import { SubscriptionGate } from '@/components/gates/SubscriptionGate';
 import { FeatureGate } from '@/components/gates/FeatureGate';
-import { CampaignsGate } from '@/components/gates/CampaignsGate';
-import { MetroIntelligenceGate } from '@/components/gates/MetroIntelligenceGate';
 
 // Stub pages
 import RelatioMarketplace from '@/pages/RelatioMarketplace';
 import ImportWizard from '@/pages/relatio/ImportWizard';
-import IntegrationGuidePanel from '@/components/relatio/IntegrationGuidePanel';
 import ImportJobDetail from '@/pages/relatio/ImportJobDetail';
 import Communio from '@/pages/Communio';
 import CaregiverNetworkPage from '@/pages/CaregiverNetworkPage';
 import OnboardingGuide from '@/pages/OnboardingGuide';
 import EnneagramAssessmentPage from '@/pages/EnneagramAssessmentPage';
 
-// App pages
+// App pages (kept for Vigilia)
 import Index from '@/pages/Index';
 import Dashboard from '@/pages/Dashboard';
-import MovementIntelligence from '@/pages/MovementIntelligence';
-import Metros from '@/pages/Metros';
-import MetroDetail from '@/pages/MetroDetail';
-import MetroNews from '@/pages/MetroNews';
-import MomentumMap from '@/pages/MomentumMap';
-import Radar from '@/pages/Radar';
-import Opportunities from '@/pages/Opportunities';
-import OpportunityDetail from '@/pages/OpportunityDetail';
-import Pipeline from '@/pages/Pipeline';
 import Anchors from '@/pages/Anchors';
-import Provisions from '@/pages/Provisions';
-import ProvisionDetail from '@/pages/ProvisionDetail';
 import People from '@/pages/People';
 import PersonDetail from '@/pages/PersonDetail';
 import FindPeople from '@/pages/FindPeople';
-import RelationshipGraph from '@/pages/RelationshipGraph';
 import Events from '@/pages/Events';
 import EventDetail from '@/pages/EventDetail';
 import FindEvents from '@/pages/FindEvents';
 import CalendarPage from '@/pages/Calendar';
 import CalendarEventPage from '@/pages/CalendarEventPage';
 import Activities from '@/pages/Activities';
-import Campaigns from '@/pages/outreach/Campaigns';
-import CampaignBuilder from '@/pages/outreach/CampaignBuilder';
-import Grants from '@/pages/Grants';
-import GrantDetail from '@/pages/GrantDetail';
-import FindGrants from '@/pages/FindGrants';
 import Volunteers from '@/pages/Volunteers';
 import VolunteerDetail from '@/pages/VolunteerDetail';
 import VolunteerHoursInbox from '@/pages/VolunteerHoursInbox';
-import Impulsus from '@/pages/Impulsus';
 import FieldNotesPage from '@/components/fieldnotes/FieldNotesPage';
 import Visits from '@/pages/Visits';
 import Projects from '@/pages/Projects';
@@ -161,20 +65,9 @@ import ProjectDetail from '@/pages/ProjectDetail';
 import Testimonium from '@/pages/Testimonium';
 import TestimoniumReport from '@/pages/TestimoniumReport';
 import TestimoniumExports from '@/pages/TestimoniumExports';
-import NarrativeStudio from '@/pages/NarrativeStudio';
-import NarrativeThreads from '@/pages/NarrativeThreads';
-import IntelligenceFeed from '@/pages/IntelligenceFeed';
-import MomentumRankings from '@/pages/MomentumRankings';
 import Reports from '@/pages/Reports';
-import ImpactExport from '@/pages/ImpactExport';
-import ThoseWhoGaveReport from '@/pages/ThoseWhoGaveReport';
 import ImportCenter from '@/pages/ImportCenter';
-import QuickAdd from '@/pages/QuickAdd';
 import Playbooks from '@/pages/Playbooks';
-import WorkflowDownloads from '@/pages/WorkflowDownloads';
-import TechnicalDocumentation from '@/pages/TechnicalDocumentation';
-import BuildReportPage from '@/pages/BuildReportPage';
-import FinancialActivity from '@/pages/FinancialActivity';
 import Settings from '@/pages/Settings';
 import VoiceSettings from '@/pages/settings/VoiceSettings';
 import ImpactDimensionsPage from '@/pages/settings/ImpactDimensionsPage';
@@ -202,9 +95,8 @@ import {
   OperatorIntakePage, OperatorAutomationPage, OperatorSystemPage,
   OperatorIntegrationsPage, OperatorPlatformPage, OperatorCommunioPage,
   OperatorTestimoniumPage, ScenarioLabPage, TourRunnerPage,
-  OperatorHowToPage, OperatorMetrosPage, OperatorPartnersPage,
-  OperatorPartnerDetailPage, OperatorSchedulingPage, OperatorOutreachPage,
-  OperatorCampaignBuilder, OperatorTimeMachinePage, OperatorOverridesPage,
+  OperatorHowToPage, OperatorSchedulingPage,
+  OperatorTimeMachinePage, OperatorOverridesPage,
   OperatorAnnouncementsPage, OperatorEcosystemPage, OperatorActivationPage,
   ErrorDeskPage, OperatorQAPage, OperatorManualsPage, OnboardingFlowGuide,
   OperatorSettingsPage, OperatorSeoPage, OperatorPeoplePage, AIObservatoryPage, OrientationDebugPage,
@@ -278,96 +170,19 @@ export function AppRouter() {
         {/* Root: marketing OR redirect to tenant */}
         <Route path="/" element={<RootRedirect />} />
 
-        {/* Public marketing routes */}
+        {/* Public marketing routes — Vigilia.care */}
         <Route element={<PublicLayout />}>
-          <Route path="/manifesto" element={<Manifesto />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/archetypes" element={<ArchetypesPage />} />
-          <Route path="/security" element={<Security />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/nri" element={<NRI />} />
-          <Route path="/cros" element={<CROSFeature />} />
-          <Route path="/profunda" element={<ProfundaPage />} />
-          <Route path="/impulsus" element={<ImpulsusFeature />} />
-          <Route path="/testimonium-feature" element={<TestimoniumFeature />} />
-          <Route path="/communio-feature" element={<CommunioFeature />} />
-          <Route path="/signum" element={<SignumFeature />} />
-          <Route path="/voluntarium" element={<VoluntariumFeature />} />
-          <Route path="/provisio" element={<ProvisioFeature />} />
-          <Route path="/relatio-campaigns" element={<RelatioCampaigns />} />
-          <Route path="/integrations" element={<Integrations />} />
-          <Route path="/features" element={<Features />} />
-          <Route path="/the-model" element={<TheModel />} />
-          <Route path="/case-study-humanity" element={<UniversalCaseStudy />} />
-          <Route path="/proof" element={<Proof />} />
-          <Route path="/compare" element={<Compare />} />
-          <Route path="/see-people" element={<SeePeople />} />
-          <Route path="/imagine-this" element={<ImagineThis />} />
-          <Route path="/roles" element={<Roles />} />
-          <Route path="/roles/shepherd" element={<RoleShepherd />} />
-          <Route path="/roles/companion" element={<RoleCompanion />} />
-          <Route path="/roles/visitor" element={<RoleVisitor />} />
-          <Route path="/roles/steward" element={<RoleSteward />} />
-          <Route path="/roles/:role/:guideSlug" element={<RoleGuidePage />} />
-          <Route path="/stories/roles/:slug" element={<RoleStoryPage />} />
-          <Route path="/archetypes/church-week" element={<ChurchWeek />} />
-          <Route path="/archetypes/nonprofit-week" element={<NonprofitWeek />} />
-          <Route path="/archetypes/social-enterprise-week" element={<SocialEnterpriseWeek />} />
-          <Route path="/archetypes/community-network-week" element={<CommunityNetworkWeek />} />
-          <Route path="/archetypes/ministry-outreach-week" element={<MinistryOutreachWeek />} />
-          <Route path="/archetypes/caregiver-solo-week" element={<CaregiverSoloWeek />} />
-          <Route path="/archetypes/caregiver-agency-week" element={<CaregiverAgencyWeek />} />
-          <Route path="/archetypes/missionary-org-week" element={<MissionaryOrgWeek />} />
-          <Route path="/insights" element={<InsightsIndex />} />
-          <Route path="/insights/:slug" element={<InsightPage />} />
-          <Route path="/archetypes/:slug/deep" element={<ArchetypeDeepPage />} />
-          <Route path="/stories/:slug" element={<StoryPage />} />
-          <Route path="/compare/:slug" element={<CompareSlugRouter />} />
-          <Route path="/metros/:metroSlug/:archetypeSlug" element={<MetroArchetypePage />} />
-          <Route path="/metros/:metroSlug" element={<MetroPublicPage />} />
-          <Route path="/path/:roleSlug" element={<RolePathwayPage />} />
-          <Route path="/calling/:themeSlug" element={<CallingPage />} />
-          <Route path="/library" element={<LibraryIndexPage />} />
-          <Route path="/library/:conceptSlug" element={<LibraryConceptPage />} />
-          <Route path="/network" element={<NetworkDirectory />} />
-          <Route path="/network/:themeSlug" element={<CommunioNetworkPage />} />
-          <Route path="/public/:tenantSlug" element={<TenantPublicMirror />} />
-          <Route path="/week/:slug" element={<WeekNarrativePage />} />
-          <Route path="/mission-atlas" element={<MissionAtlas />} />
-          <Route path="/mission-atlas/:id" element={<MissionAtlasDetail />} />
-          <Route path="/lexicon" element={<Lexicon />} />
-          <Route path="/lexicon/:slug" element={<LexiconTerm />} />
-          <Route path="/field-journal" element={<FieldJournal />} />
-          <Route path="/field-journal/:slug" element={<FieldJournalEntryPage />} />
-          <Route path="/authority" element={<Authority />} />
-          <Route path="/authority/:category" element={<AuthorityCategory />} />
-          <Route path="/authority/:category/:slug" element={<AuthorityArticle />} />
+          <Route path="/security" element={<Security />} />
           <Route path="/legal/terms" element={<LegalTerms />} />
           <Route path="/legal/privacy" element={<LegalPrivacy />} />
           <Route path="/legal/data-processing" element={<LegalDPA />} />
           <Route path="/legal/acceptable-use" element={<LegalAcceptableUse />} />
           <Route path="/legal/ai-transparency" element={<LegalAITransparency />} />
-          <Route path="/fundraising-without-a-donor-crm" element={<RelationalFundraising />} />
-          <Route path="/cros-donor-humanity" element={<DonorHumanity />} />
-          <Route path="/why-cros" element={<WhyCros />} />
-          <Route path="/essays" element={<EssaysIndex />} />
-          <Route path="/essays/:slug" element={<EssayPage />} />
-          <Route path="/field-notes-library" element={<FieldNotesIndex />} />
-          <Route path="/reflections" element={<ReflectionsIndex />} />
-          <Route path="/reflections/:year/:month" element={<ReflectionsIndex />} />
-          <Route path="/for-companions" element={<ForCaregivers />} />
-          <Route path="/for-caregivers" element={<ForCaregivers />} />
-          <Route path="/retreat-centers" element={<RetreatCenters />} />
-          <Route path="/diocese" element={<Diocese />} />
-          <Route path="/help/companions" element={<CaregiverGuide />} />
-          <Route path="/help/caregivers" element={<CaregiverGuide />} />
         </Route>
-        <Route path="/sitemap.xml" element={<SitemapRoute />} />
         
 
-        {/* Public event registration (no layout wrapper — standalone page) */}
-        <Route path="/p/:tenantSlug" element={<PublicPresencePage />} />
-        <Route path="/events/:publicSlug" element={<PublicEventPage />} />
+        {/* Public event registration — TODO: rebuild for Vigilia */}
 
         {/* Demo gate */}
         <Route path="/demo" element={<DemoGatePage />} />
@@ -398,12 +213,7 @@ export function AppRouter() {
         <Route path="/operator/sweeps" element={<Navigate to="/operator/system?tab=sweep" replace />} />
         <Route path="/operator/tour" element={<OperatorShell><TourRunnerPage /></OperatorShell>} />
         <Route path="/operator/how-to" element={<OperatorShell><OperatorHowToPage /></OperatorShell>} />
-        <Route path="/operator/metros" element={<OperatorShell><OperatorMetrosPage /></OperatorShell>} />
-        <Route path="/operator/partners" element={<OperatorShell><OperatorPartnersPage /></OperatorShell>} />
-        <Route path="/operator/partners/:slug" element={<OperatorShell><OperatorPartnerDetailPage /></OperatorShell>} />
         <Route path="/operator/scheduling" element={<OperatorShell><OperatorSchedulingPage /></OperatorShell>} />
-        <Route path="/operator/outreach" element={<OperatorShell><OperatorOutreachPage /></OperatorShell>} />
-        <Route path="/operator/outreach/campaigns/:id" element={<OperatorShell><OperatorCampaignBuilder /></OperatorShell>} />
         <Route path="/operator/time-machine" element={<OperatorShell><OperatorTimeMachinePage /></OperatorShell>} />
         <Route path="/operator/overrides" element={<OperatorShell><OperatorOverridesPage /></OperatorShell>} />
         <Route path="/operator/announcements" element={<OperatorShell><OperatorAnnouncementsPage /></OperatorShell>} />
@@ -463,74 +273,65 @@ export function AppRouter() {
         <Route path="/:tenantSlug" element={<ProtectedRoute><TenantRouteGuard /></ProtectedRoute>}>
           <Route index element={<Index />} />
           <Route path="dashboard" element={<Index />} />
-          <Route path="metros" element={<MetroIntelligenceGate><Metros /></MetroIntelligenceGate>} />
-          <Route path="metros/:metroId" element={<MetroIntelligenceGate><MetroDetail /></MetroIntelligenceGate>} />
-          <Route path="metros/narratives" element={<MetroIntelligenceGate><MetroNews /></MetroIntelligenceGate>} />
-          <Route path="momentum" element={<MetroIntelligenceGate><FeatureGate featureKey="momentum_map_overlays"><MomentumMap /></FeatureGate></MetroIntelligenceGate>} />
-          <Route path="radar" element={<Radar />} />
-          <Route path="analytics" element={<MovementIntelligence />} />
-          <Route path="intelligence" element={<MovementIntelligence />} />
-          <Route path="opportunities" element={<Opportunities />} />
-          <Route path="opportunities/:slug" element={<OpportunityDetail />} />
-          <Route path="pipeline" element={<Pipeline />} />
-          <Route path="anchors" element={<Anchors />} />
-          <Route path="provisions" element={<Provisions />} />
-          <Route path="provisions/:id" element={<ProvisionDetail />} />
+
+          {/* Residents (contacts/people) */}
+          <Route path="residents" element={<People />} />
+          <Route path="residents/:slug" element={<PersonDetail />} />
+          <Route path="residents/find" element={<FindPeople />} />
           <Route path="people" element={<People />} />
           <Route path="people/:slug" element={<PersonDetail />} />
           <Route path="people/find" element={<FindPeople />} />
-          <Route path="graph" element={<RelationshipGraph />} />
+          <Route path="contacts" element={<People />} />
+
+          {/* Facilities (anchors) */}
+          <Route path="facilities" element={<Anchors />} />
+          <Route path="anchors" element={<Anchors />} />
+
+          {/* Events & Calendar */}
           <Route path="events" element={<Events />} />
           <Route path="events/:slug" element={<EventDetail />} />
           <Route path="events/find" element={<FindEvents />} />
           <Route path="calendar" element={<CalendarPage />} />
           <Route path="calendar/event/:eventId" element={<CalendarEventPage />} />
+
+          {/* Activities & Visits */}
           <Route path="activities" element={<Activities />} />
-          <Route path="outreach/campaigns" element={<CampaignsGate><Campaigns /></CampaignsGate>} />
-          <Route path="outreach/campaigns/:id" element={<CampaignsGate><CampaignBuilder /></CampaignsGate>} />
-          <Route path="grants" element={<Grants />} />
-          <Route path="grants/:id" element={<GrantDetail />} />
-          <Route path="grants/find" element={<FindGrants />} />
+          <Route path="visits" element={<Visits />} />
+
+          {/* Volunteers */}
           <Route path="volunteers" element={<Volunteers />} />
           <Route path="volunteers/:id" element={<VolunteerDetail />} />
           <Route path="volunteer-hours-inbox" element={<VolunteerHoursInbox />} />
-          <Route path="impulsus" element={<FeatureGate featureKey="impulsus"><Impulsus /></FeatureGate>} />
+
+          {/* Kept features */}
           <Route path="field-notes" element={<FieldNotesPage />} />
-          <Route path="visits" element={<Visits />} />
           <Route path="projects" element={<Projects />} />
           <Route path="projects/:projectId" element={<ProjectDetail />} />
           <Route path="testimonium" element={<FeatureGate featureKey="testimonium"><Testimonium /></FeatureGate>} />
           <Route path="testimonium/:id" element={<TestimoniumReport />} />
           <Route path="testimonium/export" element={<FeatureGate featureKey="testimonium"><TestimoniumExports /></FeatureGate>} />
-          <Route path="story" element={<NarrativeStudio />} />
-          <Route path="narrative-threads" element={<NarrativeThreads />} />
-          <Route path="intel-feed" element={<IntelligenceFeed />} />
-          <Route path="momentum-rankings" element={<MomentumRankings />} />
           <Route path="reports" element={<Reports />} />
-          <Route path="reports/impact-export" element={<FeatureGate featureKey="exec_exports"><ImpactExport /></FeatureGate>} />
-          <Route path="reports/those-who-gave" element={<ThoseWhoGaveReport />} />
           <Route path="import" element={<ImportCenter />} />
-          <Route path="quick-add" element={<QuickAdd />} />
           <Route path="playbooks" element={<Playbooks />} />
-          <Route path="workflow-downloads" element={<WorkflowDownloads />} />
-          <Route path="technical-docs" element={<TechnicalDocumentation />} />
-          <Route path="build-report" element={<BuildReportPage />} />
+
+          {/* Settings & Profile */}
           <Route path="settings" element={<Settings />} />
-          <Route path="financial-activity" element={<FinancialActivity />} />
           <Route path="settings/voice" element={<VoiceSettings />} />
           <Route path="settings/impact" element={<ImpactDimensionsPage />} />
+          <Route path="settings/communio-profile" element={<CommunioProfileSetupWizard />} />
           <Route path="my-activity" element={<MyActivity />} />
           <Route path="help" element={<Help />} />
           <Route path="help/adoption" element={<AdoptionHub />} />
           <Route path="feedback" element={<Feedback />} />
-          <Route path="contacts" element={<People />} />
+
+          {/* Integrations & Import */}
           <Route path="relatio" element={<RelatioMarketplace />} />
           <Route path="relatio/setup/:connectorKey" element={<ImportWizard />} />
-          <Route path="relatio/companion/:connectorKey" element={<IntegrationGuidePanel />} />
           <Route path="relatio/jobs/:id" element={<ImportJobDetail />} />
+
+          {/* Community */}
           <Route path="communio" element={<Communio />} />
           <Route path="communio/caregiver-network" element={<CaregiverNetworkPage />} />
-          <Route path="settings/communio-profile" element={<CommunioProfileSetupWizard />} />
           <Route path="getting-started" element={<OnboardingGuide />} />
           <Route path="assessment/enneagram" element={<EnneagramAssessmentPage />} />
 
@@ -560,7 +361,6 @@ export function AppRouter() {
         </Route>
 
         {/* Legacy redirects */}
-        <Route path="/command-center" element={<Navigate to="/" replace />} />
 
         {/* Catch-all */}
         <Route path="*" element={<NotFound />} />

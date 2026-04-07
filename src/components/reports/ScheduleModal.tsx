@@ -20,7 +20,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { X, Loader2, Mail, Clock, Calendar } from 'lucide-react';
 import { ReportSchedule, ReportTemplate } from '@/hooks/useReportTemplates';
-import { useMetros } from '@/hooks/useMetros';
+// VIGILIA: removed — import { useMetros } from '@/hooks/useMetros';
 import { useRegions } from '@/hooks/useRegions';
 
 interface ScheduleModalProps {

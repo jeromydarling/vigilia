@@ -50,7 +50,7 @@ import {
   HelpCircle,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useMetroIntelligence } from '@/hooks/useMetroIntelligence';
+// VIGILIA: removed — import { useMetroIntelligence } from '@/hooks/useMetroIntelligence';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 export default function Reports() {

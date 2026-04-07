@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Loader2, Calendar, DollarSign, Users, ArrowRight } from 'lucide-react';
-import { MetroNewsPulseCard } from '@/components/metro/MetroNewsPulseCard';
+// VIGILIA: removed — import { MetroNewsPulseCard } from '@/components/metro/MetroNewsPulseCard';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   events: <Calendar className="h-4 w-4" />,

@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuLabel,
 } from '@/components/ui/dropdown-menu';
-import { useCreateEventFollowupCampaign } from '@/hooks/useEventFollowupCampaign';
+// VIGILIA: removed — import { useCreateEventFollowupCampaign } from '@/hooks/useEventFollowupCampaign';
 
 interface EventFollowupActionsProps {
   eventId: string;

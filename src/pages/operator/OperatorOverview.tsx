@@ -30,7 +30,7 @@ import { NarrativeBalanceIndicator } from '@/components/operator/NarrativeBalanc
 import { QuietTenantRadar } from '@/components/operator/QuietTenantRadar';
 import { TodayInCrosPanel } from '@/components/operator/TodayInCrosPanel';
 import { PlatformHealthPanel } from '@/components/operator/PlatformHealthPanel';
-import { TrustSignalBar } from '@/components/shared/TrustSignalBar';
+// VIGILIA: removed — import { TrustSignalBar } from '@/components/shared/TrustSignalBar';
 import { calmVariant } from '@/lib/calmMode';
 
 export default function OperatorOverview() {

@@ -7,8 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useCreateContact, useUpdateContact } from '@/hooks/useContacts';
-import { useCreateOpportunity } from '@/hooks/useOpportunities';
-import { useOpportunities } from '@/hooks/useOpportunities';
+// Opportunity imports removed — Vigilia uses contacts as residents
 import { useEvents } from '@/hooks/useEvents';
 import { contactSchema, formatValidationErrors } from '@/lib/validations';
 import { OCRScanButton } from '@/components/ai/OCRScanButton';

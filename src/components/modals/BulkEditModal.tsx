@@ -12,13 +12,13 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { MultiSelect } from '@/components/ui/multi-select';
 import { AlertTriangle, Loader2 } from 'lucide-react';
-import { useOpportunities } from '@/hooks/useOpportunities';
-import { useMetros } from '@/hooks/useMetros';
+// VIGILIA: removed — import { useOpportunities } from '@/hooks/useOpportunities';
+// VIGILIA: removed — import { useMetros } from '@/hooks/useMetros';
 import { useSectors } from '@/hooks/useSectors';
-import { useGrantAlignments } from '@/hooks/useGrantAlignments';
+// VIGILIA: removed — import { useGrantAlignments } from '@/hooks/useGrantAlignments';
 import { useMissionSnapshots } from '@/hooks/useMissionSnapshots';
 import { usePartnershipAngles } from '@/hooks/usePartnershipAngles';
-import { useGrantTypes } from '@/hooks/useGrantTypes';
+// VIGILIA: removed — import { useGrantTypes } from '@/hooks/useGrantTypes';
 import { toast } from '@/components/ui/sonner';
 
 // Field configuration types
