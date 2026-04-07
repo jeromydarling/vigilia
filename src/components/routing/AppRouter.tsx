@@ -11,6 +11,7 @@ import { MainLayout } from '@/components/layout/MainLayout';
 // Marketing layout + pages (public)
 import PublicLayout from '@/components/marketing/PublicLayout';
 import Landing from '@/pages/marketing/Landing';
+import VigiliaLanding from '@/pages/marketing/VigiliaLanding';
 import Manifesto from '@/pages/marketing/Manifesto';
 import Pricing from '@/pages/marketing/Pricing';
 import ArchetypesPage from '@/pages/marketing/Archetypes';
@@ -251,7 +252,7 @@ function RootRedirect() {
 function MarketingLanding() {
   return (
     <PublicLayout>
-      <Landing />
+      <VigiliaLanding />
     </PublicLayout>
   );
 }
