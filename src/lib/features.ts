@@ -7,30 +7,33 @@ type PlanKey = 'core' | 'insight' | 'story';
 
 /** Active team capacity included per plan tier */
 export const planActiveCapacity: Record<PlanKey, number> = {
-  core: 10,
-  insight: 25,
-  story: 50,
+  core: 50,    // Small Community — up to 50 residents
+  insight: 120, // Standard — up to 120 residents
+  story: 9999,  // Large Campus — unlimited
 };
 
 // Features granted by each plan tier (cumulative)
 const planFeatures: Record<PlanKey, string[]> = {
   core: [
-    'relationships', 'journey', 'reflections',
-    'signum_baseline', 'provisio', 'events',
-    'voluntarium_basic', 'basic_narrative',
-    'communio_opt_in', 'communio_groups',
-    'communio_signals', 'communio_events',
-    'communio_governance',
-    'care_logging', 'season_summaries',
-    'care_completion_ritual',
+    // Vigilia Core — Small Community ($299/mo)
+    'resident_story', 'visit_ritual', 'family_circle',
+    'volunteer_scheduling', 'visitor_mode', 'voice_notes',
+    'drift_watch', 'loneliness_detection',
+    'events', 'calendar', 'reflections',
+    'care_logging', 'season_summaries', 'care_completion_ritual',
+    'communio_opt_in',
   ],
   insight: [
-    'testimonium', 'drift_detection',
-    'momentum_map_overlays', 'story_signals',
-    'ingestion_confidence',
+    // Vigilia Standard ($399/mo)
+    'pastoral_care_tracking', 'sacramental_records',
+    'chaplain_routing', 'chaplain_signals',
+    'parish_coordination', 'eucharistic_routing',
+    'testimonium', 'drift_detection', 'story_signals',
   ],
   story: [
-    'impulsus', 'exec_exports', 'narrative_reporting',
+    // Vigilia Large Campus ($599/mo)
+    'fhir_integration', 'multi_facility_dashboard',
+    'diocese_reporting', 'exec_exports', 'narrative_reporting',
   ],
 };
 
