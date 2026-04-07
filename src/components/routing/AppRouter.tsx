@@ -75,6 +75,7 @@ import MyActivity from '@/pages/MyActivity';
 import Help from '@/pages/Help';
 import AdoptionHub from '@/pages/help/AdoptionHub';
 import Feedback from '@/pages/Feedback';
+import FamilyPortal from '@/pages/FamilyPortal';
 
 // Tenant admin pages
 import Admin from '@/pages/Admin';
@@ -334,6 +335,10 @@ export function AppRouter() {
           <Route path="communio/caregiver-network" element={<CaregiverNetworkPage />} />
           <Route path="getting-started" element={<OnboardingGuide />} />
           <Route path="assessment/enneagram" element={<EnneagramAssessmentPage />} />
+
+          {/* Family Portal */}
+          <Route path="family" element={<FamilyPortal />} />
+          <Route path="family/:slug" element={<FamilyPortal />} />
 
           {/* Tenant admin routes — require steward or admin role */}
           <Route path="admin" element={<ProtectedRoute requiredRoles={['admin', 'leadership']}><Admin /></ProtectedRoute>} />
