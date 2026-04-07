@@ -41,20 +41,20 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
               href="/#the-ritual"
               className="font-serif-body text-[hsl(var(--marketing-muted))] hover:text-[hsl(var(--marketing-deep))] transition-colors"
             >
-              The Ritual
+              How It Works
             </a>
-            <Link
-              to="/security"
+            <a
+              href="/#the-journal"
               className="font-serif-body text-[hsl(var(--marketing-muted))] hover:text-[hsl(var(--marketing-deep))] transition-colors"
             >
-              Security
-            </Link>
-            <Link
-              to="/contact"
+              The Journal
+            </a>
+            <a
+              href="/#pricing"
               className="font-serif-body text-[hsl(var(--marketing-muted))] hover:text-[hsl(var(--marketing-deep))] transition-colors"
             >
-              Contact
-            </Link>
+              Pricing
+            </a>
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
@@ -67,12 +67,12 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
                 Sign in
               </Button>
             </Link>
-            <Link to="/contact">
+            <Link to="/signup">
               <Button
                 size="sm"
                 className="rounded-none border-2 border-[hsl(var(--marketing-deep))] bg-[hsl(var(--marketing-deep))] text-[hsl(var(--marketing-cream))] hover:bg-transparent hover:text-[hsl(var(--marketing-deep))] px-6 text-xs font-sans tracking-[0.15em] uppercase transition-colors duration-300"
               >
-                Start Pilot
+                Sign Up
               </Button>
             </Link>
           </div>
@@ -90,21 +90,21 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
         {mobileOpen && (
           <div className="md:hidden border-t border-[hsl(var(--marketing-border)/0.5)] bg-[hsl(var(--marketing-surface))] px-6 py-5 space-y-3">
             <a href="/#the-ritual" className="block font-serif-body text-sm text-[hsl(var(--marketing-muted))] py-2" onClick={() => setMobileOpen(false)}>
-              The Ritual
+              How It Works
             </a>
-            <Link to="/security" className="block font-serif-body text-sm text-[hsl(var(--marketing-muted))] py-2" onClick={() => setMobileOpen(false)}>
-              Security
-            </Link>
-            <Link to="/contact" className="block font-serif-body text-sm text-[hsl(var(--marketing-muted))] py-2" onClick={() => setMobileOpen(false)}>
-              Contact
-            </Link>
+            <a href="/#the-journal" className="block font-serif-body text-sm text-[hsl(var(--marketing-muted))] py-2" onClick={() => setMobileOpen(false)}>
+              The Journal
+            </a>
+            <a href="/#pricing" className="block font-serif-body text-sm text-[hsl(var(--marketing-muted))] py-2" onClick={() => setMobileOpen(false)}>
+              Pricing
+            </a>
             <div className="flex gap-3 pt-3 border-t border-[hsl(var(--marketing-border)/0.5)]">
               <Link to="/login" className="flex-1">
                 <Button variant="outline" size="sm" className="w-full rounded-none border-[hsl(var(--marketing-border))] text-[hsl(var(--marketing-deep))]">Sign in</Button>
               </Link>
-              <Link to="/contact" className="flex-1">
+              <Link to="/signup" className="flex-1">
                 <Button size="sm" className="w-full rounded-none bg-[hsl(var(--marketing-deep))] text-[hsl(var(--marketing-cream))] text-xs tracking-[0.1em] uppercase">
-                  Start Pilot
+                  Sign Up
                 </Button>
               </Link>
             </div>

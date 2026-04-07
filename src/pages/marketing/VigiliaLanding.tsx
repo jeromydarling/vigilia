@@ -171,7 +171,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           HERO — editorial, left-aligned, generous
           ════════════════════════════════════════════════════════ */}
       <section className="reveal-on-scroll">
-        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 pt-32 sm:pt-40 md:pt-48 pb-24 sm:pb-32">
+        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 pt-28 sm:pt-32 md:pt-40 pb-20 sm:pb-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             <div className="md:col-span-8 md:col-start-1">
               <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-8">
@@ -187,15 +187,44 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
                 Built from small acts of attention by staff, chaplains, volunteers, and parish companions —
                 so families never feel far away.
               </p>
-              <Link to="/contact">
+              <Link to="/signup">
                 <Button className="rounded-none border-2 border-[hsl(var(--marketing-deep))] bg-[hsl(var(--marketing-deep))] text-[hsl(var(--marketing-cream))] hover:bg-transparent hover:text-[hsl(var(--marketing-deep))] px-10 py-5 text-xs font-sans tracking-[0.18em] uppercase transition-colors duration-300 h-auto">
-                  Start your 60-day pilot
+                  Sign Up
                 </Button>
               </Link>
             </div>
-            {/* Right column — thin vertical rule */}
-            <div className="hidden md:flex md:col-span-1 md:col-start-10 justify-center">
-              <div className="w-px h-full bg-[hsl(var(--marketing-border))]" />
+            {/* Right column — journal page illustration */}
+            <div className="hidden md:flex md:col-span-4 md:col-start-9 items-center justify-center">
+              <div className="relative w-full max-w-[260px]">
+                {/* Shadow page behind */}
+                <div className="absolute -bottom-3 -right-3 w-full h-full bg-[hsl(var(--marketing-cream))] border border-[hsl(var(--marketing-border)/0.5)]" />
+                {/* Main page */}
+                <div className="relative bg-white border border-[hsl(var(--marketing-border))] p-6 shadow-md" style={{ aspectRatio: '5 / 6.5' }}>
+                  <div className="h-[2px] bg-[hsl(var(--marketing-gold)/0.5)] mb-5" />
+                  <CrossOrnateSvg className="text-[hsl(var(--marketing-gold)/0.3)] mx-auto mb-4" />
+                  <p className="font-sans text-[8px] tracking-[0.3em] uppercase text-[hsl(var(--marketing-tan))] text-center mb-4">
+                    Wednesday, March 11
+                  </p>
+                  <div className="space-y-3">
+                    <div className="border-l border-[hsl(var(--marketing-gold)/0.3)] pl-3">
+                      <p className="font-serif-body text-[11px] text-[hsl(var(--marketing-deep))] leading-[1.7] italic">
+                        "She brightened when a volunteer mentioned the hymn from Sunday's Mass. She hummed a few bars."
+                      </p>
+                    </div>
+                    <div className="border-l border-[hsl(var(--marketing-gold)/0.3)] pl-3">
+                      <p className="font-serif-body text-[11px] text-[hsl(var(--marketing-deep))] leading-[1.7] italic">
+                        "Your brother visited this afternoon. She held his hand for a long time and said his name clearly."
+                      </p>
+                    </div>
+                    <div className="border-l border-[hsl(var(--marketing-gold)/0.15)] pl-3 opacity-40">
+                      <p className="font-serif-body text-[11px] text-[hsl(var(--marketing-muted))] leading-[1.7] italic">
+                        "She asked quietly for prayer..."
+                      </p>
+                    </div>
+                  </div>
+                  <OliveBranchSvg className="text-[hsl(var(--marketing-tan)/0.2)] mx-auto mt-5" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -207,7 +236,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           FAMILY QUESTIONS — asymmetric editorial
           ════════════════════════════════════════════════════════ */}
       <section className="reveal-on-scroll">
-        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40">
+        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             {/* Left column — pull quote intro */}
             <div className="md:col-span-4">
@@ -243,8 +272,8 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           WHAT VIGILIA FEELS LIKE — journal entries
           ════════════════════════════════════════════════════════ */}
-      <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
-        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40">
+      <section id="the-journal" className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
+        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           {/* Large pull quote */}
           <p className="font-serif-body text-2xl sm:text-3xl text-[hsl(var(--marketing-brown))] leading-[1.5] max-w-[720px] mb-20">
             A living bedside journal. Not a dashboard, a chart, a portal, or a communications utility.
@@ -279,7 +308,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           THE 30-SECOND RITUAL — two-column
           ════════════════════════════════════════════════════════ */}
       <section className="reveal-on-scroll" id="the-ritual">
-        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40">
+        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             {/* Left — text */}
             <div className="md:col-span-5">
@@ -325,7 +354,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           FEATURES — mini browser windows showing the app
           ════════════════════════════════════════════════════════ */}
       <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
-        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40">
+        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="text-center mb-16 sm:mb-20">
             <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
               What it looks like
@@ -444,7 +473,24 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
         </div>
       </section>
 
-      <ThinRule className="my-0 py-8 bg-[hsl(var(--marketing-surface))]" />
+      {/* ════════════════════════════════════════════════════════
+          MID-PAGE CTA — visual break with sign-up prompt
+          ════════════════════════════════════════════════════════ */}
+      <section className="bg-[hsl(var(--marketing-deep))] reveal-on-scroll">
+        <div className="max-w-[900px] mx-auto px-6 sm:px-8 py-14 sm:py-16 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <CandleSvg className="text-[hsl(var(--marketing-gold)/0.6)] hidden sm:block" size={24} />
+            <p className="font-serif-body text-lg sm:text-xl text-[hsl(var(--marketing-cream))] leading-snug text-center sm:text-left">
+              Ready to give families a living journal of their loved one's days?
+            </p>
+          </div>
+          <Link to="/signup" className="shrink-0">
+            <Button className="rounded-none border-2 border-[hsl(var(--marketing-cream))] bg-[hsl(var(--marketing-cream))] text-[hsl(var(--marketing-deep))] hover:bg-transparent hover:text-[hsl(var(--marketing-cream))] px-8 py-4 text-xs font-sans tracking-[0.15em] uppercase transition-colors duration-300 h-auto">
+              Sign Up
+            </Button>
+          </Link>
+        </div>
+      </section>
 
       {/* ════════════════════════════════════════════════════════
           THE PRINTED JOURNAL — editorial spread with illustrations
@@ -458,7 +504,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           <OliveBranchSvg flip />
         </div>
 
-        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40 relative">
+        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32 relative">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
             {/* Left — text */}
             <div className="md:col-span-6">
@@ -531,19 +577,38 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
         </div>
       </section>
 
-      <Divider className="py-8 bg-[hsl(var(--marketing-surface))]" />
-
       {/* ════════════════════════════════════════════════════════
           CONTINUITY + FORMATION — side by side, editorial
           ════════════════════════════════════════════════════════ */}
-      <section className="reveal-on-scroll">
-        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40">
+      <section id="continuity" className="reveal-on-scroll">
+        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
             {/* Left — Continuity */}
             <div className="border-t-2 border-[hsl(var(--marketing-gold)/0.4)] pt-10">
               <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
                 Continuity
               </p>
+              {/* Illustration: timeline of care handoffs */}
+              <div className="mb-8 flex items-center gap-3">
+                {['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((d, i) => (
+                  <div key={d} className="flex flex-col items-center gap-1.5 flex-1">
+                    <div className={`w-8 h-8 rounded-full border flex items-center justify-center text-[9px] font-sans ${
+                      i < 3
+                        ? 'border-[hsl(var(--marketing-gold)/0.5)] bg-[hsl(var(--marketing-gold)/0.08)] text-[hsl(var(--marketing-brown))]'
+                        : 'border-[hsl(var(--marketing-border))] bg-[hsl(var(--marketing-cream))] text-[hsl(var(--marketing-muted))]'
+                    }`}>
+                      {i < 3 ? 'SR' : 'JM'}
+                    </div>
+                    <span className="text-[8px] font-sans text-[hsl(var(--marketing-tan))] tracking-wide">{d}</span>
+                    {i < 4 && <div className="hidden sm:block absolute" />}
+                  </div>
+                ))}
+              </div>
+              <div className="flex items-center gap-2 mb-8">
+                <div className="flex-1 h-px bg-[hsl(var(--marketing-gold)/0.3)]" />
+                <span className="text-[8px] font-sans tracking-[0.2em] uppercase text-[hsl(var(--marketing-tan))]">story continues</span>
+                <div className="flex-1 h-px bg-[hsl(var(--marketing-gold)/0.3)]" />
+              </div>
               <h2 className="font-serif text-2xl sm:text-3xl font-normal text-[hsl(var(--marketing-deep))] mb-8 leading-[1.2] tracking-[-0.01em]">
                 When care changes hands, the story stays.
               </h2>
@@ -561,6 +626,18 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
               <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
                 Formation
               </p>
+              {/* Illustration: attention dimensions */}
+              <div className="mb-8 grid grid-cols-3 gap-2">
+                {['Surprise', 'Face', 'Family', 'Spiritual', 'Memory', 'Joy', 'Loss', 'Daily Life', 'Accompany'].map((dim, i) => (
+                  <div
+                    key={dim}
+                    className="text-center py-2.5 px-1 border border-[hsl(var(--marketing-border)/0.5)] bg-[hsl(var(--marketing-cream)/0.5)]"
+                    style={{ opacity: 0.5 + (i % 3) * 0.2 }}
+                  >
+                    <span className="text-[9px] font-sans tracking-wide text-[hsl(var(--marketing-brown))]">{dim}</span>
+                  </div>
+                ))}
+              </div>
               <h2 className="font-serif text-2xl sm:text-3xl font-normal text-[hsl(var(--marketing-deep))] mb-8 leading-[1.2] tracking-[-0.01em]">
                 Vigilia forms better witnesses of a person's life.
               </h2>
@@ -580,8 +657,8 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           VALUE & ROI — editorial two-column
           ════════════════════════════════════════════════════════ */}
-      <section className="reveal-on-scroll">
-        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40">
+      <section id="pricing" className="reveal-on-scroll">
+        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             {/* Left — price callout */}
             <div className="md:col-span-4">
@@ -639,7 +716,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           WORD OF MOUTH — full-bleed cream, large quote
           ════════════════════════════════════════════════════════ */}
       <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
-        <div className="max-w-[720px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40 text-center">
+        <div className="max-w-[720px] mx-auto px-6 sm:px-8 py-16 sm:py-20 md:py-24 text-center">
           <div className="w-16 h-px bg-[hsl(var(--marketing-tan))] mx-auto mb-12" />
           <p className="font-serif-body text-2xl sm:text-3xl italic text-[hsl(var(--marketing-brown))] leading-[1.5] mb-6">
             "This place has an app where every visit becomes part of my dad's story.
@@ -656,7 +733,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           FINAL CTA — inverted deep brown, book-end
           ════════════════════════════════════════════════════════ */}
       <section className="bg-[hsl(var(--marketing-deep))] reveal-on-scroll">
-        <div className="max-w-[680px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40 text-center">
+        <div className="max-w-[680px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32 text-center">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-[2.75rem] font-normal text-[hsl(var(--marketing-cream))] mb-10 leading-[1.15] tracking-[-0.01em]">
             A liturgy of attention,<br />bound into memory.
           </h2>
@@ -665,14 +742,11 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
             a living journal instead of a vague sense of distance. And make your Catholicity
             and humanity visible in the smallest, most ordinary moments of care.
           </p>
-          <Link to="/contact">
+          <Link to="/signup">
             <Button className="rounded-none border-2 border-[hsl(var(--marketing-cream))] bg-[hsl(var(--marketing-cream))] text-[hsl(var(--marketing-deep))] hover:bg-transparent hover:text-[hsl(var(--marketing-cream))] px-10 py-5 text-xs font-sans tracking-[0.18em] uppercase transition-colors duration-300 h-auto">
-              Start your 60-day pilot
+              Sign Up
             </Button>
           </Link>
-          <p className="font-sans text-xs text-[hsl(var(--marketing-tan)/0.6)] mt-6 tracking-wide">
-            No credit card required. No commitment. Just attention.
-          </p>
         </div>
       </section>
     </div>
