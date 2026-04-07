@@ -55,7 +55,7 @@ const App = () => (
           
           <GlobalBundleReviewPanel />
           <GlobalModals />
-          <BrowserRouter>
+          <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
             <DemoBanner />
             <DemoGuidedTour />
             <ScrollToTop />
