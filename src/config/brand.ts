@@ -23,36 +23,23 @@ export const modules = {
 
 export const tiers = {
   core: {
-    name: 'Vigilia Small Community',
-    tagline: 'For intimate care homes with deep relational bonds.',
+    name: 'Vigilia',
+    tagline: 'A liturgy of attention for Catholic senior care.',
+    price: 499,
+    priceLabel: '$499/month',
+    priceDaily: '$13/day',
     includes: [
-      'Resident Story',
-      'Visit Ritual (30-second capture)',
-      'Family Circle',
-      'Visitor Mode & Voice Notes',
+      'Resident Story & Narrative Continuity',
+      '30-Second Visit Ritual',
+      'Family Journal (living narrative)',
+      'Four Seasonal Printed Journals per resident',
+      'Pastoral Care & Sacramental Tracking',
+      'Family Circle & Communication',
       'Drift & Loneliness Watch',
-      'Volunteer Coordination',
-      'Events & Calendar',
-    ],
-  },
-  insight: {
-    name: 'Vigilia Standard',
-    tagline: 'For established Catholic communities with active parish partnerships.',
-    includes: [
-      'Everything in Small Community',
-      'Pastoral Care tracking',
-      'Chaplain routing & signals',
       'Volunteer & Parish Coordination',
-    ],
-  },
-  story: {
-    name: 'Vigilia Large Campus',
-    tagline: 'For multi-building campuses and diocesan networks.',
-    includes: [
-      'Everything in Standard',
-      'FHIR integration (PointClickCare, MatrixCare)',
-      'Multi-facility dashboard',
-      'Diocese-level reporting',
+      'Visitor Mode & Voice Notes',
+      'Events & Calendar',
+      'Staff Continuity through Turnover',
     ],
   },
 } as const;
