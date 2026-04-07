@@ -60,6 +60,8 @@ import VolunteerDetail from '@/pages/VolunteerDetail';
 import VolunteerHoursInbox from '@/pages/VolunteerHoursInbox';
 import FieldNotesPage from '@/components/fieldnotes/FieldNotesPage';
 import Visits from '@/pages/Visits';
+import DioceseReport from '@/pages/DioceseReport';
+import ParishVolunteerPortal from '@/pages/ParishVolunteerPortal';
 import Projects from '@/pages/Projects';
 import ProjectDetail from '@/pages/ProjectDetail';
 import Testimonium from '@/pages/Testimonium';
@@ -312,6 +314,10 @@ export function AppRouter() {
           <Route path="testimonium/:id" element={<TestimoniumReport />} />
           <Route path="testimonium/export" element={<FeatureGate featureKey="testimonium"><TestimoniumExports /></FeatureGate>} />
           <Route path="reports" element={<Reports />} />
+          <Route path="reports/diocese" element={<ProtectedRoute requiredRoles={['admin', 'leadership']}><DioceseReport /></ProtectedRoute>} />
+
+          {/* Parish Volunteer Portal */}
+          <Route path="volunteers/parish" element={<ParishVolunteerPortal />} />
           <Route path="import" element={<ImportCenter />} />
           <Route path="playbooks" element={<Playbooks />} />
 

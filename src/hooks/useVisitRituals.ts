@@ -7,6 +7,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useTenant } from '@/contexts/TenantContext';
 import { useAuth } from '@/contexts/AuthContext';
 import { toast } from '@/components/ui/sonner';
+import { synthesizeReflection } from '@/services/synthesizeReflection';
 import type { VisitRitualData } from '@/components/vigilia/VisitRitual';
 
 export function useVisitRituals(residentContactId?: string) {
@@ -62,7 +63,7 @@ export function useCreateVisitRitual() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (data: VisitRitualData) => {
+    mutationFn: async (data: VisitRitualData & { residentName?: string; voiceTranscript?: string | null }) => {
       const { error } = await supabase.from('visit_rituals').insert({
         tenant_id: tenantId!,
         resident_contact_id: data.residentContactId,
@@ -76,11 +77,34 @@ export function useCreateVisitRitual() {
         facility_anchor_id: data.facilityAnchorId ?? null,
       });
       if (error) throw error;
+      return data;
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ['visit-rituals'] });
       queryClient.invalidateQueries({ queryKey: ['recent-prompt-ids'] });
       toast.success('Visit recorded', { description: 'Thank you for your attention.' });
+
+      // Fire-and-forget: synthesize a family reflection from this visit
+      if (tenantId && data.residentName) {
+        synthesizeReflection({
+          tenantId,
+          residentContactId: data.residentContactId,
+          residentName: data.residentName,
+          visitRitual: {
+            mood_observed: data.mood,
+            need_observed: data.need,
+            concern_noted: data.concern,
+            voice_prompt_text: data.voicePrompt.prompt_text,
+            visited_at: new Date().toISOString(),
+          },
+          voiceTranscript: data.voiceTranscript ?? null,
+          visitorRole: 'any',
+        }).then((text) => {
+          if (text) {
+            queryClient.invalidateQueries({ queryKey: ['family-reflections'] });
+          }
+        });
+      }
     },
     onError: () => {
       toast.error('Failed to save visit');
