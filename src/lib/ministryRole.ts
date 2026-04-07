@@ -17,10 +17,10 @@ export const LENS_LABELS: Record<LensRole, string> = {
 };
 
 export const LENS_SUBTITLES: Record<LensRole, string> = {
-  steward: 'Workspace Caretaker',
-  shepherd: 'Relationship Builder',
-  companion: 'Support Role',
-  visitor: 'Minimal Access',
+  steward: 'IT & Administration',
+  shepherd: 'Mission Lead / Pastoral Director',
+  companion: 'Chaplain / Social Worker',
+  visitor: 'Eucharistic Minister / Volunteer',
 };
 
 export const MINISTRY_ROLE_LABELS: Record<MinistryRole, string> = {
@@ -30,9 +30,9 @@ export const MINISTRY_ROLE_LABELS: Record<MinistryRole, string> = {
 };
 
 export const MINISTRY_ROLE_DESCRIPTIONS: Record<MinistryRole, string> = {
-  shepherd: 'Vision, planning, oversight',
-  companion: 'Daily relationship building',
-  visitor: 'Field volunteer experience',
+  shepherd: 'Oversee resident care, view loneliness watch, manage volunteers',
+  companion: 'Update resident stories, log pastoral care, monitor family signals',
+  visitor: 'Complete visit rituals, record voice notes, view your residents',
 };
 
 /** Onboarding prompts — human language, no enterprise jargon */

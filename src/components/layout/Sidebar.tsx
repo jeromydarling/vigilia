@@ -77,100 +77,53 @@ interface NavGroup {
 // Standalone items (no group) — visible to shepherd + companion + steward
 const standaloneItems: NavItem[] = [
   { labelKey: 'sidebar.commandCenter', href: '/', icon: Compass, testId: 'nav-dashboard' },
+  { labelKey: 'sidebar.todaysVisits', href: '/visits', icon: Heart, testId: 'nav-visits' },
 ];
 
 // Visitor-only standalone items
 const visitorStandaloneItems: NavItem[] = [
   { labelKey: 'sidebar.todaysVisits', href: '/visits', icon: Heart, testId: 'nav-visits' },
-  { labelKey: 'sidebar.fieldNotes', href: '/field-notes', icon: BookOpen, testId: 'nav-field-notes' },
-  { labelKey: 'sidebar.people', href: '/people', icon: Users, testId: 'nav-people' },
+  { labelKey: 'sidebar.people', href: '/residents', icon: Users, testId: 'nav-residents' },
   { labelKey: 'sidebar.calendar', href: '/calendar', icon: CalendarDays, testId: 'nav-calendar' },
   { labelKey: 'sidebar.help', href: '/help', icon: HelpCircle, testId: 'nav-help' },
   { labelKey: 'sidebar.settings', href: '/settings', icon: Settings, testId: 'nav-settings' },
 ];
 
-// Grouped navigation
+// Grouped navigation — Vigilia
 const navGroups: NavGroup[] = [
   {
-    labelKey: 'sidebar.groups.metros',
-    groupName: 'Metros',
-    icon: MapPin,
-    items: [
-      { labelKey: 'sidebar.allMetros', href: '/metros', icon: MapPin, testId: 'nav-metros' },
-      { labelKey: 'sidebar.intelFeed', href: '/intel-feed', icon: Radar, testId: 'nav-intel-feed' },
-      { labelKey: 'sidebar.narratives', href: '/metros/narratives', icon: Radar, testId: 'nav-narratives' },
-      { labelKey: 'sidebar.momentumMap', href: '/momentum', icon: Map, testId: 'nav-momentum' },
-    ],
-  },
-  {
-    labelKey: 'sidebar.groups.partners',
-    groupName: 'Partners',
-    icon: Handshake,
-    items: [
-      { labelKey: 'sidebar.opportunities', href: '/opportunities', icon: Building2, testId: 'nav-opportunities' },
-      { labelKey: 'sidebar.radar', href: '/radar', icon: Radar, testId: 'nav-radar' },
-      { labelKey: 'sidebar.journey', href: '/pipeline', icon: Compass, testId: 'nav-pipeline' },
-      { labelKey: 'sidebar.anchors', href: '/anchors', icon: Anchor, testId: 'nav-anchors' },
-      { labelKey: 'sidebar.provisions', href: '/provisions', icon: Package, testId: 'nav-provisions', dynamicProvision: true } as any,
-    ],
-  },
-  {
     labelKey: 'sidebar.groups.people',
-    groupName: 'People',
+    groupName: 'Residents & Family',
     icon: Users,
     items: [
-      { labelKey: 'sidebar.people', href: '/people', icon: Users, testId: 'nav-people' },
-      { labelKey: 'sidebar.findPeople', href: '/people/find', icon: SearchCheck, testId: 'nav-find-people' },
-      { labelKey: 'sidebar.graph', href: '/graph', icon: Workflow, testId: 'nav-graph' },
+      { labelKey: 'sidebar.people', href: '/residents', icon: Users, testId: 'nav-residents' },
+      { labelKey: 'sidebar.findPeople', href: '/residents/find', icon: SearchCheck, testId: 'nav-find-residents' },
       { labelKey: 'sidebar.volunteers', href: '/volunteers', icon: Users, badge: undefined, testId: 'nav-volunteers' },
+      { labelKey: 'sidebar.anchors', href: '/facilities', icon: Anchor, testId: 'nav-facilities' },
     ],
   },
   {
     labelKey: 'sidebar.groups.scheduling',
-    groupName: 'Scheduling',
+    groupName: 'Calendar & Events',
     icon: Clock,
     items: [
       { labelKey: 'sidebar.calendar', href: '/calendar', icon: CalendarDays, testId: 'nav-calendar' },
       { labelKey: 'sidebar.allEvents', href: '/events', icon: Calendar, testId: 'nav-events' },
-      { labelKey: 'sidebar.findEvents', href: '/events/find', icon: SearchCheck, testId: 'nav-find-events' },
       { labelKey: 'sidebar.activities', href: '/activities', icon: Activity, testId: 'nav-activities' },
     ],
   },
   {
-    labelKey: 'sidebar.groups.grants',
-    groupName: 'Grants',
-    icon: DollarSign,
-    items: [
-      { labelKey: 'sidebar.allGrants', href: '/grants', icon: Book, testId: 'nav-grants' },
-      { labelKey: 'sidebar.findGrants', href: '/grants/find', icon: SearchCheck, testId: 'nav-find-grants' },
-    ],
-  },
-  {
     labelKey: 'sidebar.groups.scientia',
-    groupName: 'Scientia',
+    groupName: 'Reports',
     icon: Sparkles,
     items: [
-      { labelKey: 'sidebar.testimonium', href: '/testimonium', icon: BookOpen, testId: 'nav-testimonium' },
-      { labelKey: 'sidebar.intelligence', href: '/intelligence', icon: LayoutDashboard, testId: 'nav-analytics' },
       { labelKey: 'sidebar.reports', href: '/reports', icon: FileBarChart, testId: 'nav-reports' },
-    ],
-  },
-  {
-    labelKey: 'sidebar.groups.communio',
-    groupName: 'Communio',
-    icon: UsersRound,
-    items: [
-      { labelKey: 'sidebar.sharedNetwork', href: '/communio', icon: UsersRound, testId: 'nav-communio' },
-      { labelKey: 'sidebar.caregiverNetwork', href: '/communio/caregiver-network', icon: Heart, testId: 'nav-caregiver-network', caregiverOnly: true } as any,
     ],
   },
 ];
 
 // Flattened standalone items (formerly single-item groups)
-const postGroupItems: NavItem[] = [
-  { labelKey: 'sidebar.campaigns', href: '/outreach/campaigns', icon: Send, testId: 'nav-campaigns' },
-  { labelKey: 'sidebar.marketplace', href: '/relatio', icon: Plug, testId: 'nav-relatio' },
-];
+const postGroupItems: NavItem[] = [];
 
 const otherItems: NavItem[] = [
   { labelKey: 'sidebar.settings', href: '/settings', icon: Settings, testId: 'nav-settings' },
