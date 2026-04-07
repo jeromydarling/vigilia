@@ -90,7 +90,7 @@ export default function People() {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const { data: people, isLoading } = useContacts();
-  const { data: metros } = useMetros();
+  const metros: any[] = []; // VIGILIA: removed useMetros
 
   // Batch-fetch household counts for visible contacts
   const allContactIds = useMemo(() => (people || []).map(p => p.id), [people]);

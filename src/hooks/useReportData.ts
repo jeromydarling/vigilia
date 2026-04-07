@@ -16,10 +16,10 @@ interface UseReportDataOptions {
 
 export function useReportData({ regionId, metroId, reportType }: UseReportDataOptions) {
   const { data: anchors } = useAnchors();
-  const { data: opportunities } = useOpportunities();
+  const opportunities: any[] = []; // VIGILIA: removed useOpportunities
   const { data: pipeline } = useAnchorPipeline();
   const { data: events } = useEvents();
-  const { data: metros } = useMetros();
+  const metros: any[] = []; // VIGILIA: removed useMetros
   const { data: regions } = useRegions();
 
   const filteredData = useMemo(() => {

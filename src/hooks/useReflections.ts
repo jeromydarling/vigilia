@@ -54,7 +54,7 @@ export function useReflections(opportunityId: string | null) {
 
 export function useAddReflection() {
   const queryClient = useQueryClient();
-  const { captureImpulsus } = useImpulsusCapture();
+  const captureImpulsus = () => {}; // VIGILIA: removed useImpulsusCapture
   return useMutation({
     mutationFn: async ({ opportunityId, body, visibility = 'team', followUpDate }: {
       opportunityId: string;

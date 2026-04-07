@@ -56,7 +56,7 @@ function RoleBadge({ role }: { role: AppRole }) {
 function UserManageDialog({ user, onClose }: { user: UserWithDetails; onClose: () => void }) {
   const { t } = useTranslation('common');
   const { data: regions } = useRegions();
-  const { data: metros } = useMetros();
+  const metros: any[] = []; // VIGILIA: removed useMetros
   const { enabled: metroIntelligenceEnabled } = useMetroIntelligence();
   const assignRole = useAssignRole();
   const removeRole = useRemoveRole();

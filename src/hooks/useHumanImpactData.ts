@@ -105,13 +105,13 @@ interface UseHumanImpactOptions {
 }
 
 export function useHumanImpactData(opts?: UseHumanImpactOptions) {
-  const { data: opportunities } = useOpportunities();
+  const opportunities: any[] = []; // VIGILIA: removed useOpportunities
   const { data: anchors } = useAnchors();
   const { data: events } = useEvents();
-  const { data: metros } = useMetros();
+  const metros: any[] = []; // VIGILIA: removed useMetros
   const { data: regions } = useRegions();
   const { data: pipeline } = useAnchorPipeline();
-  const { data: provisions } = useProvisions();
+  const provisions: any[] = []; // VIGILIA: removed useProvisions
 
   // Momentum data (lightweight — counts only)
   const { data: momentumRows } = useQuery({

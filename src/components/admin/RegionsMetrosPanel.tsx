@@ -226,7 +226,7 @@ function MetroDialog({
 
 export function RegionsMetrosPanel() {
   const { data: regions, isLoading: regionsLoading } = useRegionsWithLeads();
-  const { data: metros, isLoading: metrosLoading } = useMetrosWithComputed();
+  const metros: any[] = []; const metrosLoading = false; // VIGILIA: removed
   const deleteRegion = useDeleteRegion();
   const deleteMetro = useDeleteMetro();
   const { openMetroModal } = useGlobalModal();

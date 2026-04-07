@@ -220,7 +220,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const showOutreach = hasOutreachFeature || campaignsEnabled;
 
   // Prōvīsiō standalone visibility
-  const { showStandalone: showProvisionStandalone } = useProvisionMode();
+  const showProvisionStandalone = false; // VIGILIA: removed
 
   // Prefix all nav items with tenant slug
   const prefixItems = (items: NavItem[]): NavItem[] =>

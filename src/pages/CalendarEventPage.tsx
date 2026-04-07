@@ -107,7 +107,7 @@ export default function CalendarEventPage() {
   const createActivity = useCreateActivity();
   const updateActivity = useUpdateActivity();
   const createContact = useCreateContact();
-  const { captureImpulsus } = useImpulsusCapture();
+  const captureImpulsus = () => {}; // VIGILIA: removed useImpulsusCapture
 
   // ── Meeting note from Read.ai ──
   const { data: meetingNote } = useMeetingNoteByCalendarEvent(

@@ -74,7 +74,7 @@ export default function Events() {
   
   const { data: events, isLoading } = useEvents({ mineOnly: isOperatorRoute, allTenants: isOperatorRoute });
   const { data: contactsCounts } = useEventContactsCount();
-  const { data: metros } = useMetros();
+  const metros: any[] = []; // VIGILIA: removed useMetros
   const { enabled: metroEnabled } = useMetroIntelligence();
 
   const defaultMetroId = 'all';

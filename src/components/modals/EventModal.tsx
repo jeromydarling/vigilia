@@ -125,7 +125,7 @@ export function EventModal({ open, onOpenChange, event }: EventModalProps) {
   // Strategic Lane input
   const [laneInput, setLaneInput] = useState('');
   
-  const { data: metros } = useMetros();
+  const metros: any[] = []; // VIGILIA: removed useMetros
   const { data: targetPopulationOptions } = useEventTargetPopulations();
   const { data: strategicLaneOptions } = useEventStrategicLanes();
   const { data: pcsGoalOptions } = useEventPcsGoals();

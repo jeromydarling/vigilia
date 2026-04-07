@@ -31,7 +31,7 @@ const modeUnitLabels: Record<string, string> = {
 };
 
 export function SupportDeliveredSection({ data }: SupportDeliveredSectionProps) {
-  const { mode } = useProvisionMode();
+  const mode = 'off'; // VIGILIA: removed useProvisionMode
   const title = modeTitles[mode] || 'Care & Support Delivered';
   const unitLabel = modeUnitLabels[mode] || 'Total Items';
 

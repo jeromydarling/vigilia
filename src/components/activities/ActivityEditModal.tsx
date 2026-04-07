@@ -107,7 +107,7 @@ export function ActivityEditModal({
   const [attended, setAttended] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
-  const { data: metros, isLoading: metrosLoading } = useMetros();
+  const metros: any[] = []; const metrosLoading = false; // VIGILIA: removed
   const createActivity = useCreateActivity();
   const updateActivity = useUpdateActivity();
   const deleteActivity = useDeleteActivity();

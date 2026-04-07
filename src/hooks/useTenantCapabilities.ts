@@ -45,7 +45,7 @@ export interface TenantCapabilities {
 export function useTenantCapabilities(): TenantCapabilities {
   const { tenant, isLoading: tenantLoading } = useTenant();
   const { enabled: metrosEnabled } = useMetroIntelligence();
-  const { mode: provisionMode, showStandalone: provisioActive } = useProvisionMode();
+  const provisionMode = 'off'; const provisioActive = false; // VIGILIA: removed
   const { entitlements, isLoading: entLoading } = useEntitlements();
 
   const plan = (tenant as any)?.tier ?? 'core';

@@ -58,7 +58,7 @@ export function MeetingModal({
   const [attended, setAttended] = useState(false);
 
   const { data: contacts, isLoading: contactsLoading } = useContacts();
-  const { data: metros, isLoading: metrosLoading } = useMetros();
+  const metros: any[] = []; const metrosLoading = false; // VIGILIA: removed
   const createActivity = useCreateActivity();
   const updateActivity = useUpdateActivity();
 

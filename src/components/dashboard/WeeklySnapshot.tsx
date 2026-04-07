@@ -384,7 +384,7 @@ export function WeeklySnapshot() {
     googleEvents: true,
   });
   const { data, isLoading } = useWeeklySnapshot(metroFilter);
-  const { data: metros } = useMetros();
+  const metros: any[] = []; // VIGILIA: removed useMetros
   const navigate = useNavigate();
   const { tenantPath } = useTenantPath();
   const { t } = useTranslation('dashboard');

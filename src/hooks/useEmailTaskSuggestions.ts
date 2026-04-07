@@ -39,7 +39,7 @@ export function useEmailTaskSuggestions(opportunityId: string | undefined) {
 
 export function useAcceptSuggestion() {
   const qc = useQueryClient();
-  const { captureImpulsus } = useImpulsusCapture();
+  const captureImpulsus = () => {}; // VIGILIA: removed useImpulsusCapture
   const { captureTestimonium } = useTestimoniumCapture();
   return useMutation({
     mutationFn: async (suggestionId: string) => {

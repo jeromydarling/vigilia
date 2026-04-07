@@ -57,7 +57,7 @@ export function ScheduleModal({
   schedule,
   isLoading,
 }: ScheduleModalProps) {
-  const { data: metros } = useMetros();
+  const metros: any[] = []; // VIGILIA: removed useMetros
   const { data: regions } = useRegions();
   
   const [name, setName] = useState('');

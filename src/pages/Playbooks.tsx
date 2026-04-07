@@ -63,7 +63,7 @@ export default function Playbooks() {
     category: selectedCategory !== 'all' ? selectedCategory : undefined,
     search: searchQuery || undefined
   });
-  const { data: metros } = useMetros();
+  const metros: any[] = []; // VIGILIA: removed useMetros
   const { data: selectedPlaybook } = usePlaybook(selectedPlaybookId);
   const createPlaybook = useCreatePlaybook();
   const updatePlaybook = useUpdatePlaybook();

@@ -103,7 +103,7 @@ export function useAISuggestions(options: UseAISuggestionsOptions = {}) {
 
 export function useApproveSuggestion() {
   const queryClient = useQueryClient();
-  const { captureImpulsus } = useImpulsusCapture();
+  const captureImpulsus = () => {}; // VIGILIA: removed useImpulsusCapture
   
   return useMutation({
     mutationFn: async (suggestionId: string) => {

@@ -54,8 +54,8 @@ export function BulkEditModal<T extends { id: string }>({
   const [enabledFields, setEnabledFields] = useState<Set<string>>(new Set());
 
   // Fetch lookup data
-  const { data: opportunities } = useOpportunities();
-  const { data: metros } = useMetros();
+  const opportunities: any[] = []; // VIGILIA: removed useOpportunities
+  const metros: any[] = []; // VIGILIA: removed useMetros
   const { data: sectors } = useSectors(true);
   const { data: grantAlignments } = useGrantAlignments(true);
   const { data: missionSnapshots } = useMissionSnapshots();

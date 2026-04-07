@@ -236,7 +236,7 @@ export function EventImportModal({
   const [extraColumns, setExtraColumns] = useState<string[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const { data: metros } = useMetros();
+  const metros: any[] = []; // VIGILIA: removed useMetros
 
   useEffect(() => {
     if (defaultMetroId) {

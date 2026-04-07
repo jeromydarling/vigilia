@@ -22,7 +22,7 @@ const provisionLabel: Record<string, string> = {
 export function ExecSummarySection({ data }: ExecSummarySectionProps) {
   const trend = trendConfig[data.momentumTrend];
   const TrendIcon = trend.icon;
-  const { mode } = useProvisionMode();
+  const mode = 'off'; // VIGILIA: removed useProvisionMode
   const supportLabel = provisionLabel[mode] || 'Support Delivered';
 
   return (

@@ -60,11 +60,11 @@ export function ContactModal({ open, onOpenChange, contact }: ContactModalProps)
   const [familyMembers, setFamilyMembers] = useState<string[]>([]);
   const [newFamilyMember, setNewFamilyMember] = useState('');
   
-  const { data: opportunities } = useOpportunities();
+  const opportunities: any[] = []; // VIGILIA: removed useOpportunities
   const { data: events } = useEvents();
   const createContact = useCreateContact();
   const updateContact = useUpdateContact();
-  const createOpportunity = useCreateOpportunity();
+  const createOpportunity = { mutateAsync: async () => ({}) }; // VIGILIA: removed
   const { similarContacts, checkForDuplicates, clearDuplicates } = useContactDuplicateCheck();
 
   useEffect(() => {
