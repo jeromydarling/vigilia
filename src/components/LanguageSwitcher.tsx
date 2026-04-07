@@ -40,12 +40,12 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     return (
       <button
         onClick={() => handleLanguageChange(nextLang)}
-        className={`cros-lang-toggle ${className}`}
+        className={`vigilia-lang-toggle ${className}`}
         aria-label={t('accessibility.languageSelector')}
         title={SUPPORTED_LANGUAGES[nextLang]}
         type="button"
       >
-        <span className="cros-lang-toggle__current">
+        <span className="vigilia-lang-toggle__current">
           {currentLang === 'en' ? 'EN' : 'ES'}
         </span>
       </button>
@@ -53,15 +53,15 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   }
 
   return (
-    <div className={`cros-lang-switcher ${className}`}>
-      <label htmlFor="cros-language-select" className="sr-only">
+    <div className={`vigilia-lang-switcher ${className}`}>
+      <label htmlFor="vigilia-language-select" className="sr-only">
         {t('accessibility.languageSelector')}
       </label>
       <select
-        id="cros-language-select"
+        id="vigilia-language-select"
         value={currentLang}
         onChange={(e) => handleLanguageChange(e.target.value as SupportedLanguage)}
-        className="cros-lang-switcher__select"
+        className="vigilia-lang-switcher__select"
         aria-label={t('accessibility.languageSelector')}
       >
         {(Object.entries(SUPPORTED_LANGUAGES) as [SupportedLanguage, string][]).map(

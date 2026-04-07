@@ -8,7 +8,7 @@
  *      Solo caregivers filter by base location only.
  */
 
-import type { TerritoryType } from '@/types/cros';
+import type { TerritoryType } from '@/types/vigilia';
 import type { ActivatedTerritory } from '@/hooks/useTenantTerritories';
 
 // ── Territory Match Weights ──

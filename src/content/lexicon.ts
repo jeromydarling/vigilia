@@ -56,7 +56,7 @@ The word "Vigilia" represents a crossing — a relationship bridge between an or
 
 Where most platforms track transactions, Vigilia remembers people. Where traditional AI analyzes data, NRI learns from human experience.`,
     related: ['narrative-relational-intelligence', 'mission-archetype', 'shepherd-role'],
-    appearsIn: ['/manifesto', '/cros'],
+    appearsIn: ['/manifesto', '/vigilia'],
   },
   {
     slug: 'mission-archetype',
@@ -291,7 +291,7 @@ Relatio is available in the Vigilia Bridge tier.`,
     slug: 'communio',
     title: 'Communio',
     category: 'Module',
-    summary: 'Cross-organization narrative sharing with privacy governance.',
+    summary: 'vigilias-organization narrative sharing with privacy governance.',
     body: `Communio enables organizations with shared mission contexts to collaborate — sharing anonymized signals, event discoveries, and narrative patterns without exposing private data.
 
 A group of parishes in the same diocese might share Local Pulse events. A network of workforce programs might share momentum signals. Communio governs what is shared, who sees it, and ensures that privacy remains paramount.

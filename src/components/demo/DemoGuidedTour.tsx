@@ -11,7 +11,7 @@ import Joyride, { type Step, type CallBackProps, STATUS } from 'react-joyride';
 import { useDemoMode } from '@/contexts/DemoModeContext';
 import { useLocation } from 'react-router-dom';
 
-const TOUR_SEEN_KEY = 'cros_demo_tour_seen';
+const TOUR_SEEN_KEY = 'vigilia_demo_tour_seen';
 
 const TOUR_STEPS: Step[] = [
   {

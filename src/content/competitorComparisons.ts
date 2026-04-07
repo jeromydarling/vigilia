@@ -11,7 +11,7 @@ export interface CompetitorSection {
   body?: string;
   bullets?: string[];
   /** Two-column layout: left = competitor, right = Vigilia */
-  columns?: { competitor: string[]; cros: string[] };
+  columns?: { competitor: string[]; vigilia: string[] };
   closingLine?: string;
 }
 
@@ -36,7 +36,7 @@ export interface CompetitorComparison {
 export const competitorComparisons: CompetitorComparison[] = [
   // ─── PAGE 1: Vigilia vs Bloomerang ───
   {
-    slug: 'cros-vs-bloomerang',
+    slug: 'vigilia-vs-bloomerang',
     seoTitle: 'Vigilia vs Bloomerang: Donor CRM or Relationship Operating System?',
     metaDescription:
       'Comparing Vigilia™ and Bloomerang? Discover whether your nonprofit needs donor infrastructure or a relational operating system built for community work.',
@@ -88,7 +88,7 @@ export const competitorComparisons: CompetitorComparison[] = [
         heading: 'Architectural Difference',
         columns: {
           competitor: ['Donor records', 'Giving history', 'Campaign performance'],
-          cros: ['People', 'Partners', 'Journey Chapters', 'Reflections', 'Community signals'],
+          vigilia: ['People', 'Partners', 'Journey Chapters', 'Reflections', 'Community signals'],
         },
         closingLine: 'One measures transactions. The other preserves relationship memory.',
       },
@@ -129,7 +129,7 @@ export const competitorComparisons: CompetitorComparison[] = [
 
   // ─── PAGE 2: Vigilia vs Salesforce ───
   {
-    slug: 'cros-vs-salesforce',
+    slug: 'vigilia-vs-salesforce',
     seoTitle: 'Vigilia vs Salesforce Nonprofit Cloud: Enterprise CRM or Relational OS?',
     metaDescription:
       'Comparing Vigilia™ and Salesforce Nonprofit Cloud? See whether your nonprofit needs enterprise fundraising infrastructure or a relational operating system.',
@@ -174,7 +174,7 @@ export const competitorComparisons: CompetitorComparison[] = [
         heading: 'Architecture',
         columns: {
           competitor: ['Accounts', 'Opportunities', 'Campaigns', 'Custom Objects'],
-          cros: ['People', 'Partners', 'Journey Chapters', 'Presence', 'Community Awareness'],
+          vigilia: ['People', 'Partners', 'Journey Chapters', 'Presence', 'Community Awareness'],
         },
         closingLine: 'Salesforce is enterprise infrastructure. Vigilia is relational infrastructure.',
       },
@@ -216,7 +216,7 @@ export const competitorComparisons: CompetitorComparison[] = [
 
   // ─── PAGE 3: Vigilia vs HubSpot ───
   {
-    slug: 'cros-vs-hubspot',
+    slug: 'vigilia-vs-hubspot',
     seoTitle: 'Vigilia vs HubSpot for Nonprofits: Marketing CRM or Relational OS?',
     metaDescription:
       'Comparing Vigilia™ and HubSpot? Discover whether your nonprofit needs marketing automation or a relational operating system built for mission work.',
@@ -291,7 +291,7 @@ export const competitorComparisons: CompetitorComparison[] = [
 
   // ─── PAGE 4: Mission Layer ───
   {
-    slug: 'cros-mission-layer-crm',
+    slug: 'vigilia-mission-layer-crm',
     seoTitle: 'The Relational Layer Above Your Nonprofit CRM | Vigilia™',
     metaDescription:
       'Already using Salesforce, Bloomerang, HubSpot, or Planning Center? Add Vigilia™ as your relational and narrative intelligence layer.',

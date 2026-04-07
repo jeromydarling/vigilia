@@ -22,9 +22,9 @@ export const glossary: GlossaryEntry[] = [
   },
   {
     term: 'Vigilia',
-    slug: 'cros',
+    slug: 'vigilia',
     definition: 'A Liturgy of Attention - a living relationship system that remembers people and notices community shifts.',
-    route: '/cros',
+    route: '/vigilia',
   },
   {
     term: 'Profunda',

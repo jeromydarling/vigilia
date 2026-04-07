@@ -20,7 +20,7 @@ interface ViewModeContextType {
 
 const ViewModeContext = createContext<ViewModeContextType | undefined>(undefined);
 
-const STORAGE_KEY = 'cros-view-mode';
+const STORAGE_KEY = 'vigilia-view-mode';
 
 export function ViewModeProvider({ children }: { children: ReactNode }) {
   const { roles } = useAuth();

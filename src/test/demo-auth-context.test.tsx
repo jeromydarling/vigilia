@@ -72,7 +72,7 @@ function createWrapper(session: DemoSession | null) {
 function DemoSessionInjector({ session, children }: { session: DemoSession | null; children: ReactNode }) {
   // We use sessionStorage to pre-load the demo session
   if (session) {
-    sessionStorage.setItem('cros_demo_session', JSON.stringify(session));
+    sessionStorage.setItem('vigilia_demo_session', JSON.stringify(session));
   }
   return <>{children}</>;
 }
@@ -82,7 +82,7 @@ describe('AuthContext in demo mode', () => {
   afterEach(() => sessionStorage.clear());
 
   it('provides synthetic profile with demo name when demo is active', async () => {
-    sessionStorage.setItem('cros_demo_session', JSON.stringify(MOCK_SESSION));
+    sessionStorage.setItem('vigilia_demo_session', JSON.stringify(MOCK_SESSION));
     // Need to re-create provider so it reads from storage
     const Wrapper = createWrapper(MOCK_SESSION);
     const { result } = renderHook(() => useAuth(), { wrapper: Wrapper });
@@ -97,7 +97,7 @@ describe('AuthContext in demo mode', () => {
 
   it('steward demo gets isSteward=true', async () => {
     const stewardSession = { ...MOCK_SESSION, role: 'steward' as const };
-    sessionStorage.setItem('cros_demo_session', JSON.stringify(stewardSession));
+    sessionStorage.setItem('vigilia_demo_session', JSON.stringify(stewardSession));
     const Wrapper = createWrapper(stewardSession);
     const { result } = renderHook(() => useAuth(), { wrapper: Wrapper });
 
@@ -110,7 +110,7 @@ describe('AuthContext in demo mode', () => {
 
   it('visitor demo gets no special roles', async () => {
     const visitorSession = { ...MOCK_SESSION, role: 'visitor' as const };
-    sessionStorage.setItem('cros_demo_session', JSON.stringify(visitorSession));
+    sessionStorage.setItem('vigilia_demo_session', JSON.stringify(visitorSession));
     const Wrapper = createWrapper(visitorSession);
     const { result } = renderHook(() => useAuth(), { wrapper: Wrapper });
 

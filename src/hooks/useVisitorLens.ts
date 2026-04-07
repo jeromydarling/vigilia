@@ -14,7 +14,7 @@ import { useTenant } from '@/contexts/TenantContext';
 import { useNavigate } from 'react-router-dom';
 import { useTenantPath } from '@/hooks/useTenantPath';
 
-const LAST_FULL_ROUTE_KEY = 'cros-last-full-route';
+const LAST_FULL_ROUTE_KEY = 'vigilia-last-full-route';
 
 function getLastFullRoute(tenantId: string): string | null {
   try {

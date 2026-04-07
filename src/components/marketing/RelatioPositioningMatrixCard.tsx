@@ -12,9 +12,9 @@ import { useTranslation } from 'react-i18next';
 
 type ColumnTone = 'muted' | 'accent';
 
-const columnKeys: { key: 'crm' | 'cros' | 'bridge'; tone: ColumnTone }[] = [
+const columnKeys: { key: 'crm' | 'vigilia' | 'bridge'; tone: ColumnTone }[] = [
   { key: 'crm', tone: 'muted' },
-  { key: 'cros', tone: 'accent' },
+  { key: 'vigilia', tone: 'accent' },
   { key: 'bridge', tone: 'muted' },
 ];
 

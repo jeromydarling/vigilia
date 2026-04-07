@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 import { Leaf, BookOpen, Eye, ArrowRight } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 
-const STORAGE_KEY = 'cros-morning-examen-last-seen';
+const STORAGE_KEY = 'vigilia-morning-examen-last-seen';
 
 function getTodayKey() {
   return new Date().toISOString().slice(0, 10);

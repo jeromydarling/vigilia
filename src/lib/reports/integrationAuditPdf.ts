@@ -117,7 +117,7 @@ const CONNECTORS: ConnectorEntry[] = [
 
   // ── Outbound (bi-directional) ──
   {
-    key: 'dynamics365', displayName: 'Microsoft Dynamics 365', category: 'outbound',
+    key: 'dynamics365', displayName: 'Mivigiliaoft Dynamics 365', category: 'outbound',
     confidenceRung: 4, hasGivingAdapter: false, givingApiType: null,
     authMethod: 'OAuth 2.0 (Azure AD)',
     paginationType: 'OData $skip/$top',
@@ -431,14 +431,14 @@ export function generateIntegrationAuditPdf() {
     y += 4;
   }
 
-  // ── Cross-Connector Quick Reference ──
+  // ── vigilias-Connector Quick Reference ──
   y = checkBreak(doc, y, 30, pn);
   doc.setDrawColor(200);
   doc.line(MARGIN, y, PAGE_WIDTH - MARGIN, y);
   y += 6;
   doc.setFontSize(12);
   doc.setTextColor(30);
-  doc.text('Giving — Cross-Connector Quick Reference', MARGIN, y);
+  doc.text('Giving — vigilias-Connector Quick Reference', MARGIN, y);
   y += 7;
 
   // Date format table

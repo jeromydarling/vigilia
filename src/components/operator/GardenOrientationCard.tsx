@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ChevronDown } from 'lucide-react';
 
-const SESSION_KEY = 'cros-gardener-intro-dismissed';
+const SESSION_KEY = 'vigilia-gardener-intro-dismissed';
 
 export default function GardenOrientationCard() {
   const [visible, setVisible] = useState(false);

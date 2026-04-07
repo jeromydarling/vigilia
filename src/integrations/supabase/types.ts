@@ -3745,7 +3745,7 @@ export type Database = {
         }
         Relationships: []
       }
-      cros_import_mappings: {
+      vigilia_import_mappings: {
         Row: {
           batch_id: string
           created_at: string
@@ -3772,7 +3772,7 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "cros_import_mappings_batch_id_fkey"
+            foreignKeyName: "vigilia_import_mappings_batch_id_fkey"
             columns: ["batch_id"]
             isOneToOne: false
             referencedRelation: "import_batches"
@@ -20948,7 +20948,7 @@ export type Database = {
           conflicting_fields: string[]
           connector_key: string
           created_at: string
-          cros_data: Json
+          vigilia_data: Json
           entity_id: string | null
           entity_type: string
           external_id: string
@@ -20964,7 +20964,7 @@ export type Database = {
           conflicting_fields?: string[]
           connector_key: string
           created_at?: string
-          cros_data?: Json
+          vigilia_data?: Json
           entity_id?: string | null
           entity_type: string
           external_id: string
@@ -20980,7 +20980,7 @@ export type Database = {
           conflicting_fields?: string[]
           connector_key?: string
           created_at?: string
-          cros_data?: Json
+          vigilia_data?: Json
           entity_id?: string | null
           entity_type?: string
           external_id?: string

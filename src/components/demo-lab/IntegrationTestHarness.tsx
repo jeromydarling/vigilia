@@ -81,9 +81,9 @@ export default function IntegrationTestHarness({ tenantId }: { tenantId: string 
   const queryClient = useQueryClient();
   const [selectedTenant, setSelectedTenant] = useState<string>('');
   const [environment, setEnvironment] = useState<string>('sandbox');
-  const [unsubEmail, setUnsubEmail] = useState('test.unsubscribe@cros.test');
+  const [unsubEmail, setUnsubEmail] = useState('test.unsubscribe@vigilia.test');
   const [unsubCampaignId, setUnsubCampaignId] = useState('');
-  const [suppressionEmail, setSuppressionEmail] = useState('test.unsubscribe@cros.test');
+  const [suppressionEmail, setSuppressionEmail] = useState('test.unsubscribe@vigilia.test');
   const [selectedRunId, setSelectedRunId] = useState<string | null>(null);
   const [runbookOpen, setRunbookOpen] = useState(false);
 
@@ -284,7 +284,7 @@ export default function IntegrationTestHarness({ tenantId }: { tenantId: string 
                 <Input
                   value={unsubEmail}
                   onChange={(e) => setUnsubEmail(e.target.value)}
-                  placeholder="test.unsubscribe@cros.test"
+                  placeholder="test.unsubscribe@vigilia.test"
                   className="h-8 text-sm"
                 />
               </div>
@@ -331,7 +331,7 @@ export default function IntegrationTestHarness({ tenantId }: { tenantId: string 
               <Input
                 value={suppressionEmail}
                 onChange={(e) => setSuppressionEmail(e.target.value)}
-                placeholder="test.unsubscribe@cros.test"
+                placeholder="test.unsubscribe@vigilia.test"
                 className="h-8 text-sm"
               />
             </div>
@@ -368,8 +368,8 @@ export default function IntegrationTestHarness({ tenantId }: { tenantId: string 
               <RunbookSection
                 title="Outlook Test — What accounts are needed?"
                 content={[
-                  "Minimum: ONE Outlook/Microsoft 365 mailbox (any tenant-owned mailbox).",
-                  "Recommended: A dedicated sandbox mailbox (e.g., cros.operator.test@yourdomain.com).",
+                  "Minimum: ONE Outlook/Mivigiliaoft 365 mailbox (any tenant-owned mailbox).",
+                  "Recommended: A dedicated sandbox mailbox (e.g., vigilia.operator.test@yourdomain.com).",
                   "No secondary recipient required — we only verify connection, scopes, and identity.",
                 ]}
                 steps={[
@@ -386,7 +386,7 @@ export default function IntegrationTestHarness({ tenantId }: { tenantId: string 
                   "None. Use any test email string — no real mailbox required.",
                 ]}
                 steps={[
-                  "Enter test email (e.g., test.unsubscribe@cros.test)",
+                  "Enter test email (e.g., test.unsubscribe@vigilia.test)",
                   "Click \"Unsubscribe Flow Test\"",
                   "Optionally click the generated link in a new tab to view the confirmation page",
                   "Expected: Token generated ✓, Unsubscribe executed ✓, Suppression verified ✓, Token marked used ✓",

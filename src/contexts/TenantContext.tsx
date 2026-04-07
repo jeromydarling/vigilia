@@ -53,7 +53,7 @@ interface TenantContextType {
 const TenantContext = createContext<TenantContextType | undefined>(undefined);
 
 /** Session-storage key so the override survives navigation but not tab close */
-const OVERRIDE_KEY = 'cros_tenant_override';
+const OVERRIDE_KEY = 'vigilia_tenant_override';
 
 export function TenantProvider({ children }: { children: ReactNode }) {
   const { user, session, isAdmin } = useAuth();

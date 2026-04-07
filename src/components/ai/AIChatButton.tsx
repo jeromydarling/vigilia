@@ -44,8 +44,8 @@ export function AIChatButton() {
   }, [isOpen, setIsOpen]);
 
   useEffect(() => {
-    window.addEventListener('cros:system-error', handleSystemError);
-    return () => window.removeEventListener('cros:system-error', handleSystemError);
+    window.addEventListener('vigilia:system-error', handleSystemError);
+    return () => window.removeEventListener('vigilia:system-error', handleSystemError);
   }, [handleSystemError]);
 
   // Hide on onboarding routes
@@ -63,7 +63,7 @@ export function AIChatButton() {
       <Button
         onClick={() => setIsOpen(true)}
         size="icon"
-        aria-label={t('accessibility.openCrosCompanion')}
+        aria-label={t('accessibility.openVigiliaCompanion')}
         className={cn(
           "fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg",
           "bg-primary hover:bg-primary/90",
@@ -74,7 +74,7 @@ export function AIChatButton() {
         )}
       >
         <Compass className="h-6 w-6" />
-        <span className="sr-only">{t('accessibility.openCrosCompanion')}</span>
+        <span className="sr-only">{t('accessibility.openVigiliaCompanion')}</span>
       </Button>
 
       <AIChatDrawer

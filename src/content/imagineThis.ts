@@ -50,7 +50,7 @@ export const scenarios: ImagineScenario[] = [
 
 export interface ComparisonRow {
   before: string;
-  withCros: string;
+  withvigilia: string;
 }
 
 export const quietComparison = {
@@ -60,23 +60,23 @@ export const quietComparison = {
   rows: [
     {
       before: 'Notes scattered across inboxes, spreadsheets, and sticky notes.',
-      withCros: 'Every visit, call, and reflection lives in one quiet story — not a data silo.',
+      withvigilia: 'Every visit, call, and reflection lives in one quiet story — not a data silo.',
     },
     {
       before: "Activity logged but never understood. Data grows; clarity doesn\u2019t.",
-      withCros: 'Movement becomes visible. Patterns surface in human language, not pivot tables.',
+      withvigilia: 'Movement becomes visible. Patterns surface in human language, not pivot tables.',
     },
     {
       before: 'Relationships flattened into records. People become rows.',
-      withCros: 'People feel known, not processed. Context travels with you.',
+      withvigilia: 'People feel known, not processed. Context travels with you.',
     },
     {
       before: 'Volunteers avoid logging in. Adoption stalls after onboarding.',
-      withCros: 'The system meets people where they are — voice notes, gentle guidance, calm rhythm.',
+      withvigilia: 'The system meets people where they are — voice notes, gentle guidance, calm rhythm.',
     },
     {
       before: 'Leadership sees dashboards. Nobody sees direction.',
-      withCros: 'Leaders receive narrative signals — what\'s shifting, who\'s growing, what deserves attention.',
+      withvigilia: 'Leaders receive narrative signals — what\'s shifting, who\'s growing, what deserves attention.',
     },
   ] as ComparisonRow[],
 };

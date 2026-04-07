@@ -85,7 +85,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import crosLogo from '@/assets/cros-mark.png';
+// Logo: using text-based V mark until Vigilia logo is designed
 import { useOperatorBookmarks } from '@/hooks/useOperatorBookmarks';
 import { useOperatorUnread } from '@/hooks/useOperatorUnread';
 import { InstallPrompt } from '@/components/pwa/InstallPrompt';
@@ -294,7 +294,7 @@ export function OperatorLayout({ children }: OperatorLayoutProps) {
           </Button>
 
           <Link to="/operator" className="flex items-center gap-2">
-            <img src={crosLogo} alt="Vigilia" className="w-8 h-8 object-contain" />
+            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center"><span className="text-white font-bold text-sm">V</span></div>
             <span className="font-semibold text-foreground text-sm hidden sm:inline">
               Vigilia Gardener
             </span>

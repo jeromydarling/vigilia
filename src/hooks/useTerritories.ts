@@ -8,7 +8,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
-import type { TerritoryType } from '@/types/cros';
+import type { TerritoryType } from '@/types/vigilia';
 
 export interface TerritoryRow {
   id: string;

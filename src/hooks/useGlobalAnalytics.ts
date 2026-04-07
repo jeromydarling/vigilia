@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const GA_STORAGE_KEY = 'cros_ga_measurement_id';
+const GA_STORAGE_KEY = 'vigilia_ga_measurement_id';
 
 /**
  * Globally injects Google Analytics gtag script on every page

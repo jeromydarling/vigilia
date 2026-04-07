@@ -258,12 +258,12 @@ const changelog = [
     title: '5 New Connectors + Donor Humanity Page + Why Vigilia Page',
     changes: [
       'NEW: Google Contacts connector — OAuth2, two-way sync via People API (contacts, groups, labels)',
-      'NEW: Microsoft Outlook Contacts connector — OAuth2, two-way sync via Microsoft Graph (contacts, folders, categories)',
+      'NEW: Mivigiliaoft Outlook Contacts connector — OAuth2, two-way sync via Mivigiliaoft Graph (contacts, folders, categories)',
       'NEW: Apple Contacts / iCloud connector — vCard/CSV migration (no public API)',
       'NEW: Monica CRM connector — API key, one-way sync (contacts, activities, notes, reminders, tasks)',
       'NEW: Contacts+ connector — API key, one-way sync (contacts, tags, notes, social profiles)',
-      'NEW: /cros-donor-humanity SEO landing page — relational donor stewardship philosophy',
-      'NEW: /why-cros page — three pillars, relational capital vs financial capital section',
+      'NEW: /vigilia-donor-humanity SEO landing page — relational donor stewardship philosophy',
+      'NEW: /why-vigilia page — three pillars, relational capital vs financial capital section',
       'UPD: Connector registry expanded to 30 connectors (6 with two-way sync)',
       'UPD: Marketing integrations page updated with all 5 new connectors',
       'UPD: Setup guides added for all 5 new connectors with step-by-step onboarding',
@@ -418,14 +418,14 @@ const changelog = [
   {
     date: 'Feb 27, 2026 - 2:00 AM',
     type: 'feature' as const,
-    title: 'Bi-Directional CRM Sync — Salesforce, Microsoft Dynamics 365 & HubSpot',
+    title: 'Bi-Directional CRM Sync — Salesforce, Mivigiliaoft Dynamics 365 & HubSpot',
     changes: [
       'NEW: Direct outbound sync via Edge Function (relatio-outbound-sync) — no external orchestration dependency',
       'NEW: Salesforce two-way sync — contacts, accounts, tasks, events, and notes flow both directions',
-      'NEW: Microsoft Dynamics 365 two-way sync — full OData v4 field mapping for all entity types',
+      'NEW: Mivigiliaoft Dynamics 365 two-way sync — full OData v4 field mapping for all entity types',
       'NEW: HubSpot two-way sync — contacts, companies, deals, and notes synchronized bidirectionally',
       'NEW: Conflict detection — field-level diff engine flags records edited in both Vigilia and external CRM',
-      'NEW: sync_conflicts table — flag-for-review resolution with accept_cros / accept_remote / merged options',
+      'NEW: sync_conflicts table — flag-for-review resolution with accept_vigilia / accept_remote / merged options',
       'NEW: sync_direction_config table — per-tenant bidirectional sync configuration and credential storage',
       'NEW: Demo Lab migration tests updated with Dynamics 365 inbound fixtures, outbound denormalization, and conflict detection',
       'UPD: Marketing Integrations page — all three CRM connectors now show two-way sync badge',
@@ -504,7 +504,7 @@ const changelog = [
   {
     date: 'Feb 27, 2026 - 12:00 AM',
     type: 'feature' as const,
-    title: 'Microsoft Dynamics 365 Inbound Connector',
+    title: 'Mivigiliaoft Dynamics 365 Inbound Connector',
     changes: [
       'NEW: Full Dynamics 365 ConnectorAdapter — OData v4 field mapping for accounts, contacts, tasks, events, activities',
       'NEW: OutboundAdapter interface — denormalizes Vigilia entities back to vendor format for write-back',
@@ -519,7 +519,7 @@ const changelog = [
   {
     date: 'Feb 26, 2026 - 11:45 PM',
     type: 'feature' as const,
-    title: 'Life Events — Cross-Archetype Narrative Ontology',
+    title: 'Life Events — vigilias-Archetype Narrative Ontology',
     changes: [
       'NEW: life_events table — structured, privacy-aware life events on People (marriage, birth, death, sobriety, etc.)',
       'NEW: LifeEventsSection on Person Detail — add, view, remove life events with dignity-first UX',
@@ -2811,10 +2811,10 @@ The heatmap aggregates anchor counts, event participation, orders, and narrative
 **Two-Way Sync (7 connectors):**
 - **HubSpot**: Contacts, companies, deals, tasks, notes
 - **Salesforce**: Contacts, accounts, tasks, events, notes
-- **Microsoft Dynamics 365**: Full OData v4 sync for all entity types
+- **Mivigiliaoft Dynamics 365**: Full OData v4 sync for all entity types
 - **Blackbaud RE NXT**: Constituents, gifts, actions, events, notes via SKY API
 - **Google Contacts**: People API sync for contacts, groups, labels
-- **Outlook Contacts**: Microsoft Graph sync for contacts, folders, categories
+- **Outlook Contacts**: Mivigiliaoft Graph sync for contacts, folders, categories
 - **CiviCRM**: APIv4 sync for contacts, activities, contributions, events
 
 **One-Way Import (24+ connectors):**

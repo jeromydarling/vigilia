@@ -27,11 +27,11 @@ describe('sanitizeEventDescription', () => {
   });
 
   it('strips Google Meet and Teams links', () => {
-    const desc = 'A wonderful workshop about community building\nhttps://meet.google.com/abc-def-ghi\nhttps://teams.microsoft.com/l/meetup';
+    const desc = 'A wonderful workshop about community building\nhttps://meet.google.com/abc-def-ghi\nhttps://teams.mivigiliaoft.com/l/meetup';
     const result = sanitizeEventDescription(desc);
     expect(result).not.toBeNull();
     expect(result!).not.toContain('meet.google.com');
-    expect(result!).not.toContain('teams.microsoft.com');
+    expect(result!).not.toContain('teams.mivigiliaoft.com');
   });
 
   it('returns null for description with only meeting content', () => {

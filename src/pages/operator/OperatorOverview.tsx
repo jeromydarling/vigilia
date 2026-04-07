@@ -28,7 +28,7 @@ import { EcosystemPulsePanel } from '@/components/operator/EcosystemPulsePanel';
 import { ConnectorConfidencePanel } from '@/components/operator/ConnectorConfidencePanel';
 import { NarrativeBalanceIndicator } from '@/components/operator/NarrativeBalanceIndicator';
 import { QuietTenantRadar } from '@/components/operator/QuietTenantRadar';
-import { TodayInCrosPanel } from '@/components/operator/TodayInCrosPanel';
+import { TodayInVigiliaPanel } from '@/components/operator/TodayInVigiliaPanel';
 import { PlatformHealthPanel } from '@/components/operator/PlatformHealthPanel';
 // VIGILIA: removed — import { TrustSignalBar } from '@/components/shared/TrustSignalBar';
 import { calmVariant } from '@/lib/calmMode';
@@ -131,7 +131,7 @@ export default function OperatorOverview() {
       <TrustSignalBar variant="full" />
 
       {/* Today in Vigilia */}
-      <TodayInCrosPanel />
+      <TodayInVigiliaPanel />
 
       <Tabs defaultValue="ecosystem">
         <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">

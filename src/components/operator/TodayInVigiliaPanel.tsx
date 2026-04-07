@@ -1,5 +1,5 @@
 /**
- * TodayInCrosPanel — Operator work queue panel.
+ * TodayInVigiliaPanel — Operator work queue panel.
  *
  * WHAT: Displays open operator work items in a calm, narrative layout.
  * WHERE: Operator Console overview (Dashboard tab).
@@ -32,7 +32,7 @@ const typeLabels: Record<string, string> = {
   communio_request: 'Communio',
 };
 
-export function TodayInCrosPanel() {
+export function TodayInVigiliaPanel() {
   const qc = useQueryClient();
 
   const { data: items, isLoading } = useQuery({

@@ -1,9 +1,9 @@
 /**
- * OutlookConnectCard — Microsoft Outlook/365 connection card.
+ * OutlookConnectCard — Mivigiliaoft Outlook/365 connection card.
  *
- * WHAT: Card for connecting Microsoft Outlook (email sending + calendar) via OAuth.
+ * WHAT: Card for connecting Mivigiliaoft Outlook (email sending + calendar) via OAuth.
  * WHERE: /settings (Integrations tab) — tenant-facing only.
- * WHY: Mirrors the Google Connect experience for organizations using Microsoft 365.
+ * WHY: Mirrors the Google Connect experience for organizations using Mivigiliaoft 365.
  */
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -60,7 +60,7 @@ export function OutlookConnectCard() {
   // Listen for OAuth popup completion
   const handleOAuthMessage = useCallback((event: MessageEvent) => {
     if (event.data?.type === 'outlook-connected' && event.data?.success) {
-      toast.success('Microsoft Outlook connected successfully');
+      toast.success('Mivigiliaoft Outlook connected successfully');
       refetch();
       queryClient.invalidateQueries({ queryKey: ['outlook-send-limits'] });
       setIsConnecting(false);
@@ -136,13 +136,13 @@ export function OutlookConnectCard() {
               Connect Outlook
             </CardTitle>
             <CardDescription>
-              Microsoft 365 email sending for campaigns
+              Mivigiliaoft 365 email sending for campaigns
             </CardDescription>
           </div>
           <HelpTooltip
-            what="Connect your Microsoft 365 account to send campaigns via Outlook."
+            what="Connect your Mivigiliaoft 365 account to send campaigns via Outlook."
             where="Settings — Integrations"
-            why="Organizations using Microsoft 365 can send relationship-based campaigns directly from their Outlook account."
+            why="Organizations using Mivigiliaoft 365 can send relationship-based campaigns directly from their Outlook account."
           />
         </div>
       </CardHeader>
@@ -166,7 +166,7 @@ export function OutlookConnectCard() {
           <Alert>
             <AlertTriangle className="h-4 w-4" />
             <AlertDescription>
-              Not connected. Connect your Microsoft 365 account to send campaigns via Outlook.
+              Not connected. Connect your Mivigiliaoft 365 account to send campaigns via Outlook.
             </AlertDescription>
           </Alert>
         )}
@@ -232,7 +232,7 @@ export function OutlookConnectCard() {
 
         {!isConnected && (
           <p className="text-xs text-muted-foreground">
-            Connect your Microsoft 365 account to send campaigns via Outlook. A daily send limit of 300 messages protects your sender reputation.
+            Connect your Mivigiliaoft 365 account to send campaigns via Outlook. A daily send limit of 300 messages protects your sender reputation.
           </p>
         )}
       </CardContent>

@@ -1,14 +1,14 @@
 /**
  * useCallingCapture — Captures calling selection from URL params into localStorage.
  *
- * WHAT: Reads ?calling= query param and persists to localStorage.cros_calling.
+ * WHAT: Reads ?calling= query param and persists to localStorage.vigilia_calling.
  * WHERE: Calling pages, marketing pages with calling links.
  * WHY: Enables continuity from marketing → onboarding by pre-selecting calling.
  */
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-const STORAGE_KEY = 'cros_calling';
+const STORAGE_KEY = 'vigilia_calling';
 
 export function useCallingCapture() {
   const [searchParams] = useSearchParams();

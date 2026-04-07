@@ -144,7 +144,7 @@ i18n
       // Priority: URL query > localStorage > browser language
       order: ['querystring', 'localStorage', 'navigator'],
       lookupQuerystring: 'lang',
-      lookupLocalStorage: 'cros-language',
+      lookupLocalStorage: 'vigilia-language',
       caches: ['localStorage'],
     },
 

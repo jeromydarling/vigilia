@@ -59,7 +59,7 @@ export async function logOperatorError(payload: ErrorPayload): Promise<void> {
 
     // Emit custom event so the Compass can auto-open with reassurance
     if (typeof window !== 'undefined') {
-      window.dispatchEvent(new CustomEvent('cros:system-error', {
+      window.dispatchEvent(new CustomEvent('vigilia:system-error', {
         detail: { fingerprint, message: payload.message, route },
       }));
     }

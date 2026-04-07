@@ -86,7 +86,7 @@ export default function Onboarding() {
   const isCheckoutReturn = checkoutToken === 'success' || hasStripeSessionId || isCompanionFree;
   const [hasCheckoutAccess, setHasCheckoutAccess] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false;
-    return window.sessionStorage.getItem('cros_checkout_onboarding') === '1';
+    return window.sessionStorage.getItem('vigilia_checkout_onboarding') === '1';
   });
 
   // Account creation state
@@ -102,13 +102,13 @@ export default function Onboarding() {
   // Persist a short-lived "checkout passed" flag so callback/query differences don't eject buyers.
   useEffect(() => {
     if (!isCheckoutReturn) return;
-    window.sessionStorage.setItem('cros_checkout_onboarding', '1');
+    window.sessionStorage.setItem('vigilia_checkout_onboarding', '1');
     setHasCheckoutAccess(true);
   }, [isCheckoutReturn]);
 
   useEffect(() => {
     if (!user) return;
-    window.sessionStorage.removeItem('cros_checkout_onboarding');
+    window.sessionStorage.removeItem('vigilia_checkout_onboarding');
     setHasCheckoutAccess(false);
   }, [user]);
 

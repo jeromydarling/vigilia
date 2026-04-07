@@ -11,7 +11,7 @@ import { toast } from 'sonner';
 import type { LensRole } from '@/lib/ministryRole';
 import { activateDemoProxy, deactivateDemoProxy } from '@/lib/demoWriteProxy';
 
-const DEMO_STORAGE_KEY = 'cros_demo_session';
+const DEMO_STORAGE_KEY = 'vigilia_demo_session';
 const DEMO_TENANT_SLUG = 'community-tech-alliance';
 const DEMO_TENANT_ID = 'a2916470-63cd-464b-9f70-17c6a75a5416';
 

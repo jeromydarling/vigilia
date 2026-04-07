@@ -141,8 +141,8 @@ const connectors: ConnectorInfo[] = [
   },
   {
     key: 'outlook_contacts',
-    name: 'Microsoft Outlook Contacts',
-    description: 'Two-way sync via Microsoft Graph. Contacts, folders, categories.',
+    name: 'Mivigiliaoft Outlook Contacts',
+    description: 'Two-way sync via Mivigiliaoft Graph. Contacts, folders, categories.',
     fieldNotes: [
       'Contacts → People (name, email, phone, company, title)',
       'Contact Folders → Tags',

@@ -7,7 +7,7 @@
  */
 import { useState, useEffect, useCallback } from 'react';
 
-const STORAGE_KEY = 'cros_a11y_mode';
+const STORAGE_KEY = 'vigilia_a11y_mode';
 
 export function useAccessibilityMode() {
   const [enabled, setEnabled] = useState(() => {

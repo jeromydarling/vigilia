@@ -1,14 +1,14 @@
 /**
  * useArchetypeCapture — Captures archetype selection from URL params into localStorage.
  *
- * WHAT: Reads ?archetype= query param and persists to localStorage.cros_archetype.
+ * WHAT: Reads ?archetype= query param and persists to localStorage.vigilia_archetype.
  * WHERE: Archetype deep pages, marketing pages with archetype links.
  * WHY: Enables continuity from marketing → onboarding by pre-selecting archetype.
  */
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-const STORAGE_KEY = 'cros_archetype';
+const STORAGE_KEY = 'vigilia_archetype';
 
 export function useArchetypeCapture() {
   const [searchParams] = useSearchParams();

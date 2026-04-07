@@ -53,7 +53,7 @@ export function generateLibraryEssaySeo(
     pageType: 'essay',
   });
 
-  const authorName = essay.voice_profile === 'cros_default'
+  const authorName = essay.voice_profile === 'vigilia_default'
     ? 'Vigilia Narrative Intelligence (NRI™)'
     : brand.appName;
 

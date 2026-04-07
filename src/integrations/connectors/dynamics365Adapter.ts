@@ -1,5 +1,5 @@
 /**
- * Microsoft Dynamics 365 CRM Connector Adapter
+ * Mivigiliaoft Dynamics 365 CRM Connector Adapter
  *
  * WHAT: Normalizes Dynamics 365 OData v4 export data to Vigilia entities.
  * WHERE: Migration harness + fixture pack tests + bi-directional sync.
@@ -23,7 +23,7 @@ import { normalizeDate, safeSnippet, normalizeState } from './types';
 
 export const dynamics365Adapter: ConnectorAdapter = {
   key: 'dynamics365',
-  displayName: 'Microsoft Dynamics 365',
+  displayName: 'Mivigiliaoft Dynamics 365',
 
   normalizeAccount(raw) {
     const warnings: MappingWarning[] = [];

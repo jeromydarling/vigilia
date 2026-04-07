@@ -60,8 +60,8 @@ export default function Activation() {
     );
   }
 
-  const coreFlags = Object.entries(featureFlags).filter(([k]) => k.startsWith('cros_core_'));
-  const optionalFlags = Object.entries(featureFlags).filter(([k]) => !k.startsWith('cros_core_'));
+  const coreFlags = Object.entries(featureFlags).filter(([k]) => k.startsWith('vigilia_core_'));
+  const optionalFlags = Object.entries(featureFlags).filter(([k]) => !k.startsWith('vigilia_core_'));
 
   return (
     <MainLayout title="Vigilia Activation" subtitle="Confirm your workspace is alive and well">
@@ -110,7 +110,7 @@ export default function Activation() {
                 {coreFlags.map(([key, enabled]) => (
                   <Badge key={key} variant={enabled ? 'default' : 'outline'} className="gap-1">
                     {enabled ? <CheckCircle className="h-3 w-3" /> : <XCircle className="h-3 w-3" />}
-                    {key.replace('cros_core_', '')}
+                    {key.replace('vigilia_core_', '')}
                   </Badge>
                 ))}
               </div>

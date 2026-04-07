@@ -7,7 +7,7 @@
  */
 
 const traditionalNodes = ['Donor', 'Campaign', 'Gift Amount', 'Donor Tier', 'Fundraising Goals'];
-const crosNodes = ['Reflection', 'Participation', 'Generosity', 'Collaboration', 'Community'];
+const vigiliaNodes = ['Reflection', 'Participation', 'Generosity', 'Collaboration', 'Community'];
 
 function RadialDiagram({
   centerLabel,
@@ -141,7 +141,7 @@ export default function RelationshipVsTransactionDiagram() {
             <p className="text-sm font-semibold uppercase tracking-wider text-[hsl(var(--marketing-blue))] mb-6">
               Vigilia™
             </p>
-            <RadialDiagram centerLabel="Relationship" nodes={crosNodes} accent />
+            <RadialDiagram centerLabel="Relationship" nodes={vigiliaNodes} accent />
             <p
               className="mt-4 text-sm text-[hsl(var(--marketing-navy)/0.6)] leading-relaxed max-w-[260px] mx-auto italic"
               style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}

@@ -20,7 +20,7 @@ interface UpgradeNudgeProps {
 }
 
 export function UpgradeNudge({ message, suggestedUpgrade, dismissKey }: UpgradeNudgeProps) {
-  const storageKey = `cros-nudge-dismissed-${dismissKey ?? 'default'}`;
+  const storageKey = `vigilia-nudge-dismissed-${dismissKey ?? 'default'}`;
   const [dismissed, setDismissed] = useState(() => {
     if (!dismissKey) return false;
     const stored = localStorage.getItem(storageKey);

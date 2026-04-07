@@ -17,7 +17,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { vigiliaToast } from '@/lib/vigiliaToast';
 import { FRICTION_COPY } from '@/lib/toneCharter';
 
-const DRAFT_PREFIX = 'cros_draft_';
+const DRAFT_PREFIX = 'vigilia_draft_';
 const DEFAULT_DEBOUNCE_MS = 3000;
 
 interface AutosaveOptions {

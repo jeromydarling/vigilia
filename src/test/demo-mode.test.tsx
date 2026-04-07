@@ -48,12 +48,12 @@ describe('DemoModeContext', () => {
     expect(result.current.demoSession?.name).toBe('Test User');
     expect(result.current.demoRole).toBe('steward');
 
-    const stored = JSON.parse(sessionStorage.getItem('cros_demo_session')!);
+    const stored = JSON.parse(sessionStorage.getItem('vigilia_demo_session')!);
     expect(stored.email).toBe('test@example.org');
   });
 
   it('restores session from sessionStorage on mount', () => {
-    sessionStorage.setItem('cros_demo_session', JSON.stringify(MOCK_SESSION));
+    sessionStorage.setItem('vigilia_demo_session', JSON.stringify(MOCK_SESSION));
 
     const { result } = renderHook(() => useDemoMode(), { wrapper });
     expect(result.current.isDemoMode).toBe(true);
@@ -61,14 +61,14 @@ describe('DemoModeContext', () => {
   });
 
   it('endDemo clears session and storage', () => {
-    sessionStorage.setItem('cros_demo_session', JSON.stringify(MOCK_SESSION));
+    sessionStorage.setItem('vigilia_demo_session', JSON.stringify(MOCK_SESSION));
     const { result } = renderHook(() => useDemoMode(), { wrapper });
 
     act(() => result.current.endDemo());
 
     expect(result.current.isDemoMode).toBe(false);
     expect(result.current.demoSession).toBeNull();
-    expect(sessionStorage.getItem('cros_demo_session')).toBeNull();
+    expect(sessionStorage.getItem('vigilia_demo_session')).toBeNull();
   });
 
   it('setDemoRole updates role and persists', () => {
@@ -77,7 +77,7 @@ describe('DemoModeContext', () => {
     act(() => result.current.setDemoRole('visitor'));
 
     expect(result.current.demoRole).toBe('visitor');
-    const stored = JSON.parse(sessionStorage.getItem('cros_demo_session')!);
+    const stored = JSON.parse(sessionStorage.getItem('vigilia_demo_session')!);
     expect(stored.role).toBe('visitor');
   });
 
@@ -123,7 +123,7 @@ describe('useDemoGuard', () => {
   });
 
   it('guardedMutate intercepts and returns undefined in demo mode', () => {
-    sessionStorage.setItem('cros_demo_session', JSON.stringify(MOCK_SESSION));
+    sessionStorage.setItem('vigilia_demo_session', JSON.stringify(MOCK_SESSION));
     const { result } = renderHook(() => useDemoGuard(), { wrapper });
     const fn = vi.fn(() => 42);
 

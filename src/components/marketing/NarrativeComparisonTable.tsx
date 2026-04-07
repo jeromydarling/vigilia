@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 interface ComparisonRow {
   dimension: string;
   traditional: string;
-  cros: string;
+  vigilia: string;
 }
 
 interface NarrativeComparisonTableProps {
@@ -36,7 +36,7 @@ export default function NarrativeComparisonTable({ rows }: NarrativeComparisonTa
         </div>
         <div className="px-4 sm:px-5 py-3 border-l border-[hsl(var(--marketing-border))]">
           <span className="text-xs font-semibold text-[hsl(var(--marketing-blue))] uppercase tracking-wider">
-            {t('narrativeComparisonTable.crosHeader')}
+            {t('narrativeComparisonTable.vigiliaHeader')}
           </span>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function NarrativeComparisonTable({ rows }: NarrativeComparisonTa
           </div>
           <div className="px-4 sm:px-5 py-3.5 border-l border-[hsl(var(--marketing-border))] bg-[hsl(var(--marketing-blue)/0.02)]">
             <span className="text-sm text-[hsl(var(--marketing-navy)/0.7)] font-medium">
-              {row.cros}
+              {row.vigilia}
             </span>
           </div>
         </div>

@@ -30,7 +30,7 @@ export default function QuietComparisonGrid() {
           {t('quietComparisonGrid.beforeLabel')}
         </span>
         <span className="text-xs font-semibold uppercase tracking-wider text-[hsl(var(--marketing-blue))]">
-          {t('quietComparisonGrid.withCrosLabel')}
+          {t('quietComparisonGrid.withvigiliaLabel')}
         </span>
       </div>
 
@@ -55,13 +55,13 @@ export default function QuietComparisonGrid() {
             {/* With Vigilia */}
             <div className="p-5 sm:p-6 bg-white">
               <span className="sm:hidden text-xs font-semibold uppercase tracking-wider text-[hsl(var(--marketing-blue))] mb-2 block">
-                {t('quietComparisonGrid.withCrosLabel')}
+                {t('quietComparisonGrid.withvigiliaLabel')}
               </span>
               <p
                 className="text-sm sm:text-base text-[hsl(var(--marketing-navy)/0.75)] leading-relaxed"
                 style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
               >
-                {row.withCros}
+                {row.withvigilia}
               </p>
             </div>
           </div>

@@ -122,7 +122,7 @@ export const hubspotOutbound: OutboundAdapter = {
 
   detectConflicts(
     entityType: OutboundEntity,
-    crosData: Record<string, unknown>,
+    vigiliaData: Record<string, unknown>,
     remoteData: Record<string, unknown>
   ): FieldDiff[] {
     const diffs: FieldDiff[] = [];
@@ -147,11 +147,11 @@ export const hubspotOutbound: OutboundAdapter = {
     };
 
     const map = fieldMaps[entityType] || {};
-    for (const [crosField, remoteField] of Object.entries(map)) {
-      const cVal = crosData[crosField];
+    for (const [vigiliaField, remoteField] of Object.entries(map)) {
+      const cVal = vigiliaData[vigiliaField];
       const rVal = remoteProps[remoteField];
       if (cVal && rVal && String(cVal).toLowerCase().trim() !== String(rVal).toLowerCase().trim()) {
-        diffs.push({ field: crosField, crosValue: cVal, remoteValue: rVal });
+        diffs.push({ field: vigiliaField, vigiliaValue: cVal, remoteValue: rVal });
       }
     }
     return diffs;

@@ -6,7 +6,7 @@ export function sanitizeEventDescription(description: string): string | null {
   const meetingPatterns = [
     /^.*join.*zoom.*meeting.*$/gim,
     /https?:\/\/[^\s]*zoom\.us[^\s]*/gi,
-    /https?:\/\/[^\s]*teams\.microsoft\.com[^\s]*/gi,
+    /https?:\/\/[^\s]*teams\.mivigiliaoft\.com[^\s]*/gi,
     /meeting id:.*$/gim,
     /passcode:.*$/gim,
     /one tap mobile.*$/gim,

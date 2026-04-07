@@ -1,9 +1,9 @@
 // Phase 7 brand narrative copy — feature pages
 // HEAD (NRI) • HEART (Vigilia) • BODY (Profunda)
 
-import sectionCrosJourneys from '@/assets/section-cros-journeys.png';
-import sectionCrosLanguage from '@/assets/section-cros-language.png';
-import sectionCrosMobile from '@/assets/section-cros-mobile.png';
+import sectionvigiliaJourneys from '@/assets/section-vigilia-journeys.png';
+import sectionvigiliaLanguage from '@/assets/section-vigilia-language.png';
+import sectionvigiliaMobile from '@/assets/section-vigilia-mobile.png';
 import sectionImpulsusStory from '@/assets/section-impulsus-story.png';
 import sectionTestimoniumDrift from '@/assets/section-testimonium-drift.png';
 import sectionTestimoniumPatterns from '@/assets/section-testimonium-patterns.png';
@@ -36,7 +36,7 @@ export const manifestoSection = {
       label: 'HEART',
       name: 'Vigilia™',
       body: 'Hold relationships at the center. A system built around presence, trust, and shared growth.',
-      to: '/cros',
+      to: '/vigilia',
     },
     {
       label: 'BODY',
@@ -45,7 +45,7 @@ export const manifestoSection = {
       to: '/profunda',
     },
   ],
-  cta: { label: 'Learn How It Works', to: '/cros' },
+  cta: { label: 'Learn How It Works', to: '/vigilia' },
 };
 
 export const nriPage = {
@@ -67,7 +67,7 @@ export const nriPage = {
   closing: "NRI™ doesn't automate relationships.\nIt helps you understand them.\n\nIt is private by default, bounded by design, and grounded in the principle that the person closest to the relationship holds the narrative.\n\nStart small. One relationship. One week. See what you notice.",
 };
 
-export const crosPage = {
+export const vigiliaPage = {
   hero: 'The Operating System Built for Relationships',
   subtitle: 'Where every interaction becomes part of a living story.',
   body: [
@@ -81,17 +81,17 @@ export const crosPage = {
     {
       title: 'Mission-First Journeys',
       body: 'Every partner follows a journey — from first discovery to growing together. Vigilia™ replaces rigid sales pipelines with human-centered stages that reflect how real relationships develop. You see where a partner is, how they got there, and what might come next.',
-      image: sectionCrosJourneys,
+      image: sectionvigiliaJourneys,
     },
     {
       title: 'Human Language, Not Dashboards',
       body: 'Instead of charts and KPIs, Vigilia™ uses gentle narrative suggestions. "You haven\'t connected with Bridge Builders in two weeks." "Three partners in Portland mentioned housing this month." The system speaks in the language of care, not analytics.',
-      image: sectionCrosLanguage,
+      image: sectionvigiliaLanguage,
     },
     {
       title: 'Built for the Field',
       body: 'Vigilia™ is mobile-first because your work happens in communities, not behind a desk. Quick reflections, visit logging, and partner lookups all work from your phone — fast, calm, and distraction-free.',
-      image: sectionCrosMobile,
+      image: sectionvigiliaMobile,
     },
   ],
   capabilities: [

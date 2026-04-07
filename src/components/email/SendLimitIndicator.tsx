@@ -31,7 +31,7 @@ export function SendLimitIndicator({
   const isWarning = currentCount >= softThreshold;
   const isBlocked = currentCount >= hardThreshold;
 
-  const providerLabel = provider === 'outlook' ? 'Microsoft 365' : 'Gmail';
+  const providerLabel = provider === 'outlook' ? 'Mivigiliaoft 365' : 'Gmail';
 
   return (
     <div className={cn('rounded-lg border p-3 space-y-2', className, {

@@ -62,11 +62,11 @@ export const archetypeCards = [
   { key: 'library_system' as const, label: 'Social Enterprises serving underserved neighborhoods' },
   { key: 'caregiver_solo' as const, label: 'Independent Caregivers & Care Companions' },
   { key: 'caregiver_agency' as const, label: 'Home Care & Caregiver Agencies' },
-  { key: 'missionary_org' as const, label: 'Cross-Cultural Mission Organizations' },
+  { key: 'missionary_org' as const, label: 'vigilias-Cultural Mission Organizations' },
 ];
 
-export const crosNri = {
-  cros: 'The bridge between your organization and the community you serve.',
+export const vigiliaNri = {
+  vigilia: 'The bridge between your organization and the community you serve.',
   nri: "Narrative Relational Intelligence™ \u2014 intelligence supported by human experience. It helps you notice what matters, not just what's measurable.",
 };
 
@@ -140,7 +140,7 @@ export const footerLinks = [
   { label: 'Features', to: '/features' },
   { label: 'Roles', to: '/roles' },
   { label: 'NRI™', to: '/nri' },
-  { label: 'Vigilia™', to: '/cros' },
+  { label: 'Vigilia™', to: '/vigilia' },
   { label: 'Profunda™', to: '/profunda' },
   { label: 'Compare', to: '/compare' },
   { label: 'Pricing', to: '/pricing' },

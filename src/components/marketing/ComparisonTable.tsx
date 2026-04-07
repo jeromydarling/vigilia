@@ -9,43 +9,43 @@ export default function ComparisonTable() {
       capability: t('comparisonTable.rows.relationshipMemory.label'),
       crm: t('comparisonTable.rows.relationshipMemory.crm'),
       marketing: t('comparisonTable.rows.relationshipMemory.marketing'),
-      cros: t('comparisonTable.rows.relationshipMemory.cros'),
+      vigilia: t('comparisonTable.rows.relationshipMemory.vigilia'),
     },
     {
       capability: t('comparisonTable.rows.communityAwareness.label'),
       crm: t('comparisonTable.rows.communityAwareness.crm'),
       marketing: t('comparisonTable.rows.communityAwareness.marketing'),
-      cros: t('comparisonTable.rows.communityAwareness.cros'),
+      vigilia: t('comparisonTable.rows.communityAwareness.vigilia'),
     },
     {
       capability: t('comparisonTable.rows.humanContext.label'),
       crm: t('comparisonTable.rows.humanContext.crm'),
       marketing: t('comparisonTable.rows.humanContext.marketing'),
-      cros: t('comparisonTable.rows.humanContext.cros'),
+      vigilia: t('comparisonTable.rows.humanContext.vigilia'),
     },
     {
       capability: t('comparisonTable.rows.migration.label'),
       crm: t('comparisonTable.rows.migration.crm'),
       marketing: t('comparisonTable.rows.migration.marketing'),
-      cros: t('comparisonTable.rows.migration.cros'),
+      vigilia: t('comparisonTable.rows.migration.vigilia'),
     },
     {
       capability: t('comparisonTable.rows.volunteer.label'),
       crm: t('comparisonTable.rows.volunteer.crm'),
       marketing: t('comparisonTable.rows.volunteer.marketing'),
-      cros: t('comparisonTable.rows.volunteer.cros'),
+      vigilia: t('comparisonTable.rows.volunteer.vigilia'),
     },
     {
       capability: t('comparisonTable.rows.expansion.label'),
       crm: t('comparisonTable.rows.expansion.crm'),
       marketing: t('comparisonTable.rows.expansion.marketing'),
-      cros: t('comparisonTable.rows.expansion.cros'),
+      vigilia: t('comparisonTable.rows.expansion.vigilia'),
     },
     {
       capability: t('comparisonTable.rows.narrativeReporting.label'),
       crm: t('comparisonTable.rows.narrativeReporting.crm'),
       marketing: t('comparisonTable.rows.narrativeReporting.marketing'),
-      cros: t('comparisonTable.rows.narrativeReporting.cros'),
+      vigilia: t('comparisonTable.rows.narrativeReporting.vigilia'),
     },
   ];
 
@@ -59,7 +59,7 @@ export default function ComparisonTable() {
               {t('comparisonTable.capabilityHeader')}
             </span>
           </div>
-          {[t('comparisonTable.columns.crm'), t('comparisonTable.columns.marketing'), t('comparisonTable.columns.cros')].map((col, i) => (
+          {[t('comparisonTable.columns.crm'), t('comparisonTable.columns.marketing'), t('comparisonTable.columns.vigilia')].map((col, i) => (
             <div
               key={col}
               className={`p-4 sm:p-5 text-center border-l border-[hsl(var(--marketing-border)/0.5)] ${
@@ -116,7 +116,7 @@ export default function ComparisonTable() {
             <div className="p-4 sm:p-5 border-l border-[hsl(var(--marketing-border)/0.3)] bg-[hsl(var(--marketing-blue)/0.04)] flex items-center gap-2 justify-center">
               <Check className="h-3.5 w-3.5 text-[hsl(142,71%,45%)] shrink-0" />
               <span className="text-xs text-[hsl(var(--marketing-navy)/0.75)] font-medium text-center leading-relaxed">
-                {r.cros}
+                {r.vigilia}
               </span>
             </div>
           </div>

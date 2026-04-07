@@ -15,7 +15,7 @@ import { Input } from '@/components/ui/input';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { HelpCircle, MapPin, Globe, Map } from 'lucide-react';
 import { useTerritories, calculateActivationSlots, type TerritoryRow } from '@/hooks/useTerritories';
-import type { TerritoryType } from '@/types/cros';
+import type { TerritoryType } from '@/types/vigilia';
 
 /** ISO country list — short subset for onboarding; full list can be expanded */
 const COMMON_COUNTRIES = [

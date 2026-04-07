@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 import { Moon, BookOpen, ArrowRight } from 'lucide-react';
 import { startOfDay } from 'date-fns';
 
-const STORAGE_KEY = 'cros-evening-examen-last-seen';
+const STORAGE_KEY = 'vigilia-evening-examen-last-seen';
 
 function getTodayKey() {
   return new Date().toISOString().slice(0, 10);

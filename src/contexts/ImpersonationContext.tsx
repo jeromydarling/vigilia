@@ -30,7 +30,7 @@ interface ImpersonationContextType {
 
 const ImpersonationContext = createContext<ImpersonationContextType | undefined>(undefined);
 
-const STORAGE_KEY = 'cros_impersonation_session';
+const STORAGE_KEY = 'vigilia_impersonation_session';
 
 export function ImpersonationProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<ImpersonationSession | null>(() => {

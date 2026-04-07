@@ -35,7 +35,7 @@ export interface OutboundPayload {
 /** Change detection result for conflict checking */
 export interface FieldDiff {
   field: string;
-  crosValue: unknown;
+  vigiliaValue: unknown;
   remoteValue: unknown;
 }
 
@@ -74,7 +74,7 @@ export interface OutboundAdapter {
   /** Detect field-level differences between Vigilia and remote data */
   detectConflicts(
     entityType: OutboundEntity,
-    crosData: Record<string, unknown>,
+    vigiliaData: Record<string, unknown>,
     remoteData: Record<string, unknown>
   ): FieldDiff[];
 }

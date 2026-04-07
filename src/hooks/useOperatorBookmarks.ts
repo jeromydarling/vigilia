@@ -7,7 +7,7 @@
  */
 import { useState, useCallback } from 'react';
 
-const STORAGE_KEY = 'cros-operator-bookmarks';
+const STORAGE_KEY = 'vigilia-operator-bookmarks';
 
 function loadBookmarks(): Set<string> {
   try {

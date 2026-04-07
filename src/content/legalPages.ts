@@ -35,7 +35,7 @@ export const TERMS_CONTENT: LegalPageContent = {
     { id: 'respectful-use', title: 'Respectful Use', body: 'Vigilia is built for organizations that serve people. We ask that you use it with the same care you bring to your mission. Harassment, exploitation, or use of Vigilia to harm vulnerable communities will result in account termination.' },
     { id: 'ending', title: 'Ending Service', body: 'Either party may end the relationship at any time. Upon termination, your data will be available for export for 90 days. After that period, it will be permanently deleted from our systems.' },
     { id: 'changes', title: 'Changes', body: 'We may update these terms as Vigilia evolves. Material changes will be communicated via email to account administrators at least 30 days before taking effect.' },
-    { id: 'contact', title: 'Contact', body: 'Questions about these terms? Reach us at legal@thecros.com. We respond to every inquiry with the same care we put into building the platform.' },
+    { id: 'contact', title: 'Contact', body: 'Questions about these terms? Reach us at legal@vigilia.care. We respond to every inquiry with the same care we put into building the platform.' },
   ],
 };
 

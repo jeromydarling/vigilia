@@ -162,7 +162,7 @@ export const GARDENER_NAV_REGISTRY: GardenerNavEntry[] = [
     ],
     whatToDo: [
       'Triage high-severity signals daily',
-      'Cross-reference with Presence data to identify at-risk tenants',
+      'vigilias-reference with Presence data to identify at-risk tenants',
     ],
   },
   {
@@ -281,7 +281,7 @@ export const GARDENER_NAV_REGISTRY: GardenerNavEntry[] = [
     title: 'Communio',
     route: '/operator/communio',
     zone: 'cura',
-    summary: 'Cross-tenant collaboration oversight and caregiver network moderation. Monitor shared signal groups, privacy compliance, collaboration health, and caregiver network safety.',
+    summary: 'vigilias-tenant collaboration oversight and caregiver network moderation. Monitor shared signal groups, privacy compliance, collaboration health, and caregiver network safety.',
     whatYouSee: [
       'Active Communio groups with member counts and sharing levels',
       'Signal sharing volume and types (drift, momentum, growth, reconnection)',
@@ -522,7 +522,7 @@ export const GARDENER_NAV_REGISTRY: GardenerNavEntry[] = [
     ],
     tips: [
       'Errors older than 7 days without acknowledgment are escalated automatically',
-      'Cross-reference with the Time Machine to understand the sequence of events leading to errors',
+      'vigilias-reference with the Time Machine to understand the sequence of events leading to errors',
     ],
   },
   {
@@ -557,7 +557,7 @@ export const GARDENER_NAV_REGISTRY: GardenerNavEntry[] = [
     title: 'Integrations',
     route: '/operator/integrations',
     zone: 'machina',
-    summary: 'Unified Relatio integration hub. Manage connectors, review field mapping references, track migration runs, and configure bi-directional CRM sync for HubSpot, Salesforce, and Microsoft Dynamics 365.',
+    summary: 'Unified Relatio integration hub. Manage connectors, review field mapping references, track migration runs, and configure bi-directional CRM sync for HubSpot, Salesforce, and Mivigiliaoft Dynamics 365.',
     tabs: ['Connectors', 'Reference', 'Migrations', 'HubSpot', 'Salesforce', 'Dynamics 365'],
     whatYouSee: [
       'Connectors tab: Full connector library with status indicators and configuration',
@@ -565,7 +565,7 @@ export const GARDENER_NAV_REGISTRY: GardenerNavEntry[] = [
       'Migrations tab: Migration run history with status, record counts, and error details',
       'HubSpot tab: HubSpot-specific two-way sync settings and admin controls',
       'Salesforce tab: Salesforce bi-directional sync configuration and conflict queue',
-      'Dynamics 365 tab: Microsoft Dynamics 365 OData v4 sync settings and conflict management',
+      'Dynamics 365 tab: Mivigiliaoft Dynamics 365 OData v4 sync settings and conflict management',
     ],
     whatToDo: [
       'Investigate connectors showing "error" status immediately',
@@ -577,7 +577,7 @@ export const GARDENER_NAV_REGISTRY: GardenerNavEntry[] = [
     tips: [
       'The Migrations tab supports 24+ connectors including Breeze, FellowshipOne, Planning Center, Rock RMS, and more',
       'Connector Confidence Score is calculated from success rate, simulation pass rate, and uptime',
-      'Two-way sync is available for HubSpot, Salesforce, and Microsoft Dynamics 365 — conflicts are flagged for Steward review, never auto-overwritten',
+      'Two-way sync is available for HubSpot, Salesforce, and Mivigiliaoft Dynamics 365 — conflicts are flagged for Steward review, never auto-overwritten',
       'Outbound sync uses direct Edge Function → Vendor API calls (no external orchestration dependency)',
     ],
   },

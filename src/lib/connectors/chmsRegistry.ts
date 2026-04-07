@@ -275,8 +275,8 @@ export const CHMS_CONNECTORS: Record<string, ChmsConnectorConfig> = {
     coverageMode: 'partial',
   },
   outlook_contacts: {
-    label: 'Microsoft Outlook Contacts',
-    description: 'Outlook / Microsoft 365 contacts via Microsoft Graph API — contacts, folders, categories.',
+    label: 'Mivigiliaoft Outlook Contacts',
+    description: 'Outlook / Mivigiliaoft 365 contacts via Mivigiliaoft Graph API — contacts, folders, categories.',
     auth: 'oauth2',
     polling: 'daily',
     domains: ['contacts', 'folders', 'categories'],

@@ -65,7 +65,7 @@ describe('Schema Drift: Extra unknown fields are ignored safely', () => {
     customField__c: 'custom value',
     newFieldNotInSpec: true,
     'odata.etag': 'W/"12345"',
-    '@odata.type': '#Microsoft.Dynamics.CRM.account',
+    '@odata.type': '#Mivigiliaoft.Dynamics.CRM.account',
   };
 
   const contactWithExtras = {

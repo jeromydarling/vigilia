@@ -107,14 +107,14 @@ export default function JoinPage() {
       if (signUpError.message?.toLowerCase().includes('already registered') || signUpError.message?.toLowerCase().includes('already been registered')) {
         setError(t('auth.join.alreadyRegisteredError'));
         // Still store token so login flow picks it up
-        localStorage.setItem('cros_invite_token', token!);
+        localStorage.setItem('vigilia_invite_token', token!);
       } else {
         setError(signUpError.message);
       }
       setIsSubmitting(false);
     } else {
       // Store token in localStorage so we can accept after email verification
-      localStorage.setItem('cros_invite_token', token!);
+      localStorage.setItem('vigilia_invite_token', token!);
       setSuccess(true);
       setIsSubmitting(false);
     }

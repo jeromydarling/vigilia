@@ -20,13 +20,13 @@ export const CONCEPTS: Concept[] = [
     label: 'Narrative Relational Intelligence',
     definition: 'Human-first intelligence built from reflections, events, conversations, and community signals. NRI recognizes meaning - not just data.',
     route: '/nri',
-    related: ['cros', 'testimonium', 'roles', 'signum'],
+    related: ['vigilia', 'testimonium', 'roles', 'signum'],
   },
   {
-    slug: 'cros',
+    slug: 'vigilia',
     label: 'A Liturgy of Attention',
     definition: 'The bridge between an organization and the community it serves. A living relationship system that remembers people and notices what is changing.',
-    route: '/cros',
+    route: '/vigilia',
     related: ['nri', 'profunda', 'communio', 'civitas'],
   },
   {
@@ -34,7 +34,7 @@ export const CONCEPTS: Concept[] = [
     label: 'Profunda',
     definition: 'The relationship memory engine - contacts, journeys, reflections, and the quiet record of human connection over time.',
     route: '/profunda',
-    related: ['cros', 'nri', 'impulsus'],
+    related: ['vigilia', 'nri', 'impulsus'],
   },
   {
     slug: 'shepherd',
@@ -69,7 +69,7 @@ export const CONCEPTS: Concept[] = [
     label: 'Communio',
     definition: 'The opt-in shared narrative network. Organizations connect for community awareness without sharing private data.',
     route: '/communio-feature',
-    related: ['cros', 'civitas', 'signum'],
+    related: ['vigilia', 'civitas', 'signum'],
   },
   {
     slug: 'testimonium',
@@ -96,28 +96,28 @@ export const CONCEPTS: Concept[] = [
     slug: 'civitas',
     label: 'Civitas',
     definition: 'The community layer - metros, local pulse, and narrative awareness across the places your organization serves.',
-    related: ['cros', 'signum', 'communio'],
+    related: ['vigilia', 'signum', 'communio'],
   },
   {
     slug: 'relatio',
     label: 'Relatio',
     definition: 'Integration and migration bridges. Connect existing tools or migrate from legacy CRMs without losing relationship history.',
     route: '/relatio-campaigns',
-    related: ['cros', 'profunda'],
+    related: ['vigilia', 'profunda'],
   },
   {
     slug: 'voluntarium',
     label: 'Voluntarium',
     definition: 'Volunteer management and hours tracking. Honor the people who show up by remembering their service.',
     route: '/voluntarium',
-    related: ['companion', 'cros'],
+    related: ['companion', 'vigilia'],
   },
   {
     slug: 'provisio',
     label: 'Provisio',
     definition: 'Technology provisions and equipment orders. Manage the tools your team needs to do their work.',
     route: '/provisio',
-    related: ['cros'],
+    related: ['vigilia'],
   },
 ];
 

@@ -2,12 +2,12 @@ import { Check, X } from 'lucide-react';
 
 const rows = [
   { feature: 'Relationships', old: 'Scattered across CRM + notes', cros: 'Unified relationship memory' },
-  { feature: 'Outreach', old: 'Email tools + spreadsheets', cros: 'Integrated outreach history' },
-  { feature: 'Volunteers', old: 'Separate scheduling platform', cros: 'Voluntārium built-in' },
-  { feature: 'Narrative Reporting', old: 'Manual reports', cros: 'Testimonium witness layer' },
-  { feature: 'Community Signals', old: 'Not available', cros: 'Signum + Local Pulse' },
-  { feature: 'Integrations', old: 'Zapier or manual work', cros: 'Relatio™ — HubSpot, Salesforce & Dynamics 365 two-way sync' },
-  { feature: 'Cost Structure', old: 'Multiple subscriptions', cros: 'One relationship operating system' },
+  { feature: 'Outreach', old: 'Email tools + spreadsheets', vigilia: 'Integrated outreach history' },
+  { feature: 'Volunteers', old: 'Separate scheduling platform', vigilia: 'Voluntārium built-in' },
+  { feature: 'Narrative Reporting', old: 'Manual reports', vigilia: 'Testimonium witness layer' },
+  { feature: 'Community Signals', old: 'Not available', vigilia: 'Signum + Local Pulse' },
+  { feature: 'Integrations', old: 'Zapier or manual work', vigilia: 'Relatio™ — HubSpot, Salesforce & Dynamics 365 two-way sync' },
+  { feature: 'Cost Structure', old: 'Multiple subscriptions', vigilia: 'One relationship operating system' },
 ];
 
 export default function PricingComparisonTable() {
@@ -66,7 +66,7 @@ export default function PricingComparisonTable() {
               </div>
               <div className="p-4 sm:p-5 border-l border-[hsl(var(--marketing-border)/0.3)] flex items-center justify-center">
                 <span className="text-xs text-[hsl(var(--marketing-navy)/0.75)] font-medium text-center leading-relaxed">
-                  {r.cros}
+                  {r.vigilia}
                 </span>
               </div>
             </div>

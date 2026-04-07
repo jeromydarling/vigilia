@@ -67,9 +67,9 @@ export default function Login() {
 
     const dest = resolveDestination();
 
-    const pendingToken = localStorage.getItem('cros_invite_token');
+    const pendingToken = localStorage.getItem('vigilia_invite_token');
     if (pendingToken) {
-      localStorage.removeItem('cros_invite_token');
+      localStorage.removeItem('vigilia_invite_token');
       supabase.rpc('accept_invite', { p_token: pendingToken, p_user_id: user.id }).then(() => {
         navigate(dest, { replace: true });
       });

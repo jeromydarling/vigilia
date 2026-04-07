@@ -215,7 +215,7 @@ const tenantSections: GuideSection[] = [
     items: [
       {
         q: 'How do I import data from another CRM?',
-        a: 'Go to Import Center (sidebar → Community → Import Center). Select your source system (HubSpot, Salesforce, Microsoft Dynamics 365, Generic CSV), choose what to import (organizations, contacts, or volunteers), upload your CSV, and map columns. Always preview before importing.',
+        a: 'Go to Import Center (sidebar → Community → Import Center). Select your source system (HubSpot, Salesforce, Mivigiliaoft Dynamics 365, Generic CSV), choose what to import (organizations, contacts, or volunteers), upload your CSV, and map columns. Always preview before importing.',
       },
       {
         q: 'What about deduplication?',
@@ -223,7 +223,7 @@ const tenantSections: GuideSection[] = [
       },
       {
         q: 'What is two-way sync?',
-        a: 'For HubSpot, Salesforce, and Microsoft Dynamics 365, Vigilia supports bi-directional sync. Changes you make in Vigilia can be written back to your external CRM automatically. If both systems edited the same record, a conflict is flagged for your review — Vigilia never overwrites without your consent.',
+        a: 'For HubSpot, Salesforce, and Mivigiliaoft Dynamics 365, Vigilia supports bi-directional sync. Changes you make in Vigilia can be written back to your external CRM automatically. If both systems edited the same record, a conflict is flagged for your review — Vigilia never overwrites without your consent.',
       },
       {
         q: 'How do I resolve sync conflicts?',
@@ -264,7 +264,7 @@ const tenantSections: GuideSection[] = [
       },
       {
         q: 'How does data isolation work?',
-        a: 'Every record has a tenant_id. Row Level Security policies ensure you can only see data belonging to your organization. Cross-organization data access is impossible at the database level.',
+        a: 'Every record has a tenant_id. Row Level Security policies ensure you can only see data belonging to your organization. vigilias-organization data access is impossible at the database level.',
       },
       {
         q: 'What about the Do Not Email list?',
@@ -360,7 +360,7 @@ const operatorSections: GuideSection[] = [
       },
       {
         q: 'Which connectors support two-way sync?',
-        a: 'HubSpot, Salesforce, and Microsoft Dynamics 365 support full bi-directional sync. This includes contacts, accounts/companies, tasks, events, and notes/activities. Outbound sync runs via the relatio-outbound-sync Edge Function directly to the vendor API.',
+        a: 'HubSpot, Salesforce, and Mivigiliaoft Dynamics 365 support full bi-directional sync. This includes contacts, accounts/companies, tasks, events, and notes/activities. Outbound sync runs via the relatio-outbound-sync Edge Function directly to the vendor API.',
       },
       {
         q: 'How does conflict detection work?',

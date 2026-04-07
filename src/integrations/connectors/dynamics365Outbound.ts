@@ -1,5 +1,5 @@
 /**
- * Microsoft Dynamics 365 Outbound Adapter
+ * Mivigiliaoft Dynamics 365 Outbound Adapter
  *
  * WHAT: Denormalizes Vigilia entities to Dynamics 365 OData v4 format for outbound sync.
  * WHERE: relatio-outbound-sync edge function (direct vendor API calls).
@@ -19,7 +19,7 @@ const BASE = '/api/data/v9.2';
 
 export const dynamics365Outbound: OutboundAdapter = {
   key: 'dynamics365',
-  displayName: 'Microsoft Dynamics 365',
+  displayName: 'Mivigiliaoft Dynamics 365',
   supportedEntities: ['account', 'contact', 'task', 'event', 'activity', 'stage'],
 
   denormalizeAccount(account: NormalizedAccount, isUpdate: boolean): OutboundPayload {
@@ -120,7 +120,7 @@ export const dynamics365Outbound: OutboundAdapter = {
 
   detectConflicts(
     entityType: OutboundEntity,
-    crosData: Record<string, unknown>,
+    vigiliaData: Record<string, unknown>,
     remoteData: Record<string, unknown>
   ): FieldDiff[] {
     const diffs: FieldDiff[] = [];
@@ -143,11 +143,11 @@ export const dynamics365Outbound: OutboundAdapter = {
     };
 
     const map = fieldMaps[entityType] || {};
-    for (const [crosField, remoteField] of Object.entries(map)) {
-      const cVal = crosData[crosField];
+    for (const [vigiliaField, remoteField] of Object.entries(map)) {
+      const cVal = vigiliaData[vigiliaField];
       const rVal = remoteData[remoteField];
       if (cVal && rVal && String(cVal).toLowerCase().trim() !== String(rVal).toLowerCase().trim()) {
-        diffs.push({ field: crosField, crosValue: cVal, remoteValue: rVal });
+        diffs.push({ field: vigiliaField, vigiliaValue: cVal, remoteValue: rVal });
       }
     }
     return diffs;

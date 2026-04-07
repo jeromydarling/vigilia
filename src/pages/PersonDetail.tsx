@@ -52,6 +52,12 @@ import { useEntityRichness } from '@/hooks/useEntityRichness';
 import { GenerositySection } from '@/components/generosity/GenerositySection';
 import { PersonalityStrengthsPanel } from '@/components/indoles/PersonalityStrengthsPanel';
 import { useTranslation } from 'react-i18next';
+import { VisitStoryFeed } from '@/components/vigilia/VisitStoryFeed';
+import { SacramentalLog } from '@/components/vigilia/SacramentalLog';
+import { VisitRitual, type VisitRitualData } from '@/components/vigilia/VisitRitual';
+import { useCreateVisitRitual, useRecentPromptIds } from '@/hooks/useVisitRituals';
+import { useResidentLonelinessScore, driftLabel, driftColor } from '@/hooks/useLonelinessWatch';
+import type { DriftStatus } from '@/types/vigilia';
 
 export default function PersonDetail() {
   const { t } = useTranslation('relationships');
@@ -64,7 +70,10 @@ export default function PersonDetail() {
   const [isCallModalOpen, setIsCallModalOpen] = useState(false);
   const { openContactModal } = useGlobalModal();
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  const [showVisitRitual, setShowVisitRitual] = useState(false);
   const { tenantId } = useTenant();
+  const createVisitRitual = useCreateVisitRitual();
+  const { data: recentPromptIds } = useRecentPromptIds();
 
   // Find person by slug first, fall back to id for backwards compatibility
   const person = people?.find(p => p.slug === slug || p.id === slug);
@@ -132,6 +141,10 @@ export default function PersonDetail() {
           <Button variant="outline" className="gap-2" onClick={() => setIsMeetingModalOpen(true)}>
             <CalendarPlus className="w-4 h-4" />
             {t('personDetail.scheduleMeeting')}
+          </Button>
+          <Button variant="default" className="gap-2" onClick={() => setShowVisitRitual(true)}>
+            <Heart className="w-4 h-4" />
+            Start Visit Ritual
           </Button>
           <Button className="gap-2" onClick={() => openContactModal(person)}>
             <Pencil className="w-4 h-4" />
@@ -229,6 +242,10 @@ export default function PersonDetail() {
 
   const visitsAndHousehold = (
     <>
+      {/* Vigilia: Visit Stories and Pastoral Care */}
+      <VisitStoryFeed residentContactId={person.id} />
+      <SacramentalLog residentContactId={person.id} />
+
       <VisitsHelpCard contactId={person.id} contactName={person.name} />
       <GenerositySection
         contactId={person.id}
@@ -379,6 +396,22 @@ export default function PersonDetail() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      {/* Visit Ritual Dialog */}
+      {showVisitRitual && person && (
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+          <VisitRitual
+            residentContactId={person.id}
+            residentName={person.name}
+            recentPromptIds={recentPromptIds ?? []}
+            onComplete={(data: VisitRitualData) => {
+              createVisitRitual.mutate(data);
+              setShowVisitRitual(false);
+            }}
+            onCancel={() => setShowVisitRitual(false)}
+          />
+        </div>
+      )}
     </MainLayout>
   );
 }

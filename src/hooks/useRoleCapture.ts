@@ -1,14 +1,14 @@
 /**
  * useRoleCapture — Captures role selection from URL params into localStorage.
  *
- * WHAT: Reads ?role= query param and persists to localStorage.cros_role.
+ * WHAT: Reads ?role= query param and persists to localStorage.vigilia_role.
  * WHERE: Role deep pages, marketing pages with role links.
  * WHY: Enables continuity from marketing → onboarding by pre-selecting role.
  */
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-const STORAGE_KEY = 'cros_role';
+const STORAGE_KEY = 'vigilia_role';
 
 export function useRoleCapture() {
   const [searchParams] = useSearchParams();

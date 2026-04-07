@@ -67,7 +67,7 @@ export default function EmailProviders() {
   // Listen for OAuth completion
   const handleOAuthMessage = useCallback((event: MessageEvent) => {
     if (event.data?.type === 'outlook-connected' && event.data?.success) {
-      toast.success('Microsoft Outlook connected successfully');
+      toast.success('Mivigiliaoft Outlook connected successfully');
       refetchOutlook();
       setConnectingOutlook(false);
     }
@@ -182,8 +182,8 @@ export default function EmailProviders() {
                   <Mail className="h-5 w-5 text-blue-600" />
                 </div>
                 <div>
-                  <CardTitle className="text-lg">Microsoft Outlook</CardTitle>
-                  <CardDescription>Microsoft 365 sending</CardDescription>
+                  <CardTitle className="text-lg">Mivigiliaoft Outlook</CardTitle>
+                  <CardDescription>Mivigiliaoft 365 sending</CardDescription>
                 </div>
               </div>
               {outlookConnections && outlookConnections.length > 0 ? (
@@ -244,7 +244,7 @@ export default function EmailProviders() {
 
             <p className="text-xs text-muted-foreground flex items-center gap-1.5">
               <AlertCircle className="h-3 w-3 shrink-0" />
-              Microsoft 365 sending limits apply. Daily limit: 300 emails (conservative default).
+              Mivigiliaoft 365 sending limits apply. Daily limit: 300 emails (conservative default).
             </p>
           </CardContent>
         </Card>

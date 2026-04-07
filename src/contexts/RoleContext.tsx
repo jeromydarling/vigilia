@@ -15,7 +15,7 @@ interface RoleContextValue {
   clearRole: () => void;
 }
 
-const STORAGE_KEY = 'cros_role';
+const STORAGE_KEY = 'vigilia_role';
 const RoleCtx = createContext<RoleContextValue | undefined>(undefined);
 
 export function MarketingRoleProvider({ children }: { children: ReactNode }) {

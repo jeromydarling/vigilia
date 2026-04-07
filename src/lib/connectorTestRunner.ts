@@ -211,7 +211,7 @@ function buildConflictDetectionTests(adapter: OutboundAdapter, key: string): Tes
   tests.push({
     key: `${key}-conflict-contact-email`, label: `${adapter.displayName} ⇆: detect contact email conflict`, adapterKey: key, entity: 'contact',
     run: () => {
-      const cros = { name: 'Jane Doe', email: 'jane@new.org', phone: '555-0101' };
+      const vigilia = { name: 'Jane Doe', email: 'jane@new.org', phone: '555-0101' };
       const remoteFieldMap: Record<string, Record<string, string>> = {
         salesforce: { name: 'Name', email: 'Email', phone: 'Phone' },
         dynamics365: { name: 'fullname', email: 'emailaddress1', phone: 'telephone1' },
@@ -222,7 +222,7 @@ function buildConflictDetectionTests(adapter: OutboundAdapter, key: string): Tes
       remote[fields.name] = 'Jane Doe';
       remote[fields.email] = 'jane@old.org';
       remote[fields.phone] = '555-0101';
-      const diffs = adapter.detectConflicts('contact', cros, remote);
+      const diffs = adapter.detectConflicts('contact', vigilia, remote);
       assert(diffs.length > 0, 'should detect email conflict');
       assert(diffs.some(d => d.field === 'email'), 'should flag email field');
     },
@@ -232,7 +232,7 @@ function buildConflictDetectionTests(adapter: OutboundAdapter, key: string): Tes
   tests.push({
     key: `${key}-conflict-account-name`, label: `${adapter.displayName} ⇆: detect account name conflict`, adapterKey: key, entity: 'account',
     run: () => {
-      const cros = { organization: 'New Name Inc', phone: '555-0100' };
+      const vigilia = { organization: 'New Name Inc', phone: '555-0100' };
       const remoteFieldMap: Record<string, Record<string, string>> = {
         salesforce: { organization: 'Name', phone: 'Phone' },
         dynamics365: { organization: 'name', phone: 'telephone1' },
@@ -242,7 +242,7 @@ function buildConflictDetectionTests(adapter: OutboundAdapter, key: string): Tes
       const remote: Record<string, unknown> = {};
       remote[fields.organization] = 'Old Name LLC';
       remote[fields.phone] = '555-0100';
-      const diffs = adapter.detectConflicts('account', cros, remote);
+      const diffs = adapter.detectConflicts('account', vigilia, remote);
       assert(diffs.length > 0, 'should detect org name conflict');
     },
   });
@@ -251,7 +251,7 @@ function buildConflictDetectionTests(adapter: OutboundAdapter, key: string): Tes
   tests.push({
     key: `${key}-conflict-none`, label: `${adapter.displayName} ⇆: no conflict when matched`, adapterKey: key, entity: 'contact',
     run: () => {
-      const cros = { name: 'Same Name', email: 'same@test.org' };
+      const vigilia = { name: 'Same Name', email: 'same@test.org' };
       const remoteFieldMap: Record<string, Record<string, string>> = {
         salesforce: { name: 'Name', email: 'Email' },
         dynamics365: { name: 'fullname', email: 'emailaddress1' },
@@ -261,7 +261,7 @@ function buildConflictDetectionTests(adapter: OutboundAdapter, key: string): Tes
       const remote: Record<string, unknown> = {};
       remote[fields.name] = 'Same Name';
       remote[fields.email] = 'same@test.org';
-      const diffs = adapter.detectConflicts('contact', cros, remote);
+      const diffs = adapter.detectConflicts('contact', vigilia, remote);
       assert(diffs.length === 0, 'should detect no conflicts');
     },
   });
@@ -282,7 +282,7 @@ function getAllTests(): TestCase[] {
 
   // Dynamics 365 — extra inbound tests
   tests.push({
-    key: 'dynamics365-contact-inactive', label: 'Microsoft Dynamics 365: inactive contact warning', adapterKey: 'dynamics365', entity: 'contact',
+    key: 'dynamics365-contact-inactive', label: 'Mivigiliaoft Dynamics 365: inactive contact warning', adapterKey: 'dynamics365', entity: 'contact',
     run: () => {
       const { result, warnings } = dynamics365Adapter.normalizeContact(DYNAMICS365_FIXTURES.contactInactive);
       assert(result !== null, 'should still normalize inactive contact');
@@ -290,7 +290,7 @@ function getAllTests(): TestCase[] {
     },
   });
   tests.push({
-    key: 'dynamics365-account-state-norm', label: 'Microsoft Dynamics 365: state normalization', adapterKey: 'dynamics365', entity: 'account',
+    key: 'dynamics365-account-state-norm', label: 'Mivigiliaoft Dynamics 365: state normalization', adapterKey: 'dynamics365', entity: 'account',
     run: () => {
       const { result, warnings } = dynamics365Adapter.normalizeAccount(DYNAMICS365_FIXTURES.account);
       assert(result !== null, 'should normalize account');
@@ -299,7 +299,7 @@ function getAllTests(): TestCase[] {
     },
   });
   tests.push({
-    key: 'dynamics365-task-valid', label: 'Microsoft Dynamics 365: normalize task', adapterKey: 'dynamics365', entity: 'task',
+    key: 'dynamics365-task-valid', label: 'Mivigiliaoft Dynamics 365: normalize task', adapterKey: 'dynamics365', entity: 'task',
     run: () => {
       const { result } = dynamics365Adapter.normalizeTask(DYNAMICS365_FIXTURES.task);
       assert(result !== null, 'should normalize task');
@@ -308,7 +308,7 @@ function getAllTests(): TestCase[] {
     },
   });
   tests.push({
-    key: 'dynamics365-event-valid', label: 'Microsoft Dynamics 365: normalize event', adapterKey: 'dynamics365', entity: 'event',
+    key: 'dynamics365-event-valid', label: 'Mivigiliaoft Dynamics 365: normalize event', adapterKey: 'dynamics365', entity: 'event',
     run: () => {
       const { result } = dynamics365Adapter.normalizeEvent(DYNAMICS365_FIXTURES.event);
       assert(result !== null, 'should normalize event');
@@ -316,7 +316,7 @@ function getAllTests(): TestCase[] {
     },
   });
   tests.push({
-    key: 'dynamics365-activity-valid', label: 'Microsoft Dynamics 365: normalize activity', adapterKey: 'dynamics365', entity: 'activity',
+    key: 'dynamics365-activity-valid', label: 'Mivigiliaoft Dynamics 365: normalize activity', adapterKey: 'dynamics365', entity: 'activity',
     run: () => {
       const { result } = dynamics365Adapter.normalizeActivity(DYNAMICS365_FIXTURES.activity);
       assert(result !== null, 'should normalize activity');

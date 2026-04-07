@@ -34,6 +34,9 @@ import { VigiliaCompanionCard } from '@/components/vigilia/VigiliaCompanionCard'
 import { CommunioAwarenessCard } from '@/components/communio/CommunioAwarenessCard';
 import { CreateVisitDialog } from '@/components/visits/CreateVisitDialog';
 import { useTranslation } from 'react-i18next';
+import { VisitRitual, type VisitRitualData } from '@/components/vigilia/VisitRitual';
+import { useCreateVisitRitual, useRecentPromptIds } from '@/hooks/useVisitRituals';
+import { useContacts } from '@/hooks/useContacts';
 
 export default function Visits() {
   const { t } = useTranslation('relationships');
@@ -48,6 +51,11 @@ export default function Visits() {
   const [createVisitOpen, setCreateVisitOpen] = useState(false);
   const [onBehalfOpen, setOnBehalfOpen] = useState(false);
   const [onBehalfActivityId, setOnBehalfActivityId] = useState<string | null>(null);
+  const [ritualResidentId, setRitualResidentId] = useState<string | null>(null);
+  const [ritualResidentName, setRitualResidentName] = useState('');
+  const createVisitRitual = useCreateVisitRitual();
+  const { data: recentPromptIds } = useRecentPromptIds();
+  const { data: allContacts } = useContacts();
 
   const today = new Date();
   const todayStart = startOfDay(today).toISOString();
@@ -234,6 +242,37 @@ export default function Visits() {
           <Users className="h-4 w-4" />
           {t('visits.recordForVolunteer')}
         </Button>
+
+        {/* Vigilia: Quick resident visit ritual */}
+        {(allContacts ?? []).length > 0 && (
+          <div className="space-y-3">
+            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+              Start a Visit Ritual
+            </h2>
+            <div className="grid grid-cols-1 gap-2">
+              {(allContacts ?? []).slice(0, 6).map((contact: any) => (
+                <button
+                  key={contact.id}
+                  className="flex items-center gap-3 p-3 rounded-lg border border-border hover:border-primary/30 hover:bg-primary/5 transition-all text-left"
+                  onClick={() => {
+                    setRitualResidentId(contact.id);
+                    setRitualResidentName(contact.name);
+                  }}
+                >
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Heart className="h-4 w-4 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">{contact.name}</p>
+                    {contact.care_level && (
+                      <p className="text-xs text-muted-foreground">{contact.care_level}</p>
+                    )}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Pending visits */}
         {pending.length > 0 && (
@@ -502,6 +541,21 @@ export default function Visits() {
           )}
         </DialogContent>
       </Dialog>
+      {/* Visit Ritual Dialog */}
+      {ritualResidentId && (
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+          <VisitRitual
+            residentContactId={ritualResidentId}
+            residentName={ritualResidentName}
+            recentPromptIds={recentPromptIds ?? []}
+            onComplete={(data: VisitRitualData) => {
+              createVisitRitual.mutate(data);
+              setRitualResidentId(null);
+            }}
+            onCancel={() => setRitualResidentId(null)}
+          />
+        </div>
+      )}
     </MainLayout>
   );
 }
