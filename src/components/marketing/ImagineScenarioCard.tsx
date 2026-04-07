@@ -3,7 +3,7 @@
  *
  * WHAT: Renders a single mission scenario with warm, editorial styling.
  * WHERE: /imagine-this page, Sections 1-3.
- * WHY: Helps leaders picture daily work with CROS without feature lists.
+ * WHY: Helps leaders picture daily work with Vigilia without feature lists.
  */
 import type { ImagineScenario } from '@/content/imagineThis';
 

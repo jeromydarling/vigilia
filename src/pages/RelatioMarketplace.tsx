@@ -1,5 +1,5 @@
 /**
- * RelatioMarketplace — Narrative Companion integration hub for CROS.
+ * RelatioMarketplace — Narrative Companion integration hub for Vigilia.
  *
  * WHAT: Hero card, ChMS companion cards, CRM bridge cards, sync history.
  * WHERE: /:tenantSlug/relatio

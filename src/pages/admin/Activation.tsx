@@ -54,7 +54,7 @@ export default function Activation() {
       <MainLayout title="Activation">
         <div className="text-center py-20">
           <h2 className="text-xl font-semibold mb-2">No Tenant Found</h2>
-          <p className="text-muted-foreground">Complete onboarding to activate your CROS workspace.</p>
+          <p className="text-muted-foreground">Complete onboarding to activate your Vigilia workspace.</p>
         </div>
       </MainLayout>
     );
@@ -64,7 +64,7 @@ export default function Activation() {
   const optionalFlags = Object.entries(featureFlags).filter(([k]) => !k.startsWith('cros_core_'));
 
   return (
-    <MainLayout title="CROS Activation" subtitle="Confirm your workspace is alive and well">
+    <MainLayout title="Vigilia Activation" subtitle="Confirm your workspace is alive and well">
       <div className="space-y-6 max-w-4xl">
         {/* Tenant Overview */}
         <Card>

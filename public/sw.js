@@ -1,12 +1,12 @@
 /**
- * CROS Service Worker — Push notifications + offline caching for field workers.
+ * Vigilia Service Worker — Push notifications + offline caching for care workers.
  *
  * WHAT: Handles push notifications with deep linking AND caches app shell for offline access.
  * WHERE: Registered from index.html, runs in browser background.
- * WHY: Visitors and Companions doing relationship work in low-connectivity areas need offline support.
+ * WHY: Visitors and Companions doing care work in low-connectivity areas need offline support.
  */
 
-const CACHE_NAME = 'cros-shell-v1';
+const CACHE_NAME = 'vigilia-shell-v1';
 const SHELL_ASSETS = [
   '/',
   '/manifest.json',

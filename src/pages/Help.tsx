@@ -149,7 +149,7 @@ const changelog = [
       'FIX: Iframe detection guard in GASection — disables connect button in preview mode with clear guidance',
       'UPD: OAuth callback redirect now properly returns user to analytics page after authorization',
       'UPD: Edge function google-oauth-start hardened with role checks and property_id validation',
-      'DOC: Full GA4 OAuth integration blueprint documented for reuse across CROS instances',
+      'DOC: Full GA4 OAuth integration blueprint documented for reuse across Vigilia instances',
     ],
   },
   {
@@ -255,7 +255,7 @@ const changelog = [
   {
     date: 'Mar 1, 2026 - 11:30 PM',
     type: 'feature' as const,
-    title: '5 New Connectors + Donor Humanity Page + Why CROS Page',
+    title: '5 New Connectors + Donor Humanity Page + Why Vigilia Page',
     changes: [
       'NEW: Google Contacts connector — OAuth2, two-way sync via People API (contacts, groups, labels)',
       'NEW: Microsoft Outlook Contacts connector — OAuth2, two-way sync via Microsoft Graph (contacts, folders, categories)',
@@ -281,7 +281,7 @@ const changelog = [
       'NEW: Shepherd-controlled sync direction toggle — switch between read-only and two-way per connector',
       'NEW: Sync Direction tab in Operator Integrations with conflict resolution strategy selector',
       'NEW: relatio_sync_config table — per-tenant, per-connector sync direction with Shepherd-only write RLS',
-      'NEW: Conflict resolution strategies — Flag for review (default), CROS wins, Remote wins',
+      'NEW: Conflict resolution strategies — Flag for review (default), Vigilia wins, Remote wins',
       'UPD: 4 connectors now support full two-way sync: Salesforce, Dynamics 365, HubSpot, Blackbaud RE NXT',
       'UPD: Marketing integrations page updated with Blackbaud RE NXT and revised two-way sync messaging',
       'UPD: Technical documentation v2.14.0 — bi-directional sync chapter expanded',
@@ -424,7 +424,7 @@ const changelog = [
       'NEW: Salesforce two-way sync — contacts, accounts, tasks, events, and notes flow both directions',
       'NEW: Microsoft Dynamics 365 two-way sync — full OData v4 field mapping for all entity types',
       'NEW: HubSpot two-way sync — contacts, companies, deals, and notes synchronized bidirectionally',
-      'NEW: Conflict detection — field-level diff engine flags records edited in both CROS and external CRM',
+      'NEW: Conflict detection — field-level diff engine flags records edited in both Vigilia and external CRM',
       'NEW: sync_conflicts table — flag-for-review resolution with accept_cros / accept_remote / merged options',
       'NEW: sync_direction_config table — per-tenant bidirectional sync configuration and credential storage',
       'NEW: Demo Lab migration tests updated with Dynamics 365 inbound fixtures, outbound denormalization, and conflict detection',
@@ -507,9 +507,9 @@ const changelog = [
     title: 'Microsoft Dynamics 365 Inbound Connector',
     changes: [
       'NEW: Full Dynamics 365 ConnectorAdapter — OData v4 field mapping for accounts, contacts, tasks, events, activities',
-      'NEW: OutboundAdapter interface — denormalizes CROS entities back to vendor format for write-back',
-      'NEW: Dynamics 365 outbound adapter — supports CROS → Dynamics write-back for all entity types',
-      'NEW: Salesforce outbound adapter — supports CROS → Salesforce write-back for all entity types',
+      'NEW: OutboundAdapter interface — denormalizes Vigilia entities back to vendor format for write-back',
+      'NEW: Dynamics 365 outbound adapter — supports Vigilia → Dynamics write-back for all entity types',
+      'NEW: Salesforce outbound adapter — supports Vigilia → Salesforce write-back for all entity types',
       'NEW: sync_conflicts table — flag-for-review conflict resolution when records edited in both systems',
       'NEW: sync_direction_config table — per-tenant bidirectional sync configuration',
       'ARCH: Webhook-driven sync cadence via n8n orchestration',
@@ -974,16 +974,16 @@ const changelog = [
   {
     date: 'Feb 20, 2026 - 3:00 PM',
     type: 'feature' as const,
-    title: 'CROS™ Brand & Multi-Tenant Architecture',
+    title: 'Vigilia™ Brand & Multi-Tenant Architecture',
     changes: [
       'NEW: Tenant onboarding with mission archetype selection (Church, Digital Inclusion, Social Enterprise, Workforce, Refugee Support, Education, Library)',
-      'NEW: Subscription tier system — CROS Core, Insight, Story, Bridge with cumulative feature gating',
+      'NEW: Subscription tier system — Vigilia Core, Insight, Story, Bridge with cumulative feature gating',
       'NEW: SubscriptionGate and FeatureGate components for dynamic tier-based access control',
       'NEW: Communio™ — collaborative groups for inter-tenant signal sharing and community intelligence',
       'NEW: communio_groups, communio_memberships, communio_shared_events, communio_shared_signals tables',
       'NEW: Archetype profiles with behavior profiles, narrative styles, and communio defaults',
       'NEW: Tenant entitlements system for add-on purchases (Campaigns, Metros, AI, Local Pulse, NRI)',
-      'Brand constants centralized in src/config/brand.ts — CROS, Neary (NRI), Latin module names',
+      'Brand constants centralized in src/config/brand.ts — Vigilia, Neary (NRI), Latin module names',
     ]
   },
   {
@@ -2822,7 +2822,7 @@ Bloomerang, Virtuous, Oracle CRM, Flocknote, Little Green Light, DonorPerfect, K
 
 **Sync Direction Control:**
 - Stewards can toggle between read-only and two-way sync per connector
-- Conflict resolution strategies: Flag for review (default), CROS wins, or Remote wins
+- Conflict resolution strategies: Flag for review (default), Vigilia wins, or Remote wins
 - Sync conflicts are surfaced for human review — never auto-resolved silently
 
 **How It Works:**
@@ -3160,7 +3160,7 @@ Bootstrap from website, edit knowledge, view version history. Injected as second
     icon: Shield,
     title: 'Accessibility Mode',
     description: 'WCAG 2.2 AA compliant experience for all users — high contrast, keyboard navigation, screen readers, and voice input.',
-    content: `CROS is committed to serving everyone, including users who rely on assistive technology. Accessibility Mode is a platform-wide toggle that transforms the experience to meet WCAG 2.2 AA standards.
+    content: `Vigilia is committed to serving everyone, including users who rely on assistive technology. Accessibility Mode is a platform-wide toggle that transforms the experience to meet WCAG 2.2 AA standards.
 
 ## How to Enable
 
@@ -3196,7 +3196,7 @@ Open your user menu (top-right avatar) and toggle **Accessibility Mode**. Your p
 
 ## NRI Companion Accessibility
 
-The CROS Companion (Compass) is designed to be the primary interaction surface for accessibility users:
+The Vigilia Companion (Compass) is designed to be the primary interaction surface for accessibility users:
 
 **Keyboard Navigation:**
 - Arrow keys navigate between nudge cards and quick prompts
@@ -3548,7 +3548,7 @@ export default function Help() {
                 <div>
                   <h4 className="text-sm font-medium text-foreground mb-2">What "Recent Actions" Means</h4>
                   <p>
-                    CROS keeps a small, private breadcrumb trail of <em>actions</em> (not content) —
+                    Vigilia keeps a small, private breadcrumb trail of <em>actions</em> (not content) —
                     like "you deleted a Partner" or "you published an essay." This helps the assistant
                     guide you to the right fix. No notes, emails, names, or personal content are ever stored.
                   </p>

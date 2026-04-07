@@ -1,5 +1,5 @@
 /**
- * CivicSignalBlock — Anonymized civic trust signals from the CROS™ network.
+ * CivicSignalBlock — Anonymized civic trust signals from the Vigilia™ network.
  *
  * WHAT: Shows aggregated metro insights from published public_metro_pages.
  * WHERE: Marketing pages, archetype pages, metro pages.

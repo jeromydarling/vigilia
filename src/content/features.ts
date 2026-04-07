@@ -1,5 +1,5 @@
 // Phase 7 brand narrative copy — feature pages
-// HEAD (NRI) • HEART (CROS) • BODY (Profunda)
+// HEAD (NRI) • HEART (Vigilia) • BODY (Profunda)
 
 import sectionCrosJourneys from '@/assets/section-cros-journeys.png';
 import sectionCrosLanguage from '@/assets/section-cros-language.png';
@@ -22,9 +22,9 @@ import sectionProvisioStewardship from '@/assets/section-provisio-stewardship.pn
 
 export const manifestoSection = {
   title: 'The Head. The Heart. The Body...and You.',
-  intro: 'Technology has long focused on systems and intelligence.\n\nCROS™ brings them back to something human.',
+  intro: 'Technology has long focused on systems and intelligence.\n\nVigilia™ brings them back to something human.',
   summary:
-    'NRI™ helps you see the story.\nCROS™ helps you stay connected.\nProfunda™ helps you move forward.',
+    'NRI™ helps you see the story.\nVigilia™ helps you stay connected.\nProfunda™ helps you move forward.',
   columns: [
     {
       label: 'HEAD',
@@ -34,7 +34,7 @@ export const manifestoSection = {
     },
     {
       label: 'HEART',
-      name: 'CROS™',
+      name: 'Vigilia™',
       body: 'Hold relationships at the center. A system built around presence, trust, and shared growth.',
       to: '/cros',
     },
@@ -51,7 +51,7 @@ export const manifestoSection = {
 export const nriPage = {
   hero: 'The Intelligence That Begins With People',
   body: [
-    'Narrative Relational Intelligence — or NRI™ — is the thinking layer of CROS™.',
+    'Narrative Relational Intelligence — or NRI™ — is the thinking layer of Vigilia™.',
     'It follows a simple rhythm: Recognize signals of care and change. Synthesize scattered information into coherent stories. Prioritize your attention toward the next faithful step.',
     'NRI™ does not replace human judgment. It strengthens it.',
     'AI handles pattern recognition, organization, speed, and memory — that\'s what machines are for. NRI grounds those capabilities in human relationships and lived experience.',
@@ -71,26 +71,26 @@ export const crosPage = {
   hero: 'The Operating System Built for Relationships',
   subtitle: 'Where every interaction becomes part of a living story.',
   body: [
-    'CROS™ is the heart of the platform.',
-    'Where traditional operating systems manage files and workflows,\nCROS™ manages living networks of people, partners, and communities.',
+    'Vigilia™ is the heart of the platform.',
+    'Where traditional operating systems manage files and workflows,\nVigilia™ manages living networks of people, partners, and communities.',
     'It keeps your work grounded in human presence:\n• conversations\n• collaboration\n• shared growth',
-    'The name "CROS™" reflects a bridge —\na crossing point between your organization and the communities you serve.',
+    'The name "Vigilia™" reflects a bridge —\na crossing point between your organization and the communities you serve.',
     'It does not try to control relationships.\nIt helps them stay alive.',
   ],
   sections: [
     {
       title: 'Mission-First Journeys',
-      body: 'Every partner follows a journey — from first discovery to growing together. CROS™ replaces rigid sales pipelines with human-centered stages that reflect how real relationships develop. You see where a partner is, how they got there, and what might come next.',
+      body: 'Every partner follows a journey — from first discovery to growing together. Vigilia™ replaces rigid sales pipelines with human-centered stages that reflect how real relationships develop. You see where a partner is, how they got there, and what might come next.',
       image: sectionCrosJourneys,
     },
     {
       title: 'Human Language, Not Dashboards',
-      body: 'Instead of charts and KPIs, CROS™ uses gentle narrative suggestions. "You haven\'t connected with Bridge Builders in two weeks." "Three partners in Portland mentioned housing this month." The system speaks in the language of care, not analytics.',
+      body: 'Instead of charts and KPIs, Vigilia™ uses gentle narrative suggestions. "You haven\'t connected with Bridge Builders in two weeks." "Three partners in Portland mentioned housing this month." The system speaks in the language of care, not analytics.',
       image: sectionCrosLanguage,
     },
     {
       title: 'Built for the Field',
-      body: 'CROS™ is mobile-first because your work happens in communities, not behind a desk. Quick reflections, visit logging, and partner lookups all work from your phone — fast, calm, and distraction-free.',
+      body: 'Vigilia™ is mobile-first because your work happens in communities, not behind a desk. Quick reflections, visit logging, and partner lookups all work from your phone — fast, calm, and distraction-free.',
       image: sectionCrosMobile,
     },
   ],
@@ -101,14 +101,14 @@ export const crosPage = {
     'Communio Shared Signals — learn from the broader ecosystem',
     'Local Awareness — stay connected to what\'s happening nearby',
   ],
-  closing: 'CROS™ keeps relationships at the center of your work.\nNot as data. As living connections.',
+  closing: 'Vigilia™ keeps relationships at the center of your work.\nNot as data. As living connections.',
 };
 
 export const profundaPage = {
   hero: 'Where Relationships Become Movement',
-  subtitle: 'The body of CROS — where action lives.',
+  subtitle: 'The body of Vigilia — where action lives.',
   body: [
-    'If NRI™ is the head and CROS™ is the heart,\nProfunda™ is the body.',
+    'If NRI™ is the head and Vigilia™ is the heart,\nProfunda™ is the body.',
     'It is where action lives.',
     'Every meeting, provision, volunteer hour, and event becomes part of a living system —\nnot as isolated data, but as movement.',
     'The body analogy matters because organizations already understand it:\nThe head sees.\nThe heart connects.\nThe body moves.',
@@ -240,7 +240,7 @@ export const voluntariumPage = {
     },
     {
       title: 'Hours That Tell Stories',
-      body: 'Volunteer hours in CROS aren\'t just numbers in a spreadsheet. Each entry connects to events, partners, and community activities. When you look at Maria Santos\'s 8 hours last week, you see the story: the food drive she organized, the families she served, the conversations that mattered.',
+      body: 'Volunteer hours in Vigilia aren\'t just numbers in a spreadsheet. Each entry connects to events, partners, and community activities. When you look at Maria Santos\'s 8 hours last week, you see the story: the food drive she organized, the families she served, the conversations that mattered.',
       image: sectionVoluntariumHours,
     },
     {
@@ -280,13 +280,13 @@ export const provisioPage = {
 
 export const financialMomentsPage = {
   title: 'Financial Moments',
-  subtitle: 'Sometimes relationships move through generosity, participation, or shared work. CROS simply remembers those moments too.',
+  subtitle: 'Sometimes relationships move through generosity, participation, or shared work. Vigilia simply remembers those moments too.',
   intro: [
     'Most systems treat money as the center of the relationship.',
-    'CROS doesn\'t.',
-    'In CROS™, financial activity is simply another moment in the story of a relationship — like a visit, a reflection, or an event.',
+    'Vigilia doesn\'t.',
+    'In Vigilia™, financial activity is simply another moment in the story of a relationship — like a visit, a reflection, or an event.',
     'If someone supports your work, joins a retreat, sponsors a gathering, or hires you to help their community, those moments belong in the thread of the relationship.',
-    'CROS makes that easy while keeping the work relational.',
+    'Vigilia makes that easy while keeping the work relational.',
   ],
   capabilities: [
     {
@@ -307,7 +307,7 @@ export const financialMomentsPage = {
   ],
   trust: [
     'Payments are handled securely through Stripe, with funds going directly to your organization.',
-    'CROS simply remembers the moment.',
+    'Vigilia simply remembers the moment.',
   ],
-  closing: 'CROS is not built to turn relationships into transactions. It simply makes it easier for the work to move when money is part of the moment.',
+  closing: 'Vigilia is not built to turn relationships into transactions. It simply makes it easier for the work to move when money is part of the moment.',
 };

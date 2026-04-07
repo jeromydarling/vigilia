@@ -47,7 +47,7 @@ export function SubscriptionGate({ children }: SubscriptionGateProps) {
               Subscription required
             </h3>
             <p className="text-sm text-muted-foreground">
-              Choose a plan to get started with CROS. Your workspace will be ready in under a minute.
+              Choose a plan to get started with Vigilia. Your workspace will be ready in under a minute.
             </p>
           </div>
           <Link to="/pricing">

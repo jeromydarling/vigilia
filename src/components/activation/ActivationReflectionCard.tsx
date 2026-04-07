@@ -17,7 +17,7 @@ export default function ActivationReflectionCard() {
     <Card className="border-dashed">
       <CardContent className="pt-5 pb-4 text-center">
         <p className="text-sm text-muted-foreground mb-1" style={serif}>
-          Many teams discover CROS through someone they trust.
+          Many teams discover Vigilia through someone they trust.
         </p>
         <p className="text-xs text-muted-foreground mb-4" style={serif}>
           Explore stories from organizations walking a similar path.

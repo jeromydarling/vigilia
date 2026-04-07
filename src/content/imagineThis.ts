@@ -121,7 +121,7 @@ export const reflections: ReflectionItem[] = [
 ];
 
 export const closing = {
-  body: 'CROS isn\'t asking you to imagine a new platform.\nIt\'s inviting you to imagine a different rhythm of care.',
+  body: 'Vigilia isn\'t asking you to imagine a new platform.\nIt\'s inviting you to imagine a different rhythm of care.',
   links: [
     { label: 'Explore Archetypes', to: '/archetypes' },
     { label: 'What a Week Looks Like', to: '/archetypes/church/week' },

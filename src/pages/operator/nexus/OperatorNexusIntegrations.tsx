@@ -41,7 +41,7 @@ const connectors: ConnectorInfo[] = [
       'Notes → Reflections (body text, associated contact/company)',
     ],
     migrationCaveats: [
-      'HubSpot lifecycle stages do not map 1:1 to CROS journey stages — manual review needed',
+      'HubSpot lifecycle stages do not map 1:1 to Vigilia journey stages — manual review needed',
       'Custom properties are ignored by default; add explicit mappings if needed',
       'Rate limited to 100 requests per 10 seconds on free tier',
     ],
@@ -74,7 +74,7 @@ const connectors: ConnectorInfo[] = [
     ],
     migrationCaveats: [
       'Bloomerang exports use "Constituent ID" as unique identifier',
-      'Donation data is ignored — CROS is not a donor management system',
+      'Donation data is ignored — Vigilia is not a donor management system',
       'Address fields are concatenated into a single notes field',
     ],
     qaReady: false,
@@ -84,7 +84,7 @@ const connectors: ConnectorInfo[] = [
     name: 'Airtable',
     description: 'One-way import via CSV. Flexible schema mapping.',
     fieldNotes: [
-      'User must map Airtable columns to CROS fields manually',
+      'User must map Airtable columns to Vigilia fields manually',
       'Linked records become text references (not relational)',
     ],
     migrationCaveats: [
@@ -183,7 +183,7 @@ const connectors: ConnectorInfo[] = [
     ],
     migrationCaveats: [
       'Self-hosted users must provide their instance URL',
-      'Relationship types mapped to CROS journey stages manually',
+      'Relationship types mapped to Vigilia journey stages manually',
       'Debt records are ignored',
     ],
     qaReady: false,
@@ -222,7 +222,7 @@ const connectors: ConnectorInfo[] = [
     migrationCaveats: [
       'Requires CiviCRM v5.36+ with AuthX support',
       'Dedicated API user must be created with correct CMS permissions',
-      'Contribution/payment data is strictly read-only — CROS never modifies financial records',
+      'Contribution/payment data is strictly read-only — Vigilia never modifies financial records',
       'CiviVolunteer extension must be installed separately if volunteer sync is needed',
       'Custom fields require explicit mapping — not imported by default',
       'WordPress and Drupal CMS have slightly different permission setup paths',

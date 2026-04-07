@@ -1,6 +1,6 @@
 {
   "welcome": {
-    "title": "Welcome to CROS",
+    "title": "Welcome to Vigilia",
     "subtitle": "Your relational community intelligence platform",
     "greeting": "Good {{timeOfDay}}, {{name}}",
     "greetingDefault": "Good {{timeOfDay}}",
@@ -11,7 +11,7 @@
     },
     "firstVisit": {
       "title": "Welcome to Your Journey",
-      "message": "CROS helps you see the people around you more clearly and grow together in community. Let's get started.",
+      "message": "Vigilia helps you see the people around you more clearly and grow together in community. Let's get started.",
       "step1": "Add your first relationship",
       "step2": "Explore the dashboard",
       "step3": "Meet your NRI Companion",

@@ -3,7 +3,7 @@
  *
  * WHAT: Subtle banner at 80%, 95%, and 100% of Deep Insight allowance.
  * WHERE: Rendered at the top of AI-heavy pages or in settings.
- * WHY: Calm, non-alarmist usage transparency per CROS governance (Part 3 & 4).
+ * WHY: Calm, non-alarmist usage transparency per Vigilia governance (Part 3 & 4).
  */
 import { useState } from 'react';
 import { useDeepInsightStatus } from '@/hooks/useDeepInsightStatus';

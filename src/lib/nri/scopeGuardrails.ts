@@ -91,7 +91,7 @@ const FREEFORM_RESPONSE = `I'm NRI — your organization's relational intelligen
 
 What would you like to do for your organization?`;
 
-const PROFESSIONAL_RESPONSE = `I'm not qualified to provide medical, legal, tax, or financial advice. I'm here to help with your organization's relational work within CROS.
+const PROFESSIONAL_RESPONSE = `I'm not qualified to provide medical, legal, tax, or financial advice. I'm here to help with your organization's relational work within Vigilia.
 
 Please consult a qualified professional for that kind of guidance. Is there anything about your community relationships or the platform I can help with?`;
 

@@ -1,7 +1,7 @@
 /**
  * Glossary — Platform term definitions for auto-linking and schema generation.
  *
- * WHAT: Canonical definitions of all CROS platform terms.
+ * WHAT: Canonical definitions of all Vigilia platform terms.
  * WHERE: Powers GlossaryAutoLink component and DefinedTerm JSON-LD schema.
  * WHY: Builds semantic authority by consistently defining terms for crawlers and users.
  */
@@ -21,9 +21,9 @@ export const glossary: GlossaryEntry[] = [
     route: '/nri',
   },
   {
-    term: 'CROS',
+    term: 'Vigilia',
     slug: 'cros',
-    definition: 'Communal Relationship Operating System - a living relationship system that remembers people and notices community shifts.',
+    definition: 'A Liturgy of Attention - a living relationship system that remembers people and notices community shifts.',
     route: '/cros',
   },
   {
@@ -82,7 +82,7 @@ export const glossary: GlossaryEntry[] = [
   {
     term: 'Gardener',
     slug: 'gardener',
-    definition: 'The person tending the wider ecosystem of CROS. A Gardener watches patterns across communities, supports growth, and helps the network remain healthy.',
+    definition: 'The person tending the wider ecosystem of Vigilia. A Gardener watches patterns across communities, supports growth, and helps the network remain healthy.',
   },
 ];
 
@@ -91,13 +91,13 @@ export function glossarySchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'DefinedTermSet',
-    name: 'CROS Platform Glossary',
-    description: 'Definitions of key concepts in the Communal Relationship Operating System.',
+    name: 'Vigilia Platform Glossary',
+    description: 'Definitions of key concepts in the A Liturgy of Attention.',
     hasDefinedTerm: glossary.map((entry) => ({
       '@type': 'DefinedTerm',
       name: entry.term,
       description: entry.definition,
-      ...(entry.route && { url: `https://thecros.app${entry.route}` }),
+      ...(entry.route && { url: `https://vigilia.care${entry.route}` }),
     })),
   };
 }

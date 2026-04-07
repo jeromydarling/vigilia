@@ -33,10 +33,10 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     guide: {
       title: 'Your Command Center',
       what: 'This is your daily home — a calm overview of what matters right now.',
-      why: 'Instead of a cluttered inbox, CROS shows you the signals and relationships that need gentle attention today.',
+      why: 'Instead of a cluttered inbox, Vigilia shows you the signals and relationships that need gentle attention today.',
       expect: 'You\'ll see recent activity, relationship signals, and suggestions from your Companion. Nothing here is urgent — it\'s awareness, not pressure.',
       terms: [
-        { word: 'Companion', meaning: 'The CROS assistant that notices patterns and offers gentle suggestions.' },
+        { word: 'Companion', meaning: 'The Vigilia assistant that notices patterns and offers gentle suggestions.' },
         { word: 'Signals', meaning: 'Quiet observations about your relationships and community — not alerts.' },
       ],
     },
@@ -46,10 +46,10 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     guide: {
       title: 'Your Command Center',
       what: 'This is your daily home — a calm overview of what matters right now.',
-      why: 'Instead of a cluttered inbox, CROS shows you the signals and relationships that need gentle attention today.',
+      why: 'Instead of a cluttered inbox, Vigilia shows you the signals and relationships that need gentle attention today.',
       expect: 'You\'ll see recent activity, relationship signals, and suggestions from your Companion. Nothing here is urgent — it\'s awareness, not pressure.',
       terms: [
-        { word: 'Companion', meaning: 'The CROS assistant that notices patterns and offers gentle suggestions.' },
+        { word: 'Companion', meaning: 'The Vigilia assistant that notices patterns and offers gentle suggestions.' },
         { word: 'Signals', meaning: 'Quiet observations about your relationships and community — not alerts.' },
       ],
     },
@@ -76,7 +76,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     guide: {
       title: 'Territories',
       what: 'The geographic areas where your organization serves.',
-      why: 'CROS organizes your work by place — because community is local.',
+      why: 'Vigilia organizes your work by place — because community is local.',
       expect: 'You\'ll see your activated territories, local signals, and community pulse data.',
       terms: [
         { word: 'Metro', meaning: 'A metropolitan area or region where you operate.' },
@@ -146,7 +146,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     guide: {
       title: 'Partners (Opportunities)',
       what: 'These are the organizations and people you\'re building relationships with.',
-      why: 'CROS calls them "Opportunities" because each one is a chance for mutual impact — not a sales lead.',
+      why: 'Vigilia calls them "Opportunities" because each one is a chance for mutual impact — not a sales lead.',
       expect: 'Browse your partners, see where each relationship stands in its journey, and add reflections.',
       terms: [
         { word: 'Journey', meaning: 'The stages a relationship moves through — from first contact to deep partnership.' },
@@ -214,7 +214,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     pattern: '/people/:slug',
     guide: {
       title: 'Person Detail',
-      what: 'Everything CROS knows about this person — their story, interactions, and life events.',
+      what: 'Everything Vigilia knows about this person — their story, interactions, and life events.',
       why: 'Remembering the whole person — not just their title — is what makes relational work meaningful.',
       expect: 'Contact info, linked organizations, activity timeline, reflections, and life events.',
       terms: [
@@ -285,7 +285,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     guide: {
       title: 'Activities',
       what: 'A log of your interactions — calls, meetings, visits, emails, and notes.',
-      why: 'This is your relationship memory. When you log an activity, CROS remembers it so you don\'t have to.',
+      why: 'This is your relationship memory. When you log an activity, Vigilia remembers it so you don\'t have to.',
       expect: 'Add new activities, see recent ones, and link them to partners or people.',
     },
   },
@@ -326,7 +326,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
       why: 'Companions and Visitors spend time in the field. This makes it easy to capture moments without paperwork.',
       expect: 'Log a visit with a quick note. It becomes part of the person\'s story.',
       terms: [
-        { word: 'Visitor', meaning: 'A CROS role for people who do field work — showing up where life happens.' },
+        { word: 'Visitor', meaning: 'A Vigilia role for people who do field work — showing up where life happens.' },
       ],
     },
   },
@@ -340,7 +340,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
       why: 'Unlike mass marketing, these campaigns are designed for genuine follow-up and care.',
       expect: 'Create campaigns, choose recipients, and track responses — all with a relational tone.',
       terms: [
-        { word: 'Relatio', meaning: 'The CROS integration and outreach layer — from the Latin for "connection."' },
+        { word: 'Relatio', meaning: 'The Vigilia integration and outreach layer — from the Latin for "connection."' },
       ],
     },
   },
@@ -360,7 +360,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     guide: {
       title: 'Find Grants',
       what: 'Discover grant opportunities relevant to your mission and territories.',
-      why: 'Helps you find funding without endless searching — CROS scores grants by relevance to your archetype.',
+      why: 'Helps you find funding without endless searching — Vigilia scores grants by relevance to your archetype.',
       expect: 'Grant listings from external sources, filtered by your location and mission type.',
     },
   },
@@ -374,7 +374,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
       why: 'Volunteers are the heart of community work. This helps you remember and recognize them.',
       expect: 'Add volunteers, log hours, see who\'s been active, and notice when someone goes quiet.',
       terms: [
-        { word: 'Voluntārium', meaning: 'The CROS name for volunteer management — from the Latin for "willing service."' },
+        { word: 'Voluntārium', meaning: 'The Vigilia name for volunteer management — from the Latin for "willing service."' },
       ],
     },
   },
@@ -388,7 +388,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
       why: 'If your organization distributes devices or tech resources, this tracks the full lifecycle.',
       expect: 'Create orders, track fulfillment, and see provision history by partner or person.',
       terms: [
-        { word: 'Prōvīsiō', meaning: 'The CROS name for technology provisioning — from the Latin for "providing."' },
+        { word: 'Prōvīsiō', meaning: 'The Vigilia name for technology provisioning — from the Latin for "providing."' },
       ],
     },
   },
@@ -402,7 +402,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
       why: 'Stakeholders need stories, not spreadsheets. Testimonium helps you tell the truth of your impact.',
       expect: 'AI-assisted reports that weave your reflections, activities, and signals into narrative form.',
       terms: [
-        { word: 'Testimonium', meaning: 'The CROS storytelling layer — from the Latin for "testimony." It turns data into narrative.' },
+        { word: 'Testimonium', meaning: 'The Vigilia storytelling layer — from the Latin for "testimony." It turns data into narrative.' },
       ],
     },
   },
@@ -448,8 +448,8 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
       why: 'Signum helps you notice what\'s happening around you that\'s relevant to your mission.',
       expect: 'Discovered organizations, events, and funding opportunities scored by relevance to your archetype.',
       terms: [
-        { word: 'Signum', meaning: 'The CROS discovery layer — from the Latin for "signal." It finds relevant things in your area.' },
-        { word: 'Archetype', meaning: 'Your organization type — like Church, Digital Inclusion, or Workforce Development. It shapes how CROS works for you.' },
+        { word: 'Signum', meaning: 'The Vigilia discovery layer — from the Latin for "signal." It finds relevant things in your area.' },
+        { word: 'Archetype', meaning: 'Your organization type — like Church, Digital Inclusion, or Workforce Development. It shapes how Vigilia works for you.' },
       ],
     },
   },
@@ -459,11 +459,11 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     pattern: '/communio',
     guide: {
       title: 'Communio',
-      what: 'An opt-in network where CROS workspaces can share anonymized patterns.',
+      what: 'An opt-in network where Vigilia workspaces can share anonymized patterns.',
       why: 'When multiple organizations serve the same community, shared awareness strengthens everyone.',
       expect: 'See anonymized signals from other organizations in your area. Your private data is never shared.',
       terms: [
-        { word: 'Communio', meaning: 'The CROS shared network — from the Latin for "communion." Participation is always opt-in.' },
+        { word: 'Communio', meaning: 'The Vigilia shared network — from the Latin for "communion." Participation is always opt-in.' },
       ],
     },
   },
@@ -473,11 +473,11 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     pattern: '/relatio',
     guide: {
       title: 'Relatio Marketplace',
-      what: 'Connect CROS to your existing tools — CRMs, calendars, and data sources.',
-      why: 'Your organization already uses other systems. Relatio bridges them into CROS without replacing them.',
+      what: 'Connect Vigilia to your existing tools — CRMs, calendars, and data sources.',
+      why: 'Your organization already uses other systems. Relatio bridges them into Vigilia without replacing them.',
       expect: 'Browse available connectors, set up integrations, and import data from external platforms.',
       terms: [
-        { word: 'Relatio', meaning: 'The CROS integration bridge — from the Latin for "connection."' },
+        { word: 'Relatio', meaning: 'The Vigilia integration bridge — from the Latin for "connection."' },
         { word: 'Connector', meaning: 'A pre-built bridge to an external tool like Salesforce, HubSpot, or Google Calendar.' },
       ],
     },
@@ -488,9 +488,9 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     pattern: '/import',
     guide: {
       title: 'Import Center',
-      what: 'Bring your existing data into CROS — partners, contacts, activities, and more.',
+      what: 'Bring your existing data into Vigilia — partners, contacts, activities, and more.',
       why: 'Starting fresh is hard. The import center lets you carry your history forward.',
-      expect: 'Upload CSV files, map columns to CROS fields, and preview before committing.',
+      expect: 'Upload CSV files, map columns to Vigilia fields, and preview before committing.',
     },
   },
 
@@ -531,7 +531,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     guide: {
       title: 'Settings',
       what: 'Your profile, notifications, team management, and workspace preferences.',
-      why: 'Customize CROS to fit your team\'s rhythm and needs.',
+      why: 'Customize Vigilia to fit your team\'s rhythm and needs.',
       expect: 'Update your profile, manage team members, configure integrations, and adjust notification preferences.',
     },
   },
@@ -553,7 +553,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     pattern: '/admin',
     guide: {
       title: 'Workspace Admin',
-      what: 'Administrative tools for managing your CROS workspace — team, roles, and configuration.',
+      what: 'Administrative tools for managing your Vigilia workspace — team, roles, and configuration.',
       why: 'Stewards and Shepherds use this to keep the workspace healthy and well-organized.',
       expect: 'Team management, role assignments, workspace settings, and activation status.',
       terms: [
@@ -566,7 +566,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     pattern: '/admin/activation',
     guide: {
       title: 'Guided Activation',
-      what: 'A structured checklist to help your organization get fully set up in CROS.',
+      what: 'A structured checklist to help your organization get fully set up in Vigilia.',
       why: 'There\'s a lot to configure. Activation walks you through it step by step so nothing gets missed.',
       expect: 'A checklist of setup tasks organized by category, with progress tracking and helpful guidance.',
     },
@@ -586,7 +586,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     pattern: '/help',
     guide: {
       title: 'Help & Documentation',
-      what: 'Guides, documentation, and support for every part of CROS.',
+      what: 'Guides, documentation, and support for every part of Vigilia.',
       why: 'When you need to understand something deeper, the help center has detailed explanations.',
       expect: 'Searchable documentation organized by section, plus the changelog and quick-start guides.',
     },
@@ -595,9 +595,9 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     pattern: '/help/adoption',
     guide: {
       title: 'Adoption & Daily Rhythm',
-      what: 'A formation space for building your team\'s daily rhythm with CROS.',
+      what: 'A formation space for building your team\'s daily rhythm with Vigilia.',
       why: 'Adoption isn\'t about training — it\'s about forming habits that serve your mission.',
-      expect: 'Role-specific guidance, daily rhythm suggestions, and tips for making CROS part of your workflow.',
+      expect: 'Role-specific guidance, daily rhythm suggestions, and tips for making Vigilia part of your workflow.',
     },
   },
   {
@@ -605,7 +605,7 @@ export const COMPASS_GUIDE_MAP: { pattern: string; guide: GuideEntry }[] = [
     guide: {
       title: 'Feedback & Help Requests',
       what: 'Share feedback, report issues, or request features.',
-      why: 'CROS grows through the wisdom of its community. Your voice shapes what comes next.',
+      why: 'Vigilia grows through the wisdom of its community. Your voice shapes what comes next.',
       expect: 'Submit a request, describe what you need, and track the status of previous submissions.',
     },
   },

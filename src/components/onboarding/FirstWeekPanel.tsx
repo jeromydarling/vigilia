@@ -47,7 +47,7 @@ export function FirstWeekPanel() {
                 <HelpCircle className="h-3.5 w-3.5 text-muted-foreground cursor-help" />
               </TooltipTrigger>
               <TooltipContent side="right" className="max-w-xs text-xs space-y-1">
-                <p><strong>What:</strong> Key milestones from your first week in CROS.</p>
+                <p><strong>What:</strong> Key milestones from your first week in Vigilia.</p>
                 <p><strong>Where:</strong> Your Command Center — visible until all steps are done.</p>
                 <p><strong>Why:</strong> Gentle encouragement to build your rhythm.</p>
               </TooltipContent>

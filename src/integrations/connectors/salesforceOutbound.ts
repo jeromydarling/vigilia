@@ -1,9 +1,9 @@
 /**
  * Salesforce Outbound Adapter
  *
- * WHAT: Denormalizes CROS entities to Salesforce REST API format for outbound sync.
+ * WHAT: Denormalizes Vigilia entities to Salesforce REST API format for outbound sync.
  * WHERE: relatio-outbound-sync edge function (direct vendor API calls).
- * WHY: Enables CROS → Salesforce write-back for contacts, accounts, tasks, events, activities.
+ * WHY: Enables Vigilia → Salesforce write-back for contacts, accounts, tasks, events, activities.
  */
 
 import type { OutboundAdapter, OutboundPayload, FieldDiff, OutboundEntity } from './outboundTypes';

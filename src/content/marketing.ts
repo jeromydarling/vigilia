@@ -4,7 +4,7 @@ import { archetypes, tiers, brand } from '@/config/brand';
 export const hero = {
   title: 'A Communal Relationship OS.',
   subtitle:
-    'CROS™ helps teams remember people, notice community shifts, and build a living story of impact \u2014 without turning mission into busywork.',
+    'Vigilia™ helps teams remember people, notice community shifts, and build a living story of impact \u2014 without turning mission into busywork.',
   ctaPrimary: 'Get started now',
   ctaSecondary: 'Try the demo',
 };
@@ -48,8 +48,8 @@ export const constellationCopy = {
   cta: 'See how it works',
   comparison: {
     headline: 'Not another CRM.\nA living constellation of care.',
-    before: 'Before CROS:\npeople were rows in a database.',
-    after: 'After CROS:\nstories become visible,\nand communities begin to recognize each other.',
+    before: 'Before Vigilia:\npeople were rows in a database.',
+    after: 'After Vigilia:\nstories become visible,\nand communities begin to recognize each other.',
   },
 };
 
@@ -84,7 +84,7 @@ export const securityPage = {
   },
   roleBased: {
     title: 'Role-based access',
-    body: 'CROS™ enforces row-level security on every table. Admins, regional leads, staff, and warehouse managers each see only what they need \u2014 nothing more.',
+    body: 'Vigilia™ enforces row-level security on every table. Admins, regional leads, staff, and warehouse managers each see only what they need \u2014 nothing more.',
   },
   auditHealth: {
     title: 'Audit & ingestion health',
@@ -96,7 +96,7 @@ export const securityPage = {
   },
   dataQuality: {
     title: 'Data quality, watched over gently',
-    body: 'CROS notices when relationships drift out of alignment — orphaned records, incomplete profiles, potential duplicates. These signals surface calmly in your steward view, never as alarms.',
+    body: 'Vigilia notices when relationships drift out of alignment — orphaned records, incomplete profiles, potential duplicates. These signals surface calmly in your steward view, never as alarms.',
   },
   emailCalendar: {
     title: 'Email + calendar safety',
@@ -109,17 +109,17 @@ export const securityPage = {
 };
 
 export const integrationConfidence = {
-  heading: 'How CROS Safely Connects to Your Existing Systems',
+  heading: 'How Vigilia Safely Connects to Your Existing Systems',
   subheading:
     "We don\u2019t ask you to take integrations on faith \u2014 we verify them carefully before they ever touch your data.",
   cards: [
     {
       title: 'Understanding the Data',
-      body: 'Before any connection goes live, CROS learns how each system speaks. We normalize names, dates, and relationships so your story stays intact.',
+      body: 'Before any connection goes live, Vigilia learns how each system speaks. We normalize names, dates, and relationships so your story stays intact.',
     },
     {
       title: 'Preparing for Change',
-      body: "External systems evolve over time. CROS is tested against changing formats so updates don\u2019t silently break your workflow.",
+      body: "External systems evolve over time. Vigilia is tested against changing formats so updates don\u2019t silently break your workflow.",
     },
     {
       title: 'Safe Practice Runs',
@@ -132,7 +132,7 @@ export const integrationConfidence = {
   ],
   trustCallout: {
     title: 'Built for Mission Work, Not Risk',
-    body: "Most platforms assume integrations are perfect. CROS assumes your work is too important to leave to chance \u2014 so we design for clarity, resilience, and human oversight.",
+    body: "Most platforms assume integrations are perfect. Vigilia assumes your work is too important to leave to chance \u2014 so we design for clarity, resilience, and human oversight.",
   },
 };
 
@@ -140,7 +140,7 @@ export const footerLinks = [
   { label: 'Features', to: '/features' },
   { label: 'Roles', to: '/roles' },
   { label: 'NRI™', to: '/nri' },
-  { label: 'CROS™', to: '/cros' },
+  { label: 'Vigilia™', to: '/cros' },
   { label: 'Profunda™', to: '/profunda' },
   { label: 'Compare', to: '/compare' },
   { label: 'Pricing', to: '/pricing' },

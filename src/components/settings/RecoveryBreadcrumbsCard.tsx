@@ -81,7 +81,7 @@ export function RecoveryBreadcrumbsCard() {
                 Help me undo mistakes (private action breadcrumbs)
               </Label>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                CROS stores a short list of recent actions (like "deleted a contact") so the assistant can help you restore work.
+                Vigilia stores a short list of recent actions (like "deleted a contact") so the assistant can help you restore work.
                 It does not store message content, notes, names, or private details. Breadcrumbs are kept for 30 days and then permanently removed.
               </p>
             </div>

@@ -3,7 +3,7 @@
  *
  * WHAT: Prompts the user to write about one relationship they're nurturing.
  * WHERE: Shown after onboarding completes or via /narrative/start route.
- * WHY: Gently invites the first narrative action — the heart of CROS.
+ * WHY: Gently invites the first narrative action — the heart of Vigilia.
  */
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';

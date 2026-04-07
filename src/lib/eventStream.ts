@@ -1,5 +1,5 @@
 /**
- * eventStream — Privacy-safe action breadcrumb logger for CROS™.
+ * eventStream — Privacy-safe action breadcrumb logger for Vigilia™.
  *
  * WHAT: Logs allowlisted user actions (not content) to app_event_stream for recovery intelligence.
  * WHERE: Called from UI destructive/major action handlers across the app.

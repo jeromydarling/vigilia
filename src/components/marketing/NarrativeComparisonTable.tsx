@@ -1,7 +1,7 @@
 /**
  * NarrativeComparisonTable — Calm comparison table for archetype comparison pages.
  *
- * WHAT: Side-by-side table comparing traditional approach vs CROS for each dimension.
+ * WHAT: Side-by-side table comparing traditional approach vs Vigilia for each dimension.
  * WHERE: /compare/:slug pages.
  * WHY: SEO-rich structured comparison without aggressive competitor bashing.
  */

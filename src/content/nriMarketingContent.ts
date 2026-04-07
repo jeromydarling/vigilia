@@ -42,7 +42,7 @@ export const aiStrengths = {
   ],
   bullets: ['Pattern recognition', 'Organization', 'Speed', 'Memory'],
   bridge:
-    "CROS™ embraces these strengths. We let the machine do what it does well — so you don't have to.",
+    "Vigilia™ embraces these strengths. We let the machine do what it does well — so you don't have to.",
 };
 
 /* ────────────────────────────────────────────
@@ -57,7 +57,7 @@ export const aiLimits = {
     'AI has no lived experience. No presence. No moral responsibility.',
   ],
   closing:
-    'So CROS™ keeps humans in the role of meaning and responsibility. The machine organizes. You decide what it means.',
+    'So Vigilia™ keeps humans in the role of meaning and responsibility. The machine organizes. You decide what it means.',
 };
 
 /* ────────────────────────────────────────────
@@ -114,7 +114,7 @@ export const adoptionBridge = {
     {
       objection: '"I don\'t want another app."',
       response:
-        'CROS™ is not another app demanding your attention. It is one place that remembers — visits, reflections, events, and emails — so you don\'t have to keep it all in your head or across five tools. It reduces cognitive load. It doesn\'t add to it.',
+        'Vigilia™ is not another app demanding your attention. It is one place that remembers — visits, reflections, events, and emails — so you don\'t have to keep it all in your head or across five tools. It reduces cognitive load. It doesn\'t add to it.',
     },
     {
       objection: '"I\'m uneasy about AI."',
@@ -175,7 +175,7 @@ export const trustBoundaries = {
    ──────────────────────────────────────────── */
 
 export const restoration = {
-  body: 'Nothing is lost here. If something drifts — a relationship, a reflection, a record — CROS™ preserves what matters. Undo, restore, and recover are built into the rhythm. NRI quietly notices when something may need revisiting, and offers the path back without urgency.',
+  body: 'Nothing is lost here. If something drifts — a relationship, a reflection, a record — Vigilia™ preserves what matters. Undo, restore, and recover are built into the rhythm. NRI quietly notices when something may need revisiting, and offers the path back without urgency.',
 };
 
 /* ────────────────────────────────────────────
@@ -185,7 +185,7 @@ export const restoration = {
 export const closingManifesto = {
   heading: 'AI Organizes. Humans Understand.',
   body: [
-    'CROS™ does not replace human intelligence. It creates space for it.',
+    'Vigilia™ does not replace human intelligence. It creates space for it.',
     'By allowing AI to manage the mechanics of organization, NRI™ gives people back the freedom to listen, to reflect, and to act with clarity.',
     'NRI quietly switches between task support and narrative understanding — helping you do the thing when needed, and see the movement when it matters.',
   ],

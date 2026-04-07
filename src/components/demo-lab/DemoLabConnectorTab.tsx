@@ -35,7 +35,7 @@ const SANDBOX_CHECKLISTS: Record<string, Array<{ id: string; label: string }>> =
     { id: 'test_app', label: 'Create test app (OAuth) with required scopes' },
     { id: 'sandbox_portal', label: 'Create Sandbox Portal' },
     { id: 'seed_data', label: 'Seed test Companies/Contacts/Deals/Notes' },
-    { id: 'connected', label: 'Connect from CROS (sandbox)' },
+    { id: 'connected', label: 'Connect from Vigilia (sandbox)' },
     { id: 'smoke_test', label: 'Run Smoke Test' },
   ],
   salesforce: [
@@ -58,7 +58,7 @@ const SANDBOX_CHECKLISTS: Record<string, Array<{ id: string; label: string }>> =
 const GENERIC_CHECKLIST = [
   { id: 'access', label: 'Obtain sandbox or demo account access' },
   { id: 'export', label: 'Export data as CSV (organizations, contacts, activities)' },
-  { id: 'upload', label: 'Upload CSV files into CROS' },
+  { id: 'upload', label: 'Upload CSV files into Vigilia' },
   { id: 'smoke_test', label: 'Run Smoke Test' },
 ];
 

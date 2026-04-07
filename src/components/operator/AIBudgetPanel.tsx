@@ -3,7 +3,7 @@
  *
  * WHAT: Set monthly AI call ceiling across all engines (Lovable AI + Perplexity).
  * WHERE: Operator Console → System (MACHINA zone).
- * WHY: Operator controls total AI spend; CROS distributes to tenants proportionally.
+ * WHY: Operator controls total AI spend; Vigilia distributes to tenants proportionally.
  */
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -137,7 +137,7 @@ export function AIBudgetPanel() {
         <CardTitle className="flex items-center gap-2">
           <Brain className="h-5 w-5" />
           Unified AI Budget
-          <HelpTooltip content="One ceiling governs all AI engines — Lovable AI (NRI, chat, email analysis) and Perplexity (search, org enrichment, discovery). CROS distributes this budget across tenants based on their tier and team size." />
+          <HelpTooltip content="One ceiling governs all AI engines — Lovable AI (NRI, chat, email analysis) and Perplexity (search, org enrichment, discovery). Vigilia distributes this budget across tenants based on their tier and team size." />
         </CardTitle>
         <CardDescription>
           Your platform-wide NRI capacity ceiling — shared across all engines.

@@ -71,7 +71,7 @@ export function NRISupportCompanion() {
       case 'What is NRI?':
         return 'NRI stands for Narrative Relational Intelligence. It\'s human-first intelligence built from your reflections, events, conversations, and community signals — not artificial data. AI assists, but the intelligence belongs to your relationships.';
       default:
-        return 'I\'m here to help you get the most from CROS. Try one of the suggested prompts.';
+        return 'I\'m here to help you get the most from Vigilia. Try one of the suggested prompts.';
     }
   };
 

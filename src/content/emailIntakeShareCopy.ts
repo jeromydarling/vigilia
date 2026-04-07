@@ -7,16 +7,16 @@
  */
 
 export function getIntakeAddress(tenantSlug: string): string {
-  return `intake+${tenantSlug}@thecros.app`;
+  return `intake+${tenantSlug}@vigilia.care`;
 }
 
 export function getEmailIntakeCopy(tenantSlug: string) {
   const address = getIntakeAddress(tenantSlug);
 
   return {
-    short_message: `After a visit or conversation, just send your notes to:\n${address}\n\nCROS will log it automatically — no app required.`,
+    short_message: `After a visit or conversation, just send your notes to:\n${address}\n\nVigilia will log it automatically — no app required.`,
 
-    staff_version: `Field notes can be emailed directly into CROS.\n\nSend updates after visits, meetings, or outreach moments to:\n${address}\n\nNo login needed. Just write what happened and hit send. The system takes care of the rest.`,
+    staff_version: `Field notes can be emailed directly into Vigilia.\n\nSend updates after visits, meetings, or outreach moments to:\n${address}\n\nNo login needed. Just write what happened and hit send. The system takes care of the rest.`,
 
     bulletin_version: `We want to make it easy for everyone to contribute.\n\nIf you prefer email over apps, you can send visit notes, reflections, or updates to:\n${address}\n\nYour notes will be saved automatically and connected to the people and stories that matter most.\n\nNo formatting required — just write naturally.`,
   };

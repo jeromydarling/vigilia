@@ -1,5 +1,5 @@
 /**
- * AIChatDrawer — Unified CROS Companion (NRI) panel.
+ * AIChatDrawer — Unified Vigilia Companion (NRI) panel.
  *
  * WHAT: Slide-out chat panel with full platform knowledge + action execution.
  * WHERE: Global — accessible from any page via the floating compass button.
@@ -320,7 +320,7 @@ export function AIChatDrawer({ open, onOpenChange, guideEntry, onDismissGuide }:
         side="right"
         className="w-full sm:w-[420px] p-0 flex flex-col compass-drawer"
         style={{ paddingBottom: keyboardHeight > 0 ? keyboardHeight : undefined }}
-        aria-label="CROS Companion — NRI Assistant"
+        aria-label="Vigilia Companion — NRI Assistant"
       >
         {/* Screen reader live announcements */}
         <div
@@ -336,7 +336,7 @@ export function AIChatDrawer({ open, onOpenChange, guideEntry, onDismissGuide }:
           <div className="flex items-center justify-between">
             <SheetTitle className="flex items-center gap-2" style={{ fontFamily: "'Playfair Display', serif" }}>
               <Compass className="h-5 w-5 text-primary" aria-hidden="true" />
-              CROS Companion
+              Vigilia Companion
             </SheetTitle>
             <Button
               variant="ghost"
@@ -504,7 +504,7 @@ export function AIChatDrawer({ open, onOpenChange, guideEntry, onDismissGuide }:
                   onClick={() => {
                     createRecoveryTicket.mutate({
                       subject: 'Emergency recovery request',
-                      description: 'User requested recovery assistance from the CROS Companion.',
+                      description: 'User requested recovery assistance from the Vigilia Companion.',
                       recentActions: recentActions.slice(0, 25),
                       currentRoute: location.pathname,
                     });
@@ -545,7 +545,7 @@ export function AIChatDrawer({ open, onOpenChange, guideEntry, onDismissGuide }:
               onChange={(e) => setInput(e.target.value)}
               onFocus={handleInputFocus}
               onKeyDown={handleKeyDown}
-              placeholder={isListening ? "Listening..." : "Ask me anything about CROS..."}
+              placeholder={isListening ? "Listening..." : "Ask me anything about Vigilia..."}
               disabled={sendMessage.isPending}
               className="flex-1 min-h-[44px] max-h-[120px] resize-none"
               rows={1}

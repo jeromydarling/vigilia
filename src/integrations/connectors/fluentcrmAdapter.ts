@@ -1,7 +1,7 @@
 /**
  * FluentCRM Connector Adapter
  *
- * WHAT: Normalizes FluentCRM (WordPress) export/API data to CROS entities.
+ * WHAT: Normalizes FluentCRM (WordPress) export/API data to Vigilia entities.
  * WHERE: Migration harness + fixture tests.
  * WHY: Self-hosted WordPress CRM — contacts, lists, tags, companies.
  */

@@ -1,5 +1,5 @@
 /**
- * QuietComparisonGrid — Before / With CROS narrative comparison.
+ * QuietComparisonGrid — Before / With Vigilia narrative comparison.
  *
  * WHAT: Side-by-side reflective comparison rendered as cards, not an aggressive table.
  * WHERE: /imagine-this page, "A Quiet Comparison" section.
@@ -52,7 +52,7 @@ export default function QuietComparisonGrid() {
                 {row.before}
               </p>
             </div>
-            {/* With CROS */}
+            {/* With Vigilia */}
             <div className="p-5 sm:p-6 bg-white">
               <span className="sm:hidden text-xs font-semibold uppercase tracking-wider text-[hsl(var(--marketing-blue))] mb-2 block">
                 {t('quietComparisonGrid.withCrosLabel')}

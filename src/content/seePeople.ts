@@ -123,6 +123,6 @@ export const teamGuide = {
 export const softClose = {
   heading: 'You\'re not failing your mission.',
   subheading: 'Your tools may simply not be built for it.',
-  cta: 'See How CROS Approaches This Differently',
+  cta: 'See How Vigilia Approaches This Differently',
   ctaTo: '/manifesto',
 };

@@ -1,7 +1,7 @@
 /**
  * GivingCSVImporter — CSV import presets for generosity records.
  *
- * WHAT: Auto-maps common giving CSV export headers to CROS generosity fields.
+ * WHAT: Auto-maps common giving CSV export headers to Vigilia generosity fields.
  * WHERE: Import Center → Generosity tab.
  * WHY: Enables clean migration from bloated donor systems using "Retain core giving history only" mode.
  *

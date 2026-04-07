@@ -1,5 +1,5 @@
 /**
- * OnboardingFlowGuide — Visual documentation + interactive demo of the CROS tenant onboarding journey.
+ * OnboardingFlowGuide — Visual documentation + interactive demo of the Vigilia tenant onboarding journey.
  *
  * WHAT: Step-by-step reference guide with an embedded interactive demo of each onboarding screen.
  * WHERE: /operator/onboarding-guide
@@ -78,7 +78,7 @@ function exportPDF() {
     const checkSpace = (n: number) => { if (y + n > doc.internal.pageSize.getHeight() - margin) { doc.addPage(); y = margin; } };
 
     doc.setFont('helvetica', 'bold'); doc.setFontSize(28);
-    doc.text('CROS™ Onboarding', margin, y + 30);
+    doc.text('Vigilia™ Onboarding', margin, y + 30);
     doc.setFontSize(16); doc.setFont('helvetica', 'normal'); doc.setTextColor(120, 120, 120);
     doc.text('Flow Guide', margin, y + 42);
     doc.setFontSize(10);
@@ -94,7 +94,7 @@ function exportPDF() {
       doc.text('See the interactive demo on the guide page for a visual walkthrough of this step.', margin, y);
     });
 
-    doc.save('CROS-Onboarding-Flow-Guide.pdf');
+    doc.save('Vigilia-Onboarding-Flow-Guide.pdf');
     toast.success('PDF exported successfully');
   });
 }
@@ -145,7 +145,7 @@ function DemoSignup() {
           </div>
         </div>
         <CardTitle className="text-2xl text-center">Create an account</CardTitle>
-        <CardDescription className="text-center">Join CROS to start building relationships</CardDescription>
+        <CardDescription className="text-center">Join Vigilia to start building relationships</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <Button variant="outline" className="w-full" disabled>
@@ -202,7 +202,7 @@ function DemoLogin() {
           </div>
         </div>
         <CardTitle className="text-2xl text-center">Welcome back</CardTitle>
-        <CardDescription className="text-center">Sign in to your CROS workspace</CardDescription>
+        <CardDescription className="text-center">Sign in to your Vigilia workspace</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <Button variant="outline" className="w-full" disabled>
@@ -237,7 +237,7 @@ function DemoWelcome() {
   return (
     <Card>
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl">Your CROS workspace is almost ready</CardTitle>
+        <CardTitle className="text-2xl">Your Vigilia workspace is almost ready</CardTitle>
         <CardDescription className="max-w-md mx-auto">
           We'll walk you through a few quick steps to configure your workspace. This takes about two minutes.
         </CardDescription>
@@ -270,7 +270,7 @@ function DemoStewardWelcome() {
         </CardTitle>
         <CardDescription className="max-w-md mx-auto">
           As the founding member, you hold the keys to this workspace.
-          You can invite your team, manage settings, and shape how your organization uses CROS.
+          You can invite your team, manage settings, and shape how your organization uses Vigilia.
         </CardDescription>
       </CardHeader>
       <CardContent className="text-center space-y-3">
@@ -333,7 +333,7 @@ function DemoMinistryRole({ state, setState }: { state: DemoState; setState: Rea
     <Card>
       <CardHeader className="text-center">
         <CardTitle style={{ fontFamily: "'Playfair Display', serif" }}>How do you serve your community?</CardTitle>
-        <CardDescription className="max-w-md mx-auto">This doesn't change your permissions. It simply helps CROS speak your language.</CardDescription>
+        <CardDescription className="max-w-md mx-auto">This doesn't change your permissions. It simply helps Vigilia speak your language.</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 gap-3">
@@ -416,7 +416,7 @@ function DemoDetails({ state, setState }: { state: DemoState; setState: React.Di
     <Card>
       <CardHeader>
         <CardTitle>Organization Details</CardTitle>
-        <CardDescription>These will appear throughout your CROS workspace.</CardDescription>
+        <CardDescription>These will appear throughout your Vigilia workspace.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
@@ -426,12 +426,12 @@ function DemoDetails({ state, setState }: { state: DemoState; setState: React.Di
         <div className="space-y-2">
           <Label>URL Slug</Label>
           <div className="flex items-center gap-2">
-            <span className="text-sm text-muted-foreground whitespace-nowrap">thecros.app/</span>
+            <span className="text-sm text-muted-foreground whitespace-nowrap">vigilia.care/</span>
             <Input value={state.orgSlug} onChange={(e) => setState(s => ({ ...s, orgSlug: e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, '') }))} placeholder="bridge-community" />
           </div>
         </div>
         <div className="pt-4 border-t">
-          <span className="text-sm font-medium">Features included with CROS Core</span>
+          <span className="text-sm font-medium">Features included with Vigilia Core</span>
           <div className="flex flex-wrap gap-1.5 mt-2">
             {['voluntarium', 'provisio', 'signum'].map(k => <Badge key={k} variant="outline" className="text-xs capitalize">{k}</Badge>)}
           </div>
@@ -475,14 +475,14 @@ function DemoConfirm({ state }: { state: DemoState }) {
     <Card>
       <CardHeader>
         <CardTitle>Confirm & Create</CardTitle>
-        <CardDescription>Review your setup before creating your CROS workspace.</CardDescription>
+        <CardDescription>Review your setup before creating your Vigilia workspace.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="grid grid-cols-2 gap-4 text-sm">
           <div><span className="text-muted-foreground">Organization</span><div className="font-medium">{state.orgName || 'Bridge Community'}</div></div>
-          <div><span className="text-muted-foreground">URL</span><div className="font-medium">thecros.app/{state.orgSlug || 'bridge-community'}</div></div>
+          <div><span className="text-muted-foreground">URL</span><div className="font-medium">vigilia.care/{state.orgSlug || 'bridge-community'}</div></div>
           <div><span className="text-muted-foreground">Archetype</span><div className="font-medium">{archetypeName}</div></div>
-          <div><span className="text-muted-foreground">Plan</span><div className="font-medium">CROS Core</div></div>
+          <div><span className="text-muted-foreground">Plan</span><div className="font-medium">Vigilia Core</div></div>
           <div><span className="text-muted-foreground">Home Metro</span><div className="font-medium">{metroName}</div></div>
           <div><span className="text-muted-foreground">Civitas™</span><div className="font-medium">{state.multiCity ? 'Enabled (trial)' : 'Not enabled'}</div></div>
           <div><span className="text-muted-foreground">Privacy Mode</span><div className="font-medium">{state.hipaaSensitive ? 'Privacy-sensitive' : 'Standard'}</div></div>
@@ -512,7 +512,7 @@ function DemoGettingStarted() {
     <Card>
       <CardHeader>
         <CardTitle style={{ fontFamily: "'Playfair Display', serif" }}>Getting Started</CardTitle>
-        <CardDescription>Your personalized checklist for getting the most from CROS.</CardDescription>
+        <CardDescription>Your personalized checklist for getting the most from Vigilia.</CardDescription>
         <div className="mt-3">
           <div className="flex items-center justify-between text-xs text-muted-foreground mb-1">
             <span>{doneCount} of {steps.length} complete</span>
@@ -566,7 +566,7 @@ export default function OnboardingFlowGuide() {
               Onboarding Flow Guide
             </h1>
             <p className="text-sm text-muted-foreground mt-1">
-              Interactive walkthrough of the CROS tenant onboarding journey
+              Interactive walkthrough of the Vigilia tenant onboarding journey
             </p>
           </div>
           <Button onClick={exportPDF} variant="outline" className="gap-2 shrink-0">
@@ -625,7 +625,7 @@ export default function OnboardingFlowGuide() {
         {/* Footer */}
         <div className="mt-12 pt-6 border-t border-border/50 text-center">
           <p className="text-xs text-muted-foreground">
-            CROS™ Onboarding Flow — 12 steps from signup to workspace readiness
+            Vigilia™ Onboarding Flow — 12 steps from signup to workspace readiness
           </p>
           <p className="text-xs text-muted-foreground/60 mt-1">
             This is a non-functional demo. Selections are local only and do not create real data.

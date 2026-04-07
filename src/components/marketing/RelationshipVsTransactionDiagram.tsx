@@ -1,9 +1,9 @@
 /**
  * RelationshipVsTransactionDiagram — Two-philosophy comparison.
  *
- * WHAT: Side-by-side radial diagrams showing CRM (money-centered) vs CROS (relationship-centered).
+ * WHAT: Side-by-side radial diagrams showing CRM (money-centered) vs Vigilia (relationship-centered).
  * WHERE: Features page, above the Financial Moments section.
- * WHY: Communicates the core CROS philosophy in under five seconds — money is not the center.
+ * WHY: Communicates the core Vigilia philosophy in under five seconds — money is not the center.
  */
 
 const traditionalNodes = ['Donor', 'Campaign', 'Gift Amount', 'Donor Tier', 'Fundraising Goals'];
@@ -116,7 +116,7 @@ export default function RelationshipVsTransactionDiagram() {
           >
             Most software organizes people around money.
             <br />
-            CROS organizes people around relationships.
+            Vigilia organizes people around relationships.
           </p>
         </div>
 
@@ -136,17 +136,17 @@ export default function RelationshipVsTransactionDiagram() {
             </p>
           </div>
 
-          {/* CROS */}
+          {/* Vigilia */}
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-wider text-[hsl(var(--marketing-blue))] mb-6">
-              CROS™
+              Vigilia™
             </p>
             <RadialDiagram centerLabel="Relationship" nodes={crosNodes} accent />
             <p
               className="mt-4 text-sm text-[hsl(var(--marketing-navy)/0.6)] leading-relaxed max-w-[260px] mx-auto italic"
               style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
             >
-              In CROS™, generosity is simply one moment in the life of a relationship.
+              In Vigilia™, generosity is simply one moment in the life of a relationship.
             </p>
           </div>
         </div>

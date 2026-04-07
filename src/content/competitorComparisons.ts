@@ -1,7 +1,7 @@
 /**
  * Competitor Comparisons — Content for /compare/:slug SEO landing pages.
  *
- * WHAT: Structured content for CROS vs specific competitor comparison pages.
+ * WHAT: Structured content for Vigilia vs specific competitor comparison pages.
  * WHERE: Powers CompareCompetitorPage at /compare/:slug.
  * WHY: SEO authority through competitor-specific comparison content with calm, non-attacking tone.
  */
@@ -10,7 +10,7 @@ export interface CompetitorSection {
   heading: string;
   body?: string;
   bullets?: string[];
-  /** Two-column layout: left = competitor, right = CROS */
+  /** Two-column layout: left = competitor, right = Vigilia */
   columns?: { competitor: string[]; cros: string[] };
   closingLine?: string;
 }
@@ -34,14 +34,14 @@ export interface CompetitorComparison {
 }
 
 export const competitorComparisons: CompetitorComparison[] = [
-  // ─── PAGE 1: CROS vs Bloomerang ───
+  // ─── PAGE 1: Vigilia vs Bloomerang ───
   {
     slug: 'cros-vs-bloomerang',
-    seoTitle: 'CROS vs Bloomerang: Donor CRM or Relationship Operating System?',
+    seoTitle: 'Vigilia vs Bloomerang: Donor CRM or Relationship Operating System?',
     metaDescription:
-      'Comparing CROS™ and Bloomerang? Discover whether your nonprofit needs donor infrastructure or a relational operating system built for community work.',
+      'Comparing Vigilia™ and Bloomerang? Discover whether your nonprofit needs donor infrastructure or a relational operating system built for community work.',
     keywords: [
-      'CROS vs Bloomerang',
+      'Vigilia vs Bloomerang',
       'Bloomerang alternative',
       'nonprofit CRM comparison',
       'donor CRM vs relationship OS',
@@ -50,7 +50,7 @@ export const competitorComparisons: CompetitorComparison[] = [
     heroHeadline: 'Donor CRM or Relationship Operating System?',
     heroSubheadline: [
       'Bloomerang optimizes fundraising.',
-      'CROS™ preserves relational continuity.',
+      'Vigilia™ preserves relational continuity.',
     ],
     heroCta: 'See Which Fits Your Mission →',
     sections: [
@@ -70,8 +70,8 @@ export const competitorComparisons: CompetitorComparison[] = [
           'If your organization\'s operational center is donor revenue, Bloomerang is purpose-built for that.',
       },
       {
-        heading: 'What CROS™ Was Built For',
-        body: 'CROS™ is a Communal Relationship Operating System built for organizations whose work is relational before it is transactional. It centers:',
+        heading: 'What Vigilia™ Was Built For',
+        body: 'Vigilia™ is a A Liturgy of Attention built for organizations whose work is relational before it is transactional. It centers:',
         bullets: [
           'Journey Chapters',
           'Reflections',
@@ -82,7 +82,7 @@ export const competitorComparisons: CompetitorComparison[] = [
           'NRI™ (Narrative Relational Intelligence)',
         ],
         closingLine:
-          'If your work depends on presence, accompaniment, and continuity of care, CROS was designed for that reality.',
+          'If your work depends on presence, accompaniment, and continuity of care, Vigilia was designed for that reality.',
       },
       {
         heading: 'Architectural Difference',
@@ -103,8 +103,8 @@ export const competitorComparisons: CompetitorComparison[] = [
         ],
       },
       {
-        heading: 'Where CROS Clearly Wins',
-        body: 'Choose CROS if:',
+        heading: 'Where Vigilia Clearly Wins',
+        body: 'Choose Vigilia if:',
         bullets: [
           'You accompany people long-term',
           'Staff turnover erodes context',
@@ -116,8 +116,8 @@ export const competitorComparisons: CompetitorComparison[] = [
       },
       {
         heading: 'Can You Use Both?',
-        body: 'Yes. Many organizations use Bloomerang for fundraising infrastructure and CROS for relational memory and field work.',
-        closingLine: 'CROS Bridge™ allows layering or gradual migration.',
+        body: 'Yes. Many organizations use Bloomerang for fundraising infrastructure and Vigilia for relational memory and field work.',
+        closingLine: 'Vigilia Bridge™ allows layering or gradual migration.',
       },
     ],
     finalCta: {
@@ -127,20 +127,20 @@ export const competitorComparisons: CompetitorComparison[] = [
     },
   },
 
-  // ─── PAGE 2: CROS vs Salesforce ───
+  // ─── PAGE 2: Vigilia vs Salesforce ───
   {
     slug: 'cros-vs-salesforce',
-    seoTitle: 'CROS vs Salesforce Nonprofit Cloud: Enterprise CRM or Relational OS?',
+    seoTitle: 'Vigilia vs Salesforce Nonprofit Cloud: Enterprise CRM or Relational OS?',
     metaDescription:
-      'Comparing CROS™ and Salesforce Nonprofit Cloud? See whether your nonprofit needs enterprise fundraising infrastructure or a relational operating system.',
+      'Comparing Vigilia™ and Salesforce Nonprofit Cloud? See whether your nonprofit needs enterprise fundraising infrastructure or a relational operating system.',
     keywords: [
-      'CROS vs Salesforce',
+      'Vigilia vs Salesforce',
       'Salesforce Nonprofit alternative',
       'Salesforce nonprofit CRM comparison',
       'relational OS vs enterprise CRM',
     ],
     heroHeadline: 'Enterprise Power Isn\'t the Same as Relational Clarity.',
-    heroSubheadline: ['Salesforce manages scale.', 'CROS™ protects presence.'],
+    heroSubheadline: ['Salesforce manages scale.', 'Vigilia™ protects presence.'],
     heroCta: 'See the Difference →',
     sections: [
       {
@@ -158,8 +158,8 @@ export const competitorComparisons: CompetitorComparison[] = [
           'It is extraordinarily powerful — and extraordinarily configurable. This often requires CRM administrators, consultants, custom object configuration, and ongoing maintenance. For large-scale fundraising organizations, this investment makes sense.',
       },
       {
-        heading: 'What CROS Was Built For',
-        body: 'CROS was built from lived ministry and field work outward. It assumes relationships are longitudinal, context matters, volunteers are central, staff turnover is real, and story must be preserved. It centers:',
+        heading: 'What Vigilia Was Built For',
+        body: 'Vigilia was built from lived ministry and field work outward. It assumes relationships are longitudinal, context matters, volunteers are central, staff turnover is real, and story must be preserved. It centers:',
         bullets: [
           'Journey Chapters',
           'Reflections',
@@ -176,7 +176,7 @@ export const competitorComparisons: CompetitorComparison[] = [
           competitor: ['Accounts', 'Opportunities', 'Campaigns', 'Custom Objects'],
           cros: ['People', 'Partners', 'Journey Chapters', 'Presence', 'Community Awareness'],
         },
-        closingLine: 'Salesforce is enterprise infrastructure. CROS is relational infrastructure.',
+        closingLine: 'Salesforce is enterprise infrastructure. Vigilia is relational infrastructure.',
       },
       {
         heading: 'Where Salesforce Wins',
@@ -189,8 +189,8 @@ export const competitorComparisons: CompetitorComparison[] = [
         ],
       },
       {
-        heading: 'Where CROS Wins',
-        body: 'Choose CROS if:',
+        heading: 'Where Vigilia Wins',
+        body: 'Choose Vigilia if:',
         bullets: [
           'Your mission is relational before transactional',
           'Field workers resist enterprise interfaces',
@@ -200,34 +200,34 @@ export const competitorComparisons: CompetitorComparison[] = [
       },
       {
         heading: 'Layer or Replace?',
-        body: 'CROS can replace Salesforce in relational-first organizations, layer above Salesforce for field teams, or bridge during migration.',
-        closingLine: 'CROS Bridge™ supports two-way sync and transition.',
+        body: 'Vigilia can replace Salesforce in relational-first organizations, layer above Salesforce for field teams, or bridge during migration.',
+        closingLine: 'Vigilia Bridge™ supports two-way sync and transition.',
       },
     ],
     finalCta: {
       lines: [
         'If revenue leakage is your risk, Salesforce protects you.',
-        'If relational drift is your risk, CROS protects you.',
+        'If relational drift is your risk, Vigilia protects you.',
       ],
       buttonLabel: 'Book an Architecture Walkthrough →',
       buttonTo: '/contact',
     },
   },
 
-  // ─── PAGE 3: CROS vs HubSpot ───
+  // ─── PAGE 3: Vigilia vs HubSpot ───
   {
     slug: 'cros-vs-hubspot',
-    seoTitle: 'CROS vs HubSpot for Nonprofits: Marketing CRM or Relational OS?',
+    seoTitle: 'Vigilia vs HubSpot for Nonprofits: Marketing CRM or Relational OS?',
     metaDescription:
-      'Comparing CROS™ and HubSpot? Discover whether your nonprofit needs marketing automation or a relational operating system built for mission work.',
+      'Comparing Vigilia™ and HubSpot? Discover whether your nonprofit needs marketing automation or a relational operating system built for mission work.',
     keywords: [
-      'CROS vs HubSpot',
+      'Vigilia vs HubSpot',
       'HubSpot nonprofit alternative',
       'marketing CRM vs relationship OS',
       'HubSpot competitor nonprofit',
     ],
     heroHeadline: 'Marketing Automation Isn\'t Relationship Memory.',
-    heroSubheadline: ['HubSpot accelerates campaigns.', 'CROS™ sustains community.'],
+    heroSubheadline: ['HubSpot accelerates campaigns.', 'Vigilia™ sustains community.'],
     heroCta: 'Compare the Approaches →',
     sections: [
       {
@@ -244,8 +244,8 @@ export const competitorComparisons: CompetitorComparison[] = [
         closingLine: 'HubSpot optimizes growth.',
       },
       {
-        heading: 'What CROS Was Built For',
-        body: 'CROS optimizes continuity. It centers:',
+        heading: 'What Vigilia Was Built For',
+        body: 'Vigilia optimizes continuity. It centers:',
         bullets: [
           'Reflections',
           'Journey Chapters',
@@ -254,7 +254,7 @@ export const competitorComparisons: CompetitorComparison[] = [
           'Community intelligence',
           'Narrative reporting',
         ],
-        closingLine: 'HubSpot asks: How do we convert? CROS asks: How do we accompany?',
+        closingLine: 'HubSpot asks: How do we convert? Vigilia asks: How do we accompany?',
       },
       {
         heading: 'Where HubSpot Wins',
@@ -267,8 +267,8 @@ export const competitorComparisons: CompetitorComparison[] = [
         ],
       },
       {
-        heading: 'Where CROS Wins',
-        body: 'Choose CROS if:',
+        heading: 'Where Vigilia Wins',
+        body: 'Choose Vigilia if:',
         bullets: [
           'Your mission happens offline',
           'Field work drives impact',
@@ -278,13 +278,13 @@ export const competitorComparisons: CompetitorComparison[] = [
       },
       {
         heading: 'Using Both',
-        body: 'Many organizations use HubSpot for marketing and CROS for field and relational memory.',
-        closingLine: 'CROS Bridge™ enables integration.',
+        body: 'Many organizations use HubSpot for marketing and Vigilia for field and relational memory.',
+        closingLine: 'Vigilia Bridge™ enables integration.',
       },
     ],
     finalCta: {
       lines: ['Growth matters.', 'So does memory.'],
-      buttonLabel: 'See How CROS Layers →',
+      buttonLabel: 'See How Vigilia Layers →',
       buttonTo: '/contact',
     },
   },
@@ -292,19 +292,19 @@ export const competitorComparisons: CompetitorComparison[] = [
   // ─── PAGE 4: Mission Layer ───
   {
     slug: 'cros-mission-layer-crm',
-    seoTitle: 'The Relational Layer Above Your Nonprofit CRM | CROS™',
+    seoTitle: 'The Relational Layer Above Your Nonprofit CRM | Vigilia™',
     metaDescription:
-      'Already using Salesforce, Bloomerang, HubSpot, or Planning Center? Add CROS™ as your relational and narrative intelligence layer.',
+      'Already using Salesforce, Bloomerang, HubSpot, or Planning Center? Add Vigilia™ as your relational and narrative intelligence layer.',
     keywords: [
       'CRM relational layer',
       'nonprofit CRM add-on',
       'relational intelligence layer',
-      'CROS mission layer',
+      'Vigilia mission layer',
       'CRM narrative layer',
     ],
     heroHeadline: 'Your CRM Tracks Donations.\nWho Tracks the Story?',
-    heroSubheadline: ['CROS™ is the relational intelligence layer above your existing CRM.'],
-    heroCta: 'See What CROS Adds →',
+    heroSubheadline: ['Vigilia™ is the relational intelligence layer above your existing CRM.'],
+    heroCta: 'See What Vigilia Adds →',
     worksWith: [
       'Salesforce',
       'Bloomerang',
@@ -326,8 +326,8 @@ export const competitorComparisons: CompetitorComparison[] = [
         ],
       },
       {
-        heading: 'What CROS Adds',
-        body: 'CROS adds the relational layer your CRM was never designed to hold:',
+        heading: 'What Vigilia Adds',
+        body: 'Vigilia adds the relational layer your CRM was never designed to hold:',
         bullets: [
           'Journey Chapters',
           'Reflections',
@@ -340,7 +340,7 @@ export const competitorComparisons: CompetitorComparison[] = [
       },
       {
         heading: 'When to Layer',
-        body: 'Layer CROS if:',
+        body: 'Layer Vigilia if:',
         bullets: [
           'Your donor CRM is stable',
           'Your field team lacks memory tools',
@@ -349,7 +349,7 @@ export const competitorComparisons: CompetitorComparison[] = [
       },
       {
         heading: 'When to Consolidate',
-        body: 'Consolidate into CROS if:',
+        body: 'Consolidate into Vigilia if:',
         bullets: [
           'Fundraising is light',
           'You want simpler architecture',

@@ -3,7 +3,7 @@
  *
  * WHAT: Provides demo state (active, role, tenant) and write-interception utilities.
  * WHERE: Wraps the entire app when demo mode is active.
- * WHY: Allows prospects to explore CROS without creating auth sessions or writing data.
+ * WHY: Allows prospects to explore Vigilia without creating auth sessions or writing data.
  */
 
 import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from 'react';

@@ -21,8 +21,8 @@ export default function Security() {
   return (
     <div className="bg-white">
       <SeoHead
-        title="Security — CROS™"
-        description="Learn how CROS protects your community's trust with data boundaries, role-based access, secure nonprofit integrations, and human oversight."
+        title="Security — Vigilia™"
+        description="Learn how Vigilia protects your community's trust with data boundaries, role-based access, secure nonprofit integrations, and human oversight."
         canonical="/security"
       />
       <section className="relative overflow-hidden">
@@ -33,7 +33,7 @@ export default function Security() {
             Security, the human way
           </h1>
           <p className="text-lg text-[hsl(var(--marketing-navy)/0.6)] max-w-xl mx-auto leading-relaxed">
-            We built CROS™ so your community's trust is never at risk. Here's how we protect what matters.
+            We built Vigilia™ so your community's trust is never at risk. Here's how we protect what matters.
           </p>
         </div>
       </section>

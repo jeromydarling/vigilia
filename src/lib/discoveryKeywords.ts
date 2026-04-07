@@ -1,5 +1,5 @@
 /**
- * discoveryKeywords — Keyword stack builder for CROS discovery personalization.
+ * discoveryKeywords — Keyword stack builder for Vigilia discovery personalization.
  *
  * WHAT: Builds a 4-layer keyword stack for Perplexity search augmentation.
  * WHERE: Used by perplexity-search edge function and DiscoveryKeywordPanel.

@@ -3,7 +3,7 @@
  *
  * WHAT: Validates an invite token and allows the user to create an account.
  * WHERE: /join?token=xxx (public route, no auth required).
- * WHY: CROS is invite-only — only stewards can grant access to their organization.
+ * WHY: Vigilia is invite-only — only stewards can grant access to their organization.
  */
 import { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate, Link } from 'react-router-dom';

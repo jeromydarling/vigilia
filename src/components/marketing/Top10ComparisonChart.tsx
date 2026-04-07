@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 /* ── Platform column definitions ── */
 const platforms = [
-  'CROS™',
+  'Vigilia™',
   'HubSpot',
   'Salesforce',
   'Bloomerang',
@@ -37,24 +37,24 @@ const d: Val = 'dot';
 /* ── CONVERGE row keys (baseline CRM) ── */
 const convergeRowKeys = ['orgsAccounts', 'peopleContacts', 'activitiesNotes', 'tasks', 'emailLogging', 'importExport'] as const;
 const convergeRowOverrides: Record<string, Partial<Record<string, Val>>> = {
-  orgsAccounts: { HubSpot: y, Salesforce: y, Bloomerang: y, "Blackbaud (Raiser's Edge)": y, 'Neon CRM': y, DonorPerfect: y, Kindful: y, NationBuilder: y, 'Zoho CRM': y, Pipedrive: y, 'CROS™': y },
-  peopleContacts: { HubSpot: y, Salesforce: y, Bloomerang: y, "Blackbaud (Raiser's Edge)": y, 'Neon CRM': y, DonorPerfect: y, Kindful: y, NationBuilder: y, 'Zoho CRM': y, Pipedrive: y, 'CROS™': y },
-  activitiesNotes: { HubSpot: y, Salesforce: y, Bloomerang: y, "Blackbaud (Raiser's Edge)": y, 'Neon CRM': y, DonorPerfect: y, Kindful: y, NationBuilder: y, 'Zoho CRM': y, Pipedrive: y, 'CROS™': y },
-  tasks: { HubSpot: y, Salesforce: y, Bloomerang: d, "Blackbaud (Raiser's Edge)": y, 'Neon CRM': d, DonorPerfect: d, Kindful: d, NationBuilder: d, 'Zoho CRM': y, Pipedrive: y, 'CROS™': y },
-  emailLogging: { HubSpot: y, Salesforce: y, Bloomerang: d, "Blackbaud (Raiser's Edge)": d, 'Neon CRM': d, DonorPerfect: d, Kindful: d, NationBuilder: d, 'Zoho CRM': d, Pipedrive: d, 'CROS™': y },
-  importExport: { HubSpot: y, Salesforce: y, Bloomerang: y, "Blackbaud (Raiser's Edge)": y, 'Neon CRM': y, DonorPerfect: y, Kindful: d, NationBuilder: d, 'Zoho CRM': y, Pipedrive: y, 'CROS™': y },
+  orgsAccounts: { HubSpot: y, Salesforce: y, Bloomerang: y, "Blackbaud (Raiser's Edge)": y, 'Neon CRM': y, DonorPerfect: y, Kindful: y, NationBuilder: y, 'Zoho CRM': y, Pipedrive: y, 'Vigilia™': y },
+  peopleContacts: { HubSpot: y, Salesforce: y, Bloomerang: y, "Blackbaud (Raiser's Edge)": y, 'Neon CRM': y, DonorPerfect: y, Kindful: y, NationBuilder: y, 'Zoho CRM': y, Pipedrive: y, 'Vigilia™': y },
+  activitiesNotes: { HubSpot: y, Salesforce: y, Bloomerang: y, "Blackbaud (Raiser's Edge)": y, 'Neon CRM': y, DonorPerfect: y, Kindful: y, NationBuilder: y, 'Zoho CRM': y, Pipedrive: y, 'Vigilia™': y },
+  tasks: { HubSpot: y, Salesforce: y, Bloomerang: d, "Blackbaud (Raiser's Edge)": y, 'Neon CRM': d, DonorPerfect: d, Kindful: d, NationBuilder: d, 'Zoho CRM': y, Pipedrive: y, 'Vigilia™': y },
+  emailLogging: { HubSpot: y, Salesforce: y, Bloomerang: d, "Blackbaud (Raiser's Edge)": d, 'Neon CRM': d, DonorPerfect: d, Kindful: d, NationBuilder: d, 'Zoho CRM': d, Pipedrive: d, 'Vigilia™': y },
+  importExport: { HubSpot: y, Salesforce: y, Bloomerang: y, "Blackbaud (Raiser's Edge)": y, 'Neon CRM': y, DonorPerfect: y, Kindful: d, NationBuilder: d, 'Zoho CRM': y, Pipedrive: y, 'Vigilia™': y },
 };
 
 /* ── DIVERGE row keys (human + narrative) ── */
 const divergeRowKeys = ['relationshipMemory', 'impulsus', 'signum', 'nriSignals', 'testimonium', 'migrationHarness', 'communio'] as const;
 const divergeRowOverrides: Record<string, Partial<Record<string, Val>>> = {
-  relationshipMemory: { 'CROS™': y },
-  impulsus: { 'CROS™': y },
-  signum: { 'CROS™': y },
-  nriSignals: { 'CROS™': y },
-  testimonium: { 'CROS™': y },
-  migrationHarness: { 'CROS™': y },
-  communio: { 'CROS™': y },
+  relationshipMemory: { 'Vigilia™': y },
+  impulsus: { 'Vigilia™': y },
+  signum: { 'Vigilia™': y },
+  nriSignals: { 'Vigilia™': y },
+  testimonium: { 'Vigilia™': y },
+  migrationHarness: { 'Vigilia™': y },
+  communio: { 'Vigilia™': y },
 };
 
 function CellContent({ val }: { val: Val }) {
@@ -114,7 +114,7 @@ export default function Top10ComparisonChart() {
                 <th
                   key={p}
                   className={`px-3 py-3 text-center font-semibold uppercase tracking-wider min-w-[80px] ${
-                    p === 'CROS™'
+                    p === 'Vigilia™'
                       ? 'bg-[hsl(var(--marketing-blue)/0.06)] text-[hsl(var(--marketing-blue))]'
                       : 'text-[hsl(var(--marketing-navy)/0.45)]'
                   }`}
@@ -137,7 +137,7 @@ export default function Top10ComparisonChart() {
                 {platforms.map((p) => (
                   <td
                     key={p}
-                    className={`px-3 py-3 text-center ${p === 'CROS™' ? 'bg-[hsl(var(--marketing-blue)/0.04)]' : ''}`}
+                    className={`px-3 py-3 text-center ${p === 'Vigilia™' ? 'bg-[hsl(var(--marketing-blue)/0.04)]' : ''}`}
                   >
                     <CellContent val={r.values[p]} />
                   </td>
@@ -158,7 +158,7 @@ export default function Top10ComparisonChart() {
                 {platforms.map((p) => (
                   <td
                     key={p}
-                    className={`px-3 py-3 text-center ${p === 'CROS™' ? 'bg-[hsl(var(--marketing-blue)/0.04)]' : ''}`}
+                    className={`px-3 py-3 text-center ${p === 'Vigilia™' ? 'bg-[hsl(var(--marketing-blue)/0.04)]' : ''}`}
                   >
                     <CellContent val={r.values[p]} />
                   </td>

@@ -181,7 +181,7 @@ export const MISSION_ATLAS: AtlasEntry[] = [
     signals: ['presence', 'reconnection', 'care_momentum'],
     roles: ['shepherd', 'companion', 'visitor'],
     narrative:
-      'Urban ministry outreach operates in density — many needs, many neighbors, many opportunities for presence. Teams may staff food pantries, visit hospitals, lead prayer groups, and coordinate with social services in the same week. CROS helps these teams hold the relational thread across encounters, so that the family seen at the food pantry on Tuesday is remembered when they appear at the prayer group on Thursday.',
+      'Urban ministry outreach operates in density — many needs, many neighbors, many opportunities for presence. Teams may staff food pantries, visit hospitals, lead prayer groups, and coordinate with social services in the same week. Vigilia helps these teams hold the relational thread across encounters, so that the family seen at the food pantry on Tuesday is remembered when they appear at the prayer group on Thursday.',
     weekLink: '/week/ministry-visitor',
   },
   {
@@ -202,7 +202,7 @@ export const MISSION_ATLAS: AtlasEntry[] = [
     signals: ['care', 'presence'],
     roles: ['visitor'],
     narrative:
-      'Solo companions in urban contexts carry an invisible load — mentoring, sponsoring, visiting, and holding the emotional weight of accompaniment without institutional support. CROS provides a private, sacred space for documenting the journey: voice notes after meaningful conversations, season summaries that honor the growth, and gentle signals that remind the companion they are not alone. No organization sees this data. It belongs entirely to the person walking alongside another.',
+      'Solo companions in urban contexts carry an invisible load — mentoring, sponsoring, visiting, and holding the emotional weight of accompaniment without institutional support. Vigilia provides a private, sacred space for documenting the journey: voice notes after meaningful conversations, season summaries that honor the growth, and gentle signals that remind the companion they are not alone. No organization sees this data. It belongs entirely to the person walking alongside another.',
   },
   {
     id: 'companion-org-urban',
@@ -212,7 +212,7 @@ export const MISSION_ATLAS: AtlasEntry[] = [
     signals: ['care', 'engagement', 'momentum'],
     roles: ['shepherd', 'companion', 'steward'],
     narrative:
-      'Companion organizations coordinate multiple team members serving vulnerable populations — mentors, sponsors, home visitors, coaches, and companions for aging adults. The steward manages scheduling and coordination. The companion maintains the daily relationship thread. The shepherd sees the bigger picture: which people are thriving, which team members need support, which relationships need attention. CROS protects companion journal privacy while giving leadership the aggregate signals they need.',
+      'Companion organizations coordinate multiple team members serving vulnerable populations — mentors, sponsors, home visitors, coaches, and companions for aging adults. The steward manages scheduling and coordination. The companion maintains the daily relationship thread. The shepherd sees the bigger picture: which people are thriving, which team members need support, which relationships need attention. Vigilia protects companion journal privacy while giving leadership the aggregate signals they need.',
   },
   {
     id: 'companion-org-suburban',
@@ -222,7 +222,7 @@ export const MISSION_ATLAS: AtlasEntry[] = [
     signals: ['visit_activity', 'care', 'engagement'],
     roles: ['companion', 'visitor', 'steward'],
     narrative:
-      'Suburban companion organizations often serve people in their homes across spread-out neighborhoods. Travel time between visits shapes the daily rhythm. Companions coordinate with family members — adult children, spouses, neighbors — to ensure continuity. CROS tracks the relationship web around each person without exposing private logs to anyone outside the direct accompaniment team.',
+      'Suburban companion organizations often serve people in their homes across spread-out neighborhoods. Travel time between visits shapes the daily rhythm. Companions coordinate with family members — adult children, spouses, neighbors — to ensure continuity. Vigilia tracks the relationship web around each person without exposing private logs to anyone outside the direct accompaniment team.',
   },
   {
     id: 'workforce-suburban',

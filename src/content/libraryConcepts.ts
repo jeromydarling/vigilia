@@ -1,9 +1,9 @@
 /**
- * Library Concepts — Canonical civic language definitions for CROS™.
+ * Library Concepts — Canonical civic language definitions for Vigilia™.
  *
  * WHAT: Static content for the public narrative library.
  * WHERE: Used by LibraryConceptPage.tsx at /library/:conceptSlug.
- * WHY: Establishes CROS™ as an ontology source for civic relationship language.
+ * WHY: Establishes Vigilia™ as an ontology source for civic relationship language.
  */
 
 export interface LibraryConcept {

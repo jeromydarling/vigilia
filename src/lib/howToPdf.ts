@@ -211,5 +211,5 @@ export function generateHowToPdf(sections: HowToSection[]) {
   }
 
   addPageFooter(doc, pageNum.current);
-  doc.save('CROS-Operator-How-To-Guide.pdf');
+  doc.save('Vigilia-Operator-How-To-Guide.pdf');
 }

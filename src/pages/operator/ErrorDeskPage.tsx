@@ -118,7 +118,7 @@ export default function ErrorDeskPage() {
           <h1 className="text-xl font-semibold text-foreground flex items-center gap-1">
             Error Desk
             <SectionTooltip
-              what="Centralized error tracking for the CROS platform"
+              what="Centralized error tracking for the Vigilia platform"
               where="operator_app_errors table"
               why="One place to triage, understand, and fix platform issues"
             />

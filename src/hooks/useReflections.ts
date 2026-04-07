@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
-import { crosToast } from '@/lib/crosToast';
+import { vigiliaToast } from '@/lib/vigiliaToast';
 // VIGILIA: removed — import { useImpulsusCapture } from './useImpulsusCapture';
 
 export interface Reflection {
@@ -87,7 +87,7 @@ export function useAddReflection() {
     onSuccess: (data, vars) => {
       queryClient.invalidateQueries({ queryKey: ['reflections', vars.opportunityId] });
       queryClient.invalidateQueries({ queryKey: ['story-events', vars.opportunityId] });
-      crosToast.held();
+      vigiliaToast.held();
 
       captureImpulsus({
         kind: 'reflection',
@@ -97,7 +97,7 @@ export function useAddReflection() {
         context: { reflectionSnippet: vars.body?.slice(0, 80) },
       });
     },
-    onError: (error) => crosToast.gentle(`Something didn't go through: ${error.message}`),
+    onError: (error) => vigiliaToast.gentle(`Something didn't go through: ${error.message}`),
   });
 }
 
@@ -121,9 +121,9 @@ export function useUpdateReflection() {
     onSuccess: (_, vars) => {
       queryClient.invalidateQueries({ queryKey: ['reflections', vars.opportunityId] });
       queryClient.invalidateQueries({ queryKey: ['story-events', vars.opportunityId] });
-      crosToast.updated();
+      vigiliaToast.updated();
     },
-    onError: (error) => crosToast.gentle(`Something didn't go through: ${error.message}`),
+    onError: (error) => vigiliaToast.gentle(`Something didn't go through: ${error.message}`),
   });
 }
 
@@ -140,8 +140,8 @@ export function useDeleteReflection() {
     onSuccess: (_, vars) => {
       queryClient.invalidateQueries({ queryKey: ['reflections', vars.opportunityId] });
       queryClient.invalidateQueries({ queryKey: ['story-events', vars.opportunityId] });
-      crosToast.removed();
+      vigiliaToast.removed();
     },
-    onError: (error) => crosToast.gentle(`Something didn't go through: ${error.message}`),
+    onError: (error) => vigiliaToast.gentle(`Something didn't go through: ${error.message}`),
   });
 }

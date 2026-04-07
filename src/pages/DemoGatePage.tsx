@@ -3,7 +3,7 @@
  *
  * WHAT: Name/email/location form that grants demo access and captures leads for Gardener pipeline.
  * WHERE: /demo (public, no auth required).
- * WHY: Allows prospects to experience CROS while creating trackable leads.
+ * WHY: Allows prospects to experience Vigilia while creating trackable leads.
  */
 
 import { useState } from 'react';

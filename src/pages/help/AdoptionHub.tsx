@@ -55,7 +55,7 @@ function AdoptionIntroCard({ tenantSlug }: { tenantSlug: string }) {
   return (
     <NarrativeCard icon={Heart} title="Adoption is not about learning tools — it is about building rhythm.">
       <p>
-        CROS works when people add small moments daily. A reflection here. A voice note there.
+        Vigilia works when people add small moments daily. A reflection here. A voice note there.
         Over time, those quiet acts become a living memory — one that speaks for the organization
         when reports are due, when leadership asks what changed, when a new person joins the mission.
       </p>
@@ -156,7 +156,7 @@ function EmailIntakeAdoptionCard({ tenantSlug }: { tenantSlug: string }) {
       <p>
         Not everyone will open an app after a visit — and they shouldn't have to.
         Simple Intake lets anyone on your team send notes by email.
-        CROS logs them automatically as part of the relationship story.
+        Vigilia logs them automatically as part of the relationship story.
       </p>
       <p className="font-medium text-foreground text-sm">Three simple steps for Stewards:</p>
       <ul className="list-none space-y-2 pl-1">

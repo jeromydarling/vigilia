@@ -149,7 +149,7 @@ export function activateDemoProxy() {
   };
 
   isPatched = true;
-  console.info('[CROS Demo] Write interception activated');
+  console.info('[Vigilia Demo] Write interception activated');
 }
 
 /**
@@ -169,7 +169,7 @@ export function deactivateDemoProxy() {
   }
 
   isPatched = false;
-  console.info('[CROS Demo] Write interception deactivated');
+  console.info('[Vigilia Demo] Write interception deactivated');
 }
 
 /** Check if the proxy is currently active */

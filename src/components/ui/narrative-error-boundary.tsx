@@ -27,7 +27,7 @@ export class NarrativeErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error) {
     console.warn(
-      `[CROS] ${this.props.layerName ?? 'Overlay'} layer encountered an error and was silenced:`,
+      `[Vigilia] ${this.props.layerName ?? 'Overlay'} layer encountered an error and was silenced:`,
       error.message,
     );
   }

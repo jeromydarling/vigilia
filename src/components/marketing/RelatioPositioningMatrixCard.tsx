@@ -1,9 +1,9 @@
 /**
  * RelatioPositioningMatrixCard — Lightweight positioning matrix.
  *
- * WHAT: Three-column quiet comparison: Traditional CRM vs CROS vs Bridge Mode.
+ * WHAT: Three-column quiet comparison: Traditional CRM vs Vigilia vs Bridge Mode.
  * WHERE: Homepage, below the Imagine / See People narrative cards.
- * WHY: Clarifies CROS positioning without aggressive sales language.
+ * WHY: Clarifies Vigilia positioning without aggressive sales language.
  */
 
 import { Link } from 'react-router-dom';
@@ -22,7 +22,7 @@ export default function RelatioPositioningMatrixCard() {
   const { t } = useTranslation('marketing');
   return (
     <section
-      aria-label="How CROS relates to your existing tools"
+      aria-label="How Vigilia relates to your existing tools"
       className="max-w-[960px] mx-auto px-4 sm:px-6 py-10 sm:py-14"
     >
       <div className="rounded-2xl border border-[hsl(var(--marketing-border))] bg-[hsl(var(--marketing-surface))] p-6 sm:p-10">

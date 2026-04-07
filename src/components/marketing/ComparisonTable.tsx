@@ -112,7 +112,7 @@ export default function ComparisonTable() {
               </span>
             </div>
 
-            {/* CROS™ */}
+            {/* Vigilia™ */}
             <div className="p-4 sm:p-5 border-l border-[hsl(var(--marketing-border)/0.3)] bg-[hsl(var(--marketing-blue)/0.04)] flex items-center gap-2 justify-center">
               <Check className="h-3.5 w-3.5 text-[hsl(142,71%,45%)] shrink-0" />
               <span className="text-xs text-[hsl(var(--marketing-navy)/0.75)] font-medium text-center leading-relaxed">

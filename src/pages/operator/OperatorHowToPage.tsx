@@ -62,7 +62,7 @@ export default function OperatorHowToPage() {
         <CardHeader className="pb-3">
           <CardTitle className="text-base">What is the Gardener Console?</CardTitle>
           <CardDescription>
-            The Gardener Console is the ecosystem stewardship layer for CROS, organized into five zones:
+            The Gardener Console is the ecosystem stewardship layer for Vigilia, organized into five zones:
           </CardDescription>
         </CardHeader>
         <CardContent className="text-sm text-muted-foreground space-y-3">

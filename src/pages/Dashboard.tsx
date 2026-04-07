@@ -1,7 +1,7 @@
 /**
  * Mission Rhythm — A calm view of how care, relationships, and work are unfolding.
  *
- * WHAT: CROS-native analytics dashboard organized into 4 narrative sections.
+ * WHAT: Vigilia-native analytics dashboard organized into 4 narrative sections.
  * WHERE: /:tenantSlug/analytics
  * WHY: Replaces Profunda-style ops dashboard with human-centered mission awareness.
  */

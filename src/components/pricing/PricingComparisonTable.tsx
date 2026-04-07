@@ -17,7 +17,7 @@ export default function PricingComparisonTable() {
         className="text-2xl sm:text-3xl font-bold text-[hsl(var(--marketing-navy))] text-center mb-10"
         style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
       >
-        Old Stack vs CROS™
+        Old Stack vs Vigilia™
       </h2>
 
       <div className="overflow-x-auto max-w-4xl mx-auto">
@@ -38,7 +38,7 @@ export default function PricingComparisonTable() {
             </div>
             <div className="p-4 sm:p-5 text-center border-l border-[hsl(var(--marketing-border)/0.5)]">
               <span className="text-xs font-semibold uppercase tracking-wider text-[hsl(var(--marketing-blue))]">
-                CROS™
+                Vigilia™
               </span>
             </div>
           </div>

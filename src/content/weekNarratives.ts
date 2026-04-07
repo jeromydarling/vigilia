@@ -3,7 +3,7 @@
  *
  * WHAT: Static narrative content for /week/:slug pages.
  * WHERE: Used by WeekNarrativePage.tsx.
- * WHY: Demonstrates daily life inside CROS™ through human-centered storytelling.
+ * WHY: Demonstrates daily life inside Vigilia™ through human-centered storytelling.
  */
 
 export interface WeekDay {
@@ -28,8 +28,8 @@ export const weekNarratives: WeekNarrative[] = [
     slug: 'catholic-visitor',
     role: 'Visitor',
     title: 'A Week as a Visitor',
-    seoTitle: 'What a Week Looks Like in CROS™ | Visitor',
-    seoDescription: 'A realistic look at how parish visitors use CROS™ each week — no dashboards, just presence, voice notes, and the quiet work of remembering people.',
+    seoTitle: 'What a Week Looks Like in Vigilia™ | Visitor',
+    seoDescription: 'A realistic look at how parish visitors use Vigilia™ each week — no dashboards, just presence, voice notes, and the quiet work of remembering people.',
     intro: 'Some people keep spreadsheets. Some keep paper lists. Some keep everything in memory. But visiting isn\u2019t about data \u2014 it\u2019s about presence.',
     days: [
       {
@@ -40,7 +40,7 @@ export const weekNarratives: WeekNarrative[] = [
       {
         day: 'Tuesday',
         title: 'Walking the Route',
-        body: 'Two homes today. Neither expects a report. Both expect a conversation. The Visitor carries nothing but a phone and a willingness to listen. CROS\u2122 stays in the background, holding what was said before so the Visitor can be fully present now.',
+        body: 'Two homes today. Neither expects a report. Both expect a conversation. The Visitor carries nothing but a phone and a willingness to listen. Vigilia\u2122 stays in the background, holding what was said before so the Visitor can be fully present now.',
       },
       {
         day: 'Wednesday',
@@ -64,8 +64,8 @@ export const weekNarratives: WeekNarrative[] = [
     slug: 'shepherd',
     role: 'Shepherd',
     title: 'A Week as a Shepherd',
-    seoTitle: 'What a Week Looks Like in CROS™ | Shepherd',
-    seoDescription: 'A realistic look at how mission leaders use CROS™ each week — narrative intelligence, community pulse, and the art of holding stories.',
+    seoTitle: 'What a Week Looks Like in Vigilia™ | Shepherd',
+    seoDescription: 'A realistic look at how mission leaders use Vigilia™ each week — narrative intelligence, community pulse, and the art of holding stories.',
     intro: 'The Shepherd doesn\u2019t manage tasks. They hold the longer story \u2014 the one that connects this week\u2019s visits to last year\u2019s conversations, and both of those to the mission\u2019s deeper purpose.',
     days: [
       {
@@ -100,8 +100,8 @@ export const weekNarratives: WeekNarrative[] = [
     slug: 'steward',
     role: 'Steward',
     title: 'A Week as a Steward',
-    seoTitle: 'What a Week Looks Like in CROS™ | Steward',
-    seoDescription: 'A realistic look at how operational stewards use CROS™ each week — quiet oversight, volunteer onboarding, and ecosystem care.',
+    seoTitle: 'What a Week Looks Like in Vigilia™ | Steward',
+    seoDescription: 'A realistic look at how operational stewards use Vigilia™ each week — quiet oversight, volunteer onboarding, and ecosystem care.',
     intro: 'Stewardship is invisible work. When it\u2019s done well, no one notices \u2014 because everything just works. The Steward makes that possible.',
     days: [
       {
@@ -136,8 +136,8 @@ export const weekNarratives: WeekNarrative[] = [
     slug: 'social-outreach',
     role: 'Outreach Team',
     title: 'A Week in Social Outreach',
-    seoTitle: 'What a Week Looks Like in CROS™ | Social Outreach',
-    seoDescription: 'A realistic look at how nonprofit outreach teams use CROS™ each week — case visits, voice notes, and human-centered intelligence.',
+    seoTitle: 'What a Week Looks Like in Vigilia™ | Social Outreach',
+    seoDescription: 'A realistic look at how nonprofit outreach teams use Vigilia™ each week — case visits, voice notes, and human-centered intelligence.',
     intro: 'The outreach team doesn\u2019t think in terms of "cases." They think in terms of people \u2014 families navigating complex systems, individuals rebuilding after setbacks, neighbors who need someone to show up.',
     days: [
       {
@@ -172,8 +172,8 @@ export const weekNarratives: WeekNarrative[] = [
     slug: 'community-companion',
     role: 'Companion',
     title: 'A Week as a Companion',
-    seoTitle: 'What a Week Looks Like in CROS™ | Companion',
-    seoDescription: 'A realistic look at how frontline companions use CROS™ each week — logging activities, tracking provisions, and walking alongside people.',
+    seoTitle: 'What a Week Looks Like in Vigilia™ | Companion',
+    seoDescription: 'A realistic look at how frontline companions use Vigilia™ each week — logging activities, tracking provisions, and walking alongside people.',
     intro: 'The Companion doesn\u2019t manage systems. They don\u2019t run reports. They walk alongside people \u2014 and that simple act of presence is the most powerful thing any technology can support.',
     days: [
       {

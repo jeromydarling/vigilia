@@ -25,9 +25,9 @@ const careSections: CareSection[] = [
     id: 'getting-started',
     icon: Heart,
     title: 'Getting Started',
-    description: 'Your first steps as a companion in CROS.',
+    description: 'Your first steps as a companion in Vigilia.',
     content: [
-      'CROS is a relationship memory system — not compliance software. It helps you remember the people you accompany through stories, milestones, and gentle reflection.',
+      'Vigilia is a relationship memory system — not compliance software. It helps you remember the people you accompany through stories, milestones, and gentle reflection.',
       'After signing up, add the people you walk with under "People." Each person becomes a living record of your shared journey.',
       'Log your visits and check-ins under "Activities." You can add optional hours, notes, and voice recordings.',
       'Everything you write is private by default. No one sees your notes unless you choose to share.',
@@ -64,7 +64,7 @@ const careSections: CareSection[] = [
     description: 'How your data stays private — and when you choose to share.',
     content: [
       'Solo workspaces are completely private. No organization, employer, or third party can access your records.',
-      'If you also work with an organization on CROS, those are separate workspaces with separate data.',
+      'If you also work with an organization on Vigilia, those are separate workspaces with separate data.',
       'You can export a Season Summary as a PDF to share with anyone you choose — on your terms.',
       'One-way export: you can push selected summaries to an organization workspace. They can never pull from yours.',
     ],
@@ -97,9 +97,9 @@ const careSections: CareSection[] = [
     id: 'agency-companions',
     icon: Shield,
     title: 'Working with an Organization',
-    description: 'How CROS works when your organization uses it too.',
+    description: 'How Vigilia works when your organization uses it too.',
     content: [
-      'If your organization uses CROS, you\'ll be invited as a Companion. Your organization workspace is separate from any personal Solo workspace.',
+      'If your organization uses Vigilia, you\'ll be invited as a Companion. Your organization workspace is separate from any personal Solo workspace.',
       'In the organization workspace, your logs are visible to leadership by default — but you can mark entries as Private.',
       'Private entries: only you can see the content. Leadership sees that you logged an entry and the hours, but never the notes.',
       'Season Summaries: you choose whether to share with the organization or keep private.',
@@ -113,7 +113,7 @@ const careSections: CareSection[] = [
     description: 'The purpose of this space.',
     content: [
       'Many people who walk closely with others have no structured way to remember the arc of growth.',
-      'CROS preserves that memory — for mentors, sponsors, caregivers, spiritual directors, coaches, and anyone who accompanies another person.',
+      'Vigilia preserves that memory — for mentors, sponsors, caregivers, spiritual directors, coaches, and anyone who accompanies another person.',
       'This is not about productivity. It\'s about faithfully remembering the people you serve.',
     ],
   },
@@ -121,7 +121,7 @@ const careSections: CareSection[] = [
     id: 'not-relevant',
     icon: HelpCircle,
     title: 'Sections You Won\'t See',
-    description: 'CROS features that aren\'t part of companion workspaces.',
+    description: 'Vigilia features that aren\'t part of companion workspaces.',
     content: [
       'As a companion, you won\'t see: Metros, Pipeline, Anchors, Grants, Outreach/Campaigns, Intel Feed, Momentum Map, or Relatio integrations.',
       'These modules serve community organizations with different operational needs. They\'re hidden from companion workspaces to keep things calm and focused.',
@@ -142,7 +142,7 @@ export default function CaregiverGuide() {
             <h1 className="text-2xl font-bold text-foreground">Companion Guide</h1>
           </div>
           <p className="text-muted-foreground">
-            Everything you need to know about using CROS™ as a companion — solo or with an organization.
+            Everything you need to know about using Vigilia™ as a companion — solo or with an organization.
           </p>
           <p className="text-sm text-muted-foreground italic">
             For mentors, sponsors, caregivers, and those who walk closely with others.
@@ -153,7 +153,7 @@ export default function CaregiverGuide() {
         <Card className="border-primary/20 bg-primary/5">
           <CardContent className="pt-4">
             <p className="text-sm text-foreground">
-              CROS is not compliance software. It's a relationship memory system — 
+              Vigilia is not compliance software. It's a relationship memory system — 
               designed for people who accompany others, not corporations that manage them. 
               Your notes, reflections, and season summaries belong to you.
             </p>

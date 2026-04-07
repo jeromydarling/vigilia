@@ -24,7 +24,7 @@ export function LegacyPathRedirect() {
     const authPaths = ['/login', '/signup', '/forgot-password', '/reset-password', '/onboarding'];
     
     if (marketingPaths.includes(path) || authPaths.includes(path) || path.startsWith('/insights') || path.startsWith('/stories') || path.startsWith('/roles/') || path.startsWith('/metros/') || path.startsWith('/path/') || path.startsWith('/calling/') || path.startsWith('/library') || path.startsWith('/network/') || path.startsWith('/public/') || path.startsWith('/week/') || path.startsWith('/essays') || path.startsWith('/field-notes-library') || path.startsWith('/reflections') || path.startsWith('/field-journal') || path.startsWith('/lexicon') || path.startsWith('/mission-atlas') || path.startsWith('/compare/') || path.startsWith('/archetypes/') || path.startsWith('/legal/') || path.startsWith('/fundraising') || path.startsWith('/authority') || path.startsWith('/events/') || path === '/sitemap.xml') return;
-    if (path.startsWith('/admin')) return; // Master CROS admin console — no tenant prefix
+    if (path.startsWith('/admin')) return; // Master Vigilia admin console — no tenant prefix
     if (path.startsWith('/operator')) return; // Operator console — no tenant prefix
     if (path.startsWith(`/${tenant.slug}`)) return;
     

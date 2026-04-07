@@ -199,5 +199,5 @@ export function generateHelpPdf(changelog: ChangelogEntry[], sections: AppSectio
   }
 
   addPageFooter(doc, pageNum.current);
-  doc.save('CROS-Help-Documentation.pdf');
+  doc.save('Vigilia-Help-Documentation.pdf');
 }

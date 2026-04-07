@@ -149,7 +149,7 @@ export const MICRO_GUIDANCE_REGISTRY: MicroGuide[] = [
   {
     key: 'steward_invite_users',
     title: 'Invite your team',
-    body: 'CROS works best when your team is here. Each person sees what is right for their role.',
+    body: 'Vigilia works best when your team is here. Each person sees what is right for their role.',
     roleTargets: ['steward'],
     routes: ['/admin', '/dashboard', '/'],
     triggers: ['first_time_page', 'friction_idle'],
@@ -194,7 +194,7 @@ export const MICRO_GUIDANCE_REGISTRY: MicroGuide[] = [
   {
     key: 'universal_idle_encouragement',
     title: 'Take your time',
-    body: 'There is no rush. CROS remembers where you left off. You can come back to this anytime.',
+    body: 'There is no rush. Vigilia remembers where you left off. You can come back to this anytime.',
     roleTargets: ['visitor', 'companion', 'shepherd', 'steward'],
     routes: '*',
     triggers: ['friction_idle'],

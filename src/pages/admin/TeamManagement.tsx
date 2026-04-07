@@ -494,9 +494,9 @@ export default function TeamManagement() {
           <HelpCircle className="h-4 w-4 mt-0.5 shrink-0" />
           <div>
             <p className="font-medium text-foreground mb-1">About Team Management</p>
-            <p><strong>What:</strong> Manage who has access to your CROS workspace and what experience they see.</p>
+            <p><strong>What:</strong> Manage who has access to your Vigilia workspace and what experience they see.</p>
             <p><strong>Where:</strong> This page is available to Stewards from Admin → Team.</p>
-            <p><strong>Why:</strong> CROS is invite-only. Only stewards can add or remove team members, ensuring your community data stays protected.</p>
+            <p><strong>Why:</strong> Vigilia is invite-only. Only stewards can add or remove team members, ensuring your community data stays protected.</p>
           </div>
         </div>
       </div>

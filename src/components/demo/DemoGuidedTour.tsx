@@ -1,7 +1,7 @@
 /**
  * DemoGuidedTour — Guided walkthrough for demo visitors.
  *
- * WHAT: Joyride-powered tour highlighting key CROS features.
+ * WHAT: Joyride-powered tour highlighting key Vigilia features.
  * WHERE: Activates once when demo mode starts on Command Center.
  * WHY: Prevents visitors from getting lost — guides them through the story.
  */
@@ -23,7 +23,7 @@ const TOUR_STEPS: Step[] = [
   },
   {
     target: '[data-tour="stale-next-steps"]',
-    content: 'CROS gently surfaces relationships that may need attention — no pressure, just awareness.',
+    content: 'Vigilia gently surfaces relationships that may need attention — no pressure, just awareness.',
     title: 'Gentle Nudges',
     placement: 'top',
   },

@@ -3,7 +3,7 @@
  *
  * WHAT: Run and view system sweeps with green/red scoreboard.
  * WHERE: /operator/sweeps
- * WHY: Proves the entire CROS pipeline works end-to-end.
+ * WHY: Proves the entire Vigilia pipeline works end-to-end.
  */
 import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';

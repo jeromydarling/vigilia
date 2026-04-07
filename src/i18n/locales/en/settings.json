@@ -1,6 +1,6 @@
 {
   "title": "Settings",
-  "subtitle": "Manage your CROS experience",
+  "subtitle": "Manage your Vigilia experience",
   "tabs": {
     "profile": "Profile",
     "preferences": "Preferences",
@@ -88,7 +88,7 @@
     "dataDelete": "Delete My Account",
     "dataDeleteWarning": "This will permanently delete all your data. This action cannot be undone.",
     "sharingPreferences": "Sharing Preferences",
-    "analyticsOptIn": "Help improve CROS with anonymous usage data",
+    "analyticsOptIn": "Help improve Vigilia with anonymous usage data",
     "companionDataUsage": "NRI Companion uses your data to provide personalized insights. Your data is never shared externally."
   },
   "accessibility": {
@@ -104,7 +104,7 @@
   "billing": {
     "title": "Billing",
     "currentPlan": "Current Plan",
-    "corePlan": "CROS Core — $49/month",
+    "corePlan": "Vigilia Core — $49/month",
     "changePlan": "Change Plan",
     "billingHistory": "Billing History",
     "nextBillingDate": "Next billing date: {{date}}",
@@ -179,7 +179,7 @@
   "addons": {
     "title": "Add-Ons",
     "description": "Add or remove capabilities from your subscription. Changes are prorated.",
-    "tooltipWhat": "Purchasable add-ons that extend your CROS plan.",
+    "tooltipWhat": "Purchasable add-ons that extend your Vigilia plan.",
     "tooltipWhere": "Settings → Subscription.",
     "tooltipWhy": "Add capabilities like Bridge integrations, campaigns, or expanded AI without upgrading your base tier.",
     "active": "Active",
@@ -217,7 +217,7 @@
     "description": "Gentle guidance while you work — optional and private.",
     "pausedByTenant": "Companion guidance has been paused by your steward.",
     "enableLabel": "Enable Companion Mode",
-    "enableDescription": "When enabled, CROS can offer small suggestions when you pause or get stuck. Nothing you write is used here. You can turn it off anytime.",
+    "enableDescription": "When enabled, Vigilia can offer small suggestions when you pause or get stuck. Nothing you write is used here. You can turn it off anytime.",
     "privacyNote": "Companion Mode tracks only whether guidance was shown or dismissed — not what you wrote.",
     "hideSample": "Hide sample",
     "previewSample": "Preview a sample",
@@ -229,7 +229,7 @@
     "tooltipWhat": "Regular email summaries of movement, reflections, and community signals.",
     "tooltipWhere": "Settings → Living Pulse Digest",
     "tooltipWhy": "Gentle updates keep you connected to the story without needing to check the app.",
-    "description": "You decide how often CROS speaks into your day.",
+    "description": "You decide how often Vigilia speaks into your day.",
     "rhythmLabel": "Rhythm",
     "daily": "Daily — a morning whisper",
     "weekly": "Weekly — a gentle rhythm",
@@ -261,7 +261,7 @@
     "tooltipWhat": "Keywords that shape your discovery search results across events, grants, people, and organizations.",
     "tooltipWhere": "These are layered into every Perplexity search your team runs.",
     "tooltipWhy": "So discovery finds what matters to your mission — not generic results.",
-    "description": "Discovery keywords help CROS find events, grants, and partners aligned with your mission. Keywords are layered — your custom terms take priority.",
+    "description": "Discovery keywords help Vigilia find events, grants, and partners aligned with your mission. Keywords are layered — your custom terms take priority.",
     "loadingLayers": "Loading keyword layers…",
     "noKeywordsLayer": "No keywords in this layer.",
     "layers": {
@@ -450,7 +450,7 @@
     "tooltipWhat": "Define structured metrics for your organization's impact.",
     "tooltipWhere": "Settings > Impact Dimensions",
     "tooltipWhy": "These appear on events, activities, and provisions — and feed your reports.",
-    "description": "Measure what matters in your work — without changing how CROS stays simple.",
+    "description": "Measure what matters in your work — without changing how Vigilia stays simple.",
     "manage": "Manage Impact Dimensions",
     "pageTitle": "Impact Dimensions",
     "pageSubtitle": "Measure what matters in your work",
@@ -458,7 +458,7 @@
     "yourDimensionsTooltipWhat": "Structured metrics you define for your organization.",
     "yourDimensionsTooltipWhere": "Settings > Impact Dimensions",
     "yourDimensionsTooltipWhy": "These appear on event, activity, and provision forms and feed your reports.",
-    "pageDescription": "Define how your organization measures impact — without changing how CROS stays simple.",
+    "pageDescription": "Define how your organization measures impact — without changing how Vigilia stays simple.",
     "addDimension": "Add Dimension",
     "noDimensions": "No dimensions yet. Add one to start measuring your impact.",
     "newDimensionTitle": "New Impact Dimension",
@@ -497,8 +497,8 @@
   "missionIdentity": {
     "title": "Mission Identity",
     "descriptionReadOnly": "Your organization's archetype and relational focus",
-    "description": "How CROS understands your organization's work and language",
-    "tooltipWhat": "Your mission archetype shapes journey stages, keyword sets, and narrative tone throughout CROS.",
+    "description": "How Vigilia understands your organization's work and language",
+    "tooltipWhat": "Your mission archetype shapes journey stages, keyword sets, and narrative tone throughout Vigilia.",
     "tooltipWhere": "Settings → Modules",
     "tooltipWhy": "As your organization evolves, the system should evolve with you.",
     "archetypeLabel": "Archetype:",
@@ -523,9 +523,9 @@
   },
   "narrativeCompanion": {
     "title": "Narrative Companion",
-    "description": "CROS listens alongside your existing system — never changes it.",
+    "description": "Vigilia listens alongside your existing system — never changes it.",
     "enableLabel": "Enable Narrative Companion",
-    "enableDesc": "Allow CROS to receive gentle signals from connected systems.",
+    "enableDesc": "Allow Vigilia to receive gentle signals from connected systems.",
     "noSystems": "No systems connected yet. Visit your Activation Guide to get started.",
     "status": {
       "listening": "Listening",
@@ -678,7 +678,7 @@
     "title": "Recovery Breadcrumbs",
     "description": "Help the assistant help you undo mistakes",
     "label": "Help me undo mistakes (private action breadcrumbs)",
-    "hint": "CROS stores a short list of recent actions (like \"deleted a contact\") so the assistant can help you restore work. It does not store message content, notes, names, or private details. Breadcrumbs are kept for 30 days and then permanently removed.",
+    "hint": "Vigilia stores a short list of recent actions (like \"deleted a contact\") so the assistant can help you restore work. It does not store message content, notes, names, or private details. Breadcrumbs are kept for 30 days and then permanently removed.",
     "enabled": "Action breadcrumbs enabled — the assistant can help you undo mistakes.",
     "disabled": "Action breadcrumbs disabled. The assistant will no longer see recent actions.",
     "saveFailed": "Could not save preference. Please try again."
@@ -732,7 +732,7 @@
   "subscription": {
     "title": "Plan & Billing",
     "description": "Your organization's subscription and plan details",
-    "tooltipContent": "View your current CROS plan, upgrade or add tiers, and manage billing through the customer portal.",
+    "tooltipContent": "View your current Vigilia plan, upgrade or add tiers, and manage billing through the customer portal.",
     "statusLabel": "Status",
     "active": "Active",
     "communityGrant": "Community Grant",
@@ -742,8 +742,8 @@
     "currentPeriodEnds": "Current Period Ends",
     "availableUpgrades": "Available Upgrades",
     "manageBilling": "Manage Billing & Payment",
-    "subscribeToCROS": "Subscribe to CROS",
-    "operatorGrantedNote": "Your organization has been granted access by the CROS team. To upgrade or add capabilities, please reach out to your community steward.",
+    "subscribeToVigilia": "Subscribe to Vigilia",
+    "operatorGrantedNote": "Your organization has been granted access by the Vigilia team. To upgrade or add capabilities, please reach out to your community steward.",
     "refreshTitle": "Refresh subscription status",
     "add": "Add"
   },

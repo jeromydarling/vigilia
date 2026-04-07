@@ -3,7 +3,7 @@
  *
  * WHAT: Shows a soft, dismissible banner when a user is approaching usage limits.
  * WHERE: Main app layout, above page content.
- * WHY: Encourages upgrades without creating urgency or pressure — in keeping with CROS principles.
+ * WHY: Encourages upgrades without creating urgency or pressure — in keeping with Vigilia principles.
  */
 import { useState } from 'react';
 import { X, Sparkles } from 'lucide-react';

@@ -14,7 +14,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Loader2, Copy, ExternalLink } from 'lucide-react';
 import { useCreatePaymentLink } from '@/hooks/useStripeConnect';
-import { crosToast } from '@/lib/crosToast';
+import { vigiliaToast } from '@/lib/vigiliaToast';
 
 const EVENT_TYPES = [
   { value: 'generosity', label: 'Generosity' },
@@ -49,7 +49,7 @@ export function CreatePaymentLinkDialog({
   const handleSubmit = () => {
     const amountCents = Math.round(parseFloat(amount) * 100);
     if (!title || isNaN(amountCents) || amountCents <= 0) {
-      crosToast.gentle('Please provide a title and valid amount.');
+      vigiliaToast.gentle('Please provide a title and valid amount.');
       return;
     }
 
@@ -63,9 +63,9 @@ export function CreatePaymentLinkDialog({
     }, {
       onSuccess: (data) => {
         setResult({ url: data.url });
-        crosToast.recorded('Payment link created.');
+        vigiliaToast.recorded('Payment link created.');
       },
-      onError: (e) => crosToast.gentle(e.message),
+      onError: (e) => vigiliaToast.gentle(e.message),
     });
   };
 
@@ -81,7 +81,7 @@ export function CreatePaymentLinkDialog({
   const handleCopy = () => {
     if (result?.url) {
       navigator.clipboard.writeText(result.url);
-      crosToast.noted('Link copied.');
+      vigiliaToast.noted('Link copied.');
     }
   };
 

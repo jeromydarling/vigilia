@@ -1,5 +1,5 @@
 /**
- * AIChatButton — Floating CROS Companion (NRI) compass launcher.
+ * AIChatButton — Floating Vigilia Companion (NRI) compass launcher.
  *
  * WHAT: Fixed-position compass button to open the unified NRI Guide.
  * WHERE: Global — rendered in App.tsx.

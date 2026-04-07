@@ -86,7 +86,7 @@ export const HELP_CONTENT = {
 
   'card.event-day-banner': 'Highlights events happening today or this week. Pulled from your events calendar so you never miss an engagement.',
 
-  'card.local-pulse': 'Your Home Metro\'s weekly heartbeat. Every Monday, CROS discovers events and community happenings within 50 miles using RSS feeds, calendars, and web scraping.',
+  'card.local-pulse': 'Your Home Metro\'s weekly heartbeat. Every Monday, Vigilia discovers events and community happenings within 50 miles using RSS feeds, calendars, and web scraping.',
 
   // ─── Opportunity detail tabs ───────────────────────────────────
 
@@ -144,9 +144,9 @@ export const HELP_CONTENT = {
 
   'card.story-signals': 'Gentle observations from NRI (Narrative Relational Intelligence). Story Signals surface connections, check-ins, and celebrations based on this week\'s relationship activity — never with urgency, always with care.',
 
-  'card.recovery-breadcrumbs': 'When enabled, CROS keeps a short, private list of actions you take — like "deleted a contact" or "imported a file." This helps the assistant guide you through undo and restore. Breadcrumbs never include message content, names, notes, or private details. They are automatically removed after 30 days. You can turn this off at any time; the assistant will still help, but won\'t have context about recent actions.',
+  'card.recovery-breadcrumbs': 'When enabled, Vigilia keeps a short, private list of actions you take — like "deleted a contact" or "imported a file." This helps the assistant guide you through undo and restore. Breadcrumbs never include message content, names, notes, or private details. They are automatically removed after 30 days. You can turn this off at any time; the assistant will still help, but won\'t have context about recent actions.',
 
-  'page.recovery': 'CROS has three layers of restoration. First, the Recycle Bin holds soft-deleted items for 90 days — you can restore them yourself. Second, action breadcrumbs (if enabled) let the assistant suggest what to undo. Third, Recovery Tickets let you request emergency help from a Gardener. Nothing is ever truly lost.',
+  'page.recovery': 'Vigilia has three layers of restoration. First, the Recycle Bin holds soft-deleted items for 90 days — you can restore them yourself. Second, action breadcrumbs (if enabled) let the assistant suggest what to undo. Third, Recovery Tickets let you request emergency help from a Gardener. Nothing is ever truly lost.',
 
   'page.garden-studio': 'Your safe editing workspace. Every change is audited, versioned, and reversible. Edit essays, playbooks, voice calibration, notifications, Communio directory, and feature switches — all draft-first, all with rollback.',
 

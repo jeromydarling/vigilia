@@ -81,7 +81,7 @@ export default function RelationalFlowStrip() {
           className="text-center text-sm text-[hsl(var(--marketing-navy)/0.55)] mt-8 italic"
           style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
         >
-          CROS simply helps you remember the thread.
+          Vigilia simply helps you remember the thread.
         </p>
 
         {/* Verso l'alto */}

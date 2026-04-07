@@ -3,7 +3,7 @@
  *
  * WHAT: Shows "✦ Uses Deep Insight" label with hover explanation.
  * WHERE: Next to buttons/actions that trigger Deep Intelligence workflows.
- * WHY: Transparent usage communication per CROS governance (Part 3).
+ * WHY: Transparent usage communication per Vigilia governance (Part 3).
  */
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Sparkles } from 'lucide-react';

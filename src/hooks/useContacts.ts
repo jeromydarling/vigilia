@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { isDemoProxyActive } from '@/lib/demoWriteProxy';
-import { crosToast } from '@/lib/crosToast';
+import { vigiliaToast } from '@/lib/vigiliaToast';
 import { useLogAudit, computeChanges } from './useAuditLog';
 
 export function useContacts() {
@@ -84,7 +84,7 @@ export function useCreateContact() {
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ['contacts'] });
       queryClient.invalidateQueries({ queryKey: ['opportunities'] });
-      crosToast.noted('Person added');
+      vigiliaToast.noted('Person added');
       
       // Skip audit logging in demo mode (data is a fake proxy response)
       if (!data?.id || isDemoProxyActive()) return;
@@ -98,7 +98,7 @@ export function useCreateContact() {
       });
     },
     onError: (error) => {
-      crosToast.gentle(`Something didn't go through: ${error.message}`);
+      vigiliaToast.gentle(`Something didn't go through: ${error.message}`);
     }
   });
 }
@@ -151,7 +151,7 @@ export function useUpdateContact() {
     onSuccess: ({ data, previousData }) => {
       queryClient.invalidateQueries({ queryKey: ['contacts'] });
       queryClient.invalidateQueries({ queryKey: ['opportunities'] });
-      crosToast.updated();
+      vigiliaToast.updated();
       
       // Skip audit logging in demo mode
       if (!data?.id || isDemoProxyActive()) return;
@@ -170,7 +170,7 @@ export function useUpdateContact() {
       });
     },
     onError: (error) => {
-      crosToast.gentle(`Something didn't go through: ${error.message}`);
+      vigiliaToast.gentle(`Something didn't go through: ${error.message}`);
     }
   });
 }
@@ -227,7 +227,7 @@ export function useDeleteContact() {
       }
       queryClient.invalidateQueries({ queryKey: ['contacts'] });
       queryClient.invalidateQueries({ queryKey: ['opportunities'] });
-      crosToast.removed();
+      vigiliaToast.removed();
       
       logAudit.mutate({
         action: 'delete',
@@ -237,7 +237,7 @@ export function useDeleteContact() {
       });
     },
     onError: (error) => {
-      crosToast.gentle(`Something didn't go through: ${error.message}`);
+      vigiliaToast.gentle(`Something didn't go through: ${error.message}`);
     }
   });
 }

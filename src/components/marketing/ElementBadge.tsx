@@ -1,21 +1,21 @@
 /**
- * ElementBadge — Periodic-table-style badge for NRI, CROS, Profunda.
+ * ElementBadge — Periodic-table-style badge for NRI, Vigilia, Profunda.
  *
  * WHAT: Renders a brand keyword in a compact "element" card with a symbol and subtitle.
  * WHERE: Navigation, feature sections, any marketing reference to the three pillars.
- * WHY: Gives NRI / CROS / PROFUNDA a distinctive, recognisable visual identity.
+ * WHY: Gives NRI / Vigilia / PROFUNDA a distinctive, recognisable visual identity.
  */
 
 import { useTranslation } from 'react-i18next';
 
 const elementBase: Record<string, { symbol: string; number: string; subtitleKey: string }> = {
   NRI:      { symbol: 'Nr', number: '01', subtitleKey: 'elementBadge.nriSubtitle' },
-  CROS:     { symbol: 'Cr', number: '02', subtitleKey: 'elementBadge.crosSubtitle' },
+  Vigilia:     { symbol: 'Cr', number: '02', subtitleKey: 'elementBadge.crosSubtitle' },
   Profunda: { symbol: 'Pf', number: '03', subtitleKey: 'elementBadge.profundaSubtitle' },
 };
 
 interface ElementBadgeProps {
-  name: 'NRI' | 'CROS' | 'Profunda';
+  name: 'NRI' | 'Vigilia' | 'Profunda';
   /** 'sm' for nav items, 'md' default, 'lg' for hero cards */
   size?: 'sm' | 'md' | 'lg';
   className?: string;
@@ -57,7 +57,7 @@ export default function ElementBadge({ name, size = 'md', className = '' }: Elem
 }
 
 /** Inline variant for use in nav links — shows element + full name side by side */
-export function ElementNavLabel({ name }: { name: 'NRI' | 'CROS' | 'Profunda' }) {
+export function ElementNavLabel({ name }: { name: 'NRI' | 'Vigilia' | 'Profunda' }) {
   const { t } = useTranslation('marketing');
   const elBase = elementBase[name];
   if (!elBase) return <span>{name}</span>;

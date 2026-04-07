@@ -36,7 +36,7 @@ export function downloadHowToMarkdown(sections: HowToSection[]) {
   // Zone overview
   lines.push('## What is the Gardener Console?');
   lines.push('');
-  lines.push('The Gardener Console is the ecosystem stewardship layer for CROS, organized into five zones:');
+  lines.push('The Gardener Console is the ecosystem stewardship layer for Vigilia, organized into five zones:');
   lines.push('');
   for (const key of ZONE_ORDER) {
     const z = ZONE_LABELS[key];
@@ -117,7 +117,7 @@ export function downloadHowToMarkdown(sections: HowToSection[]) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'CROS-Gardener-Guide.md';
+  a.download = 'Vigilia-Gardener-Guide.md';
   a.click();
   URL.revokeObjectURL(url);
 }

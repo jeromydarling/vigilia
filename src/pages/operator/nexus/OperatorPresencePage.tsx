@@ -1,7 +1,7 @@
 /**
  * OperatorPresencePage — Presence Intelligence workflow dashboard.
  *
- * WHAT: Shows how humans use CROS across tenants — visit note volume,
+ * WHAT: Shows how humans use Vigilia across tenants — visit note volume,
  *       voice vs typed ratios, and calm narrative signals.
  * WHERE: /operator/nexus/presence
  * WHY: Helps the Operator see where presence is growing or quieting
@@ -148,7 +148,7 @@ export default function OperatorPresencePage() {
         <div>
           <h1 className="text-xl font-semibold text-foreground font-serif">Presence Intelligence</h1>
           <p className="text-sm text-muted-foreground mt-1">
-            How humans are using CROS — visit rhythms, voice patterns, and quiet signals.
+            How humans are using Vigilia — visit rhythms, voice patterns, and quiet signals.
           </p>
         </div>
         <Button

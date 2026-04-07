@@ -129,13 +129,13 @@ export function DemoLabConnectorTests() {
           <div>
             <p className="font-medium text-foreground mb-1">What the tests validate</p>
             <ul className="list-disc pl-5 space-y-1">
-              <li><strong>Entity mapping (inbound)</strong> — Every adapter is tested for correct mapping of accounts, contacts, tasks, events, and activities from the vendor's schema to CROS's normalized format.</li>
+              <li><strong>Entity mapping (inbound)</strong> — Every adapter is tested for correct mapping of accounts, contacts, tasks, events, and activities from the vendor's schema to Vigilia's normalized format.</li>
               <li><strong>Data normalization</strong> — Emails are lowercased, dates are ISO-formatted, phone numbers are cleaned, and states are standardized (e.g. "California" → "CA").</li>
               <li><strong>Orphan detection</strong> — Contacts referencing non-existent accounts are flagged with mapping warnings rather than silently dropped.</li>
               <li><strong>Contract compliance</strong> — Every adapter implements the full <code>ConnectorAdapter</code> interface: <code>mapAccounts</code>, <code>mapContacts</code>, <code>mapTasks</code>, <code>mapEvents</code>, <code>mapActivities</code>, and <code>metadata()</code>.</li>
               <li><strong>Schema resilience</strong> — Tests include edge cases: empty arrays, missing optional fields, malformed dates, and null values.</li>
-              <li><strong>Outbound denormalization (⇆)</strong> — For Salesforce and Dynamics 365, tests verify that CROS entities are correctly reverse-mapped to vendor-specific API formats for both create (POST) and update (PATCH) operations.</li>
-              <li><strong>Conflict detection (⇆)</strong> — Tests verify that field-level differences between CROS data and remote vendor data are flagged for steward review rather than silently overwritten.</li>
+              <li><strong>Outbound denormalization (⇆)</strong> — For Salesforce and Dynamics 365, tests verify that Vigilia entities are correctly reverse-mapped to vendor-specific API formats for both create (POST) and update (PATCH) operations.</li>
+              <li><strong>Conflict detection (⇆)</strong> — Tests verify that field-level differences between Vigilia data and remote vendor data are flagged for steward review rather than silently overwritten.</li>
             </ul>
           </div>
 
@@ -148,10 +148,10 @@ export function DemoLabConnectorTests() {
               <li><strong>Happy path</strong> — Standard records with all fields populated.</li>
               <li><strong>Edge cases</strong> — Missing emails, null phones, orphaned contacts, empty result sets, inactive statecodes (Dynamics 365).</li>
               <li><strong>Schema drift</strong> — Extra or renamed fields that real APIs sometimes return.</li>
-              <li><strong>Outbound round-trip</strong> — CROS data is denormalized to vendor format and tested for correct endpoint, method, and body structure.</li>
+              <li><strong>Outbound round-trip</strong> — Vigilia data is denormalized to vendor format and tested for correct endpoint, method, and body structure.</li>
             </ul>
             <p className="mt-2">
-              Because the adapters are pure functions (API response → normalized CROS data, and CROS data → vendor payload), the mapping logic is fully testable without network calls. The fixtures are modeled from real API documentation and sample responses from each vendor (Salesforce, HubSpot, Planning Center, Dynamics 365, etc.).
+              Because the adapters are pure functions (API response → normalized Vigilia data, and Vigilia data → vendor payload), the mapping logic is fully testable without network calls. The fixtures are modeled from real API documentation and sample responses from each vendor (Salesforce, HubSpot, Planning Center, Dynamics 365, etc.).
             </p>
           </div>
 
@@ -164,7 +164,7 @@ export function DemoLabConnectorTests() {
               <li><strong>Live outbound writes</strong> — Actual vendor API calls for Salesforce ⇆ and Dynamics 365 ⇆ are tested via edge function integration tests, not here.</li>
             </ul>
             <p className="mt-2 text-xs italic">
-              If all tests pass, you can be confident that when live data arrives from any supported CRM, it will be correctly normalized into CROS relationships, contacts, and activities — without manual QA against each vendor.
+              If all tests pass, you can be confident that when live data arrives from any supported CRM, it will be correctly normalized into Vigilia relationships, contacts, and activities — without manual QA against each vendor.
             </p>
           </div>
         </CardContent>

@@ -1,9 +1,9 @@
 /**
  * Salesforce Connector Adapter
  * 
- * WHAT: Normalizes Salesforce CSV export data to CROS entities.
+ * WHAT: Normalizes Salesforce CSV export data to Vigilia entities.
  * WHERE: Migration harness + fixture pack tests.
- * WHY: Deterministic, testable mapping from Salesforce objects to CROS spine.
+ * WHY: Deterministic, testable mapping from Salesforce objects to Vigilia spine.
  */
 
 import type {

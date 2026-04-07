@@ -15,7 +15,7 @@ import { Heart, ChevronRight, Feather, Bell, BookOpen, Compass, Loader2 } from '
 import { supabase } from '@/integrations/supabase/client';
 import { useTenant } from '@/contexts/TenantContext';
 import { useAuth } from '@/contexts/AuthContext';
-import { crosToast } from '@/lib/crosToast';
+import { vigiliaToast } from '@/lib/vigiliaToast';
 
 interface Props {
   onComplete: () => void;
@@ -61,7 +61,7 @@ export function CompanionOnboardingFlow({ onComplete }: Props) {
       setCreatedOpportunityId(data.id);
       setScreen('first_reflection');
     } catch (err) {
-      crosToast.gentle('Something didn\'t go through. Please try again.');
+      vigiliaToast.gentle('Something didn\'t go through. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -110,10 +110,10 @@ export function CompanionOnboardingFlow({ onComplete }: Props) {
                 className="text-3xl font-bold text-foreground"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                Welcome to CROS
+                Welcome to Vigilia
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                CROS helps you remember the people you're walking with.
+                Vigilia helps you remember the people you're walking with.
               </p>
               <Button
                 size="lg"

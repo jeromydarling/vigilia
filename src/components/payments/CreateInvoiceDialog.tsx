@@ -13,7 +13,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Loader2, ExternalLink, Copy } from 'lucide-react';
 import { useCreateInvoice } from '@/hooks/useStripeConnect';
-import { crosToast } from '@/lib/crosToast';
+import { vigiliaToast } from '@/lib/vigiliaToast';
 
 interface CreateInvoiceDialogProps {
   open: boolean;
@@ -36,7 +36,7 @@ export function CreateInvoiceDialog({ open, onOpenChange, contactId, contactName
   const handleSubmit = () => {
     const amountCents = Math.round(parseFloat(amount) * 100);
     if (!description || isNaN(amountCents) || amountCents <= 0) {
-      crosToast.gentle('Please provide a description and valid amount.');
+      vigiliaToast.gentle('Please provide a description and valid amount.');
       return;
     }
 
@@ -50,9 +50,9 @@ export function CreateInvoiceDialog({ open, onOpenChange, contactId, contactName
     }, {
       onSuccess: (data) => {
         setResult({ hosted_url: data.hosted_url });
-        crosToast.recorded('Invoice sent.');
+        vigiliaToast.recorded('Invoice sent.');
       },
-      onError: (e) => crosToast.gentle(e.message),
+      onError: (e) => vigiliaToast.gentle(e.message),
     });
   };
 
@@ -69,7 +69,7 @@ export function CreateInvoiceDialog({ open, onOpenChange, contactId, contactName
   const handleCopyLink = () => {
     if (result?.hosted_url) {
       navigator.clipboard.writeText(result.hosted_url);
-      crosToast.noted('Link copied.');
+      vigiliaToast.noted('Link copied.');
     }
   };
 

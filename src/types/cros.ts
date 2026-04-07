@@ -1,9 +1,9 @@
 /**
- * CROS Type Aliases — Human-centered names for legacy CRM types.
+ * Vigilia Type Aliases — Human-centered names for legacy CRM types.
  *
- * WHAT: Re-exports existing types under CROS-aligned names so new code can use relationship language.
+ * WHAT: Re-exports existing types under Vigilia-aligned names so new code can use relationship language.
  * WHERE: Import from '@/types/cros' in all new components.
- * WHY: Gradual migration from CRM jargon (Opportunity, Pipeline) to CROS language (Partner, Journey) without breaking existing imports.
+ * WHY: Gradual migration from CRM jargon (Opportunity, Pipeline) to Vigilia language (Partner, Journey) without breaking existing imports.
  */
 
 // ── Core entity aliases ──

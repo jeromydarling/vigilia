@@ -116,7 +116,7 @@ export function buildLovableFixPrompt(error: ErrorRow): string {
  */
 export function buildBulkRepairPrompt(errors: ErrorRow[]): string {
   const header = [
-    '# CROS™ Bulk Stabilization Prompt',
+    '# Vigilia™ Bulk Stabilization Prompt',
     '',
     `This prompt addresses ${errors.length} tracked issue(s).`,
     'Fix each in order of severity. Maintain all existing functionality.',

@@ -1,5 +1,5 @@
 /**
- * ImportWizard — Guided 6-step import wizard for migrating data into CROS.
+ * ImportWizard — Guided 6-step import wizard for migrating data into Vigilia.
  *
  * WHAT: Step-by-step wizard: choose source → select objects → map fields → preview → run → review.
  * WHERE: /relatio/setup/:connectorKey
@@ -182,7 +182,7 @@ export default function ImportWizard() {
           <CardHeader>
             <CardTitle className="text-xl">Bring your relationships with you</CardTitle>
             <CardDescription>
-              We'll help you move your data from {connector?.name || connectorKey} into CROS.
+              We'll help you move your data from {connector?.name || connectorKey} into Vigilia.
               Nothing gets lost, and your original data stays untouched.
             </CardDescription>
           </CardHeader>
@@ -193,7 +193,7 @@ export default function ImportWizard() {
                 {isExportBased
                   ? `Export your data from ${connector?.name} as CSV files, then upload them here. We'll map everything for you.`
                   : isCsv
-                  ? 'Upload a CSV file and we\'ll guide you through mapping your columns to CROS fields.'
+                  ? 'Upload a CSV file and we\'ll guide you through mapping your columns to Vigilia fields.'
                   : `We'll connect securely to ${connector?.name} and import your relationships.`}
               </p>
             </div>
@@ -302,7 +302,7 @@ export default function ImportWizard() {
           <CardHeader>
             <CardTitle>Review field mapping</CardTitle>
             <CardDescription>
-              Here's how your data will map into CROS. You can adjust these later in settings.
+              Here's how your data will map into Vigilia. You can adjust these later in settings.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">

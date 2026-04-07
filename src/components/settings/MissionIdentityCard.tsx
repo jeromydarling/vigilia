@@ -121,11 +121,11 @@ export function MissionIdentityCard() {
           <div>
             <CardTitle className="text-base" style={serif}>Mission Identity</CardTitle>
             <CardDescription>
-              How CROS understands your organization's work and language
+              How Vigilia understands your organization's work and language
             </CardDescription>
           </div>
           <HelpTooltip
-            what="Your mission archetype shapes journey stages, keyword sets, and narrative tone throughout CROS."
+            what="Your mission archetype shapes journey stages, keyword sets, and narrative tone throughout Vigilia."
             where="Settings → Modules"
             why="As your organization evolves, the system should evolve with you."
           />

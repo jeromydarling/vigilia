@@ -58,7 +58,7 @@ export default function OnboardingFamiliaStep({ choice, onChoiceChange }: Props)
         </div>
         <CardDescription>
           Some organizations belong to a wider family — parishes in a diocese, chapters in a society,
-          campuses in a network. If that's you, CROS can help you stay connected without losing autonomy.
+          campuses in a network. If that's you, Vigilia can help you stay connected without losing autonomy.
         </CardDescription>
       </CardHeader>
       <CardContent>

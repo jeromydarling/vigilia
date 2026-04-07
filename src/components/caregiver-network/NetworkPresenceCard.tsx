@@ -156,7 +156,7 @@ export default function NetworkPresenceCard() {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="relay_only">Relay only — messages through CROS</SelectItem>
+              <SelectItem value="relay_only">Relay only — messages through Vigilia</SelectItem>
               <SelectItem value="reveal_on_request">Reveal on request — share after I accept</SelectItem>
               <SelectItem value="public_email_optional">Public email — visible on my card</SelectItem>
             </SelectContent>

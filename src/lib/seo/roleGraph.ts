@@ -1,7 +1,7 @@
 /**
  * Role Graph — Maps roles to archetypes, stories, modules, and guides.
  *
- * WHAT: Semantic relationship map centered on CROS roles.
+ * WHAT: Semantic relationship map centered on Vigilia roles.
  * WHERE: Powers "Related Paths" blocks at bottom of role pages and guides.
  * WHY: Builds role-centric SEO authority by connecting identity to platform features.
  */

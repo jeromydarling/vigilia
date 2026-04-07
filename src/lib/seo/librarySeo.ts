@@ -3,7 +3,7 @@
  *
  * WHAT: Generates seo_title, seo_description, schema_json, canonical_url from library_essays.
  * WHERE: Used by the essay publish flow and public essay rendering.
- * WHY: Ensures published essays have rich, CROS-branded SEO without manual effort.
+ * WHY: Ensures published essays have rich, Vigilia-branded SEO without manual effort.
  */
 import { brand } from '@/config/brand';
 import { generateSemanticKeywords } from '@/lib/narrativeSEO/semanticKeywords';
@@ -44,7 +44,7 @@ export function generateLibraryEssaySeo(
   const truncTitle = essay.title.length > 55
     ? `${essay.title.slice(0, 55)}…`
     : essay.title;
-  const seoTitle = `${truncTitle} — CROS™ Living Library`;
+  const seoTitle = `${truncTitle} — Vigilia™ Living Library`;
   const seoDescription = (essay.excerpt || essay.content_markdown?.replace(/[#*_\n]/g, ' ').slice(0, 155) || '').slice(0, 155);
   const canonicalUrl = `/library/${essay.slug}`;
 
@@ -54,7 +54,7 @@ export function generateLibraryEssaySeo(
   });
 
   const authorName = essay.voice_profile === 'cros_default'
-    ? 'CROS Narrative Intelligence (NRI™)'
+    ? 'Vigilia Narrative Intelligence (NRI™)'
     : brand.appName;
 
   const schemaJson: Record<string, unknown> = {
@@ -71,7 +71,7 @@ export function generateLibraryEssaySeo(
     keywords: keywords.join(', '),
     isPartOf: {
       '@type': 'CollectionPage',
-      name: 'CROS™ Living Library',
+      name: 'Vigilia™ Living Library',
       url: `${SITE_URL}/library`,
     },
   };

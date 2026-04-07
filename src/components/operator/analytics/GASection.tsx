@@ -3,7 +3,7 @@
  *
  * WHAT: Connect a GA4 property via OAuth, then view sessions, traffic sources, and top pages.
  * WHERE: Operator Analytics page (/operator/nexus/analytics)
- * WHY: Gardeners need website traffic context alongside ecosystem health signals, without leaving CROS.
+ * WHY: Gardeners need website traffic context alongside ecosystem health signals, without leaving Vigilia.
  */
 import { useState } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
@@ -308,7 +308,7 @@ export default function GASection() {
         <HelpTooltip
           what="View live GA4 analytics data from your connected property."
           where="Gardener Console → Analytics"
-          why="Website traffic context alongside ecosystem health signals — without leaving CROS."
+          why="Website traffic context alongside ecosystem health signals — without leaving Vigilia."
         />
       </div>
 

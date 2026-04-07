@@ -1,9 +1,9 @@
 /**
  * Stories — Narrative story content registry for /stories/:slug.
  *
- * WHAT: Hypothetical but realistic weekly stories showing CROS in action.
+ * WHAT: Hypothetical but realistic weekly stories showing Vigilia in action.
  * WHERE: Powers StoryPage component at /stories/:slug.
- * WHY: Creates narrative SEO authority by illustrating real-world CROS usage.
+ * WHY: Creates narrative SEO authority by illustrating real-world Vigilia usage.
  */
 
 export interface Story {
@@ -29,7 +29,7 @@ export const stories: Story[] = [
   {
     slug: 'first-week-at-grace-church',
     title: 'First Week at Grace Church',
-    description: 'How a small church used CROS™ to notice a returning family, connect a newcomer, and remember what mattered — without a single spreadsheet.',
+    description: 'How a small church used Vigilia™ to notice a returning family, connect a newcomer, and remember what mattered — without a single spreadsheet.',
     keywords: ['church CRM story', 'faith community technology', 'pastoral care', 'relationship memory'],
     datePublished: '2026-02-15',
     archetypeKey: 'church',
@@ -37,7 +37,7 @@ export const stories: Story[] = [
       {
         time: 'Monday Morning',
         title: 'The Quiet Review',
-        narrative: 'Pastor Beth opens CROS™ with coffee. NRI has noticed the Ramirez family attended both services — their first visit in six weeks. A Reflection from last month reads: "Carlos mentioned stress at work." No alarm. Just a gentle flag: "You may want to reach out."',
+        narrative: 'Pastor Beth opens Vigilia™ with coffee. NRI has noticed the Ramirez family attended both services — their first visit in six weeks. A Reflection from last month reads: "Carlos mentioned stress at work." No alarm. Just a gentle flag: "You may want to reach out."',
         role: 'shepherd',
         feature: 'NRI Narrative',
       },
@@ -78,7 +78,7 @@ export const stories: Story[] = [
       {
         time: 'Sunday',
         title: 'The Living Story',
-        narrative: 'As the congregation gathers, Pastor Beth knows things no attendance sheet could tell her. The Ramirez family needs warmth. Denise needs a follow-up. Brother Thomas wants his Bible. The food pantry needs vegetables. A new shelter is opening nearby. CROS™ didn\'t create this knowledge. The people did. CROS™ just remembered.',
+        narrative: 'As the congregation gathers, Pastor Beth knows things no attendance sheet could tell her. The Ramirez family needs warmth. Denise needs a follow-up. Brother Thomas wants his Bible. The food pantry needs vegetables. A new shelter is opening nearby. Vigilia™ didn\'t create this knowledge. The people did. Vigilia™ just remembered.',
         role: 'shepherd',
       },
     ],
@@ -87,7 +87,7 @@ export const stories: Story[] = [
   {
     slug: 'harbor-nonprofits-quiet-week',
     title: 'Harbor Nonprofit\'s Quiet Week',
-    description: 'A digital inclusion nonprofit uses CROS™ to track device distributions, volunteer hours, and community shifts — all without losing the human thread.',
+    description: 'A digital inclusion nonprofit uses Vigilia™ to track device distributions, volunteer hours, and community shifts — all without losing the human thread.',
     keywords: ['nonprofit CRM story', 'digital inclusion', 'volunteer management', 'community technology'],
     datePublished: '2026-02-18',
     archetypeKey: 'digital_inclusion',

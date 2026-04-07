@@ -1,11 +1,11 @@
 /**
- * CROS™ i18n Configuration
+ * Vigilia™ i18n Configuration
  *
  * Internationalization infrastructure using react-i18next.
  * Supports English (en) and Spanish (es) with namespace-based translation files.
  *
  * Latin module names (Civitas, Signum, Relatio, Voluntārium, Prōvīsiō, etc.)
- * are intentionally NOT translated — they are part of the CROS brand identity.
+ * are intentionally NOT translated — they are part of the Vigilia brand identity.
  *
  * Installation:
  *   npm install i18next react-i18next i18next-browser-languagedetector

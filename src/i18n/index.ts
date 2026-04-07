@@ -1,5 +1,5 @@
 /**
- * CROS™ i18n — Barrel Export
+ * Vigilia™ i18n — Barrel Export
  *
  * Usage in your app entry point (main.tsx or App.tsx):
  *   import './i18n';

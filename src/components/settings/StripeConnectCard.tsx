@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Loader2, ExternalLink, CheckCircle, AlertCircle } from 'lucide-react';
 import { useStripeConnectStatus, useStripeConnectOnboard } from '@/hooks/useStripeConnect';
-import { crosToast } from '@/lib/crosToast';
+import { vigiliaToast } from '@/lib/vigiliaToast';
 import { useTenant } from '@/contexts/TenantContext';
 
 export function StripeConnectCard() {
@@ -20,7 +20,7 @@ export function StripeConnectCard() {
 
   const handleConnect = () => {
     onboard.mutate(undefined, {
-      onError: (e) => crosToast.gentle(e.message),
+      onError: (e) => vigiliaToast.gentle(e.message),
     });
   };
 
@@ -55,7 +55,7 @@ export function StripeConnectCard() {
         {!status?.connected && (
           <>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Payments flow directly to your organization. CROS facilitates the connection but never holds funds.
+              Payments flow directly to your organization. Vigilia facilitates the connection but never holds funds.
               Stripe handles KYC verification, payouts, tax forms, and compliance.
             </p>
             <Button onClick={handleConnect} disabled={onboard.isPending}>
@@ -91,7 +91,7 @@ export function StripeConnectCard() {
               <p className="text-sm font-medium">Ready to receive payments</p>
               <p className="text-xs text-muted-foreground">
                 Invoices, payment links, and event payments will route funds directly to your Stripe account.
-                A small 1% platform fee supports CROS infrastructure.
+                A small 1% platform fee supports Vigilia infrastructure.
               </p>
               {status.onboarding_completed_at && (
                 <p className="text-xs text-muted-foreground">

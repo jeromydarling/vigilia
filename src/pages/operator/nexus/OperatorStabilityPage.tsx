@@ -97,7 +97,7 @@ export default function OperatorStabilityPage() {
 
   const handleCopyAll = () => {
     if (!errors?.length) return;
-    const header = `# CROS™ System Stability Repair Pack\n\nThis pack addresses ${errors.length} recent friction event(s).\n\n---\n\n`;
+    const header = `# Vigilia™ System Stability Repair Pack\n\nThis pack addresses ${errors.length} recent friction event(s).\n\n---\n\n`;
     const body = errors.slice(0, 10).map((e, i) =>
       `## Issue ${i + 1}\n\n${buildSystemErrorPrompt(e)}`
     ).join('\n\n---\n\n');

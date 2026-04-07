@@ -62,7 +62,7 @@ const JETPACKCRM_FIXTURES = {
   task: {
     id: 'jp-t-1', title: 'Tenant Onboarding Call', customer: 'jp-c-1',
     from: '03/15/2026 13:00:00', to: '03/15/2026 14:00:00',
-    notes: 'Initial CROS setup walkthrough', complete: 0,
+    notes: 'Initial Vigilia setup walkthrough', complete: 0,
   },
   taskCompleted: {
     id: 'jp-t-2', title: 'Welcome email sent', customer: 'jp-c-1', complete: 1,
@@ -77,7 +77,7 @@ const WPERP_FIXTURES = {
   account: {
     id: 'erp-co-1', company: 'Refugee Resettlement Alliance', website: 'https://rra.org',
     phone: '612-555-0300', city: 'Saint Paul', state: 'MN', postal_code: '55103',
-    life_stage: 'customer', notes: 'Active CROS tenant since Jan 2026',
+    life_stage: 'customer', notes: 'Active Vigilia tenant since Jan 2026',
   },
   contact: {
     id: 'erp-c-1', first_name: 'Fatima', last_name: 'Ahmed',

@@ -1,7 +1,7 @@
 /**
  * Integration Audit PDF Report Generator
  *
- * WHAT: Generates a comprehensive PDF documenting all CROS™ connectors, their
+ * WHAT: Generates a comprehensive PDF documenting all Vigilia™ connectors, their
  *       confidence levels, giving support status, and architectural notes.
  * WHERE: Downloadable from operator console or reports section.
  * WHY: Enables external review (e.g. by Claude AI) of integration architecture.
@@ -55,7 +55,7 @@ const CONNECTORS: ConnectorEntry[] = [
       'v2 API (v2.11, Oct 2025) — actively maintained',
       'Filter: donationStatus = SUCCEED or Settled',
       'v2.11 renamed donorNote → publicRecognitionName',
-      'Dedicated integration user recommended: "CROS Integration"',
+      'Dedicated integration user recommended: "Vigilia Integration"',
     ],
   },
   {
@@ -212,7 +212,7 @@ const CONNECTORS: ConnectorEntry[] = [
       'Responsive fundraising platform — growing Catholic/pro-life adoption',
       'REST API with gifts, projects, tasks, contacts endpoints',
       'Elevated to Rung 2 planning — giving adapter on roadmap',
-      'High strategic priority for CROS target market',
+      'High strategic priority for Vigilia target market',
     ],
   },
 
@@ -245,7 +245,7 @@ function addFooter(doc: jsPDF, pageNum: number) {
   const h = doc.internal.pageSize.getHeight();
   doc.setFontSize(7);
   doc.setTextColor(150);
-  doc.text(`CROS™ Integration Audit Report — Page ${pageNum}`, PAGE_WIDTH / 2, h - 6, { align: 'center' });
+  doc.text(`Vigilia™ Integration Audit Report — Page ${pageNum}`, PAGE_WIDTH / 2, h - 6, { align: 'center' });
   doc.text(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }), PAGE_WIDTH - MARGIN, h - 6, { align: 'right' });
 }
 
@@ -267,7 +267,7 @@ export function generateIntegrationAuditPdf() {
   // ── Title ──
   doc.setFontSize(22);
   doc.setTextColor(30);
-  doc.text('CROS™ Integration Audit Report', MARGIN, y);
+  doc.text('Vigilia™ Integration Audit Report', MARGIN, y);
   y += 9;
   doc.setFontSize(11);
   doc.setTextColor(80);
@@ -539,5 +539,5 @@ export function generateIntegrationAuditPdf() {
   }
 
   addFooter(doc, pn.current);
-  doc.save('CROS-Integration-Audit-Report.pdf');
+  doc.save('Vigilia-Integration-Audit-Report.pdf');
 }

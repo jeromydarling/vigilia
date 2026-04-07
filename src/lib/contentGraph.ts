@@ -1,5 +1,5 @@
 /**
- * contentGraph — Structured relationships between CROS™ narrative pages.
+ * contentGraph — Structured relationships between Vigilia™ narrative pages.
  *
  * WHAT: Defines connections between roles, archetypes, week stories, and philosophy pages.
  * WHERE: Used by RelatedNarrativesCard and NarrativeLinks for auto-linking.
@@ -20,7 +20,7 @@ export const CONTENT_GRAPH: Record<string, ContentNode> = {
   // Roles
   '/roles': {
     path: '/roles',
-    title: 'Roles in CROS™',
+    title: 'Roles in Vigilia™',
     subtitle: 'Shepherd · Companion · Visitor · Steward',
     category: 'role',
     related: ['/week/shepherd', '/week/community-companion', '/week/catholic-visitor', '/week/steward', '/manifesto'],
@@ -101,7 +101,7 @@ export const CONTENT_GRAPH: Record<string, ContentNode> = {
   // Philosophy
   '/manifesto': {
     path: '/manifesto',
-    title: 'The CROS™ Manifesto',
+    title: 'The Vigilia™ Manifesto',
     subtitle: 'Why we built this',
     category: 'philosophy',
     related: ['/nri', '/roles', '/archetypes', '/week/shepherd'],
@@ -135,7 +135,7 @@ export const CONTENT_GRAPH: Record<string, ContentNode> = {
   // Lexicon
   '/lexicon': {
     path: '/lexicon',
-    title: 'The CROS Lexicon™',
+    title: 'The Vigilia Lexicon™',
     subtitle: 'The language of living mission',
     category: 'concept',
     related: ['/nri', '/roles', '/archetypes', '/mission-atlas', '/field-journal'],

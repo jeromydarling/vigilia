@@ -24,7 +24,7 @@ export function buildEssayMeta(input: EssayMeta) {
   const fullTitle = input.title.length > 55
     ? input.title.slice(0, 55) + '…'
     : input.title;
-  const seoTitle = `${fullTitle} — CROS™`;
+  const seoTitle = `${fullTitle} — Vigilia™`;
 
   return {
     title: seoTitle,
@@ -38,7 +38,7 @@ export function buildEssayMeta(input: EssayMeta) {
 
 export function essayJsonLd(input: EssayMeta) {
   const authorName = input.voice_origin === 'nri'
-    ? 'CROS Narrative Intelligence (NRI™)'
+    ? 'Vigilia Narrative Intelligence (NRI™)'
     : brand.appName;
 
   return {

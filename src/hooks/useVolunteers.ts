@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
-import { crosToast } from '@/lib/crosToast';
+import { vigiliaToast } from '@/lib/vigiliaToast';
 import { useTestimoniumCapture } from './useTestimoniumCapture';
 
 export type Volunteer = {
@@ -137,9 +137,9 @@ export function useCreateVolunteer() {
     },
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['volunteers'] });
-      crosToast.noted('Volunteer added');
+      vigiliaToast.noted('Volunteer added');
     },
-    onError: (err: Error) => crosToast.gentle(err.message),
+    onError: (err: Error) => vigiliaToast.gentle(err.message),
   });
 }
 
@@ -159,9 +159,9 @@ export function useUpdateVolunteer() {
     onSuccess: (_, vars) => {
       qc.invalidateQueries({ queryKey: ['volunteers'] });
       qc.invalidateQueries({ queryKey: ['volunteer', vars.id] });
-      crosToast.updated();
+      vigiliaToast.updated();
     },
-    onError: (err: Error) => crosToast.gentle(err.message),
+    onError: (err: Error) => vigiliaToast.gentle(err.message),
   });
 }
 
@@ -189,7 +189,7 @@ export function useCreateShift() {
       qc.invalidateQueries({ queryKey: ['volunteer-shifts', vars.volunteer_id] });
       qc.invalidateQueries({ queryKey: ['volunteer', vars.volunteer_id] });
       qc.invalidateQueries({ queryKey: ['volunteers'] });
-      crosToast.recorded('Hours logged');
+      vigiliaToast.recorded('Hours logged');
       captureTestimonium({
         sourceModule: 'voluntarium',
         eventKind: 'hours_logged',
@@ -197,7 +197,7 @@ export function useCreateShift() {
         metadata: { volunteer_id: vars.volunteer_id, minutes: vars.minutes },
       });
     },
-    onError: (err: Error) => crosToast.gentle(err.message),
+    onError: (err: Error) => vigiliaToast.gentle(err.message),
   });
 }
 

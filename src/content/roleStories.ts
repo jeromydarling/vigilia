@@ -23,8 +23,8 @@ export const roleStories: RoleStory[] = [
   {
     slug: 'visitor-home-visit',
     title: 'A Visitor\'s Morning',
-    description: 'What it feels like to make a home visit with CROS™ — from checking assignments to recording a voice note in the car.',
-    keywords: ['visitor story', 'home visit', 'voice notes', 'field work', 'CROS visitor'],
+    description: 'What it feels like to make a home visit with Vigilia™ — from checking assignments to recording a voice note in the car.',
+    keywords: ['visitor story', 'home visit', 'voice notes', 'field work', 'Vigilia visitor'],
     datePublished: '2026-02-19',
     role: 'visitor',
     opening: 'James is a volunteer at Grace Community Church. Every Tuesday morning, he visits two or three families. He doesn\'t think of himself as a "data collector" or a "case worker." He\'s just a neighbor who shows up.',
@@ -32,7 +32,7 @@ export const roleStories: RoleStory[] = [
       {
         time: '8:15 AM',
         title: 'Checking the list',
-        narrative: 'James opens CROS™ on his phone while finishing coffee. Two visits today: the Ramirez family and Mrs. Chen. For the Ramirezes, his Shepherd left a note: "Carlos mentioned looking for work last time." For Mrs. Chen: "She loves when people stay for tea."',
+        narrative: 'James opens Vigilia™ on his phone while finishing coffee. Two visits today: the Ramirez family and Mrs. Chen. For the Ramirezes, his Shepherd left a note: "Carlos mentioned looking for work last time." For Mrs. Chen: "She loves when people stay for tea."',
         feature: 'Visit Assignments',
       },
       {
@@ -59,16 +59,16 @@ export const roleStories: RoleStory[] = [
       },
     ],
     reflection: 'James doesn\'t know that his voice notes will appear in Pastor Beth\'s Metro Narrative on Monday morning. He doesn\'t know that NRI™ will gently flag Mrs. Chen\'s fence request. He doesn\'t need to know. His job was to show up — and he did.',
-    closing: 'The most important technology in CROS™ is the one you barely notice. It remembers what you witnessed — so the story of every person you visited is never lost.',
+    closing: 'The most important technology in Vigilia™ is the one you barely notice. It remembers what you witnessed — so the story of every person you visited is never lost.',
   },
   {
     slug: 'shepherd-followup',
     title: 'A Shepherd\'s Monday Morning',
     description: 'How a Shepherd starts the week — reviewing the Metro Narrative, noticing drift signals, and deciding who needs a call.',
-    keywords: ['shepherd story', 'metro narrative', 'leadership', 'pastoral care', 'CROS shepherd'],
+    keywords: ['shepherd story', 'metro narrative', 'leadership', 'pastoral care', 'Vigilia shepherd'],
     datePublished: '2026-02-19',
     role: 'shepherd',
-    opening: 'Pastor Beth arrives at her office at 7:30. Before opening email, she opens CROS™. The Metro Narrative is waiting — a short letter about her community\'s week.',
+    opening: 'Pastor Beth arrives at her office at 7:30. Before opening email, she opens Vigilia™. The Metro Narrative is waiting — a short letter about her community\'s week.',
     timeline: [
       {
         time: '7:35 AM',
@@ -96,13 +96,13 @@ export const roleStories: RoleStory[] = [
       },
     ],
     reflection: 'In thirty minutes, Beth has absorbed the story of her community\'s week, noticed someone who needed care, and connected a local development to her mission. No dashboard. No KPIs. Just awareness.',
-    closing: 'A Shepherd doesn\'t manage people — a Shepherd holds the story. CROS™ helps you hold it gently, without the weight of a spreadsheet.',
+    closing: 'A Shepherd doesn\'t manage people — a Shepherd holds the story. Vigilia™ helps you hold it gently, without the weight of a spreadsheet.',
   },
   {
     slug: 'companion-delivery-day',
     title: 'A Companion\'s Delivery Day',
-    description: 'How a Companion uses CROS™ to deliver devices, capture reflections, and keep the thread of care alive.',
-    keywords: ['companion story', 'digital inclusion', 'device delivery', 'relationship care', 'CROS companion'],
+    description: 'How a Companion uses Vigilia™ to deliver devices, capture reflections, and keep the thread of care alive.',
+    keywords: ['companion story', 'digital inclusion', 'device delivery', 'relationship care', 'Vigilia companion'],
     datePublished: '2026-02-19',
     role: 'companion',
     opening: 'Marcus is a tech coordinator at Harbor Digital Inclusion. Today he\'s delivering three refurbished laptops. Each one represents a family\'s request for connection.',
@@ -110,7 +110,7 @@ export const roleStories: RoleStory[] = [
       {
         time: '9:00 AM',
         title: 'Checking provisions',
-        narrative: 'Marcus opens Prōvīsiō in CROS™. Three deliveries today: Garcia family (Chromebook, Spanish setup), Thompson household (laptop for remote work), and the Eastside Community Center (two monitors). Each has a note from his Shepherd.',
+        narrative: 'Marcus opens Prōvīsiō in Vigilia™. Three deliveries today: Garcia family (Chromebook, Spanish setup), Thompson household (laptop for remote work), and the Eastside Community Center (two monitors). Each has a note from his Shepherd.',
         feature: 'Prōvīsiō',
       },
       {

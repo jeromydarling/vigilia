@@ -2,7 +2,7 @@
  * LivingArchetypeStoryCard — Anonymized narrative signals from the ecosystem.
  *
  * WHAT: Displays aggregated, anonymized story text for a given archetype.
- * WHERE: Below "Week Inside CROS" on archetype deep pages.
+ * WHERE: Below "Week Inside Vigilia" on archetype deep pages.
  * WHY: Makes archetype pages living, self-updating story surfaces without exposing tenant data.
  */
 import { useQuery } from '@tanstack/react-query';

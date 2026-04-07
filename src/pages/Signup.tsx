@@ -3,7 +3,7 @@
  *
  * WHAT: Shows a "contact your organization" message instead of a signup form.
  * WHERE: /signup (public route).
- * WHY: CROS is invite-only — accounts can only be created via steward invite links (/join?token=xxx).
+ * WHY: Vigilia is invite-only — accounts can only be created via steward invite links (/join?token=xxx).
  */
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';

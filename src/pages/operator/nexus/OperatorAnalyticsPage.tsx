@@ -155,7 +155,7 @@ export default function OperatorAnalyticsPage() {
             label="Active Tenants"
             value={tenantCount ?? '—'}
             icon={Users}
-            helpText="Total organizations using CROS."
+            helpText="Total organizations using Vigilia."
           />
           <MetricCard
             label="QA Pass Rate"
@@ -233,7 +233,7 @@ export default function OperatorAnalyticsPage() {
         <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
           <Users className="w-3.5 h-3.5" />
           Module Adoption
-          <HelpTip text="Which CROS modules are being used actively by tenants." />
+          <HelpTip text="Which Vigilia modules are being used actively by tenants." />
         </h2>
         <Card>
           <CardContent className="py-4">

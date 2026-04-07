@@ -1,12 +1,12 @@
 /**
  * Giving Adapters — Platform-specific normalizeGiving() implementations
  *
- * WHAT: Maps raw CRM giving data to CROS NormalizedGiving records.
+ * WHAT: Maps raw CRM giving data to Vigilia NormalizedGiving records.
  * WHERE: Used by Bridge migration harness and API sync runners.
  * WHY: Each donor CRM stores gifts differently; this normalizes to a single shape.
  *
  * Platforms: Bloomerang, NeonCRM, DonorPerfect, Little Green Light
- * Reference: CROS Generosity Records API Guide (March 2026)
+ * Reference: Vigilia Generosity Records API Guide (March 2026)
  */
 
 import type { NormalizedGiving, MappingWarning } from './types';

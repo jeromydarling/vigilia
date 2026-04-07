@@ -145,7 +145,7 @@ export function DemoSessionExpiry() {
                   Your demo session has ended
                 </DialogTitle>
                 <DialogDescription className="pt-2 leading-relaxed">
-                  Thank you for exploring CROS. We'd love to hear what resonated
+                  Thank you for exploring Vigilia. We'd love to hear what resonated
                   and discuss how it might serve your community.
                 </DialogDescription>
               </DialogHeader>

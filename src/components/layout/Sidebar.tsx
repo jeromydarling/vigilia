@@ -373,14 +373,14 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           {showLabel && (
             <a href="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center">
-                <span className="text-white font-bold text-sm">CR</span>
+                <span className="text-white font-bold text-sm">V</span>
               </div>
-              <span className="font-semibold text-sidebar-foreground">CROS</span>
+              <span className="font-semibold text-sidebar-foreground">Vigilia</span>
             </a>
           )}
           {!showLabel && (
             <a href="/" className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center mx-auto">
-              <span className="text-white font-bold text-sm">CR</span>
+              <span className="text-white font-bold text-sm">V</span>
             </a>
           )}
 

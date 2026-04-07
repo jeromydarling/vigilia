@@ -35,7 +35,7 @@ export function downloadLeadershipBriefPdf({ report, weekLabel }: BriefPdfOption
   doc.setTextColor(120);
   doc.text(`Week of ${weekLabel} · ${tenantName}`, MARGIN, y);
   y += 4;
-  doc.text(`${brand.appName}™ — Communal Relationship Operating System`, MARGIN, y);
+  doc.text(`${brand.appName}™ — A Liturgy of Attention`, MARGIN, y);
   y += 8;
 
   // Divider
@@ -122,5 +122,5 @@ export function downloadLeadershipBriefPdf({ report, weekLabel }: BriefPdfOption
     );
   }
 
-  doc.save(`CROS-Leadership-Brief-${weekLabel.replace(/[, ]+/g, '-')}.pdf`);
+  doc.save(`Vigilia-Leadership-Brief-${weekLabel.replace(/[, ]+/g, '-')}.pdf`);
 }

@@ -1,7 +1,7 @@
 /**
  * WP ERP Connector Adapter
  *
- * WHAT: Normalizes WP ERP (WordPress) export/API data to CROS entities.
+ * WHAT: Normalizes WP ERP (WordPress) export/API data to Vigilia entities.
  * WHERE: Migration harness + fixture tests.
  * WHY: WordPress ERP suite — CRM contacts, companies, activity logs, lifecycle stages.
  */

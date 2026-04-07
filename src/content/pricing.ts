@@ -58,9 +58,9 @@ export type AddOn = {
 export const addOns: AddOn[] = [
   {
     key: 'bridge',
-    name: 'CROS Bridge™',
+    name: 'Vigilia Bridge™',
     headline: 'Your past relationships become living memory',
-    description: 'Bridge helps your past relationships become living memory inside CROS — preserving continuity, story, and relational history as you transition from legacy systems.',
+    description: 'Bridge helps your past relationships become living memory inside Vigilia — preserving continuity, story, and relational history as you transition from legacy systems.',
     bullets: ['Relatio integration bridges', 'HubSpot two-way sync', 'Story-preserving migration tools'],
     price: '+$49',
     priceSuffix: '/mo',

@@ -1,22 +1,22 @@
 // Stripe product + price mapping — single source of truth
 // These IDs come from the Stripe dashboard / API
-// LIVE account: CROS LLC (acct_1TAgVAIuo9wd3dMd)
+// LIVE account: Vigilia LLC (acct_1TAgVAIuo9wd3dMd)
 
 export const stripeProducts = {
   core: {
     product_id: 'prod_U8z6jlvVhKv9qZ',
     price_id: 'price_1TAh8YIuo9wd3dMdDsWk0zXv',
-    name: 'CROS Core',
+    name: 'Vigilia Core',
   },
   insight: {
     product_id: 'prod_U8z6LGUkXDJpx2',
     price_id: 'price_1TAh8ZIuo9wd3dMdXAIoOK9R',
-    name: 'CROS Insight',
+    name: 'Vigilia Insight',
   },
   story: {
     product_id: 'prod_U8z6GphHgzYNTO',
     price_id: 'price_1TAh8bIuo9wd3dMd4YKAeOoK',
-    name: 'CROS Story',
+    name: 'Vigilia Story',
   },
 } as const;
 
@@ -27,7 +27,7 @@ export const stripeAddons = {
   bridge: {
     product_id: 'prod_U8z6Mc849SLYzz',
     price_id: 'price_1TAh8cIuo9wd3dMdLjH7qASI',
-    name: 'CROS Bridge™',
+    name: 'Vigilia Bridge™',
     lookup_key: 'cros_addon_bridge',
   },
   additional_users: {

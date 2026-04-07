@@ -1,9 +1,9 @@
 /**
  * HubSpot Outbound Adapter
  *
- * WHAT: Denormalizes CROS entities to HubSpot CRM API v3 format for outbound sync.
+ * WHAT: Denormalizes Vigilia entities to HubSpot CRM API v3 format for outbound sync.
  * WHERE: relatio-outbound-sync edge function (direct vendor API calls).
- * WHY: Enables CROS → HubSpot write-back for contacts, companies, deals, tasks, notes.
+ * WHY: Enables Vigilia → HubSpot write-back for contacts, companies, deals, tasks, notes.
  */
 
 import type { OutboundAdapter, OutboundPayload, FieldDiff, OutboundEntity } from './outboundTypes';

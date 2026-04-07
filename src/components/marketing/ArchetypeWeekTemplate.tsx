@@ -36,7 +36,7 @@ export default function ArchetypeWeekTemplate({
         <SeoHead
           title={pageTitle}
           description={introLine}
-          keywords={['CROS archetype', archetypeTitle.toLowerCase(), 'community relationship example']}
+          keywords={['Vigilia archetype', archetypeTitle.toLowerCase(), 'community relationship example']}
           canonical={canonical}
           ogType="article"
           jsonLd={articleSchema({

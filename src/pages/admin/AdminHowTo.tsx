@@ -1,5 +1,5 @@
 /**
- * AdminHowTo — In-app admin guide for the CROS administrative console.
+ * AdminHowTo — In-app admin guide for the Vigilia administrative console.
  *
  * WHAT: Practical reference guide for tenant admin tools, with operator sections visible only to stewards.
  * WHERE: /:tenantSlug/admin/how-to
@@ -91,7 +91,7 @@ const tenantSections: GuideSection[] = [
     items: [
       {
         q: 'What are territories?',
-        a: 'Territories are the unified geography layer in CROS. They replace the old metro-only model with support for metros, county bundles, states, countries, and mission fields. Each territory type has different activation slot costs.',
+        a: 'Territories are the unified geography layer in Vigilia. They replace the old metro-only model with support for metros, county bundles, states, countries, and mission fields. Each territory type has different activation slot costs.',
       },
       {
         q: 'What is a county bundle?',
@@ -223,11 +223,11 @@ const tenantSections: GuideSection[] = [
       },
       {
         q: 'What is two-way sync?',
-        a: 'For HubSpot, Salesforce, and Microsoft Dynamics 365, CROS supports bi-directional sync. Changes you make in CROS can be written back to your external CRM automatically. If both systems edited the same record, a conflict is flagged for your review — CROS never overwrites without your consent.',
+        a: 'For HubSpot, Salesforce, and Microsoft Dynamics 365, Vigilia supports bi-directional sync. Changes you make in Vigilia can be written back to your external CRM automatically. If both systems edited the same record, a conflict is flagged for your review — Vigilia never overwrites without your consent.',
       },
       {
         q: 'How do I resolve sync conflicts?',
-        a: 'When a conflict is detected, it appears in the Integrations page under your connector. You can choose to accept the CROS version, the external CRM version, or merge them manually. Conflicts are always flagged — never silently overwritten.',
+        a: 'When a conflict is detected, it appears in the Integrations page under your connector. You can choose to accept the Vigilia version, the external CRM version, or merge them manually. Conflicts are always flagged — never silently overwritten.',
       },
     ],
   },
@@ -240,7 +240,7 @@ const tenantSections: GuideSection[] = [
     items: [
       {
         q: 'What is Communio?',
-        a: 'Communio is the cooperative sharing layer between organizations on CROS. You can form groups, share anonymized signals, co-sense community momentum, and discover shared patterns — all without exposing private data.',
+        a: 'Communio is the cooperative sharing layer between organizations on Vigilia. You can form groups, share anonymized signals, co-sense community momentum, and discover shared patterns — all without exposing private data.',
       },
       {
         q: 'How do groups work?',
@@ -371,12 +371,12 @@ const operatorSections: GuideSection[] = [
   {
     id: 'compass-companion',
     icon: Compass,
-    title: 'CROS Companion & Compass Posture',
+    title: 'Vigilia Companion & Compass Posture',
     badge: 'All Roles',
     items: [
       {
         q: 'What is the compass icon in the bottom-right corner?',
-        a: 'That is the CROS Companion — your personal guide to the platform. Tap it to open a conversation where you can ask questions, log activities, or request help with anything in CROS.',
+        a: 'That is the Vigilia Companion — your personal guide to the platform. Tap it to open a conversation where you can ask questions, log activities, or request help with anything in Vigilia.',
       },
       {
         q: 'Why does the compass sometimes glow?',

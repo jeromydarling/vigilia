@@ -288,7 +288,7 @@ export const DONE_CRITERIA = [
   'Imagery appears naturally in each reflection',
   'Closing questions feel invitational, not instructive',
   'Tone aligns with Ignatian spirituality',
-  'NRI sounds unmistakably like CROS — calm, human, attentive',
+  'NRI sounds unmistakably like Vigilia — calm, human, attentive',
 ];
 
 /* ─── EDITORIAL BRAIN (DISCERNMENT ENGINE) ─── */

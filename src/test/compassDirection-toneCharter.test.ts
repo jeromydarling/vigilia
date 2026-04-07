@@ -1,5 +1,5 @@
 /**
- * compassDirection + toneCharter — Direction mapping and CROS vocabulary tests.
+ * compassDirection + toneCharter — Direction mapping and Vigilia vocabulary tests.
  *
  * WHAT: Tests compass direction logic and tone charter enforcement.
  * WHERE: src/test/compassDirection-toneCharter.test.ts
@@ -13,10 +13,10 @@ import {
   dominantDirection,
 } from '@/lib/compassDirection';
 import {
-  crosText,
+  vigiliaText,
   containsBannedWord,
   BANNED_WORDS,
-  CROS_VOCABULARY,
+  Vigilia_VOCABULARY,
 } from '@/lib/toneCharter';
 
 // ── compassDirection ──
@@ -74,15 +74,15 @@ describe('dominantDirection', () => {
 
 // ── toneCharter ──
 
-describe('crosText', () => {
+describe('vigiliaText', () => {
   it('translates known SaaS terms', () => {
-    expect(crosText('Saved!')).toBe('Held.');
-    expect(crosText('Success!')).toBe('Noted.');
-    expect(crosText('No data')).toBe('Every relationship begins somewhere');
+    expect(vigiliaText('Saved!')).toBe('Held.');
+    expect(vigiliaText('Success!')).toBe('Noted.');
+    expect(vigiliaText('No data')).toBe('Every relationship begins somewhere');
   });
 
   it('passes through unknown strings', () => {
-    expect(crosText('Custom phrase')).toBe('Custom phrase');
+    expect(vigiliaText('Custom phrase')).toBe('Custom phrase');
   });
 });
 

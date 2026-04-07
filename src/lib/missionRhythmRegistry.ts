@@ -3,7 +3,7 @@
  *
  * WHAT: Defines which dashboard panels appear based on tenant archetype, features, and data presence.
  * WHERE: Consumed by Dashboard (Mission Rhythm), Reports, and any analytics surface.
- * WHY: CROS tenants vary wildly — a parish doesn't need pipeline metrics, a workforce org doesn't need liturgical calendars.
+ * WHY: Vigilia tenants vary wildly — a parish doesn't need pipeline metrics, a workforce org doesn't need liturgical calendars.
  */
 
 export type MissionPanelKey =
@@ -109,7 +109,7 @@ export const MISSION_PANELS: MissionPanelConfig[] = [
     title: 'Team Activity',
     description: 'How your team is engaging with the system.',
     section: 'momentum',
-    fallbackCopy: 'Activity will appear as your team begins using CROS.',
+    fallbackCopy: 'Activity will appear as your team begins using Vigilia.',
   },
   {
     key: 'momentum_vigilia',

@@ -22,21 +22,21 @@ import { pricing, MONTHLY_PRICES } from '@/content/pricing';
 const allTiers = [
   {
     key: 'core',
-    name: 'CROS Core',
+    name: 'Vigilia Core',
     description: 'Relationship OS, Signum baseline, Voluntārium, events, and basic narrative.',
     price: MONTHLY_PRICES.core,
     color: 'hsl(var(--primary))',
   },
   {
     key: 'insight',
-    name: 'CROS Insight',
+    name: 'Vigilia Insight',
     description: 'Testimonium, Drift Detection, Momentum Map Overlays, and Story Signals.',
     price: MONTHLY_PRICES.insight,
     additive: true,
   },
   {
     key: 'story',
-    name: 'CROS Story',
+    name: 'Vigilia Story',
     description: 'Impulsus journal, executive exports, and narrative reporting.',
     price: MONTHLY_PRICES.story,
     additive: true,
@@ -44,10 +44,10 @@ const allTiers = [
 ];
 
 const tierLabels: Record<string, string> = {
-  core: 'CROS Core',
-  insight: 'CROS Insight',
-  story: 'CROS Story',
-  bridge: 'CROS Bridge™',
+  core: 'Vigilia Core',
+  insight: 'Vigilia Insight',
+  story: 'Vigilia Story',
+  bridge: 'Vigilia Bridge™',
 };
 
 export function SubscriptionSettingsCard() {
@@ -98,7 +98,7 @@ export function SubscriptionSettingsCard() {
         <CardTitle className="flex items-center gap-2">
           <CreditCard className="h-5 w-5" />
           Plan & Billing
-          <HelpTooltip content="View your current CROS plan, upgrade or add tiers, and manage billing through the customer portal." />
+          <HelpTooltip content="View your current Vigilia plan, upgrade or add tiers, and manage billing through the customer portal." />
         </CardTitle>
         <CardDescription>
           Your organization's subscription and plan details
@@ -258,13 +258,13 @@ export function SubscriptionSettingsCard() {
               ) : (
                 <ArrowUpRight className="mr-2 h-4 w-4" />
               )}
-              Subscribe to CROS
+              Subscribe to Vigilia
             </Button>
           )}
 
           {isOperatorGranted && (
             <p className="text-xs text-muted-foreground text-center">
-              Your organization has been granted access by the CROS team. To upgrade or add capabilities, please reach out to your community steward.
+              Your organization has been granted access by the Vigilia team. To upgrade or add capabilities, please reach out to your community steward.
             </p>
           )}
         </div>

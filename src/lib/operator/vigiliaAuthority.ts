@@ -4,7 +4,7 @@
  * WHAT: Converts aggregated Vigilia awareness signals into anonymized narrative themes
  *       for powering SEO authority content, archetype pages, and Communio directory storytelling.
  * WHERE: Consumed by Operator Narrative Studio, SEO authority engine, and Living Archetypes.
- * WHY: CROS authority content should feel organic — grown from real ecosystem patterns,
+ * WHY: Vigilia authority content should feel organic — grown from real ecosystem patterns,
  *       never manufactured. This bridge ensures privacy-safe narrative translation.
  */
 import { supabase } from '@/integrations/supabase/client';

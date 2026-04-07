@@ -1,7 +1,7 @@
 /**
  * EssayConnections — Internal linking component for essay pages.
  *
- * WHAT: Shows related essays and key CROS pages for SEO authority.
+ * WHAT: Shows related essays and key Vigilia pages for SEO authority.
  * WHERE: Bottom of every essay page.
  * WHY: Builds internal link graph without aggressive CTAs.
  */
@@ -20,7 +20,7 @@ const STATIC_LINKS = [
   { name: 'What is NRI?', url: '/nri' },
   { name: 'Mission Archetypes', url: '/archetypes' },
   { name: 'Ministry Roles', url: '/roles' },
-  { name: 'Explore CROS', url: '/pricing' },
+  { name: 'Explore Vigilia', url: '/pricing' },
 ];
 
 export function EssayConnections({ currentSlug, collection }: Props) {

@@ -1,5 +1,5 @@
 /**
- * LegalPageLayout — Shared layout for CROS legal pages.
+ * LegalPageLayout — Shared layout for Vigilia legal pages.
  *
  * WHAT: Renders structured legal content with serif headings, anchor nav, and calm tone.
  * WHERE: Used by all /legal/* routes.
@@ -17,7 +17,7 @@ export default function LegalPageLayout({ page }: { page: LegalPageContent }) {
   return (
     <article>
       <SeoHead
-        title={`${page.title} — CROS\u2122`}
+        title={`${page.title} — Vigilia\u2122`}
         description={page.intro}
         canonical={page.route}
         jsonLd={{
@@ -25,7 +25,7 @@ export default function LegalPageLayout({ page }: { page: LegalPageContent }) {
           '@type': 'WebPage',
           name: page.title,
           description: page.intro,
-          publisher: { '@type': 'Organization', name: 'CROS' },
+          publisher: { '@type': 'Organization', name: 'Vigilia' },
         }}
       />
 

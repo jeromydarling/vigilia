@@ -173,10 +173,10 @@ export default function FlocknoteImportWizard() {
       <div className="flex items-center gap-3 mb-2">
         <FileSpreadsheet className="h-6 w-6 text-primary" />
         <h1 className="text-2xl font-bold font-serif">Flocknote Bridge</h1>
-        <HelpTip text="Import people, groups, and memberships from Flocknote CSV exports into CROS." />
+        <HelpTip text="Import people, groups, and memberships from Flocknote CSV exports into Vigilia." />
       </div>
       <p className="text-muted-foreground text-sm">
-        Bring your community relationships from Flocknote into CROS. Your original data stays untouched.
+        Bring your community relationships from Flocknote into Vigilia. Your original data stays untouched.
       </p>
 
       {/* Step indicators */}
@@ -234,7 +234,7 @@ export default function FlocknoteImportWizard() {
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
               <Eye className="h-4 w-4" /> Column Mapping Preview
-              <HelpTip text="Shows how your CSV columns map to CROS fields. Unknown columns are flagged but preserved." />
+              <HelpTip text="Shows how your CSV columns map to Vigilia fields. Unknown columns are flagged but preserved." />
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">

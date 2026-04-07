@@ -3,7 +3,7 @@
  *
  * WHAT: Animated notification feed that shows fictional community activity appearing in real time.
  * WHERE: Rendered on the Command Center when demo mode is active.
- * WHY: Makes the demo feel alive and inhabited — a real community using CROS.
+ * WHY: Makes the demo feel alive and inhabited — a real community using Vigilia.
  */
 
 import { useState, useEffect, useCallback } from 'react';

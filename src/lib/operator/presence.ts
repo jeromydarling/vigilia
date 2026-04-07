@@ -5,7 +5,7 @@
  *       and softens language through the Ignatian Filter before delivery.
  * WHERE: Consumed by Nexus cards, push dispatch, digest builder, and
  *        OperatorNotificationsPage.
- * WHY: CROS believes the system should speak only when meaningful,
+ * WHY: Vigilia believes the system should speak only when meaningful,
  *      and always with warmth.
  */
 

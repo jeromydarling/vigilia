@@ -39,10 +39,10 @@ function deriveInsights(): AdoptionInsight[] {
     insights.push({ title: 'Companion stories could grow', body: 'We are noticing limited Companion-focused content. Walking-alongside narratives resonate with many archetypes.', severity: 'gentle' });
   }
   if (!archetypes.includes('digital_inclusion')) {
-    insights.push({ title: 'Digital inclusion archetype is underrepresented', body: 'Consider a field journal entry showing how digital equity teams use CROS.', severity: 'notice' });
+    insights.push({ title: 'Digital inclusion archetype is underrepresented', body: 'Consider a field journal entry showing how digital equity teams use Vigilia.', severity: 'notice' });
   }
   if (AUTHORITY_SECTIONS.filter((s) => s.category === 'adoption').length < 3) {
-    insights.push({ title: 'More adoption guidance could help', body: 'Leaders adopting CROS benefit from non-technical guidance. Consider adding more adoption-category authority content.', severity: 'gentle' });
+    insights.push({ title: 'More adoption guidance could help', body: 'Leaders adopting Vigilia benefit from non-technical guidance. Consider adding more adoption-category authority content.', severity: 'gentle' });
   }
 
   return insights;

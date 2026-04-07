@@ -39,7 +39,7 @@ export default function PublicMovementOptInCard({
             Help grow the constellation of care
           </h4>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Across CROS, organizations are quietly building a living constellation —
+            Across Vigilia, organizations are quietly building a living constellation —
             not of data points, but of people helped and stories unfolding.
           </p>
           <p className="text-xs text-muted-foreground leading-relaxed">

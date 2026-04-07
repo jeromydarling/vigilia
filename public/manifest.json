@@ -1,7 +1,7 @@
 {
-  "name": "CROS",
-  "short_name": "CROS",
-  "description": "Communal Relationship Operating System",
+  "name": "Vigilia",
+  "short_name": "Vigilia",
+  "description": "A Liturgy of Attention — Catholic Senior Care Hospitality",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",

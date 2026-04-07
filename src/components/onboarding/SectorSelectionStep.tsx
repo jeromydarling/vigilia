@@ -49,12 +49,12 @@ export default function SectorSelectionStep({ selected, onChange }: Props) {
             <TooltipContent side="top" className="max-w-xs text-xs space-y-1">
               <p><strong>What:</strong> Sector tags that describe the domains your organization serves.</p>
               <p><strong>Where:</strong> Used in discovery weighting, narrative context, and movement filtering.</p>
-              <p><strong>Why:</strong> Helps CROS surface more relevant community signals without limiting what you see.</p>
+              <p><strong>Why:</strong> Helps Vigilia surface more relevant community signals without limiting what you see.</p>
             </TooltipContent>
           </Tooltip>
         </div>
         <CardDescription>
-          Select 1–5 sectors. These help CROS prioritize discoveries that match your mission.
+          Select 1–5 sectors. These help Vigilia prioritize discoveries that match your mission.
         </CardDescription>
       </CardHeader>
       <CardContent>

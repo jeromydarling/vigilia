@@ -63,7 +63,7 @@ export function EmailIntakeSetupCard({ onSkip, onComplete }: Props) {
           <p className="text-[0.925rem] text-muted-foreground leading-relaxed">
             Not everyone wants to use an app — and that's okay.
             Team members, social workers, or partners can email notes directly into your workspace,
-            and CROS will log them automatically.
+            and Vigilia will log them automatically.
           </p>
           <div className="flex gap-2 flex-wrap">
             <Button onClick={handleEnable} size="sm">

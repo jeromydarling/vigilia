@@ -28,7 +28,7 @@ export function ImpactDimensionsCard() {
           />
         </CardTitle>
         <CardDescription>
-          Measure what matters in your work — without changing how CROS stays simple.
+          Measure what matters in your work — without changing how Vigilia stays simple.
         </CardDescription>
       </CardHeader>
       <CardContent>

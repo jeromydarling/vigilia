@@ -14,11 +14,11 @@
   "valueProps": {
     "seepeople": {
       "title": "See People",
-      "description": "Every person in your community has a story. CROS helps you see them — truly see them — and respond with intention."
+      "description": "Every person in your community has a story. Vigilia helps you see them — truly see them — and respond with intention."
     },
     "growTogether": {
       "title": "Grow Together",
-      "description": "Relationships aren't transactions. They unfold over time. CROS grows with you, season by season."
+      "description": "Relationships aren't transactions. They unfold over time. Vigilia grows with you, season by season."
     },
     "communityIntelligence": {
       "title": "Community Intelligence",
@@ -28,10 +28,10 @@
   "nriPanel": {
     "title": "NRI, Not AI",
     "subtitle": "Natural Relational Intelligence",
-    "description": "Most platforms use AI to automate relationships. CROS uses NRI — Natural Relational Intelligence — to illuminate them. The NRI Companion doesn't replace your judgment. It deepens your attention.",
+    "description": "Most platforms use AI to automate relationships. Vigilia uses NRI — Natural Relational Intelligence — to illuminate them. The NRI Companion doesn't replace your judgment. It deepens your attention.",
     "comparison": {
       "aiTitle": "Typical AI CRM",
-      "nriTitle": "CROS NRI Companion",
+      "nriTitle": "Vigilia NRI Companion",
       "aiPoint1": "Automates follow-ups",
       "nriPoint1": "Reminds you why this person matters",
       "aiPoint2": "Scores leads",
@@ -46,7 +46,7 @@
     "title": "Pricing",
     "subtitle": "Simple, honest pricing for those who serve.",
     "core": {
-      "name": "CROS Core",
+      "name": "Vigilia Core",
       "price": "$49",
       "period": "/month",
       "description": "Everything you need to see your people and grow your community.",
@@ -76,7 +76,7 @@
       "q3": "Is my data safe?",
       "a3": "Your data is yours. We never sell it, share it, or use it for advertising. Ever.",
       "q4": "Do the Latin module names mean it's only for Catholic communities?",
-      "a4": "Not at all. CROS is designed for anyone who cares for others — mentors, recovery coaches, advocates, community organizers, and yes, parish leaders too."
+      "a4": "Not at all. Vigilia is designed for anyone who cares for others — mentors, recovery coaches, advocates, community organizers, and yes, parish leaders too."
     }
   },
   "testimonials": {
@@ -93,7 +93,7 @@
   },
   "archetypeWeekTemplate": {
     "backLink": "Back to Archetypes",
-    "titlePrefix": "A Week Inside CROS™",
+    "titlePrefix": "A Week Inside Vigilia™",
     "closingReflectionHeading": "The Living Story",
     "seePricing": "See pricing",
     "breadcrumb": {
@@ -107,7 +107,7 @@
     "copyLink": "Copy Link",
     "copied": "Copied",
     "shareByEmail": "Share by Email",
-    "defaultEmailSubject": "A story you might find meaningful — from CROS",
+    "defaultEmailSubject": "A story you might find meaningful — from Vigilia",
     "toastCopied": "Link copied",
     "toastError": "Could not copy link"
   },
@@ -131,7 +131,7 @@
     "columns": {
       "crm": "Traditional CRM",
       "marketing": "Marketing Platform",
-      "cros": "CROS™"
+      "cros": "Vigilia™"
     },
     "rows": {
       "relationshipMemory": {
@@ -197,7 +197,7 @@
     },
     "compass": {
       "label": "How movement flows",
-      "tooltip": "Movement across CROS is shaped by shared intelligence — guided by care, discernment, narrative, and restoration."
+      "tooltip": "Movement across Vigilia is shaped by shared intelligence — guided by care, discernment, narrative, and restoration."
     }
   },
   "elementBadge": {
@@ -213,8 +213,8 @@
   },
   "gardenerNoteModal": {
     "title": "A Note from the First Gardener",
-    "srDescription": "A personal reflection on the origins of CROS.",
-    "p1": "I built CROS slowly — while serving in ministry, recovery spaces, nonprofit outreach, and creative work.",
+    "srDescription": "A personal reflection on the origins of Vigilia.",
+    "p1": "I built Vigilia slowly — while serving in ministry, recovery spaces, nonprofit outreach, and creative work.",
     "p2": "It exists because humans deserve more than databases and thoughtless automation.",
     "p3": "Now it grows beyond me — through every organization that chooses to tend it.",
     "footnote": "Technology shaped by presence, not disruption."
@@ -223,7 +223,7 @@
     "eyebrow": "Written in human language. Updated with care.",
     "lastUpdated": "Last updated:",
     "breadcrumb": {
-      "home": "CROS"
+      "home": "Vigilia"
     }
   },
   "livingArchetypeStoryCard": {
@@ -231,7 +231,7 @@
     "tooltip": {
       "what": "Anonymized narrative signals aggregated across the ecosystem.",
       "where": "Derived from testimonium rollups — no tenant data exposed.",
-      "why": "Shows that real organizations are using CROS™ for this mission type."
+      "why": "Shows that real organizations are using Vigilia™ for this mission type."
     },
     "recentMovement": "Recent Movement Across Ministries Like Yours",
     "anonymizedNote": "These reflections are anonymized and aggregated across the ecosystem."
@@ -239,24 +239,24 @@
   "narrativeCTA": {
     "beginRhythm": {
       "heading": "Ready to begin?",
-      "body": "Choose your mission archetype and let CROS™ shape itself around the work you already do.",
+      "body": "Choose your mission archetype and let Vigilia™ shape itself around the work you already do.",
       "button": "Begin your rhythm"
     },
     "seeCityStory": {
       "heading": "What's happening in your city?",
-      "body": "See the civic patterns emerging across the CROS™ network — anonymized, aggregated, and human.",
+      "body": "See the civic patterns emerging across the Vigilia™ network — anonymized, aggregated, and human.",
       "button": "Explore civic stories"
     },
     "walkFirstWeek": {
       "heading": "Walk your first week",
-      "body": "See what a week inside CROS™ looks like for your mission — no commitment, just a story.",
+      "body": "See what a week inside Vigilia™ looks like for your mission — no commitment, just a story.",
       "button": "See a week inside"
     }
   },
   "narrativeComparisonTable": {
     "dimensionHeader": "Dimension",
     "traditionalHeader": "Traditional",
-    "crosHeader": "CROS™"
+    "crosHeader": "Vigilia™"
   },
   "narrativeGraphLinks": {
     "defaultHeading": "You may also explore",
@@ -290,7 +290,7 @@
     "tagline": "AI organizes data. NRI™ helps people understand their relationships."
   },
   "publicLayout": {
-    "logoAlt": "CROS logo",
+    "logoAlt": "Vigilia logo",
     "nav": {
       "features": "Features",
       "theModel": "The Model",
@@ -319,13 +319,13 @@
       "contact": "Contact"
     },
     "footer": {
-      "copyright": "© {{year}} CROS™ · {{fullName}}. All rights reserved.",
-      "gardenerNote": "CROS was grown from decades of lived community work."
+      "copyright": "© {{year}} Vigilia™ · {{fullName}}. All rights reserved.",
+      "gardenerNote": "Vigilia was grown from decades of lived community work."
     }
   },
   "quietComparisonGrid": {
     "beforeLabel": "Before",
-    "withCrosLabel": "With CROS"
+    "withCrosLabel": "With Vigilia"
   },
   "relatedNarrativesCard": {
     "heading": "Continue the story",
@@ -339,8 +339,8 @@
     }
   },
   "relatioPositioningMatrix": {
-    "eyebrow": "Where CROS fits",
-    "footnote": "CROS works alongside your existing tools — or can become your primary system over time.",
+    "eyebrow": "Where Vigilia fits",
+    "footnote": "Vigilia works alongside your existing tools — or can become your primary system over time.",
     "seeIntegrations": "See all integrations",
     "columns": {
       "crm": {
@@ -350,7 +350,7 @@
         "p3": "Data ownership unclear"
       },
       "cros": {
-        "heading": "CROS™",
+        "heading": "Vigilia™",
         "p1": "Relationship-first",
         "p2": "Narrative-aware",
         "p3": "Companion, not replacement"
@@ -397,14 +397,14 @@
   },
   "weekLibraryCTA": {
     "eyebrow": "Narrative Library",
-    "heading": "See what a real week looks like inside CROS™",
+    "heading": "See what a real week looks like inside Vigilia™",
     "body": "Stories from Visitors, Shepherds, Stewards, and Companions — real rhythms, not feature lists.",
     "linkText": "Explore the stories"
   },
   "archetypeDeepPage": {
     "eyebrow": "Mission Archetype",
-    "weekInsideHeading": "A Week Inside CROS™",
-    "weekInsideBody": "See how a {{archetype}} team uses CROS™ from Monday to Sunday.",
+    "weekInsideHeading": "A Week Inside Vigilia™",
+    "weekInsideBody": "See how a {{archetype}} team uses Vigilia™ from Monday to Sunday.",
     "readFullWeek": "Read the full week",
     "threeLensesHeading": "Three Lenses, One Mission",
     "extendAddOnsHeading": "Extend with Add-ons",
@@ -449,12 +449,12 @@
   "archetypesPage": {
     "roleIdentityHeading": "Which role fits you?",
     "title": "Mission Archetypes",
-    "description": "CROS™ adapts to your mission — church, nonprofit, social enterprise, or workforce development. Choose an archetype and your workspace shapes itself.",
-    "heroBody": "CROS™ adapts to your mission. Choose an archetype during onboarding and your workspace shapes itself — journey stages, language, community signals, and narrative tone.",
+    "description": "Vigilia™ adapts to your mission — church, nonprofit, social enterprise, or workforce development. Choose an archetype and your workspace shapes itself.",
+    "heroBody": "Vigilia™ adapts to your mission. Choose an archetype during onboarding and your workspace shapes itself — journey stages, language, community signals, and narrative tone.",
     "exampleJourneysLabel": "Example Journeys",
     "exampleReflectionLabel": "Example Reflection",
     "communitySignalLabel": "Community Signal",
-    "readWeekInside": "Read a Week Inside CROS™",
+    "readWeekInside": "Read a Week Inside Vigilia™",
     "deepDive": "Deep dive",
     "seoLinks": {
       "heading": "Next steps",
@@ -467,12 +467,12 @@
     }
   },
   "authorityPage": {
-    "eyebrow": "The CROS Authority Hub",
+    "eyebrow": "The Vigilia Authority Hub",
     "heading": "Knowledge for Living Mission",
     "subheading": "Stories, guidance, and reflections from the field — for leaders who believe relationships matter more than metrics.",
     "readingPath": {
       "label": "Where to begin",
-      "description": "Start with a Week story to see CROS in daily rhythm. Then explore an Adoption guide for practical wisdom. When you're ready to go deeper, the Essays and Field Dispatches will meet you there."
+      "description": "Start with a Week story to see Vigilia in daily rhythm. Then explore an Adoption guide for practical wisdom. When you're ready to go deeper, the Essays and Field Dispatches will meet you there."
     },
     "featured": {
       "heading": "Featured Reading"
@@ -525,7 +525,7 @@
       },
       "adoption": {
         "label": "Adoption Guidance",
-        "description": "Non-technical leadership insights for bringing CROS into your organization."
+        "description": "Non-technical leadership insights for bringing Vigilia into your organization."
       },
       "stories": {
         "label": "Narrative Essays",
@@ -553,7 +553,7 @@
     "rolesHeading": "Roles that carry this calling",
     "faqHeading": "Questions about this calling",
     "ctaHeading": "Follow this calling",
-    "ctaBody": "Begin with the archetype that matches your mission. CROS™ will shape itself around the work you already do.",
+    "ctaBody": "Begin with the archetype that matches your mission. Vigilia™ will shape itself around the work you already do.",
     "ctaButton": "Begin your rhythm"
   },
   "crosFeaturePage": {
@@ -623,9 +623,9 @@
   },
   "loginPage": {
     "welcomeBack": "Welcome back",
-    "description": "Sign in to your CROS account",
+    "description": "Sign in to your Vigilia account",
     "removedAlert": "Your access to the organization has been removed. Please contact a steward if you believe this is an error.",
-    "checkoutSuccess": "Payment successful! Sign in to access your CROS account.",
+    "checkoutSuccess": "Payment successful! Sign in to access your Vigilia account.",
     "signInWithGoogle": "Sign in with Google",
     "orDivider": "or",
     "emailLabel": "Email",
@@ -681,7 +681,7 @@
       "governance": {
         "eyebrow": "Governance",
         "heading": "Shared Intelligence",
-        "body": "Every CROS community participates in a shared intelligence capacity. Instead of charging per action, CROS protects calm work with predictable, human-scaled limits."
+        "body": "Every Vigilia community participates in a shared intelligence capacity. Instead of charging per action, Vigilia protects calm work with predictable, human-scaled limits."
       }
     },
     "core": {
@@ -760,7 +760,7 @@
         },
         "financialMoments": {
           "title": "Financial Moments",
-          "desc": "When relationships include generosity, participation, or collaboration — CROS simply remembers those moments too."
+          "desc": "When relationships include generosity, participation, or collaboration — Vigilia simply remembers those moments too."
         }
       }
     },
@@ -771,11 +771,11 @@
     }
   },
   "comparePage": {
-    "headline": "Most systems organize data.\nCROS™ remembers relationships.",
-    "subheadline": "For decades, CRMs helped organizations track activity — but rarely helped them understand the human story behind it. CROS™ was built differently.",
+    "headline": "Most systems organize data.\nVigilia™ remembers relationships.",
+    "subheadline": "For decades, CRMs helped organizations track activity — but rarely helped them understand the human story behind it. Vigilia™ was built differently.",
     "viewPricing": "View Pricing",
     "seeArchetypes": "See Archetypes",
-    "howCrosComparesHeading": "How CROS™ Compares",
+    "howCrosComparesHeading": "How Vigilia™ Compares",
     "convergeSection": {
       "heading": "Where We Converge — and Where We Diverge",
       "body": "Most modern platforms can store contacts, log activity, and track tasks. That's the convergence. The divergence is whether the system helps your team remember the human story — and notice what's changing in the community you serve."
@@ -789,8 +789,8 @@
       "body": "Relationship memory, community awareness, narrative intelligence — the human layer."
     },
     "top10": {
-      "heading": "CROS™ vs 10 Leading Platforms",
-      "subheading": "Most CRMs assume you're at a desk. CROS™ assumes you're with people."
+      "heading": "Vigilia™ vs 10 Leading Platforms",
+      "subheading": "Most CRMs assume you're at a desk. Vigilia™ assumes you're with people."
     },
     "migrationSection": {
       "heading": "Leaving your old system shouldn't be a project.",
@@ -803,8 +803,8 @@
       "p1": "Traditional platforms were designed to manage transactions — not relationships.",
       "p2": "They record emails sent, donations logged, campaigns opened.",
       "p3": "But they rarely answer: What did we notice? What changed? Who needed us most?",
-      "p4": "CROS™ doesn't replace technology. It restores the human layer that technology quietly removed.",
-      "p5": "Instead of forcing people into spreadsheets, CROS™ helps your team remember why those relationships mattered in the first place."
+      "p4": "Vigilia™ doesn't replace technology. It restores the human layer that technology quietly removed.",
+      "p5": "Instead of forcing people into spreadsheets, Vigilia™ helps your team remember why those relationships mattered in the first place."
     },
     "intelligenceSection": {
       "heading": "Intelligence, Redefined",
@@ -812,7 +812,7 @@
     },
     "unifiedSection": {
       "heading": "One system · every layer",
-      "unifierNote": "CROS™ unifies these without losing the human story."
+      "unifierNote": "Vigilia™ unifies these without losing the human story."
     },
     "finalCta": {
       "heading": "Ready to move beyond the spreadsheet?",
@@ -849,11 +849,11 @@
   "relatioMarketplace": {
     "gate": {
       "title": "Relatio Marketplace",
-      "description": "Available in CROS Bridge. Connect your CROS workspace to CRMs, communication tools, and community platforms.",
+      "description": "Available in Vigilia Bridge. Connect your Vigilia workspace to CRMs, communication tools, and community platforms.",
       "viewPlans": "View plans"
     },
     "narrativeCompanions": "Narrative Companions",
-    "companionTooltip": "CROS listens alongside your existing system. Nothing is changed — we only observe and generate narrative signals.",
+    "companionTooltip": "Vigilia listens alongside your existing system. Nothing is changed — we only observe and generate narrative signals.",
     "listening": "Listening",
     "startSetup": "Start Setup",
     "connectedBridges": "Connected Bridges",
@@ -862,7 +862,7 @@
     "syncHistory": "Sync History"
   },
   "landingPage": {
-    "heroCopy": "CROS™ helps teams remember people, notice community shifts, and build a living story of impact — without turning mission into busywork.",
+    "heroCopy": "Vigilia™ helps teams remember people, notice community shifts, and build a living story of impact — without turning mission into busywork.",
     "heroTagline": "A Relationship Operating System built on a different ontology — where story guides structure.",
     "deviceTrustBar": {
       "mobile": "Mobile-first",
@@ -873,7 +873,7 @@
     },
     "rolesSection": {
       "heading": "What role are you?",
-      "subheading": "CROS™ adapts to how you serve — whether you lead, walk alongside, or show up in the field.",
+      "subheading": "Vigilia™ adapts to how you serve — whether you lead, walk alongside, or show up in the field.",
       "shepherd": {
         "tagline": "Keep the story.",
         "copy": "Guide the mission with calm oversight. See relationships unfold across people, communities, and time."
@@ -891,7 +891,7 @@
     "nervousSystem": {
       "label": "NERVOUS SYSTEM",
       "name": "You",
-      "body": "The system only lives when you do. Every reflection, conversation, and moment of presence is the signal that gives CROS™ its meaning."
+      "body": "The system only lives when you do. Every reflection, conversation, and moment of presence is the signal that gives Vigilia™ its meaning."
     },
     "reflectionCard": {
       "heading": "Not sure if you need new software?",
@@ -902,7 +902,7 @@
       "heading": "Technology should carry the weight.\nHumans carry the meaning.",
       "p1": "Computers learned numbers.",
       "p2": "AI learned language.",
-      "p3": "CROS™ helps you remember people.",
+      "p3": "Vigilia™ helps you remember people.",
       "cta": "Read the Manifesto"
     },
     "narrativeCards": {
@@ -930,13 +930,13 @@
     },
     "archetypesSection": {
       "heading": "Built for missions like yours",
-      "subheading": "Choose your archetype. CROS™ adapts to how you serve.",
+      "subheading": "Choose your archetype. Vigilia™ adapts to how you serve.",
       "exploreArchetypes": "Explore archetypes"
     },
     "beyondCrmSection": {
       "heading": "Why Organizations Are Moving Beyond Traditional CRMs",
-      "body": "Traditional systems track activity. CROS™ remembers relationships — and the human stories that hold them together.",
-      "cta": "See How CROS™ Compares"
+      "body": "Traditional systems track activity. Vigilia™ remembers relationships — and the human stories that hold them together.",
+      "cta": "See How Vigilia™ Compares"
     },
     "privacySection": {
       "heading": "Privacy & trust, by design",
@@ -944,7 +944,7 @@
       "link": "Learn about our security approach"
     },
     "integrationsSection": {
-      "badgeLabel": "CROS Bridge™",
+      "badgeLabel": "Vigilia Bridge™",
       "heading": "Connects to the tools you already use",
       "subheading": "30+ integrations — CRMs, church management systems, nonprofit platforms, and WordPress.",
       "twoWayLabel": "2-way",
@@ -953,13 +953,13 @@
     },
     "intelligenceSection": {
       "heading": "Intelligence, governed with intention.",
-      "p1": "CROS includes a shared intelligence capacity — not to replace human judgment, but to help communities notice what might otherwise be missed.",
+      "p1": "Vigilia includes a shared intelligence capacity — not to replace human judgment, but to help communities notice what might otherwise be missed.",
       "p2": "Instead of unlimited automation, we believe in discernment. Your community shares a living AI capacity that grows alongside your mission, guided by gentle safeguards and transparent stewardship.",
       "bullet1": "No surprise overages",
       "bullet2": "Shared capacity shaped by your mission",
       "bullet3": "AI that listens before it speaks",
       "bullet4": "Bulk operations and saved views for growing teams",
-      "cta": "See how intelligence flows through CROS"
+      "cta": "See how intelligence flows through Vigilia"
     },
     "finalCta": {
       "heading": "Ready to remember people well?",
@@ -969,7 +969,7 @@
   },
   "rolesPage": {
     "heroHeading": "What role are you?",
-    "heroSubheading": "CROS™ adapts to how you serve people — whether you lead, walk alongside, or show up in the field.",
+    "heroSubheading": "Vigilia™ adapts to how you serve people — whether you lead, walk alongside, or show up in the field.",
     "seoLinksHeading": "Continue exploring"
   },
   "roleGuidePage": {
@@ -992,7 +992,7 @@
     "archetypesHeading": "Archetypes where this role thrives",
     "faqHeading": "Common questions",
     "ctaHeading": "Step into this role",
-    "ctaBody": "Begin your journey with CROS™ and let the system shape itself around how you already serve.",
+    "ctaBody": "Begin your journey with Vigilia™ and let the system shape itself around how you already serve.",
     "ctaButton": "Step into this role"
   },
   "roleStoryPage": {
@@ -1015,7 +1015,7 @@
   },
   "contactPage": {
     "heading": "Get started now",
-    "subheading": "Tell us about your organization and we'll set up your CROS™ workspace.",
+    "subheading": "Tell us about your organization and we'll set up your Vigilia™ workspace.",
     "nameLabel": "Name *",
     "emailLabel": "Email *",
     "organizationLabel": "Organization",
@@ -1065,9 +1065,9 @@
       "title": "Steward",
       "identity": "You set up the workspace and tend to the tools your team needs.",
       "bullets": {
-        "whatYouDo": "Configure CROS™, invite team members, manage integrations, and ensure the workspace serves the mission.",
+        "whatYouDo": "Configure Vigilia™, invite team members, manage integrations, and ensure the workspace serves the mission.",
         "whatYouSee": "Admin console, activation checklist, team readiness, and integration status.",
-        "whatYouAvoid": "Doing everything yourself. Once setup is done, CROS™ runs itself."
+        "whatYouAvoid": "Doing everything yourself. Once setup is done, Vigilia™ runs itself."
       },
       "cta": "See Steward view"
     },
@@ -1108,7 +1108,7 @@
     "visitor": {
       "eyebrow": "Visitor",
       "heroHeading": "Keep the witness",
-      "heroBody": "Visitors show up where life happens — homes, events, neighborhoods. Your presence is the most important thing you bring. CROS™ makes sure it's remembered.",
+      "heroBody": "Visitors show up where life happens — homes, events, neighborhoods. Your presence is the most important thing you bring. Vigilia™ makes sure it's remembered.",
       "promiseHeading": "Show up. Speak. Done.",
       "promiseSubtext": "That's the entire Visitor workflow.",
       "voiceNoteLabel": "Example voice note",
@@ -1120,8 +1120,8 @@
     "steward": {
       "eyebrow": "Steward",
       "heroHeading": "Tend the workspace",
-      "heroBody": "Stewards are workspace caretakers. You set up the environment, invite the team, and ensure CROS™ serves your mission — then you step back and let the roles do their work.",
-      "teamFitBody": "A Steward often wears another hat too — Shepherd or Companion. The Steward role is about the workspace itself: setup, invitations, integrations, and readiness. Once your team is configured, CROS™ runs itself.",
+      "heroBody": "Stewards are workspace caretakers. You set up the environment, invite the team, and ensure Vigilia™ serves your mission — then you step back and let the roles do their work.",
+      "teamFitBody": "A Steward often wears another hat too — Shepherd or Companion. The Steward role is about the workspace itself: setup, invitations, integrations, and readiness. Once your team is configured, Vigilia™ runs itself.",
       "roleInEcosystemHeading": "Your role in the ecosystem"
     }
   },
@@ -1130,14 +1130,14 @@
     "seePricing": "See pricing",
     "seoLinksHeading": "Continue exploring",
     "eyebrow": {
-      "story": "CROS Story",
+      "story": "Vigilia Story",
       "intelligence": "Intelligence",
       "modules": "Modules",
-      "insight": "CROS Insight"
+      "insight": "Vigilia Insight"
     }
   },
   "whyCrosPage": {
-    "heroHeading": "Why CROS Exists",
+    "heroHeading": "Why Vigilia Exists",
     "heroBody": "Because organizations that serve people deserve technology that remembers them.",
     "seoLinksHeading": "Continue exploring"
   },

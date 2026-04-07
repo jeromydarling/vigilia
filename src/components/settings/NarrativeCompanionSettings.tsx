@@ -111,7 +111,7 @@ export function NarrativeCompanionSettings() {
           <div>
             <CardTitle className="text-base">Narrative Companion</CardTitle>
             <CardDescription>
-              CROS listens alongside your existing system — never changes it.
+              Vigilia listens alongside your existing system — never changes it.
             </CardDescription>
           </div>
         </div>
@@ -121,7 +121,7 @@ export function NarrativeCompanionSettings() {
           <div className="space-y-0.5">
             <Label>Enable Narrative Companion</Label>
             <p className="text-xs text-muted-foreground">
-              Allow CROS to receive gentle signals from connected systems.
+              Allow Vigilia to receive gentle signals from connected systems.
             </p>
           </div>
           <Switch

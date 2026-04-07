@@ -1,11 +1,11 @@
 /**
- * lexiconLinker — Auto-linking helper for CROS Lexicon™ terms.
+ * lexiconLinker — Auto-linking helper for Vigilia Lexicon™ terms.
  *
  * WHAT: Scans text for known lexicon terms and returns segments for rendering linked text.
  * WHERE: Used in marketing content components to auto-link terms.
  * WHY: Builds semantic authority by connecting content to lexicon definitions.
  */
-import { CROS_LEXICON } from '@/content/lexicon';
+import { Vigilia_LEXICON } from '@/content/lexicon';
 
 interface TextSegment {
   text: string;
@@ -13,7 +13,7 @@ interface TextSegment {
 }
 
 // Build lookup sorted by title length (longest first to avoid partial matches)
-const TERM_MAP = CROS_LEXICON
+const TERM_MAP = Vigilia_LEXICON
   .flatMap((entry) => {
     const titles = [entry.title];
     // Add short forms for common terms

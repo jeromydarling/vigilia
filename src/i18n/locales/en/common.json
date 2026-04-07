@@ -149,7 +149,7 @@
     "sortDescending": "Sort descending",
     "pageOf": "Page {{current}} of {{total}}",
     "languageSelector": "Select language",
-    "openCrosCompanion": "Open CROS Companion"
+    "openCrosCompanion": "Open Vigilia Companion"
   },
   "password": {
     "strength": "Password strength",
@@ -171,7 +171,7 @@
   "auth": {
     "login": {
       "title": "Welcome back",
-      "subtitle": "Sign in to your CROS account",
+      "subtitle": "Sign in to your Vigilia account",
       "emailLabel": "Email",
       "emailPlaceholder": "you@organization.org",
       "passwordLabel": "Password",
@@ -182,7 +182,7 @@
       "noAccount": "Need an account?",
       "contactSteward": "Ask your organization's steward for an invite link.",
       "removedAlert": "Your access to the organization has been removed. Please contact a steward if you believe this is an error.",
-      "checkoutSuccess": "Payment successful! Sign in to access your CROS account.",
+      "checkoutSuccess": "Payment successful! Sign in to access your Vigilia account.",
       "googleFailed": "Google sign-in failed"
     },
     "signup": {
@@ -255,10 +255,10 @@
     "returnHome": "Return to Home"
   },
   "onboarding": {
-    "welcomeTitle": "Welcome to CROS",
+    "welcomeTitle": "Welcome to Vigilia",
     "welcomeSubtitle": "Create your account to get started",
     "setupSubtitle": "Let's set up your organization",
-    "planBadge": "CROS {{tier}} Plan",
+    "planBadge": "Vigilia {{tier}} Plan",
     "stepOf": "Step {{current}} of {{total}}",
     "accountCreation": {
       "paymentConfirmed": "Payment confirmed",
@@ -278,7 +278,7 @@
       "passwordTooShort": "Password must be at least 8 characters."
     },
     "welcome": {
-      "title": "Your CROS workspace is almost ready",
+      "title": "Your Vigilia workspace is almost ready",
       "description": "We'll walk you through a few quick steps to configure your workspace. This takes about two minutes.",
       "step1": "Choose archetype",
       "step2": "Choose territory",
@@ -286,7 +286,7 @@
     },
     "stewardWelcome": {
       "title": "You are the Steward of this workspace",
-      "description": "As the founding member, you hold the keys to this workspace. You can invite your team, manage settings, and shape how your organization uses CROS.",
+      "description": "As the founding member, you hold the keys to this workspace. You can invite your team, manage settings, and shape how your organization uses Vigilia.",
       "inviteTeamTitle": "Invite your team",
       "inviteTeamDesc": "Add Shepherds, Companions, and Visitors",
       "manageBillingTitle": "Manage billing",
@@ -319,7 +319,7 @@
     },
     "ministryRole": {
       "title": "How do you serve your community?",
-      "description": "This doesn't change your permissions. It simply helps CROS speak your language."
+      "description": "This doesn't change your permissions. It simply helps Vigilia speak your language."
     },
     "multiCity": {
       "title": "Do you operate in more than one city?",
@@ -331,13 +331,13 @@
     },
     "details": {
       "title": "Organization Details",
-      "description": "These will appear throughout your CROS workspace.",
+      "description": "These will appear throughout your Vigilia workspace.",
       "orgNameLabel": "Organization Name",
       "orgNamePlaceholder": "e.g. PCs for People",
       "urlSlugLabel": "URL Slug",
       "slugTaken": "This slug is already in use. Please choose a different one.",
       "slugAvailable": "This slug is available.",
-      "featuresIncluded": "Features included with CROS {{tier}}",
+      "featuresIncluded": "Features included with Vigilia {{tier}}",
       "featuresUpgrade": "Features are determined by your plan tier. You can upgrade anytime from settings."
     },
     "knowledge": {
@@ -361,7 +361,7 @@
     },
     "confirm": {
       "title": "Confirm & Create",
-      "description": "Review your setup before creating your CROS workspace.",
+      "description": "Review your setup before creating your Vigilia workspace.",
       "organization": "Organization",
       "url": "URL",
       "archetype": "Archetype",
@@ -384,7 +384,7 @@
     },
     "verifyEmail": {
       "title": "One last thing — verify your email",
-      "description": "Your workspace is ready! We sent a verification link to {{email}}. Please verify your email to access your CROS workspace.",
+      "description": "Your workspace is ready! We sent a verification link to {{email}}. Please verify your email to access your Vigilia workspace.",
       "orgCreated": "Organization created successfully!",
       "checkInbox": "Check your inbox and click the verification link, then come back to sign in.",
       "goToSignIn": "Go to sign in"
@@ -395,7 +395,7 @@
     },
     "toasts": {
       "paymentConfirmed": "Payment confirmed! Let's set up your workspace.",
-      "orgCreated": "Organization created! Welcome to CROS.",
+      "orgCreated": "Organization created! Welcome to Vigilia.",
       "uploadProcessing": "Upload may still be processing. You can check later in Settings.",
       "fileTooLarge": "File too large — maximum 5 MB.",
       "couldNotUpdateStep": "Could not update step.",
@@ -411,7 +411,7 @@
     "goToCommandCenter": "Go to Command Center",
     "setupProgress": "Your setup progress",
     "stepsComplete": "{{completed}} of {{total}} steps complete",
-    "helpText": "These steps help you get the most from CROS.",
+    "helpText": "These steps help you get the most from Vigilia.",
     "tooltipWhat": "Guided onboarding steps tailored to your mission archetype.",
     "tooltipWhere": "This page — accessible from your Command Center.",
     "tooltipWhy": "Helps your team build rhythm without overwhelming the first day.",
@@ -456,7 +456,7 @@
     "operatorResponse": "Response"
   },
   "sponsoredSetup": {
-    "welcomeHeading": "Welcome to CROS",
+    "welcomeHeading": "Welcome to Vigilia",
     "workspacePreparedFor": "A workspace has been prepared for",
     "yourOrganization": "your organization",
     "steps": {
@@ -466,20 +466,20 @@
     },
     "welcome": {
       "cardTitle": "Your workspace is ready",
-      "cardDescription": "A Gardener has prepared this space for you. Before you begin, we'd love to know a little about how you'll use CROS — just a few quick steps."
+      "cardDescription": "A Gardener has prepared this space for you. Before you begin, we'd love to know a little about how you'll use Vigilia — just a few quick steps."
     },
     "role": {
-      "cardTitle": "How will you use CROS?",
+      "cardTitle": "How will you use Vigilia?",
       "cardDescription": "This shapes your experience — what you see first, and how the system supports you."
     },
     "migration": {
       "cardTitle": "Where are you coming from?",
-      "cardDescription": "Your workspace includes CROS Bridge™ — our integration and migration tools. Knowing your current system helps us prepare the best path forward.",
+      "cardDescription": "Your workspace includes Vigilia Bridge™ — our integration and migration tools. Knowing your current system helps us prepare the best path forward.",
       "crmLabel": "Current CRM or database",
       "notesLabel": "Anything we should know about your data?",
       "notesPlaceholder": "e.g. We have ~2,000 contacts and 5 years of donation history in Bloomerang...",
       "notesHint": "Optional — this helps your Gardener prepare migration tools.",
-      "noCrmMessage": "No problem — CROS is designed to grow with you. You can always connect tools later through the Relatio™ marketplace."
+      "noCrmMessage": "No problem — Vigilia is designed to grow with you. You can always connect tools later through the Relatio™ marketplace."
     },
     "profile": {
       "cardTitle": "What should we call you?",
@@ -499,13 +499,13 @@
       "settingUp": "Setting up\u2026"
     },
     "toasts": {
-      "welcome": "Welcome to CROS. Your workspace is ready.",
+      "welcome": "Welcome to Vigilia. Your workspace is ready.",
       "failed": "Setup failed"
     }
   },
   "importCenter": {
     "title": "Import Center",
-    "subtitle": "Transition from any CRM — upload CSV exports and map them into CROS",
+    "subtitle": "Transition from any CRM — upload CSV exports and map them into Vigilia",
     "importTypeLabel": "Import Type",
     "sourceSystemLabel": "Source System",
     "uploadPrompt": "Upload a CSV file to get started",

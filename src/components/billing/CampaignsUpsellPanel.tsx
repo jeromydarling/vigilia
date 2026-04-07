@@ -54,7 +54,7 @@ export function CampaignsUpsellPanel() {
           <p className="text-sm text-muted-foreground text-center leading-relaxed">
             You don't need another marketing platform.
             Relatio Campaigns grows naturally from the relationships you already
-            track inside CROS. Send thoughtful outreach through Gmail or Outlook
+            track inside Vigilia. Send thoughtful outreach through Gmail or Outlook
             without exporting lists, juggling tools, or treating people like
             data points.
           </p>

@@ -60,7 +60,7 @@ export default function CommunioSoftInvite({ isSteward }: CommunioSoftInviteProp
             Working with another organization?
           </p>
           <p className="text-xs text-muted-foreground mt-0.5">
-            You can invite them to explore CROS through a story that fits their mission.
+            You can invite them to explore Vigilia through a story that fits their mission.
           </p>
           <Button
             variant="ghost"

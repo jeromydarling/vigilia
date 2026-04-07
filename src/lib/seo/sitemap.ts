@@ -12,7 +12,7 @@ import { archetypeComparisons } from '@/content/archetypeComparisons';
 import { roleGuides } from '@/content/roleGuides';
 import { roleStories } from '@/content/roleStories';
 
-const SITE_URL = 'https://thecros.app';
+const SITE_URL = 'https://vigilia.care';
 
 const staticRoutes = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },

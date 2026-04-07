@@ -46,7 +46,7 @@
   "contact": {
     "title": "Need More Help?",
     "email": "Email us at support@crosplatform.com",
-    "community": "Join the CROS community",
+    "community": "Join the Vigilia community",
     "feedback": "Send Feedback"
   },
   "helpNav": {
@@ -148,7 +148,7 @@
   },
   "caregiverGuide": {
     "title": "Companion Guide",
-    "subtitle": "Everything you need to know about using CROS™ as a companion — solo or with an organization.",
+    "subtitle": "Everything you need to know about using Vigilia™ as a companion — solo or with an organization.",
     "forLine": "For mentors, sponsors, caregivers, and those who walk closely with others.",
     "footer": "Need more help? Visit the full Help page or reach out through Help Requests."
   }

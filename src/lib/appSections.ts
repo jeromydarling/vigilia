@@ -1,5 +1,5 @@
 /**
- * appSections — Shared registry of CROS app section metadata.
+ * appSections — Shared registry of Vigilia app section metadata.
  *
  * WHAT: Single source of truth for section names, descriptions, and feature requirements.
  * WHERE: Used by Help.tsx (full content) and AdminHowTo.tsx (admin guide) to prevent drift.
@@ -47,7 +47,7 @@ export const APP_SECTIONS: AppSectionMeta[] = [
   { id: 'volunteers', title: 'Voluntārium', description: 'Volunteer management, hours tracking, and recognition.', navGroup: 'Partners' },
   { id: 'provisions', title: 'Prōvīsiō', description: 'Technology provision requests and order tracking.', navGroup: 'Partners' },
   { id: 'testimonium', title: 'Testimonium', description: 'Narrative storytelling and impact insights.', requiredFeature: 'testimonium', navGroup: 'Home' },
-  { id: 'communio', title: 'Communio', description: 'Opt-in narrative sharing between CROS workspaces.', navGroup: 'Communio' },
+  { id: 'communio', title: 'Communio', description: 'Opt-in narrative sharing between Vigilia workspaces.', navGroup: 'Communio' },
   { id: 'search', title: 'Global Search', description: 'Find anything quickly across the application.', navGroup: 'Home' },
   { id: 'settings', title: 'Settings', description: 'Your profile, notifications, and workspace preferences.', navGroup: 'Home' },
   { id: 'discovery', title: 'Discovery (Signum)', description: 'Territory-aware discovery — finds partners, events, and grants within your activated territories using archetype-sensitive relevance scoring.', navGroup: 'Partners' },

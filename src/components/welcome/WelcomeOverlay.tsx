@@ -122,7 +122,7 @@ export function WelcomeOverlay({ onDismiss }: Props) {
                 </h3>
               </div>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Connecting your email lets CROS help you track conversations
+                Connecting your email lets Vigilia help you track conversations
                 and stay organized — but it's completely optional.
               </p>
               <div className="flex flex-wrap gap-2">
@@ -159,7 +159,7 @@ export function WelcomeOverlay({ onDismiss }: Props) {
                 </h3>
               </div>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Your calendar helps CROS understand your rhythm
+                Your calendar helps Vigilia understand your rhythm
                 and suggest meaningful moments to connect.
               </p>
               <Button
@@ -252,7 +252,7 @@ export function WelcomeOverlay({ onDismiss }: Props) {
               onClick={() => handleDismiss(true)}
               disabled={dismissing}
             >
-              Continue to CROS
+              Continue to Vigilia
             </Button>
             <Button
               variant="ghost"

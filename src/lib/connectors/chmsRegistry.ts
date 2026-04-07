@@ -3,7 +3,7 @@
  *
  * WHAT: Defines supported ChMS platforms, their auth methods, polling cadence, and domains.
  * WHERE: Used by NarrativeCompanionSetupCard, Settings integrations, relatio-sync-runner.
- * WHY: CROS acts as a silent Narrative Companion — never a replacement CRM.
+ * WHY: Vigilia acts as a silent Narrative Companion — never a replacement CRM.
  */
 
 export interface ChmsConnectorConfig {

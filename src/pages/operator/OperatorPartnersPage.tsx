@@ -131,7 +131,7 @@ export default function OperatorPartnersPage() {
           <h1 className="text-2xl font-bold text-foreground flex items-center gap-2">
             Partners
             <HelpTooltip
-              what="Your sales pipeline — organizations you're cultivating as potential CROS customers or ecosystem partners."
+              what="Your sales pipeline — organizations you're cultivating as potential Vigilia customers or ecosystem partners."
               where="Operator Console → Partners (CRESCERE)"
               why="This is your own CRM, completely separate from your tenants' data. Track prospects through the journey from research to active customer."
             />

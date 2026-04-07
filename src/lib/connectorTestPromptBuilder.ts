@@ -107,7 +107,7 @@ export function buildConnectorRunPrompt(run: ConnectorTestRun): string {
   }
 
   const header = [
-    '# CROS™ Connector Adapter Repair Pack',
+    '# Vigilia™ Connector Adapter Repair Pack',
     '',
     `This pack addresses **${failures.length}** failing test(s) out of ${run.total} total.`,
     `Run ID: \`${run.run_id}\``,

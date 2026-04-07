@@ -24,7 +24,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { BookOpen, Plus, Search, Edit2, Trash2, Eye, EyeOff, Globe, ExternalLink } from 'lucide-react';
-import { CROS_LEXICON, getLexiconCategories, getLexiconByCategory } from '@/content/lexicon';
+import { Vigilia_LEXICON, getLexiconCategories, getLexiconByCategory } from '@/content/lexicon';
 import { Link } from 'react-router-dom';
 
 interface KnowledgeDoc {
@@ -259,7 +259,7 @@ function LexiconCoveragePanel() {
         <Card>
           <CardContent className="p-4">
             <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Total Terms</p>
-            <p className="text-2xl font-semibold font-serif">{CROS_LEXICON.length}</p>
+            <p className="text-2xl font-semibold font-serif">{Vigilia_LEXICON.length}</p>
           </CardContent>
         </Card>
         <Card>

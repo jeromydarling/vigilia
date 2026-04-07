@@ -40,7 +40,7 @@ describe('Financial Activity Labels', () => {
     }
   });
 
-  it('uses CROS pastoral language, not commercial language', () => {
+  it('uses Vigilia pastoral language, not commercial language', () => {
     const forbidden = ['Revenue', 'Transaction', 'Order', 'Success!', 'Donor', 'Top donor', 'Conversion'];
     const allLabels = [...Object.values(EVENT_TYPE_LABELS), ...Object.values(STATUS_LABELS)];
     for (const label of allLabels) {

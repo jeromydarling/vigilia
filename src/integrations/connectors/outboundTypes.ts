@@ -1,13 +1,13 @@
 /**
  * Outbound Adapter Interface — Bi-directional Sync
  *
- * WHAT: Defines the denormalization contract for writing CROS data back to external CRMs.
+ * WHAT: Defines the denormalization contract for writing Vigilia data back to external CRMs.
  * WHERE: Used by relatio-outbound-sync edge function for direct vendor API calls.
- * WHY: Consistent reverse-mapping from CROS entities to vendor-specific formats.
+ * WHY: Consistent reverse-mapping from Vigilia entities to vendor-specific formats.
  *
  * Architecture:
- * - Inbound: ConnectorAdapter (types.ts) normalizes vendor → CROS
- * - Outbound: OutboundAdapter denormalizes CROS → vendor
+ * - Inbound: ConnectorAdapter (types.ts) normalizes vendor → Vigilia
+ * - Outbound: OutboundAdapter denormalizes Vigilia → vendor
  * - Conflicts: sync_conflicts table with flag-for-review resolution
  * - Transport: Direct Edge Function → Vendor API (no n8n)
  */
@@ -46,7 +46,7 @@ export type SyncDirection = 'inbound' | 'outbound' | 'bidirectional';
 export type OutboundEntity = 'account' | 'contact' | 'task' | 'event' | 'activity' | 'stage';
 
 /**
- * OutboundAdapter — reverse-maps CROS normalized entities to vendor format.
+ * OutboundAdapter — reverse-maps Vigilia normalized entities to vendor format.
  *
  * Each method returns an OutboundPayload ready for the vendor API.
  * The adapter does NOT make HTTP calls — that's n8n's responsibility.
@@ -56,22 +56,22 @@ export interface OutboundAdapter {
   displayName: string;
   supportedEntities: OutboundEntity[];
 
-  /** CROS account → vendor account payload */
+  /** Vigilia account → vendor account payload */
   denormalizeAccount(account: NormalizedAccount, isUpdate: boolean): OutboundPayload;
 
-  /** CROS contact → vendor contact payload */
+  /** Vigilia contact → vendor contact payload */
   denormalizeContact(contact: NormalizedContact, isUpdate: boolean): OutboundPayload;
 
-  /** CROS task → vendor task payload */
+  /** Vigilia task → vendor task payload */
   denormalizeTask(task: NormalizedTask, isUpdate: boolean): OutboundPayload;
 
-  /** CROS event → vendor event payload */
+  /** Vigilia event → vendor event payload */
   denormalizeEvent(event: NormalizedEvent, isUpdate: boolean): OutboundPayload;
 
-  /** CROS activity → vendor activity/note payload */
+  /** Vigilia activity → vendor activity/note payload */
   denormalizeActivity(activity: NormalizedActivity, isUpdate: boolean): OutboundPayload;
 
-  /** Detect field-level differences between CROS and remote data */
+  /** Detect field-level differences between Vigilia and remote data */
   detectConflicts(
     entityType: OutboundEntity,
     crosData: Record<string, unknown>,

@@ -1,9 +1,9 @@
 /**
  * CiviCRM Connector Adapter
  *
- * WHAT: Normalizes CiviCRM APIv4 JSON responses to CROS entities.
+ * WHAT: Normalizes CiviCRM APIv4 JSON responses to Vigilia entities.
  * WHERE: Migration harness + fixture pack tests.
- * WHY: Deterministic, testable mapping from CiviCRM objects to CROS spine.
+ * WHY: Deterministic, testable mapping from CiviCRM objects to Vigilia spine.
  *
  * CiviCRM APIv4 entities mapped:
  *   Contact (Organization) → NormalizedAccount
@@ -269,7 +269,7 @@ export const civicrmAdapter: ConnectorAdapter = {
   /**
    * CiviCRM Contributions → NormalizedGiving
    *
-   * WHAT: Maps CiviCRM APIv4 Contribution entity to CROS GenerosityRecord.
+   * WHAT: Maps CiviCRM APIv4 Contribution entity to Vigilia GenerosityRecord.
    * WHERE: Bridge migration + API sync runners.
    * WHY: CiviCRM has 11K+ nonprofit users — Tier 1 giving connector.
    *
@@ -326,8 +326,8 @@ export const civicrmAdapter: ConnectorAdapter = {
       };
       recurringInterval = FREQ_MAP[freqUnit] ?? null;
       if (freqUnit === 'day') {
-        warnings.push({ type: 'normalization', message: 'CiviCRM frequency_unit "day" has no CROS equivalent — mapped as one-time with warning', field: 'frequency_unit' });
-        // day-interval gifts are extremely rare and have no CROS schema match; treat as recurring with null interval
+        warnings.push({ type: 'normalization', message: 'CiviCRM frequency_unit "day" has no Vigilia equivalent — mapped as one-time with warning', field: 'frequency_unit' });
+        // day-interval gifts are extremely rare and have no Vigilia schema match; treat as recurring with null interval
       } else if (freqUnit && !recurringInterval) {
         warnings.push({ type: 'normalization', message: `Unknown frequency_unit: ${freqUnit}`, field: 'frequency_unit' });
       }

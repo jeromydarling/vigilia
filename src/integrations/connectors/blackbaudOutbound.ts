@@ -1,9 +1,9 @@
 /**
  * Blackbaud RE NXT Outbound Adapter
  *
- * WHAT: Denormalizes CROS entities to Blackbaud SKY API format for outbound sync.
+ * WHAT: Denormalizes Vigilia entities to Blackbaud SKY API format for outbound sync.
  * WHERE: relatio-outbound-sync edge function (direct vendor API calls).
- * WHY: Enables CROS → Blackbaud write-back for constituents, actions, events, notes.
+ * WHY: Enables Vigilia → Blackbaud write-back for constituents, actions, events, notes.
  */
 
 import type { OutboundAdapter, OutboundPayload, FieldDiff, OutboundEntity } from './outboundTypes';

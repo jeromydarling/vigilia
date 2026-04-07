@@ -3,7 +3,7 @@
  *
  * WHAT: Manages the a11y-mode class on <html> and persists preference to localStorage.
  * WHERE: Header toggle, MainLayout, any component needing a11y state.
- * WHY: CROS serves diverse users — accessibility is a core expression of the mission.
+ * WHY: Vigilia serves diverse users — accessibility is a core expression of the mission.
  */
 import { useState, useEffect, useCallback } from 'react';
 

@@ -11,11 +11,11 @@
  */
 
 /**
- * Canonical list of allowed origins for CROS.
+ * Canonical list of allowed origins for Vigilia.
  * Update this when adding custom domains.
  */
 export const ALLOWED_ORIGINS = [
-  'https://thecros.lovable.app',
+  'https://vigilia.care',
   'https://id-preview--42b69f1f-4d36-4265-955d-fba8e0c00a1a.lovable.app',
   'http://localhost:5173',
   'http://localhost:3000',
@@ -27,7 +27,7 @@ export const ALLOWED_ORIGINS = [
  *
  * Usage in edge function:
  * ```ts
- * const allowedOrigins = ['https://thecros.lovable.app', ...];
+ * const allowedOrigins = ['https://vigilia.care', ...];
  * function getAllowedOrigin(req: Request): string {
  *   const origin = req.headers.get('Origin') ?? '';
  *   return allowedOrigins.includes(origin) ? origin : allowedOrigins[0];

@@ -1,29 +1,29 @@
 /**
- * CROS Toast — Charter-compliant notification system.
+ * Vigilia Toast — Charter-compliant notification system.
  *
- * WHAT: Wraps sonner toast with CROS vocabulary enforcement.
+ * WHAT: Wraps sonner toast with Vigilia vocabulary enforcement.
  * WHERE: Import this instead of raw `toast` from sonner in all components.
  * WHY: Prevents SaaS-tone drift in confirmation and error messages.
  */
 import { toast as sonnerToast, ExternalToast } from 'sonner';
-import { crosText, FRICTION_COPY } from '@/lib/toneCharter';
+import { vigiliaText, FRICTION_COPY } from '@/lib/toneCharter';
 
 type ToastData = ExternalToast;
 
 /**
- * CROS-compliant toast functions.
+ * Vigilia-compliant toast functions.
  *
  * Usage:
- *   import { crosToast } from '@/lib/crosToast';
- *   crosToast.held();              // silent "Held." confirmation
- *   crosToast.noted();             // "Noted."
- *   crosToast.updated();           // "Updated."
- *   crosToast.recorded();          // "Recorded."
- *   crosToast.removed();           // "Removed."
- *   crosToast.gentle(message);     // gentle system message (errors)
- *   crosToast.info(message);       // neutral informational
+ *   import { vigiliaToast } from '@/lib/vigiliaToast';
+ *   vigiliaToast.held();              // silent "Held." confirmation
+ *   vigiliaToast.noted();             // "Noted."
+ *   vigiliaToast.updated();           // "Updated."
+ *   vigiliaToast.recorded();          // "Recorded."
+ *   vigiliaToast.removed();           // "Removed."
+ *   vigiliaToast.gentle(message);     // gentle system message (errors)
+ *   vigiliaToast.info(message);       // neutral informational
  */
-export const crosToast = {
+export const vigiliaToast = {
   /** Autosave / save confirmation */
   held: (opts?: ToastData) =>
     sonnerToast('Held.', { duration: 1500, ...opts }),
@@ -53,9 +53,9 @@ export const crosToast = {
 
   /** Neutral info */
   info: (message: string, opts?: ToastData) =>
-    sonnerToast(crosText(message), { duration: 2500, ...opts }),
+    sonnerToast(vigiliaText(message), { duration: 2500, ...opts }),
 
   /** Fallback: raw toast with vocabulary filter */
   raw: (message: string, opts?: ToastData) =>
-    sonnerToast(crosText(message), opts),
+    sonnerToast(vigiliaText(message), opts),
 };

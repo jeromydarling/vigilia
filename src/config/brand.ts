@@ -1,14 +1,14 @@
-// CROS Brand Constants
+// Vigilia Brand Constants
 // UI rebrand layer — database tables retain original Profunda names
 
 export const brand = {
-  appName: 'CROS',
-  fullName: 'Communal Relationship Operating System',
+  appName: 'Vigilia',
+  fullName: 'A Liturgy of Attention',
   assistantName: 'Neary',
   assistantFullName: 'NRI — Narrative Relational Intelligence',
-  tagline: 'The Community Relationship OS',
-  positioning: 'CROS is the Community Relationship OS — a human system for remembering, noticing, and serving people well.',
-  domain: 'thecros.app',
+  tagline: 'Catholic Senior Care Hospitality',
+  positioning: 'Vigilia is the fastest way for staff, chaplains, and volunteers to record what mattered in a visit — so no resident\'s story, spiritual need, or quiet loneliness is missed.',
+  domain: 'vigilia.care',
 } as const;
 
 export const modules = {
@@ -23,40 +23,36 @@ export const modules = {
 
 export const tiers = {
   core: {
-    name: 'CROS Core',
-    tagline: 'The foundation for relationship-centered community work.',
+    name: 'Vigilia Small Community',
+    tagline: 'For intimate care homes with deep relational bonds.',
     includes: [
-      'Profunda (Relationship OS)',
-      'Civitas (Community Awareness)',
-      'Relationships & People',
-      'Journey Chapters',
-      'Reflections',
-      'Volunteers (Voluntārium)',
+      'Resident Story',
+      'Visit Ritual (30-second capture)',
+      'Family Circle',
+      'Visitor Mode & Voice Notes',
+      'Drift & Loneliness Watch',
+      'Volunteer Coordination',
       'Events & Calendar',
-      'Signum (Local Pulse baseline)',
-      'Basic Narrative',
-      'Communio (opt-in shared network)',
     ],
   },
   insight: {
-    name: 'CROS Insight',
-    tagline: 'Understand how your city is changing.',
+    name: 'Vigilia Standard',
+    tagline: 'For established Catholic communities with active parish partnerships.',
     includes: [
-      'Everything in Core',
-      'Testimonium storytelling',
-      'Drift Detection',
-      'Heat Map Narrative Overlays',
-      'Story Signals (Signum Intelligence)',
+      'Everything in Small Community',
+      'Pastoral Care tracking',
+      'Chaplain routing & signals',
+      'Volunteer & Parish Coordination',
     ],
   },
   story: {
-    name: 'CROS Story',
-    tagline: 'Turn daily work into lasting impact narratives.',
+    name: 'Vigilia Large Campus',
+    tagline: 'For multi-building campuses and diocesan networks.',
     includes: [
-      'Everything in Insight',
-      'Impulsus impact journal',
-      'Executive storytelling exports',
-      'Narrative reporting',
+      'Everything in Standard',
+      'FHIR integration (PointClickCare, MatrixCare)',
+      'Multi-facility dashboard',
+      'Diocese-level reporting',
     ],
   },
 } as const;

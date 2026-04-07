@@ -17,7 +17,7 @@ import { Loader2, Heart } from 'lucide-react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { useTenant } from '@/contexts/TenantContext';
-import { crosToast } from '@/lib/crosToast';
+import { vigiliaToast } from '@/lib/vigiliaToast';
 
 const GENEROSITY_TYPES = [
   { value: 'check', label: 'Paper check' },
@@ -69,9 +69,9 @@ export function ManualGenerosityDialog({ open, onOpenChange, contactId, contactN
     onSuccess: () => {
       setSaved(true);
       qc.invalidateQueries({ queryKey: ['financial-events'] });
-      crosToast.recorded('Generosity recorded.');
+      vigiliaToast.recorded('Generosity recorded.');
     },
-    onError: (e) => crosToast.gentle(e.message),
+    onError: (e) => vigiliaToast.gentle(e.message),
   });
 
   const handleClose = () => {

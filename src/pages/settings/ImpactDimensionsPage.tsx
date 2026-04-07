@@ -99,7 +99,7 @@ export default function ImpactDimensionsPage() {
               />
             </CardTitle>
             <CardDescription>
-              Define how your organization measures impact — without changing how CROS stays simple.
+              Define how your organization measures impact — without changing how Vigilia stays simple.
             </CardDescription>
           </CardHeader>
           <CardContent>

@@ -1,5 +1,5 @@
 /**
- * CROS™ Enneagram Assessment — Indoles Module
+ * Vigilia™ Enneagram Assessment — Indoles Module
  *
  * WHAT: 36-question Likert-scale assessment deriving Enneagram type, wing, and confidence.
  * WHERE: Standalone route at /:tenantSlug/assessment/enneagram
@@ -357,7 +357,7 @@ function ResultsView({
         <p className="text-xs text-ignatian-muted font-serif-body">
           Your results: Type {enneagram_type}w{enneagram_wing} ({TYPE_NAMES[enneagram_type]}) · Confidence {enneagram_confidence}%
           <br />
-          This data is saved to your CROS™ Indoles profile and informs NRI matching.
+          This data is saved to your Vigilia™ Indoles profile and informs NRI matching.
         </p>
       </div>
     </div>
@@ -431,7 +431,7 @@ export default function EnneagramAssessment({ onComplete, onManualSelect }: Enne
         {/* Header */}
         <div className="text-center mb-9">
           <div className="text-[11px] tracking-[0.25em] uppercase text-ignatian-gold font-serif-body mb-2">
-            CROS™ Indoles
+            Vigilia™ Indoles
           </div>
           <h1 className="text-3xl font-bold text-ignatian-deep font-serif leading-tight">
             Enneagram Assessment

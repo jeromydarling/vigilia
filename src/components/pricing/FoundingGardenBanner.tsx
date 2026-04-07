@@ -58,7 +58,7 @@ export function FoundingGardenBanner({ optedIn, onToggle }: FoundingGardenBanner
               Founding Garden
             </h3>
             <p className="text-xs text-[hsl(var(--marketing-navy)/0.5)] leading-relaxed">
-              Join the first {status.cap} communities shaping what CROS becomes.
+              Join the first {status.cap} communities shaping what Vigilia becomes.
               Founding members receive annual pricing and early voice in the ecosystem.
             </p>
           </div>

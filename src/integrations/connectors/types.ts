@@ -69,11 +69,11 @@ export interface NormalizedActivity {
 }
 
 /**
- * NormalizedGiving — canonical CROS shape for generosity records.
+ * NormalizedGiving — canonical Vigilia shape for generosity records.
  *
  * WHAT: Standard giving record structure across all connectors.
  * WHERE: ConnectorAdapter.normalizeGiving() implementations.
- * WHY: CROS remembers generosity in a single, clean format regardless of source CRM.
+ * WHY: Vigilia remembers generosity in a single, clean format regardless of source CRM.
  */
 export interface NormalizedGiving {
   date: string;                       // ISO 8601 — 'YYYY-MM-DD'

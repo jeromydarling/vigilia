@@ -1,7 +1,7 @@
 /**
  * OperatorManualsPage — PDF export for both physical reference manuals.
  *
- * WHAT: Generates two downloadable PDFs: CROS Field Guide (Tenant) and Operator Steward Manual.
+ * WHAT: Generates two downloadable PDFs: Vigilia Field Guide (Tenant) and Operator Steward Manual.
  * WHERE: /operator/manuals
  * WHY: Supports creation of physical reference books for training and stewardship.
  */
@@ -76,7 +76,7 @@ function addCoverPage(doc: jsPDF, title: string, subtitle: string) {
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(36);
   doc.setTextColor(255, 255, 255);
-  doc.text('CROS™', 105, 100, { align: 'center' });
+  doc.text('Vigilia™', 105, 100, { align: 'center' });
   doc.setFontSize(18);
   doc.text(title, 105, 120, { align: 'center' });
   doc.setFont('helvetica', 'normal');
@@ -85,15 +85,15 @@ function addCoverPage(doc: jsPDF, title: string, subtitle: string) {
   doc.text(subtitle, 105, 135, { align: 'center' });
   doc.setFontSize(9);
   doc.text(`Generated ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`, 105, 260, { align: 'center' });
-  doc.text('Communal Relationship Operating System', 105, 268, { align: 'center' });
+  doc.text('A Liturgy of Attention', 105, 268, { align: 'center' });
   doc.addPage();
 }
 
-// ── Manual 1: CROS Field Guide ──
+// ── Manual 1: Vigilia Field Guide ──
 
 function generateFieldGuide(): jsPDF {
   const doc = new jsPDF();
-  addCoverPage(doc, 'CROS Field Guide', 'The Tenant Reference Book');
+  addCoverPage(doc, 'Vigilia Field Guide', 'The Tenant Reference Book');
   let y = 25;
 
   // TOC
@@ -175,7 +175,7 @@ function generateFieldGuide(): jsPDF {
 
   // Section G — AI & Discernment
   if (y > 200) { doc.addPage(); y = 25; }
-  y = addSection(doc, 'G. AI & Discernment in CROS', y);
+  y = addSection(doc, 'G. AI & Discernment in Vigilia', y);
   y = addParagraph(doc, 'A calm, grounded guide to how Narrative Relational Intelligence (NRI) works — and what it means for your team.', y);
   y += 4;
 
@@ -323,8 +323,8 @@ export default function OperatorManualsPage() {
       } else {
         const doc = manual === 'field-guide' ? generateFieldGuide() : generateOperatorManual();
         const filename = manual === 'field-guide'
-          ? `CROS-Field-Guide-${new Date().toISOString().split('T')[0]}.pdf`
-          : `CROS-Gardener-Steward-Manual-${new Date().toISOString().split('T')[0]}.pdf`;
+          ? `Vigilia-Field-Guide-${new Date().toISOString().split('T')[0]}.pdf`
+          : `Vigilia-Gardener-Steward-Manual-${new Date().toISOString().split('T')[0]}.pdf`;
         doc.save(filename);
       }
     } finally {
@@ -347,7 +347,7 @@ export default function OperatorManualsPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 font-serif">
               <BookOpen className="h-5 w-5 text-primary" />
-              CROS Field Guide
+              Vigilia Field Guide
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -411,7 +411,7 @@ export default function OperatorManualsPage() {
               </TooltipProvider>
             </CardTitle>
             <CardDescription>
-              The Platform Governance Reference — everything a Gardener needs to steward the entire CROS™ network.
+              The Platform Governance Reference — everything a Gardener needs to steward the entire Vigilia™ network.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -460,7 +460,7 @@ export default function OperatorManualsPage() {
               </TooltipProvider>
             </CardTitle>
             <CardDescription>
-              The Developer Reference — comprehensive technical documentation of the entire CROS™ architecture.
+              The Developer Reference — comprehensive technical documentation of the entire Vigilia™ architecture.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">

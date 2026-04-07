@@ -47,7 +47,7 @@
     }
   },
   "buildReport": {
-    "title": "CROS Build Report",
+    "title": "Vigilia Build Report",
     "downloaded": "Downloaded — Click Again",
     "downloadPdf": "Download PDF"
   },

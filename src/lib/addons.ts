@@ -19,7 +19,7 @@ export interface AddOn {
 export const ADD_ONS: AddOn[] = [
   {
     key: 'bridge',
-    label: 'CROS Bridge™',
+    label: 'Vigilia Bridge™',
     description: 'Integration bridges, CRM migrations, and two-way sync with existing tools.',
     features: ['relatio_marketplace', 'crm_migrations', 'hubspot_two_way'],
     price: 49,

@@ -5,7 +5,7 @@
  * WHERE: Used by Operator Nexus to surface link suggestions for new content.
  * WHY: Ensures every narrative page becomes a semantic bridge without manual editing.
  */
-import { CROS_LEXICON } from '@/content/lexicon';
+import { Vigilia_LEXICON } from '@/content/lexicon';
 import { MISSION_ATLAS } from '@/content/missionAtlas';
 
 export interface SuggestedLink {
@@ -59,7 +59,7 @@ export function suggestLinksForContent(opts: {
   // Lexicon term matches
   if (opts.text) {
     const lower = opts.text.toLowerCase();
-    CROS_LEXICON.forEach((entry) => {
+    Vigilia_LEXICON.forEach((entry) => {
       if (lower.includes(entry.title.toLowerCase())) {
         links.push({ type: 'lexicon', label: entry.title, path: `/lexicon/${entry.slug}`, reason: `Term "${entry.title}" appears in content.` });
       }

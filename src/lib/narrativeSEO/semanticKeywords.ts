@@ -1,7 +1,7 @@
 /**
- * semanticKeywords — CROS™ ontology-aligned keyword clusters.
+ * semanticKeywords — Vigilia™ ontology-aligned keyword clusters.
  *
- * WHAT: Generates semantic keyword sets from narrative context, drawn from CROS vocabulary.
+ * WHAT: Generates semantic keyword sets from narrative context, drawn from Vigilia vocabulary.
  * WHERE: Used by narrativeSEO.ts to populate meta keywords and JSON-LD.
  * WHY: SEO authority through mission language — never generic CRM phrasing.
  */

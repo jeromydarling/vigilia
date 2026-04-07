@@ -1,9 +1,9 @@
 /**
- * languageGraph — Structured JSON-LD generators for CROS™ civic ontology.
+ * languageGraph — Structured JSON-LD generators for Vigilia™ civic ontology.
  *
  * WHAT: Generates schema.org DefinedTerm and ItemList JSON-LD for semantic pages.
  * WHERE: Injected into Library, Calling, and Pathway pages via SeoHead.
- * WHY: Establishes CROS™ as an ontology source for civic relationship language.
+ * WHY: Establishes Vigilia™ as an ontology source for civic relationship language.
  */
 
 import { brand } from '@/config/brand';
@@ -23,7 +23,7 @@ export function definedTermSchema(opts: {
     url: `${SITE_URL}${opts.url}`,
     inDefinedTermSet: {
       '@type': 'DefinedTermSet',
-      name: 'CROS Civic Language',
+      name: 'Vigilia Civic Language',
       url: `${SITE_URL}/library`,
     },
   };

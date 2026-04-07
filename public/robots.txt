@@ -1,5 +1,5 @@
-# CROS™ — Communal Relationship Operating System
-# https://thecros.app
+# Vigilia — A Liturgy of Attention
+# https://vigilia.care
 
 # Major search engines
 User-agent: Googlebot
@@ -64,4 +64,4 @@ Disallow: /settings
 # Individual page: https://zmeawjhxbgvtcfcfcygf.supabase.co/functions/v1/render-page?path=/manifesto
 
 # Sitemaps
-Sitemap: https://thecros.app/sitemap.xml
+Sitemap: https://vigilia.care/sitemap.xml

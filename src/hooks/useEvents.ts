@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
-import { crosToast } from '@/lib/crosToast';
+import { vigiliaToast } from '@/lib/vigiliaToast';
 import { useLogAudit, computeChanges } from './useAuditLog';
 import { useTenant } from '@/contexts/TenantContext';
 import { useAuth } from '@/contexts/AuthContext';
@@ -96,7 +96,7 @@ export function useCreateEvent() {
     },
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ['events'] });
-      crosToast.noted('Event recorded');
+      vigiliaToast.noted('Event recorded');
       
       // Log audit
       logAudit.mutate({
@@ -107,7 +107,7 @@ export function useCreateEvent() {
       });
     },
     onError: (error) => {
-      crosToast.gentle(`Something didn't go through: ${error.message}`);
+      vigiliaToast.gentle(`Something didn't go through: ${error.message}`);
     }
   });
 }
@@ -171,7 +171,7 @@ export function useUpdateEvent() {
     },
     onSuccess: ({ data, previousData }) => {
       queryClient.invalidateQueries({ queryKey: ['events'] });
-      crosToast.updated();
+      vigiliaToast.updated();
       
       // Log audit with changes
       const changes = previousData 
@@ -187,7 +187,7 @@ export function useUpdateEvent() {
       });
     },
     onError: (error) => {
-      crosToast.gentle(`Something didn't go through: ${error.message}`);
+      vigiliaToast.gentle(`Something didn't go through: ${error.message}`);
     }
   });
 }
@@ -277,7 +277,7 @@ export function useDuplicateEvent() {
     },
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ['events'] });
-      crosToast.noted('Event duplicated');
+      vigiliaToast.noted('Event duplicated');
       
       // Log audit
       logAudit.mutate({
@@ -288,7 +288,7 @@ export function useDuplicateEvent() {
       });
     },
     onError: (error) => {
-      crosToast.gentle(`Something didn't go through: ${error.message}`);
+      vigiliaToast.gentle(`Something didn't go through: ${error.message}`);
     }
   });
 }

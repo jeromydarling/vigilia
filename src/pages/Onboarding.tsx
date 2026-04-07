@@ -901,7 +901,7 @@ export default function Onboarding() {
               <div className="space-y-2">
                 <Label htmlFor="org-slug">{t('onboarding.details.urlSlugLabel')}</Label>
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-muted-foreground whitespace-nowrap">thecros.app/</span>
+                  <span className="text-sm text-muted-foreground whitespace-nowrap">vigilia.care/</span>
                   <div className="relative flex-1">
                     <Input
                       id="org-slug"
@@ -1103,7 +1103,7 @@ export default function Onboarding() {
                 Financial Moments
               </CardTitle>
               <CardDescription className="max-w-md mx-auto">
-                Will your organization accept payments, send invoices, or receive generosity through CROS?
+                Will your organization accept payments, send invoices, or receive generosity through Vigilia?
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-5">
@@ -1111,7 +1111,7 @@ export default function Onboarding() {
                 <div className="space-y-0.5">
                   <Label className="text-sm font-medium">Yes, we'll accept payments or invoicing</Label>
                   <p className="text-xs text-muted-foreground">
-                    You can connect your Stripe account later in Settings → Payments. CROS never holds funds.
+                    You can connect your Stripe account later in Settings → Payments. Vigilia never holds funds.
                   </p>
                 </div>
                 <Switch checked={wantsPayments} onCheckedChange={setWantsPayments} />
@@ -1130,7 +1130,7 @@ export default function Onboarding() {
                     <li>Mark events as paid — attendees complete checkout through Stripe</li>
                   </ul>
                   <p className="text-xs text-muted-foreground italic mt-2">
-                    Funds always go directly to your organization. A small 1% platform fee supports CROS infrastructure.
+                    Funds always go directly to your organization. A small 1% platform fee supports Vigilia infrastructure.
                   </p>
                 </div>
               )}
@@ -1158,7 +1158,7 @@ export default function Onboarding() {
                 </div>
                 <div>
                   <span className="text-muted-foreground">{t('onboarding.confirm.url')}</span>
-                  <div className="font-medium">thecros.app/{orgSlug}</div>
+                  <div className="font-medium">vigilia.care/{orgSlug}</div>
                 </div>
                 <div>
                   <span className="text-muted-foreground">{t('onboarding.confirm.archetype')}</span>

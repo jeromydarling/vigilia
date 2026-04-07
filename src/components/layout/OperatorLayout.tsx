@@ -294,9 +294,9 @@ export function OperatorLayout({ children }: OperatorLayoutProps) {
           </Button>
 
           <Link to="/operator" className="flex items-center gap-2">
-            <img src={crosLogo} alt="CROS" className="w-8 h-8 object-contain" />
+            <img src={crosLogo} alt="Vigilia" className="w-8 h-8 object-contain" />
             <span className="font-semibold text-foreground text-sm hidden sm:inline">
-              CROS Gardener
+              Vigilia Gardener
             </span>
           </Link>
 

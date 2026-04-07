@@ -1,11 +1,11 @@
 /**
  * Microsoft Dynamics 365 CRM Connector Adapter
  *
- * WHAT: Normalizes Dynamics 365 OData v4 export data to CROS entities.
+ * WHAT: Normalizes Dynamics 365 OData v4 export data to Vigilia entities.
  * WHERE: Migration harness + fixture pack tests + bi-directional sync.
- * WHY: Deterministic, testable mapping from Dynamics 365 objects to CROS spine.
+ * WHY: Deterministic, testable mapping from Dynamics 365 objects to Vigilia spine.
  *
- * Field mappings sourced from CROS Dynamics 365 Integration Guide v1.0.
+ * Field mappings sourced from Vigilia Dynamics 365 Integration Guide v1.0.
  * Auth: OAuth 2.0 via Azure AD (client credentials flow).
  * Rate limit: 6,000 req / 5-min sliding window.
  */

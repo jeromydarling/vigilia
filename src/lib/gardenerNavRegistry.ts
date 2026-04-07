@@ -926,7 +926,7 @@ export const GARDENER_NAV_REGISTRY: GardenerNavEntry[] = [
     title: 'SEO',
     route: '/operator/seo',
     zone: 'crescere',
-    summary: 'Platform SEO management. Monitor search visibility, meta configurations, and organic discovery for the public-facing CROS presence.',
+    summary: 'Platform SEO management. Monitor search visibility, meta configurations, and organic discovery for the public-facing Vigilia presence.',
     whatYouSee: [
       'SEO configuration for public pages',
       'Meta tag management and preview',
@@ -1129,7 +1129,7 @@ export const GARDENER_NAV_REGISTRY: GardenerNavEntry[] = [
     title: 'Demo Lab (Scenario Lab)',
     route: '/operator/scenario-lab',
     zone: 'silentium',
-    summary: 'Seed named scenarios and run deterministic simulations. Test the full CROS experience — journeys, reflections, campaigns, events — without touching production data.',
+    summary: 'Seed named scenarios and run deterministic simulations. Test the full Vigilia experience — journeys, reflections, campaigns, events — without touching production data.',
     whatYouSee: [
       'Scenario registry: church_small, gov_medium, coalition_large, importer_csv, hubspot_hybrid',
       'Demo tenant selector for targeting simulation runs',

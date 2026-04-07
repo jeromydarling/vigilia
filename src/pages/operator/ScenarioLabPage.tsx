@@ -2,7 +2,7 @@
  * ScenarioLabPage — Unified Scenario Lab combining seeding, simulation,
  * demo tenant management, migration harness, and connector testing.
  *
- * WHAT: Full sandbox for CROS platform validation.
+ * WHAT: Full sandbox for Vigilia platform validation.
  * WHERE: /operator/scenario-lab
  * WHY: Launch-grade testing layer — one place for all demo/test tools.
  */
@@ -269,7 +269,7 @@ export default function ScenarioLabPage() {
             <TooltipContent className="max-w-xs">
               <p className="text-xs"><strong>What:</strong> Unified sandbox for demo data, simulations, CRM migrations, and connector tests.</p>
               <p className="text-xs"><strong>Where:</strong> Operator → Scenario Lab.</p>
-              <p className="text-xs"><strong>Why:</strong> Safely validate the entire CROS pipeline without touching production data.</p>
+              <p className="text-xs"><strong>Why:</strong> Safely validate the entire Vigilia pipeline without touching production data.</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
@@ -303,7 +303,7 @@ export default function ScenarioLabPage() {
         <TabsContent value="scenarios" className="space-y-6 mt-4">
           <Card>
             <CardHeader>
-              <CardTitle className="text-base">Run Configuration <HelpTip text="Select a scenario and demo tenant, then seed data and run simulations to validate the full CROS pipeline." /></CardTitle>
+              <CardTitle className="text-base">Run Configuration <HelpTip text="Select a scenario and demo tenant, then seed data and run simulations to validate the full Vigilia pipeline." /></CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

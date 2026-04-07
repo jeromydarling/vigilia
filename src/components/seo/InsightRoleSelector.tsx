@@ -1,7 +1,7 @@
 /**
  * InsightRoleSelector — Role selector block embedded in insight essays.
  *
- * WHAT: Compact role selector showing all three CROS roles with links.
+ * WHAT: Compact role selector showing all three Vigilia roles with links.
  * WHERE: Inside /insights/:slug pages.
  * WHY: Creates identity anchor within essay content for deeper engagement.
  */

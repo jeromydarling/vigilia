@@ -241,7 +241,7 @@ export default function CommunioProfileSetupWizard() {
               <TooltipContent className="max-w-xs">
                 <p className="text-xs font-normal">
                   <strong>What:</strong> Your organization's presence in the Communio network.<br />
-                  <strong>Where:</strong> Visible to other CROS organizations (and optionally publicly).<br />
+                  <strong>Where:</strong> Visible to other Vigilia organizations (and optionally publicly).<br />
                   <strong>Why:</strong> Help neighboring organizations discover your community presence.
                 </p>
               </TooltipContent>
@@ -475,7 +475,7 @@ export default function CommunioProfileSetupWizard() {
                   <Label>Network visibility</Label>
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Other CROS organizations in the directory can see your profile.
+                  Other Vigilia organizations in the directory can see your profile.
                 </p>
               </div>
               <Switch checked={networkVisible} onCheckedChange={setNetworkVisible} />

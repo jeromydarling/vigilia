@@ -28,7 +28,7 @@ interface AddonConfig {
 }
 
 const addons: AddonConfig[] = [
-  { key: 'bridge', name: 'CROS Bridge™', description: 'Integration bridges, CRM sync, and migration tools.', price: '$49/mo', icon: <Link2 className="h-4 w-4" /> },
+  { key: 'bridge', name: 'Vigilia Bridge™', description: 'Integration bridges, CRM sync, and migration tools.', price: '$49/mo', icon: <Link2 className="h-4 w-4" /> },
   { key: 'campaigns', name: 'Relatio Campaigns™', description: 'Relationship-first email outreach via Gmail.', price: '$29/mo', icon: <Mail className="h-4 w-4" /> },
   { key: 'expanded_local_pulse', name: 'Expanded Local Pulse', description: 'Daily crawls and higher article caps.', price: '$25/mo', icon: <Globe className="h-4 w-4" /> },
   { key: 'expansion_capacity', name: 'Expansion Capacity', description: 'Additional metro activation for growing regions.', price: '$19/metro/mo', icon: <MapPin className="h-4 w-4" /> },

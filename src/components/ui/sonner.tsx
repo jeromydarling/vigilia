@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes";
 import { Toaster as Sonner, toast as rawToast, ExternalToast } from "sonner";
-import { crosText, FRICTION_COPY } from '@/lib/toneCharter';
+import { vigiliaText, FRICTION_COPY } from '@/lib/toneCharter';
 
 type ToasterProps = React.ComponentProps<typeof Sonner>;
 
@@ -28,7 +28,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
 /**
  * Charter-compliant toast wrapper.
  *
- * WHAT: Wraps sonner's toast with CROS vocabulary mapping.
+ * WHAT: Wraps sonner's toast with Vigilia vocabulary mapping.
  * WHERE: Import { toast } from '@/components/ui/sonner' everywhere.
  * WHY: Automatically translates SaaS-tone messages to charter language.
  *
@@ -38,7 +38,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
  */
 const toast = Object.assign(
   (message: string | React.ReactNode, data?: ExternalToast) => {
-    const mapped = typeof message === 'string' ? crosText(message) : message;
+    const mapped = typeof message === 'string' ? vigiliaText(message) : message;
     return rawToast(mapped, { duration: 2000, ...data });
   },
   {
@@ -56,12 +56,12 @@ const toast = Object.assign(
     },
     warning: (message: string | React.ReactNode, data?: ExternalToast) => {
       if (typeof message !== 'string') return rawToast.warning(message, data);
-      return rawToast(crosText(message), { duration: 3000, ...data });
+      return rawToast(vigiliaText(message), { duration: 3000, ...data });
     },
     info: rawToast.info,
     loading: (message: string | React.ReactNode, data?: ExternalToast) => {
       if (typeof message !== 'string') return rawToast.loading(message, data);
-      return rawToast.loading(crosText(message) || FRICTION_COPY.loading, data);
+      return rawToast.loading(vigiliaText(message) || FRICTION_COPY.loading, data);
     },
     promise: rawToast.promise,
     dismiss: rawToast.dismiss,
@@ -75,7 +75,7 @@ function mapSuccess(msg: string): string {
   const lower = msg.toLowerCase().trim();
 
   // Direct vocabulary hit
-  const direct = crosText(msg);
+  const direct = vigiliaText(msg);
   if (direct !== msg) return direct;
 
   // Pattern matching for common CRUD messages
@@ -91,9 +91,9 @@ function mapSuccess(msg: string): string {
   if (/imported|synced|migrated/i.test(lower)) return 'Noted.';
   if (/exported|downloaded/i.test(lower)) return 'Noted.';
 
-  // Fallback: strip "successfully" and apply crosText
+  // Fallback: strip "successfully" and apply vigiliaText
   const cleaned = msg.replace(/\s*successfully\s*/gi, ' ').trim();
-  return crosText(cleaned);
+  return vigiliaText(cleaned);
 }
 
 /** Soften error messages to charter-compliant gentle language */

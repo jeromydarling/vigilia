@@ -1,5 +1,5 @@
 /**
- * appEventTracker — Privacy-safe behavioral event logger for CROS™.
+ * appEventTracker — Privacy-safe behavioral event logger for Vigilia™.
  *
  * WHAT: Logs anonymized user interactions to app_event_stream for discovery insights.
  * WHERE: Used across marketing pages and in-app surfaces.

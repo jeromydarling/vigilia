@@ -130,7 +130,7 @@ export default function OperatorOverview() {
       {/* Trust Signal Bar */}
       <TrustSignalBar variant="full" />
 
-      {/* Today in CROS */}
+      {/* Today in Vigilia */}
       <TodayInCrosPanel />
 
       <Tabs defaultValue="ecosystem">

@@ -3,7 +3,7 @@
  *
  * WHAT: Queries communio_group_metrics + nri_usage_metrics for the Operator Console.
  * WHERE: Used by the "Communio Health" tab in OperatorConsole.
- * WHY: Provides aggregated, privacy-safe governance visibility for CROS leadership.
+ * WHY: Provides aggregated, privacy-safe governance visibility for Vigilia leadership.
  */
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';

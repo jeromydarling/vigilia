@@ -77,7 +77,7 @@ export default function OnboardingOrgEnrichmentStep({
           </TooltipTrigger>
           <TooltipContent side="bottom" className="max-w-[280px] text-xs space-y-1">
             <p><strong>What:</strong> We read your public page or PDF to learn your mission, programs, and location.</p>
-            <p><strong>Where:</strong> This information seeds your CROS workspace identity.</p>
+            <p><strong>Where:</strong> This information seeds your Vigilia workspace identity.</p>
             <p><strong>Why:</strong> So NRI can speak your language from day one.</p>
           </TooltipContent>
         </Tooltip>

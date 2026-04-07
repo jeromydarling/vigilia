@@ -1,5 +1,5 @@
 /**
- * narrativeGraph — Structured semantic knowledge graph for CROS™ narrative pages.
+ * narrativeGraph — Structured semantic knowledge graph for Vigilia™ narrative pages.
  *
  * WHAT: Defines typed relationships between archetypes, roles, signals, and concepts.
  * WHERE: Used by NarrativeGraphLinks component and Nexus health panel.
@@ -290,7 +290,7 @@ export function definedTermSchema(conceptKey: string) {
     description: c.description,
     inDefinedTermSet: {
       '@type': 'DefinedTermSet',
-      name: 'CROS™ Concepts',
+      name: 'Vigilia™ Concepts',
     },
   };
 }

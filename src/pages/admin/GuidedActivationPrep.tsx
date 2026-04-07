@@ -209,7 +209,7 @@ export default function GuidedActivationPrep() {
               <div className="space-y-0.5">
                 <Label className="text-sm font-medium">Allow Operator Access</Label>
                 <p className="text-xs text-muted-foreground">
-                  Let the CROS team view your workspace during your activation session. Fully audited.
+                  Let the Vigilia team view your workspace during your activation session. Fully audited.
                 </p>
               </div>
               <Switch

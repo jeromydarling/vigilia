@@ -1,4 +1,4 @@
-// CROS App Root — Communal Relationship Operating System
+// Vigilia App Root — A Liturgy of Attention
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";

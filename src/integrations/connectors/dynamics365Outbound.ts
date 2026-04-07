@@ -1,9 +1,9 @@
 /**
  * Microsoft Dynamics 365 Outbound Adapter
  *
- * WHAT: Denormalizes CROS entities to Dynamics 365 OData v4 format for outbound sync.
+ * WHAT: Denormalizes Vigilia entities to Dynamics 365 OData v4 format for outbound sync.
  * WHERE: relatio-outbound-sync edge function (direct vendor API calls).
- * WHY: Enables CROS → Dynamics 365 write-back for contacts, accounts, tasks, events, activities.
+ * WHY: Enables Vigilia → Dynamics 365 write-back for contacts, accounts, tasks, events, activities.
  */
 
 import type { OutboundAdapter, OutboundPayload, FieldDiff, OutboundEntity } from './outboundTypes';

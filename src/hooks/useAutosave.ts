@@ -1,10 +1,10 @@
 /**
- * useAutosave — Universal autosave hook for CROS forms.
+ * useAutosave — Universal autosave hook for Vigilia forms.
  *
  * WHAT: Debounced autosave to sessionStorage with silent "Held." confirmation.
  * WHERE: Every form with long-form text or multi-field input.
  * WHY: "There must never be a scenario where long-form work is lost."
- *       — CROS Tone & Language Charter, Autosave Mandate.
+ *       — Vigilia Tone & Language Charter, Autosave Mandate.
  *
  * Features:
  *  - Silent save every 3 seconds after typing
@@ -14,7 +14,7 @@
  *  - Compass notification if save fails
  */
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { crosToast } from '@/lib/crosToast';
+import { vigiliaToast } from '@/lib/vigiliaToast';
 import { FRICTION_COPY } from '@/lib/toneCharter';
 
 const DRAFT_PREFIX = 'cros_draft_';
@@ -69,11 +69,11 @@ export function useAutosave<T = Record<string, unknown>>(
         sessionStorage.setItem(storageKey, serialized);
         lastSavedRef.current = serialized;
         if (showToast) {
-          crosToast.held();
+          vigiliaToast.held();
         }
       } catch {
         // sessionStorage full — notify gently
-        crosToast.gentle(FRICTION_COPY.autosaveFallback);
+        vigiliaToast.gentle(FRICTION_COPY.autosaveFallback);
       }
     },
     [storageKey, showToast]
@@ -98,7 +98,7 @@ export function useAutosave<T = Record<string, unknown>>(
         setWasRecovered(true);
         if (showRecoveryToast) {
           // Slight delay so it appears after page renders
-          setTimeout(() => crosToast.info(FRICTION_COPY.draftRecovered), 300);
+          setTimeout(() => vigiliaToast.info(FRICTION_COPY.draftRecovered), 300);
         }
         return parsed;
       }

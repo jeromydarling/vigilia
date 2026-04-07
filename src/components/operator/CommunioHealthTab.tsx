@@ -3,7 +3,7 @@
  *
  * WHAT: Displays aggregated Communio group health, sharing distribution, quiet groups, and NRI metrics.
  * WHERE: Rendered inside OperatorConsole as the "Communio Health" tab.
- * WHY: Gives CROS leadership visibility into cross-tenant sharing patterns without exposing CRM data.
+ * WHY: Gives Vigilia leadership visibility into cross-tenant sharing patterns without exposing CRM data.
  */
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';

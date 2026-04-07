@@ -270,7 +270,7 @@ export function buildBulkSelfHealingPrompt(
   runs: Array<{ suiteKey: string; runId: string; steps: QAStep[] }>,
 ): string {
   const header = [
-    '# CROS™ QA Self-Healing Repair Pack',
+    '# Vigilia™ QA Self-Healing Repair Pack',
     '',
     `This pack addresses ${runs.length} failing suite(s).`,
     'Fix each in order of severity. Maintain all existing functionality.',

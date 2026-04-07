@@ -1,5 +1,5 @@
 /**
- * Concept Graph — Semantic relationship map for CROS marketing concepts.
+ * Concept Graph — Semantic relationship map for Vigilia marketing concepts.
  *
  * WHAT: Registry of platform concepts with slugs, labels, definitions, and relationships.
  * WHERE: Powers internal linking suggestions, glossary auto-linking, and schema generation.
@@ -24,7 +24,7 @@ export const CONCEPTS: Concept[] = [
   },
   {
     slug: 'cros',
-    label: 'Communal Relationship Operating System',
+    label: 'A Liturgy of Attention',
     definition: 'The bridge between an organization and the community it serves. A living relationship system that remembers people and notices what is changing.',
     route: '/cros',
     related: ['nri', 'profunda', 'communio', 'civitas'],
@@ -60,7 +60,7 @@ export const CONCEPTS: Concept[] = [
   {
     slug: 'roles',
     label: 'Roles',
-    definition: 'The three human identities in CROS: Shepherd, Companion, and Visitor. Each shapes how the system adapts to your work.',
+    definition: 'The three human identities in Vigilia: Shepherd, Companion, and Visitor. Each shapes how the system adapts to your work.',
     route: '/roles',
     related: ['shepherd', 'companion', 'visitor'],
   },

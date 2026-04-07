@@ -83,7 +83,7 @@ export function TodayInCrosPanel() {
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center gap-2 text-base">
           <Inbox className="h-5 w-5 text-primary" />
-          Today in CROS
+          Today in Vigilia
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>

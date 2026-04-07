@@ -21,7 +21,7 @@ import { Building2, Mail, Clock, CheckCircle, Shield, Copy, ArrowRight, Heart, L
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { crosToast } from '@/lib/crosToast';
+import { vigiliaToast } from '@/lib/vigiliaToast';
 
 type RelationshipStrategy = 'private' | 'move' | 'copy';
 
@@ -164,7 +164,7 @@ export function OrganizationsTab() {
       return data;
     },
     onSuccess: (data) => {
-      crosToast.held(data.message || "You've joined the organization. The thread is still here.");
+      vigiliaToast.held(data.message || "You've joined the organization. The thread is still here.");
       setAcceptingInvite(null);
       setStrategy('private');
       setSelectedOpps([]);
@@ -172,7 +172,7 @@ export function OrganizationsTab() {
       queryClient.invalidateQueries({ queryKey: ['my-organizations'] });
       queryClient.invalidateQueries({ queryKey: ['my-pending-invites'] });
     },
-    onError: (err: Error) => crosToast.gentle(err.message),
+    onError: (err: Error) => vigiliaToast.gentle(err.message),
   });
 
   const toggleOpp = (id: string) => {

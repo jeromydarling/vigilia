@@ -3,7 +3,7 @@
  *
  * WHAT: Short (400-700 word) action-oriented guides for specific role workflows.
  * WHERE: /roles/:role/:guideSlug
- * WHY: SEO-rich, practical content that helps users see themselves using CROS.
+ * WHY: SEO-rich, practical content that helps users see themselves using Vigilia.
  */
 
 export interface RoleGuide {
@@ -21,13 +21,13 @@ export const roleGuides: RoleGuide[] = [
     slug: 'home-visits',
     role: 'shepherd',
     title: 'Overseeing Home Visits as a Shepherd',
-    description: 'How Shepherds use CROS™ to guide visit assignments, review voice notes, and keep the thread of pastoral care unbroken.',
-    keywords: ['shepherd home visits', 'pastoral care', 'visit management', 'CROS shepherd'],
+    description: 'How Shepherds use Vigilia™ to guide visit assignments, review voice notes, and keep the thread of pastoral care unbroken.',
+    keywords: ['shepherd home visits', 'pastoral care', 'visit management', 'Vigilia shepherd'],
     datePublished: '2026-02-20',
     sections: [
       {
         heading: 'Why Shepherds oversee visits',
-        body: 'Home visits are where the deepest relationships form. As a Shepherd, you don\'t make every visit — but you hold the story of every family. CROS™ gives you a quiet window into what your Visitors are experiencing, without requiring them to fill out forms or write reports.',
+        body: 'Home visits are where the deepest relationships form. As a Shepherd, you don\'t make every visit — but you hold the story of every family. Vigilia™ gives you a quiet window into what your Visitors are experiencing, without requiring them to fill out forms or write reports.',
       },
       {
         heading: 'Reviewing voice notes',
@@ -48,7 +48,7 @@ export const roleGuides: RoleGuide[] = [
     role: 'visitor',
     title: 'Recording Voice Notes as a Visitor',
     description: 'The simplest way to document a visit. Tap, speak, done. Your voice becomes the record.',
-    keywords: ['visitor voice notes', 'field recording', 'mobile CRM', 'CROS visitor'],
+    keywords: ['visitor voice notes', 'field recording', 'mobile CRM', 'Vigilia visitor'],
     datePublished: '2026-02-20',
     sections: [
       {
@@ -57,7 +57,7 @@ export const roleGuides: RoleGuide[] = [
       },
       {
         heading: 'How it works',
-        body: 'Open CROS™ on your phone. Tap the microphone button. Speak naturally: "Visited the Johnsons. Kids are doing well in school. Marcus mentioned he\'s looking for part-time work. Maria asked about the food pantry schedule." Tap stop. That\'s it.',
+        body: 'Open Vigilia™ on your phone. Tap the microphone button. Speak naturally: "Visited the Johnsons. Kids are doing well in school. Marcus mentioned he\'s looking for part-time work. Maria asked about the food pantry schedule." Tap stop. That\'s it.',
       },
       {
         heading: 'What happens next',
@@ -65,7 +65,7 @@ export const roleGuides: RoleGuide[] = [
       },
       {
         heading: 'Tips for great voice notes',
-        body: 'Be yourself. Speak conversationally. Mention names when you can. Note what you noticed — not just what was said. "Marcus seemed tired" is as valuable as "Marcus needs a job referral." The human context is what makes CROS™ different from a clipboard.',
+        body: 'Be yourself. Speak conversationally. Mention names when you can. Note what you noticed — not just what was said. "Marcus seemed tired" is as valuable as "Marcus needs a job referral." The human context is what makes Vigilia™ different from a clipboard.',
       },
     ],
   },
@@ -74,7 +74,7 @@ export const roleGuides: RoleGuide[] = [
     role: 'companion',
     title: 'Managing Technology Provisions as a Companion',
     description: 'How Companions use Prōvīsiō to track device requests, deliveries, and digital inclusion progress.',
-    keywords: ['companion provisions', 'technology distribution', 'digital inclusion', 'CROS companion'],
+    keywords: ['companion provisions', 'technology distribution', 'digital inclusion', 'Vigilia companion'],
     datePublished: '2026-02-20',
     sections: [
       {
@@ -100,7 +100,7 @@ export const roleGuides: RoleGuide[] = [
     role: 'shepherd',
     title: 'Reading the Weekly Narrative',
     description: 'How Shepherds use the Metro Narrative to stay aware of community patterns without dashboard fatigue.',
-    keywords: ['weekly narrative', 'metro narrative', 'community awareness', 'CROS shepherd'],
+    keywords: ['weekly narrative', 'metro narrative', 'community awareness', 'Vigilia shepherd'],
     datePublished: '2026-02-20',
     sections: [
       {
@@ -122,7 +122,7 @@ export const roleGuides: RoleGuide[] = [
     role: 'companion',
     title: 'Writing Effective Reflections',
     description: 'How Companions capture the human context that makes relationships meaningful — without writing reports.',
-    keywords: ['companion reflections', 'relationship journaling', 'CROS reflections', 'care documentation'],
+    keywords: ['companion reflections', 'relationship journaling', 'Vigilia reflections', 'care documentation'],
     datePublished: '2026-02-20',
     sections: [
       {
@@ -148,12 +148,12 @@ export const roleGuides: RoleGuide[] = [
     role: 'visitor',
     title: 'Preparing for a Visit',
     description: 'A simple guide for Visitors preparing for home visits — what to check, what to bring, and how to be present.',
-    keywords: ['visitor checklist', 'home visit preparation', 'field visit guide', 'CROS visitor'],
+    keywords: ['visitor checklist', 'home visit preparation', 'field visit guide', 'Vigilia visitor'],
     datePublished: '2026-02-20',
     sections: [
       {
         heading: 'Before you go',
-        body: 'Open CROS™ on your phone and check your Visit Assignments. You\'ll see who you\'re visiting, any notes from your Shepherd ("Ask about the new job"), and the last visit summary. Take 60 seconds to read it. That context will make your visit more meaningful.',
+        body: 'Open Vigilia™ on your phone and check your Visit Assignments. You\'ll see who you\'re visiting, any notes from your Shepherd ("Ask about the new job"), and the last visit summary. Take 60 seconds to read it. That context will make your visit more meaningful.',
       },
       {
         heading: 'What to bring',
@@ -172,9 +172,9 @@ export const roleGuides: RoleGuide[] = [
   {
     slug: 'workspace-setup',
     role: 'steward',
-    title: 'Setting Up Your CROS Workspace',
-    description: 'How Stewards configure a new CROS™ workspace — choosing an archetype, inviting the team, and activating modules.',
-    keywords: ['CROS setup', 'workspace configuration', 'steward guide', 'onboarding'],
+    title: 'Setting Up Your Vigilia Workspace',
+    description: 'How Stewards configure a new Vigilia™ workspace — choosing an archetype, inviting the team, and activating modules.',
+    keywords: ['Vigilia setup', 'workspace configuration', 'steward guide', 'onboarding'],
     datePublished: '2026-02-20',
     sections: [
       {
@@ -187,7 +187,7 @@ export const roleGuides: RoleGuide[] = [
       },
       {
         heading: 'Activating modules',
-        body: 'CROS Core includes Relationships, Journeys, Reflections, Events, and basic Signum. If your plan includes Insight or Story tiers, you\'ll see additional modules like Testimonium, Impulsus, and advanced narrative tools. Activate what you need — leave the rest quiet.',
+        body: 'Vigilia Core includes Relationships, Journeys, Reflections, Events, and basic Signum. If your plan includes Insight or Story tiers, you\'ll see additional modules like Testimonium, Impulsus, and advanced narrative tools. Activate what you need — leave the rest quiet.',
       },
       {
         heading: 'Your first week',
@@ -198,18 +198,18 @@ export const roleGuides: RoleGuide[] = [
   {
     slug: 'team-invites',
     role: 'steward',
-    title: 'Inviting Your Team to CROS',
+    title: 'Inviting Your Team to Vigilia',
     description: 'How Stewards invite Shepherds, Companions, and Visitors — and why self-selection matters.',
-    keywords: ['team invites', 'CROS onboarding', 'steward team management', 'role selection'],
+    keywords: ['team invites', 'Vigilia onboarding', 'steward team management', 'role selection'],
     datePublished: '2026-02-20',
     sections: [
       {
         heading: 'Why self-selection matters',
-        body: 'CROS™ lets each team member choose their own role. This isn\'t just a UX choice — it\'s a philosophy. When people identify with how they serve, they engage more deeply. A volunteer who chooses "Visitor" feels ownership of that identity.',
+        body: 'Vigilia™ lets each team member choose their own role. This isn\'t just a UX choice — it\'s a philosophy. When people identify with how they serve, they engage more deeply. A volunteer who chooses "Visitor" feels ownership of that identity.',
       },
       {
         heading: 'Sending invitations',
-        body: 'From Admin → Team, enter email addresses. Each person receives a warm invitation email with a brief explanation of what CROS™ is. They\'ll create their account and be guided through a simplified onboarding — choosing their role and seeing what\'s relevant to them.',
+        body: 'From Admin → Team, enter email addresses. Each person receives a warm invitation email with a brief explanation of what Vigilia™ is. They\'ll create their account and be guided through a simplified onboarding — choosing their role and seeing what\'s relevant to them.',
       },
       {
         heading: 'Role guidance',
