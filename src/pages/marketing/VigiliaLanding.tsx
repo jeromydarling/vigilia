@@ -52,8 +52,35 @@ const VALUE_POINTS = [
   },
   {
     num: '05',
-    title: 'Reputation and referrals',
-    body: 'Families who receive a seasonal journal of their loved one\'s days are far more likely to say, "This place really sees my mom."',
+    title: 'Diocese-ready reporting',
+    body: 'One-click mission reports with sacramental coverage, visit frequency, volunteer participation, and ERD compliance — evidence your bishop can actually use.',
+  },
+];
+
+const PLATFORM_FEATURES = [
+  {
+    tag: 'Vigil Mode',
+    title: 'When the end comes, the journal becomes a memorial.',
+    body: 'End-of-life mode heightens pastoral attention, increases family communication, and weaves the final chapter with dignity. After death, the journal becomes a keepsake the family keeps forever.',
+    details: ['Tender family messaging', 'Chaplain-focused prompts', 'Sacrament tracking', 'Memorial journal'],
+  },
+  {
+    tag: 'Weekly Digest',
+    title: 'The story comes to the family.',
+    body: 'Families don\'t log into apps. Each week, a digest arrives by email with selected reflections, a mood summary, and a seasonal prayer. One tap to reply with a note for Mom.',
+    details: ['2-3 curated reflections', 'Mood summary', 'Seasonal prayer', 'One-tap reply'],
+  },
+  {
+    tag: 'Mission Report',
+    title: 'Turn Catholic identity from an assertion into evidence.',
+    body: 'One-click reports for your bishop, sponsor, or board. Total visits, sacraments by type, sacramental coverage percentage, family engagement, volunteer hours — aligned with the ERDs (7th Edition, USCCB 2025).',
+    details: ['Sacramental coverage %', 'Visit frequency metrics', 'ERD compliance note', 'Print-ready'],
+  },
+  {
+    tag: 'Parish Volunteers',
+    title: 'The first scheduling tool built for ministry.',
+    body: 'Coordinate Extraordinary Ministers, friendly visitors, and prayer partners across parishes. Track Safe Environment Training, auto-generate parish bulletin summaries, and ensure no resident falls through the cracks.',
+    details: ['Weekly scheduling grid', 'Multi-parish coordination', 'Bulletin text generator', 'Visit tracking'],
   },
 ];
 
@@ -655,6 +682,90 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       </section>
 
       {/* ════════════════════════════════════════════════════════
+          THE FULL PLATFORM — feature showcase
+          ════════════════════════════════════════════════════════ */}
+      <section id="platform" className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
+        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
+          <div className="text-center mb-16">
+            <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
+              Beyond the journal
+            </p>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-[2.75rem] font-normal text-[hsl(var(--marketing-deep))] leading-[1.15] tracking-[-0.01em] max-w-[640px] mx-auto">
+              A complete platform for Catholic eldercare.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+            {PLATFORM_FEATURES.map((feat, i) => (
+              <div
+                key={feat.tag}
+                className="bg-[hsl(var(--marketing-surface))] border border-[hsl(var(--marketing-border)/0.6)] p-8 sm:p-10 relative reveal-on-scroll"
+                style={{ transitionDelay: `${i * 80}ms` }}
+              >
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--marketing-gold)/0.4)]" />
+                <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-[hsl(var(--marketing-gold-light))] mb-4">
+                  {feat.tag}
+                </p>
+                <h3 className="font-serif text-xl sm:text-2xl font-normal text-[hsl(var(--marketing-deep))] mb-4 leading-[1.25]">
+                  {feat.title}
+                </h3>
+                <p className="font-serif-body text-base text-[hsl(var(--marketing-muted))] leading-[1.7] mb-6">
+                  {feat.body}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {feat.details.map((d) => (
+                    <span key={d} className="text-[10px] font-sans px-3 py-1 border border-[hsl(var(--marketing-border)/0.5)] text-[hsl(var(--marketing-brown))] tracking-wide">
+                      {d}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Sacrament tracker callout */}
+          <div className="mt-10 md:mt-12 bg-[hsl(var(--marketing-surface))] border border-[hsl(var(--marketing-border)/0.6)] p-8 sm:p-10 relative reveal-on-scroll">
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--marketing-gold))]" />
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-7">
+                <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-[hsl(var(--marketing-gold-light))] mb-4">
+                  Sacrament Tracker
+                </p>
+                <h3 className="font-serif text-xl sm:text-2xl font-normal text-[hsl(var(--marketing-deep))] mb-4 leading-[1.25]">
+                  Every communion, confession, anointing — documented.
+                </h3>
+                <p className="font-serif-body text-base text-[hsl(var(--marketing-muted))] leading-[1.7]">
+                  No nursing home EHR tracks sacramental care. Vigilia does. Log communion visits,
+                  confession availability, Anointing of the Sick, Last Rites, rosary, and blessings
+                  with date, minister, and notes. Know which residents haven't received communion in two weeks.
+                  Give your chaplain a dashboard, not a clipboard.
+                </p>
+              </div>
+              <div className="md:col-span-4 md:col-start-9">
+                <div className="space-y-3">
+                  {[
+                    { sac: 'Holy Communion', count: '142', period: 'this season' },
+                    { sac: 'Anointing of the Sick', count: '8', period: 'this season' },
+                    { sac: 'Confession', count: '23', period: 'this season' },
+                    { sac: 'Last Rites', count: '2', period: 'this season' },
+                  ].map((row) => (
+                    <div key={row.sac} className="flex items-center justify-between py-2 border-b border-[hsl(var(--marketing-border)/0.3)]">
+                      <span className="text-sm font-serif-body text-[hsl(var(--marketing-deep))]">{row.sac}</span>
+                      <span className="text-sm font-sans text-[hsl(var(--marketing-muted))]">{row.count}</span>
+                    </div>
+                  ))}
+                  <div className="flex items-center justify-between pt-1">
+                    <span className="text-xs font-sans text-[hsl(var(--marketing-tan))]">Sacramental coverage</span>
+                    <span className="text-sm font-semibold font-sans text-[hsl(var(--marketing-deep))]">94%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════
           VALUE & ROI — editorial two-column
           ════════════════════════════════════════════════════════ */}
       <section id="pricing" className="reveal-on-scroll">
@@ -738,9 +849,9 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
             A liturgy of attention,<br />bound into memory.
           </h2>
           <p className="font-serif-body text-lg text-[hsl(var(--marketing-tan))] leading-[1.8] max-w-md mx-auto mb-12">
-            For roughly the cost of one modest expense per day, you can give families
-            a living journal instead of a vague sense of distance. And make your Catholicity
-            and humanity visible in the smallest, most ordinary moments of care.
+            The visit ritual. The family journal. Vigil mode. Sacrament tracking.
+            Diocese reporting. Parish volunteer coordination. Everything a Catholic
+            care community needs to make its identity visible and its families close.
           </p>
           <Link to="/signup">
             <Button className="rounded-none border-2 border-[hsl(var(--marketing-cream))] bg-[hsl(var(--marketing-cream))] text-[hsl(var(--marketing-deep))] hover:bg-transparent hover:text-[hsl(var(--marketing-cream))] px-10 py-5 text-xs font-sans tracking-[0.18em] uppercase transition-colors duration-300 h-auto">

@@ -50,6 +50,12 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
               The Journal
             </a>
             <a
+              href="/#platform"
+              className="font-serif-body text-[hsl(var(--marketing-muted))] hover:text-[hsl(var(--marketing-deep))] transition-colors"
+            >
+              Platform
+            </a>
+            <a
               href="/#pricing"
               className="font-serif-body text-[hsl(var(--marketing-muted))] hover:text-[hsl(var(--marketing-deep))] transition-colors"
             >
@@ -94,6 +100,9 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
             </a>
             <a href="/#the-journal" className="block font-serif-body text-sm text-[hsl(var(--marketing-muted))] py-2" onClick={() => setMobileOpen(false)}>
               The Journal
+            </a>
+            <a href="/#platform" className="block font-serif-body text-sm text-[hsl(var(--marketing-muted))] py-2" onClick={() => setMobileOpen(false)}>
+              Platform
             </a>
             <a href="/#pricing" className="block font-serif-body text-sm text-[hsl(var(--marketing-muted))] py-2" onClick={() => setMobileOpen(false)}>
               Pricing
