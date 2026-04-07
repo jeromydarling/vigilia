@@ -5,6 +5,20 @@ import { brand } from '@/config/brand';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
+function LogoCandle({ className = '' }: { className?: string }) {
+  return (
+    <svg width="14" height="24" viewBox="0 0 14 24" fill="none" className={className} aria-hidden>
+      <path d="M7 1c0.8 1.6 1.6 3.2 1.6 4.8-0.3 1-1 1.6-1.6 1.6s-1.3-0.6-1.6-1.6C5.4 4.2 6.2 2.6 7 1z" stroke="currentColor" strokeWidth="0.7" fill="none" />
+      <ellipse cx="7" cy="7" rx="0.7" ry="1.1" fill="currentColor" opacity="0.3" />
+      <line x1="7" y1="7.5" x2="7" y2="10" stroke="currentColor" strokeWidth="0.6" />
+      <rect x="4.5" y="10" width="5" height="12" rx="0.5" stroke="currentColor" strokeWidth="0.6" fill="none" />
+      <line x1="4.5" y1="14" x2="9.5" y2="14" stroke="currentColor" strokeWidth="0.3" opacity="0.3" />
+      <line x1="4.5" y1="18" x2="9.5" y2="18" stroke="currentColor" strokeWidth="0.3" opacity="0.3" />
+      <path d="M3.5 22h7" stroke="currentColor" strokeWidth="0.6" />
+    </svg>
+  );
+}
+
 export default function PublicLayout({ children }: { children?: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -14,7 +28,8 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
       {/* Sticky Nav — warm, editorial */}
       <header className="sticky top-0 z-50 border-b border-[hsl(var(--marketing-border)/0.5)] bg-[hsl(var(--marketing-surface)/0.92)] backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center gap-2">
+            <LogoCandle className="text-[hsl(var(--marketing-gold))]" />
             <span className="font-serif text-xl tracking-tight text-[hsl(var(--marketing-deep))]">
               Vigilia
             </span>
@@ -107,9 +122,12 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
         <div className="max-w-6xl mx-auto px-6 sm:px-8 py-16">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div>
-              <span className="font-serif text-xl text-[hsl(var(--marketing-cream))] tracking-tight">
-                Vigilia
-              </span>
+              <div className="flex items-center gap-2">
+                <LogoCandle className="text-[hsl(var(--marketing-gold))]" />
+                <span className="font-serif text-xl text-[hsl(var(--marketing-cream))] tracking-tight">
+                  Vigilia
+                </span>
+              </div>
               <p className="font-serif-body italic text-sm text-[hsl(var(--marketing-tan))] mt-2">
                 A Liturgy of Attention
               </p>

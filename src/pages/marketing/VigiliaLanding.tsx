@@ -57,6 +57,74 @@ const VALUE_POINTS = [
   },
 ];
 
+/* ── SVG Illustrations ── */
+function CandleSvg({ className = '', size = 48 }: { className?: string; size?: number }) {
+  return (
+    <svg width={size} height={size * 1.6} viewBox="0 0 30 48" fill="none" className={className} aria-hidden>
+      <path d="M15 2c1.5 3 3 6 3 9-0.5 2-2 3-3 3s-2.5-1-3-3c0-3 1.5-6 3-9z" stroke="currentColor" strokeWidth="0.8" fill="none" />
+      <ellipse cx="15" cy="14" rx="1.2" ry="2" fill="currentColor" opacity="0.3" />
+      <line x1="15" y1="14" x2="15" y2="20" stroke="currentColor" strokeWidth="0.8" />
+      <rect x="11" y="20" width="8" height="24" rx="1" stroke="currentColor" strokeWidth="0.8" fill="none" />
+      <line x1="11" y1="26" x2="19" y2="26" stroke="currentColor" strokeWidth="0.4" opacity="0.4" />
+      <line x1="11" y1="32" x2="19" y2="32" stroke="currentColor" strokeWidth="0.4" opacity="0.4" />
+      <line x1="11" y1="38" x2="19" y2="38" stroke="currentColor" strokeWidth="0.4" opacity="0.4" />
+      <path d="M9 44h12" stroke="currentColor" strokeWidth="0.8" />
+    </svg>
+  );
+}
+
+function OliveBranchSvg({ className = '', flip = false }: { className?: string; flip?: boolean }) {
+  return (
+    <svg width="120" height="40" viewBox="0 0 120 40" fill="none" className={className} style={flip ? { transform: 'scaleX(-1)' } : undefined} aria-hidden>
+      <path d="M4 32 Q30 28 60 20 Q90 12 116 8" stroke="currentColor" strokeWidth="0.7" fill="none" />
+      <ellipse cx="25" cy="26" rx="6" ry="3" transform="rotate(-20 25 26)" stroke="currentColor" strokeWidth="0.5" fill="none" />
+      <ellipse cx="42" cy="22" rx="6" ry="3" transform="rotate(-15 42 22)" stroke="currentColor" strokeWidth="0.5" fill="none" />
+      <ellipse cx="60" cy="18" rx="6" ry="3" transform="rotate(-12 60 18)" stroke="currentColor" strokeWidth="0.5" fill="none" />
+      <ellipse cx="78" cy="14" rx="6" ry="3" transform="rotate(-10 78 14)" stroke="currentColor" strokeWidth="0.5" fill="none" />
+      <ellipse cx="96" cy="10" rx="6" ry="3" transform="rotate(-8 96 10)" stroke="currentColor" strokeWidth="0.5" fill="none" />
+      <circle cx="30" cy="29" r="1.5" stroke="currentColor" strokeWidth="0.4" fill="none" />
+      <circle cx="52" cy="22" r="1.5" stroke="currentColor" strokeWidth="0.4" fill="none" />
+      <circle cx="85" cy="13" r="1.5" stroke="currentColor" strokeWidth="0.4" fill="none" />
+    </svg>
+  );
+}
+
+function CrossOrnateSvg({ className = '' }: { className?: string }) {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className={className} aria-hidden>
+      <line x1="16" y1="4" x2="16" y2="28" stroke="currentColor" strokeWidth="0.8" />
+      <line x1="8" y1="12" x2="24" y2="12" stroke="currentColor" strokeWidth="0.8" />
+      <circle cx="16" cy="12" r="2" stroke="currentColor" strokeWidth="0.5" fill="none" />
+      <path d="M14 4 Q16 2 18 4" stroke="currentColor" strokeWidth="0.5" fill="none" />
+    </svg>
+  );
+}
+
+/* ── Mini browser window for features section ── */
+function BrowserFrame({ title, children, className = '' }: { title: string; children: React.ReactNode; className?: string }) {
+  return (
+    <div className={`rounded-lg overflow-hidden border border-[hsl(var(--marketing-border))] shadow-lg bg-white ${className}`}>
+      {/* Browser chrome */}
+      <div className="flex items-center gap-2 px-4 py-2.5 bg-[hsl(var(--marketing-surface))] border-b border-[hsl(var(--marketing-border)/0.6)]">
+        <div className="flex gap-1.5">
+          <div className="w-2.5 h-2.5 rounded-full bg-[hsl(var(--marketing-tan)/0.5)]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[hsl(var(--marketing-tan)/0.3)]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[hsl(var(--marketing-tan)/0.3)]" />
+        </div>
+        <div className="flex-1 mx-8">
+          <div className="bg-white rounded-md px-3 py-1 text-[10px] font-sans text-[hsl(var(--marketing-tan))] text-center border border-[hsl(var(--marketing-border)/0.4)]">
+            vigilia.care/{title.toLowerCase().replace(/\s+/g, '-')}
+          </div>
+        </div>
+      </div>
+      {/* Content */}
+      <div className="p-5 sm:p-6 bg-[hsl(var(--marketing-surface))]">
+        {children}
+      </div>
+    </div>
+  );
+}
+
 /* ── Decorative divider ── */
 function Divider({ className = '' }: { className?: string }) {
   return (
@@ -254,10 +322,143 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       </section>
 
       {/* ════════════════════════════════════════════════════════
-          THE PRINTED JOURNAL — editorial spread
+          FEATURES — mini browser windows showing the app
           ════════════════════════════════════════════════════════ */}
       <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40">
+          <div className="text-center mb-16 sm:mb-20">
+            <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
+              What it looks like
+            </p>
+            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[hsl(var(--marketing-deep))] leading-[1.15] tracking-[-0.01em]">
+              Simple tools, deep attention.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+            {/* Visit Ritual */}
+            <div className="reveal-on-scroll" style={{ transitionDelay: '0ms' }}>
+              <BrowserFrame title="visit">
+                <div className="space-y-3">
+                  <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-[hsl(var(--marketing-tan))]">Visit Ritual</p>
+                  <p className="font-serif text-sm text-[hsl(var(--marketing-deep))]">Margaret Williams</p>
+                  <div className="space-y-2 pt-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 rounded-full bg-[hsl(var(--marketing-gold)/0.15)] flex items-center justify-center text-[8px]">&#9829;</div>
+                      <span className="font-sans text-xs text-[hsl(var(--marketing-muted))]">Spirit</span>
+                      <div className="ml-auto flex gap-1">
+                        {['Peaceful', 'Restless', 'Joyful'].map((m) => (
+                          <span key={m} className={`text-[9px] font-sans px-2 py-0.5 rounded-sm border ${m === 'Peaceful' ? 'bg-[hsl(var(--marketing-gold)/0.12)] border-[hsl(var(--marketing-gold)/0.3)] text-[hsl(var(--marketing-brown))]' : 'border-[hsl(var(--marketing-border)/0.5)] text-[hsl(var(--marketing-tan))]'}`}>{m}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 rounded-full bg-[hsl(var(--marketing-gold)/0.15)] flex items-center justify-center text-[8px]">&#9734;</div>
+                      <span className="font-sans text-xs text-[hsl(var(--marketing-muted))]">Need</span>
+                      <div className="ml-auto flex gap-1">
+                        {['Comfort', 'Prayer', 'Company'].map((m) => (
+                          <span key={m} className={`text-[9px] font-sans px-2 py-0.5 rounded-sm border ${m === 'Prayer' ? 'bg-[hsl(var(--marketing-gold)/0.12)] border-[hsl(var(--marketing-gold)/0.3)] text-[hsl(var(--marketing-brown))]' : 'border-[hsl(var(--marketing-border)/0.5)] text-[hsl(var(--marketing-tan))]'}`}>{m}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pt-3 border-t border-[hsl(var(--marketing-border)/0.3)] mt-3">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-red-400/60 animate-pulse" />
+                      <span className="font-serif-body text-xs italic text-[hsl(var(--marketing-muted))]">"She asked for prayer and seemed at peace..."</span>
+                    </div>
+                  </div>
+                </div>
+              </BrowserFrame>
+              <p className="font-sans text-xs text-[hsl(var(--marketing-tan))] mt-4 text-center tracking-wide">
+                The 30-second ritual
+              </p>
+            </div>
+
+            {/* Family Journal */}
+            <div className="reveal-on-scroll" style={{ transitionDelay: '120ms' }}>
+              <BrowserFrame title="family">
+                <div className="space-y-3">
+                  <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-[hsl(var(--marketing-tan))]">Lent 2026</p>
+                  <p className="font-serif text-sm text-[hsl(var(--marketing-deep))]">Margaret's Journal</p>
+                  <div className="space-y-3 pt-2">
+                    <div className="border-l-2 border-[hsl(var(--marketing-gold)/0.3)] pl-3">
+                      <p className="font-sans text-[9px] text-[hsl(var(--marketing-tan))] mb-1">Monday, March 9</p>
+                      <p className="font-serif-body text-[11px] text-[hsl(var(--marketing-deep))] leading-[1.6]">She seemed peaceful today. A volunteer sat with her after lunch and they listened to hymns together.</p>
+                    </div>
+                    <div className="border-l-2 border-[hsl(var(--marketing-gold)/0.3)] pl-3">
+                      <p className="font-sans text-[9px] text-[hsl(var(--marketing-tan))] mb-1">Wednesday, March 11</p>
+                      <p className="font-serif-body text-[11px] text-[hsl(var(--marketing-deep))] leading-[1.6]">Your brother visited and she held his hand for a long time. She spoke his name clearly.</p>
+                    </div>
+                    <div className="border-l-2 border-[hsl(var(--marketing-gold)/0.15)] pl-3 opacity-50">
+                      <p className="font-sans text-[9px] text-[hsl(var(--marketing-tan))] mb-1">Friday, March 13</p>
+                      <p className="font-serif-body text-[11px] text-[hsl(var(--marketing-muted))] leading-[1.6]">She asked quietly for prayer...</p>
+                    </div>
+                  </div>
+                </div>
+              </BrowserFrame>
+              <p className="font-sans text-xs text-[hsl(var(--marketing-tan))] mt-4 text-center tracking-wide">
+                The family journal
+              </p>
+            </div>
+
+            {/* Dashboard */}
+            <div className="reveal-on-scroll" style={{ transitionDelay: '240ms' }}>
+              <BrowserFrame title="dashboard">
+                <div className="space-y-3">
+                  <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-[hsl(var(--marketing-tan))]">Care Overview</p>
+                  <p className="font-serif text-sm text-[hsl(var(--marketing-deep))]">St. Joseph's</p>
+                  <div className="space-y-2 pt-2">
+                    <div className="flex justify-between items-center text-[10px] font-sans">
+                      <span className="text-[hsl(var(--marketing-muted))]">Visits today</span>
+                      <span className="text-[hsl(var(--marketing-deep))] font-medium">14</span>
+                    </div>
+                    <div className="w-full h-1 bg-[hsl(var(--marketing-border)/0.4)] rounded-full">
+                      <div className="h-full w-[70%] bg-[hsl(var(--marketing-gold)/0.6)] rounded-full" />
+                    </div>
+                    <div className="flex justify-between items-center text-[10px] font-sans">
+                      <span className="text-[hsl(var(--marketing-muted))]">Loneliness watch</span>
+                      <span className="text-[hsl(var(--marketing-gold-light))] font-medium">3 residents</span>
+                    </div>
+                    <div className="flex justify-between items-center text-[10px] font-sans">
+                      <span className="text-[hsl(var(--marketing-muted))]">Reflections pending</span>
+                      <span className="text-[hsl(var(--marketing-deep))] font-medium">6</span>
+                    </div>
+                    <div className="border-t border-[hsl(var(--marketing-border)/0.3)] pt-2 mt-2">
+                      <p className="text-[10px] font-sans text-[hsl(var(--marketing-tan))]">Easter journal</p>
+                      <div className="flex items-center gap-2 mt-1">
+                        <div className="flex-1 h-1.5 bg-[hsl(var(--marketing-border)/0.4)] rounded-full">
+                          <div className="h-full w-[85%] bg-[hsl(var(--marketing-gold))] rounded-full" />
+                        </div>
+                        <span className="text-[9px] font-sans text-[hsl(var(--marketing-muted))]">85%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </BrowserFrame>
+              <p className="font-sans text-xs text-[hsl(var(--marketing-tan))] mt-4 text-center tracking-wide">
+                The care dashboard
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <ThinRule className="my-0 py-8 bg-[hsl(var(--marketing-surface))]" />
+
+      {/* ════════════════════════════════════════════════════════
+          THE PRINTED JOURNAL — editorial spread with illustrations
+          ════════════════════════════════════════════════════════ */}
+      <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-16 right-0 text-[hsl(var(--marketing-tan)/0.15)] hidden lg:block">
+          <OliveBranchSvg />
+        </div>
+        <div className="absolute bottom-20 left-0 text-[hsl(var(--marketing-tan)/0.15)] hidden lg:block">
+          <OliveBranchSvg flip />
+        </div>
+
+        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40 relative">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
             {/* Left — text */}
             <div className="md:col-span-6">
@@ -272,23 +473,39 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
                 your family receives a printed journal of the season's reflections, opened
                 with a prayer and filled with the moments that mattered.
               </p>
-              <p className="font-serif-body text-lg text-[hsl(var(--marketing-deep))] leading-[1.8]">
+              <p className="font-serif-body text-lg text-[hsl(var(--marketing-deep))] leading-[1.8] mb-10">
                 Most apps disappear when the screen closes. A printed journal says:
                 <em> this life mattered, these visits mattered, these small moments were worth keeping.</em>
               </p>
+              {/* Seasons row */}
+              <div className="flex flex-wrap gap-6 text-center">
+                {['Advent', 'Lent', 'Easter', 'Ordinary Time'].map((s) => (
+                  <div key={s} className="flex flex-col items-center gap-2">
+                    <CrossOrnateSvg className="text-[hsl(var(--marketing-gold)/0.5)]" />
+                    <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[hsl(var(--marketing-tan))]">{s}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Right — booklet mockup */}
+            {/* Right — booklet mockup with candle illustration */}
             <div className="md:col-span-5 md:col-start-8">
+              {/* Candle illustration floating above */}
+              <div className="flex justify-center mb-8 text-[hsl(var(--marketing-gold)/0.35)]">
+                <CandleSvg size={36} />
+              </div>
               <div className="relative">
-                {/* Stacked page behind */}
-                <div className="absolute -bottom-3 -right-3 w-full h-full border border-[hsl(var(--marketing-border))] bg-[hsl(var(--marketing-surface))]" />
+                {/* Third page (deepest) */}
+                <div className="absolute -bottom-5 -right-5 w-full h-full border border-[hsl(var(--marketing-border)/0.4)] bg-[hsl(var(--marketing-surface)/0.5)]" />
+                {/* Second page */}
+                <div className="absolute -bottom-3 -right-3 w-full h-full border border-[hsl(var(--marketing-border)/0.7)] bg-[hsl(var(--marketing-surface))]" />
                 {/* Main booklet */}
-                <div className="relative bg-[hsl(var(--marketing-cream))] border border-[hsl(var(--marketing-border))] p-8 sm:p-10 text-center shadow-[-4px_4px_12px_-4px_rgba(0,0,0,0.1)] transform md:rotate-[-1.5deg]"
+                <div className="relative bg-[hsl(var(--marketing-cream))] border border-[hsl(var(--marketing-border))] p-8 sm:p-10 text-center shadow-[-4px_6px_16px_-4px_rgba(0,0,0,0.12)] transform md:rotate-[-1.5deg]"
                   style={{ aspectRatio: '5.5 / 7' }}
                 >
                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--marketing-gold))]" />
                   <div className="flex flex-col justify-center h-full">
+                    <CrossOrnateSvg className="text-[hsl(var(--marketing-gold)/0.3)] mx-auto mb-3" />
                     <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-[hsl(var(--marketing-tan))] mb-4">
                       Seasonal Journal
                     </p>
@@ -298,7 +515,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
                     <p className="font-sans text-xs text-[hsl(var(--marketing-muted))] mb-6 tracking-wide">
                       Easter 2026 &middot; St. Joseph's Care Home
                     </p>
-                    <div className="w-12 h-px bg-[hsl(var(--marketing-tan))] mx-auto mb-6" />
+                    <OliveBranchSvg className="text-[hsl(var(--marketing-tan)/0.25)] mx-auto mb-4" />
                     <p className="font-serif-body text-sm italic text-[hsl(var(--marketing-muted))] leading-relaxed px-2">
                       "This week carried both tenderness and fatigue. She seemed more inward than usual,
                       but moments of warmth returned through prayer, familiar music, and family presence."
@@ -317,41 +534,46 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       <Divider className="py-8 bg-[hsl(var(--marketing-surface))]" />
 
       {/* ════════════════════════════════════════════════════════
-          TURNOVER CONTINUITY — narrow, contemplative
+          CONTINUITY + FORMATION — side by side, editorial
           ════════════════════════════════════════════════════════ */}
       <section className="reveal-on-scroll">
-        <div className="max-w-[680px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40 text-left">
-          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[hsl(var(--marketing-deep))] mb-10 leading-[1.15] tracking-[-0.01em]">
-            When care changes hands, the story stays.
-          </h2>
-          <p className="font-serif-body text-lg text-[hsl(var(--marketing-muted))] leading-[1.8] mb-8">
-            One caregiver leaves. Another arrives. They don't inherit a blank slate —
-            they inherit a living chapter. The next person steps into the story where it left off.
-          </p>
-          <p className="font-serif-body text-lg text-[hsl(var(--marketing-muted))] leading-[1.8]">
-            That is one of the deepest practical benefits of narrative continuity
-            in long-term care.
-          </p>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════
-          FORMATION — narrow, book-page feel
-          ════════════════════════════════════════════════════════ */}
-      <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
-        <div className="max-w-[680px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40 text-left">
-          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[hsl(var(--marketing-deep))] mb-10 leading-[1.15] tracking-[-0.01em]">
-            Vigilia forms better witnesses of a person's life.
-          </h2>
-          <p className="font-serif-body text-lg text-[hsl(var(--marketing-muted))] leading-[1.8] mb-8">
-            Most senior-care systems teach people to document events.
-            Vigilia teaches them to notice human moments faithfully.
-          </p>
-          <p className="font-serif-body text-lg text-[hsl(var(--marketing-muted))] leading-[1.8]">
-            Every visit becomes part of a living family journal.
-            A liturgy of attention for the people entrusted with care.
-            So no chapter is lost when care changes hands.
-          </p>
+        <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-24 sm:py-32 md:py-40">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
+            {/* Left — Continuity */}
+            <div className="border-t-2 border-[hsl(var(--marketing-gold)/0.4)] pt-10">
+              <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
+                Continuity
+              </p>
+              <h2 className="font-serif text-2xl sm:text-3xl font-normal text-[hsl(var(--marketing-deep))] mb-8 leading-[1.2] tracking-[-0.01em]">
+                When care changes hands, the story stays.
+              </h2>
+              <p className="font-serif-body text-lg text-[hsl(var(--marketing-muted))] leading-[1.8] mb-6">
+                One caregiver leaves. Another arrives. They don't inherit a blank slate —
+                they inherit a living chapter. The next person steps into the story where it left off.
+              </p>
+              <p className="font-serif-body text-base text-[hsl(var(--marketing-muted))] leading-[1.8]">
+                That is one of the deepest practical benefits of narrative continuity
+                in long-term care.
+              </p>
+            </div>
+            {/* Right — Formation */}
+            <div className="border-t-2 border-[hsl(var(--marketing-gold)/0.4)] pt-10">
+              <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
+                Formation
+              </p>
+              <h2 className="font-serif text-2xl sm:text-3xl font-normal text-[hsl(var(--marketing-deep))] mb-8 leading-[1.2] tracking-[-0.01em]">
+                Vigilia forms better witnesses of a person's life.
+              </h2>
+              <p className="font-serif-body text-lg text-[hsl(var(--marketing-muted))] leading-[1.8] mb-6">
+                Most senior-care systems teach people to document events.
+                Vigilia teaches them to notice human moments faithfully.
+              </p>
+              <p className="font-serif-body text-base text-[hsl(var(--marketing-muted))] leading-[1.8]">
+                Every visit becomes part of a living family journal.
+                A liturgy of attention for the people entrusted with care.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
