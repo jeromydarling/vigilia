@@ -118,6 +118,7 @@ import {
   // Vigilia operator dashboards
   OperatorPrintJobsPage, OperatorSynthesisPage, OperatorFamilyAnalyticsPage,
   OperatorDioceseOverviewPage, OperatorVisitAdoptionPage, OperatorSynthesisBenchPage,
+  OperatorCHAAlignmentPage,
 } from '@/components/routing/LazyOperatorPages';
 
 /**
@@ -283,6 +284,7 @@ export function AppRouter() {
         <Route path="/operator/diocese" element={<OperatorShell><OperatorDioceseOverviewPage /></OperatorShell>} />
         <Route path="/operator/visit-adoption" element={<OperatorShell><OperatorVisitAdoptionPage /></OperatorShell>} />
         <Route path="/operator/synthesis-bench" element={<OperatorShell><OperatorSynthesisBenchPage /></OperatorShell>} />
+        <Route path="/operator/cha-alignment" element={<OperatorShell><OperatorCHAAlignmentPage /></OperatorShell>} />
 
         {/* Tenant-scoped app routes: /:tenantSlug/... */}
         <Route path="/:tenantSlug" element={<ProtectedRoute><TenantRouteGuard /></ProtectedRoute>}>

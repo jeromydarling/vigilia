@@ -13,6 +13,7 @@
 import { supabase } from '@/integrations/supabase/client';
 import { buildReflectionPrompt, isPrintWorthy } from '@/lib/narrativeSynthesis';
 import { validateReflection, buildReviewPrompt } from '@/lib/reflectionValidator';
+import { fetchKnowledgeContext } from '@/hooks/useCatholicKnowledge';
 import { getCurrentSeason } from '@/lib/liturgicalCalendar';
 import type { MoodObserved, NeedObserved, ConcernNoted } from '@/types/vigilia';
 
@@ -50,8 +51,14 @@ export async function synthesizeReflection(params: SynthesizeReflectionParams): 
   } = params;
 
   try {
-    // Build the LLM prompt from the raw visit data
-    const prompt = buildReflectionPrompt({
+    // Fetch relevant CHA/ERD guidance for context
+    const concernTags = visitRitual.concern_noted === 'new_grief' ? ['end_of_life', 'bereavement']
+      : visitRitual.concern_noted === 'spiritual_request' ? ['sacraments', 'spiritual_preparation']
+      : ['spiritual_care'];
+    const knowledgeContext = await fetchKnowledgeContext({ tags: concernTags, limit: 2 }).catch(() => '');
+
+    // Build the LLM prompt from the raw visit data + Catholic health context
+    let prompt = buildReflectionPrompt({
       residentName,
       mood: visitRitual.mood_observed,
       need: visitRitual.need_observed,
@@ -61,6 +68,11 @@ export async function synthesizeReflection(params: SynthesizeReflectionParams): 
       visitedAt: visitRitual.visited_at,
       visitorRole,
     });
+
+    // Append CHA guidance as context (not instructions — just awareness)
+    if (knowledgeContext) {
+      prompt += `\n\nCATHOLIC CARE CONTEXT (for your awareness, not to quote directly):\n${knowledgeContext}`;
+    }
 
     // Call the Supabase edge function for LLM text generation
     const { data, error } = await supabase.functions.invoke('generate-text', {

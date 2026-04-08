@@ -158,18 +158,21 @@ export default function DioceseReport() {
             {/* Section 5: ERD Compliance Note */}
             <section className="print:break-before-page">
               <Card className="bg-muted/30 border-dashed">
-                <CardContent className="p-6">
+                <CardContent className="p-6 space-y-4">
                   <h3 className="text-sm font-semibold mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
-                    Ethical &amp; Religious Directives Compliance
+                    Ethical &amp; Religious Directives Alignment
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-                    This report is generated in support of the Ethical and Religious Directives
-                    for Catholic Health Care Services (7th Edition, USCCB 2025). Data reflects
-                    documented pastoral care, sacramental administration, and family engagement
-                    during the reporting period. All spiritual care interactions are recorded
-                    through Vigilia's structured visit ritual by staff, chaplains, and volunteers.
-                    Sacramental records are maintained with date, type, and minister documentation.
+                    This report supports compliance with the Ethical and Religious Directives
+                    for Catholic Health Care Services (7th Edition, USCCB 2025).
                   </p>
+                  <div className="space-y-2 text-sm text-muted-foreground" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
+                    <p><strong>Directive 12</strong> — Sacramental provision: {report.totalSacraments} sacraments documented, {report.sacramentalCoveragePercent}% resident coverage.</p>
+                    <p><strong>Directive 13</strong> — Eucharistic ministry: {report.communionCount} communion visits delivered by staff, chaplains, and Extraordinary Ministers.</p>
+                    <p><strong>Directive 35</strong> — Family involvement: {report.reflectionsPublished} narrative reflections published to families; {report.journalsShipped} printed journals shipped.</p>
+                    <p><strong>Directive 55</strong> — End-of-life sacraments: {report.anointingCount} anointings, {report.lastRitesCount} Last Rites administered.</p>
+                    <p><strong>CHA Essential Services</strong> — {report.totalVisits} documented pastoral visits across {report.uniqueVisitors} caregivers, demonstrating consistent pastoral presence (Category 3).</p>
+                  </div>
                 </CardContent>
               </Card>
             </section>
