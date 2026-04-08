@@ -274,7 +274,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           ════════════════════════════════════════════════════════ */}
       <section className="reveal-on-scroll relative overflow-hidden">
         {/* Rosary placement 1: beads peeking from right, tilted */}
-        <img src={rosaryBg} alt="" aria-hidden className="pointer-events-none absolute z-0 opacity-[0.07] w-[600px] sm:w-[800px] lg:w-[1000px]" style={{ top: '-100px', right: '-250px', transform: 'rotate(-15deg)' }} />
+        <img src={rosaryBg} alt="" aria-hidden className="pointer-events-none absolute z-0 opacity-[0.07]" style={{ top: '-60px', right: '-180px', width: 600, minWidth: 600, transform: 'rotate(-15deg)' }} />
         <div className="relative z-10 max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             {/* Left column — pull quote intro */}
@@ -627,7 +627,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           ════════════════════════════════════════════════════════ */}
       <section id="continuity" className="reveal-on-scroll relative overflow-hidden">
         {/* Rosary placement 2: chain curving from left edge, mirrored */}
-        <img src={rosaryBg} alt="" aria-hidden className="pointer-events-none absolute z-0 opacity-[0.06] w-[700px] sm:w-[900px] lg:w-[1100px]" style={{ top: '-80px', left: '-300px', transform: 'rotate(25deg) scaleX(-1)' }} />
+        <img src={rosaryBg} alt="" aria-hidden className="pointer-events-none absolute z-0 opacity-[0.06]" style={{ top: '-60px', left: '-200px', width: 650, minWidth: 650, transform: 'rotate(20deg) scaleX(-1)' }} />
         <div className="relative z-10 max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
             {/* Left — Continuity */}
@@ -865,7 +865,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           ════════════════════════════════════════════════════════ */}
       <section className="bg-[hsl(var(--marketing-deep)/0.92)] reveal-on-scroll relative overflow-hidden">
         {/* Rosary placement 3: rotated so the cross appears, right side */}
-        <img src={rosaryBg} alt="" aria-hidden className="pointer-events-none absolute z-0 opacity-[0.12] w-[500px] sm:w-[700px] lg:w-[900px] invert" style={{ bottom: '-120px', right: '-200px', transform: 'rotate(40deg)' }} />
+        <img src={rosaryBg} alt="" aria-hidden className="pointer-events-none absolute z-0 opacity-[0.12] invert" style={{ bottom: '-80px', right: '-120px', width: 550, minWidth: 550, transform: 'rotate(40deg)' }} />
         <div className="relative z-10 max-w-[680px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32 text-center">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-[2.75rem] font-normal text-[hsl(var(--marketing-cream))] mb-10 leading-[1.15] tracking-[-0.01em]">
             A liturgy of attention,<br />bound into memory.
