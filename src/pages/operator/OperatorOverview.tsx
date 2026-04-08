@@ -30,7 +30,7 @@ import { NarrativeBalanceIndicator } from '@/components/operator/NarrativeBalanc
 import { QuietTenantRadar } from '@/components/operator/QuietTenantRadar';
 import { TodayInVigiliaPanel } from '@/components/operator/TodayInVigiliaPanel';
 import { PlatformHealthPanel } from '@/components/operator/PlatformHealthPanel';
-// VIGILIA: removed — import { TrustSignalBar } from '@/components/shared/TrustSignalBar';
+import { TrustSignalBar } from '@/components/shared/TrustSignalBar';
 import { calmVariant } from '@/lib/calmMode';
 
 export default function OperatorOverview() {
@@ -127,8 +127,7 @@ export default function OperatorOverview() {
         </Button>
       </div>
 
-      {/* Trust Signal Bar */}
-      <TrustSignalBar variant="full" />
+      {/* Trust Signal Bar — removed for Vigilia */}
 
       {/* Today in Vigilia */}
       <TodayInVigiliaPanel />

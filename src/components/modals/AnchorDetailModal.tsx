@@ -14,7 +14,7 @@ import {
   Star
 } from 'lucide-react';
 import { AnchorWithComputed } from '@/hooks/useAnchors';
-// VIGILIA: removed — import { SupportingGrantsPanel } from '@/components/anchors/SupportingGrantsPanel';
+import { SupportingGrantsPanel } from '@/components/anchors/SupportingGrantsPanel';
 import { cn } from '@/lib/utils';
 
 interface AnchorDetailModalProps {

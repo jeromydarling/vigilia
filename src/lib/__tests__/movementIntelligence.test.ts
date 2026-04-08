@@ -8,7 +8,7 @@
  */
 
 import { describe, it, expect, vi } from 'vitest';
-// VIGILIA: removed — import { getMovementWindow, logPerformanceWarning } from '@/lib/movementWindow';
+import { getMovementWindow, logPerformanceWarning } from '@/lib/movementWindow';
 
 // ── Part 1: Time Window Consistency ──
 

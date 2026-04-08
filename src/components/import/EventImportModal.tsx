@@ -24,7 +24,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { parseCSV, CSVParseResult } from '@/lib/csv';
 import { Upload, FileSpreadsheet, CheckCircle2, AlertCircle, Loader2, X, MapPin, RefreshCw } from 'lucide-react';
 import { cn } from '@/lib/utils';
-// VIGILIA: removed — import { useMetros } from '@/hooks/useMetros';
+import { useMetros } from '@/hooks/useMetros';
 
 export interface ImportOptions {
   upsertMode: boolean;

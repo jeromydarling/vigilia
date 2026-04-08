@@ -18,7 +18,7 @@ import {
   Filter,
 } from 'lucide-react';
 import { useWeeklySnapshot, DaySnapshot, UpcomingEvent, UpcomingMeeting, UpcomingTask, UpcomingGoogleEvent } from '@/hooks/useWeeklySnapshot';
-// VIGILIA: removed — import { useMetros } from '@/hooks/useMetros';
+import { useMetros } from '@/hooks/useMetros';
 import { useTranslation } from 'react-i18next';
 import { format, parseISO } from 'date-fns';
 import { cn } from '@/lib/utils';

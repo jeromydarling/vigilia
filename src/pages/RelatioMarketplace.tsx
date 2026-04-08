@@ -16,12 +16,12 @@ import { Button } from '@/components/ui/button';
 import { Lock, ArrowRight, Plug, Loader2, History, Heart, HelpCircle } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-// VIGILIA: removed — import { ConnectorCard } from '@/components/relatio/ConnectorCard';
-// VIGILIA: removed — import { SyncHistoryPanel } from '@/components/relatio/SyncHistoryPanel';
+import { ConnectorCard } from '@/components/relatio/ConnectorCard';
+import { SyncHistoryPanel } from '@/components/relatio/SyncHistoryPanel';
 import { useTenantPath } from '@/hooks/useTenantPath';
 import { CHMS_CONNECTORS, getConnectorsForArchetype } from '@/lib/connectors/chmsRegistry';
-// VIGILIA: removed — import { getIntegrationVoice } from '@/lib/relatio/integrationVoice';
-// VIGILIA: removed — import { SETUP_GUIDES, getDifficultyLabel, getDifficultyColor } from '@/lib/relatio/setupGuides';
+import { getIntegrationVoice } from '@/lib/relatio/integrationVoice';
+import { SETUP_GUIDES, getDifficultyLabel, getDifficultyColor } from '@/lib/relatio/setupGuides';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface Connector {

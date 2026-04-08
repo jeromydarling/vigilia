@@ -43,7 +43,7 @@ import { CompanionModeSettingsCard } from '@/components/settings/CompanionModeSe
 import { MissionIdentityCard } from '@/components/settings/MissionIdentityCard';
 import { DiscoveryKeywordPanel } from '@/components/settings/DiscoveryKeywordPanel';
 import { FamiliaSettingsCard } from '@/components/settings/FamiliaSettingsCard';
-// VIGILIA: removed — import { ProvisionModeCard } from '@/components/settings/ProvisionModeCard';
+import { ProvisionModeCard } from '@/components/settings/ProvisionModeCard';
 import { ImpactDimensionsCard } from '@/components/settings/ImpactDimensionsCard';
 import { FamiliaSharingToggle } from '@/components/settings/FamiliaSharingToggle';
 import DigestPreferencesCard from '@/components/settings/DigestPreferencesCard';

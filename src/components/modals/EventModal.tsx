@@ -7,10 +7,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { AddressAutocomplete } from '@/components/shared/AddressAutocomplete';
-// VIGILIA: removed — import { PartnerCombobox } from '@/components/shared/PartnerCombobox';
+import { PartnerCombobox } from '@/components/shared/PartnerCombobox';
 
 import { useCreateEvent, useUpdateEvent } from '@/hooks/useEvents';
-// VIGILIA: removed — import { useMetros } from '@/hooks/useMetros';
+import { useMetros } from '@/hooks/useMetros';
 import { useEventTargetPopulations, useEventStrategicLanes, useEventPcsGoals } from '@/hooks/useEventLookups';
 import { toast } from '@/components/ui/sonner';
 import { cn } from '@/lib/utils';

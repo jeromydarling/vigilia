@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import { useAnchors } from './useAnchors';
-// VIGILIA: removed — import { useOpportunities } from './useOpportunities';
+import { useOpportunities } from './useOpportunities';
 import { useAnchorPipeline } from './useAnchorPipeline';
 import { useEvents } from './useEvents';
-// VIGILIA: removed — import { useMetros } from './useMetros';
+import { useMetros } from './useMetros';
 import { useRegions } from './useRegions';
 import { ReportData, KPIData, TableData, HighlightData } from '@/lib/reportPdf';
 import { addDays, subDays, isAfter, isBefore, parseISO, format } from 'date-fns';

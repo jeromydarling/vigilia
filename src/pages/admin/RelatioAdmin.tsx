@@ -15,9 +15,9 @@ import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-// VIGILIA: removed — import { ConnectionStatusBadge } from '@/components/relatio/ConnectionStatusBadge';
-// VIGILIA: removed — import { SyncHistoryPanel } from '@/components/relatio/SyncHistoryPanel';
-// VIGILIA: removed — import { SmokeTestButton } from '@/components/relatio/SmokeTestButton';
+import { ConnectionStatusBadge } from '@/components/relatio/ConnectionStatusBadge';
+import { SyncHistoryPanel } from '@/components/relatio/SyncHistoryPanel';
+import { SmokeTestButton } from '@/components/relatio/SmokeTestButton';
 import {
   Shield, Plug, RefreshCw, ArrowLeftRight, Database, Activity,
   Loader2, CheckCircle2, XCircle, AlertTriangle, HelpCircle,

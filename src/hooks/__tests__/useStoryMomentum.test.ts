@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-// VIGILIA: removed — import { computeDensity, DENSITY_THRESHOLDS } from '@/hooks/useStoryMomentum';
-// VIGILIA: removed — import type { StorySourceCounts } from '@/hooks/useStoryMomentum';
+import { computeDensity, DENSITY_THRESHOLDS } from '@/hooks/useStoryMomentum';
+import type { StorySourceCounts } from '@/hooks/useStoryMomentum';
 
 function makeSources(overrides: Partial<StorySourceCounts> = {}): StorySourceCounts {
   return {

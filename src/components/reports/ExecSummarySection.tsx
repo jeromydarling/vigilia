@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Heart, Users, Calendar, Package, TrendingUp, TrendingDown, Minus, HandHeart } from 'lucide-react';
 import type { ExecSummaryData } from '@/hooks/useHumanImpactData';
-// VIGILIA: removed — import { useProvisionMode } from '@/hooks/useProvisionMode';
+import { useProvisionMode } from '@/hooks/useProvisionMode';
 
 interface ExecSummarySectionProps {
   data: ExecSummaryData;

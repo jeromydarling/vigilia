@@ -13,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { RichTextEditor, RichTextDisplay } from '@/components/ui/rich-text-editor';
 import { UnsavedChangesDialog } from '@/components/modals/UnsavedChangesDialog';
 import { usePlaybooks, usePlaybook, useCreatePlaybook, useUpdatePlaybook, useDeletePlaybook, PlaybookInput } from '@/hooks/usePlaybooks';
-// VIGILIA: removed — import { useMetros } from '@/hooks/useMetros';
+import { useMetros } from '@/hooks/useMetros';
 import { useFormDirty } from '@/hooks/useUnsavedChanges';
 import DOMPurify from 'dompurify';
 

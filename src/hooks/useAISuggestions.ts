@@ -2,7 +2,7 @@ import { useInfiniteQuery, useMutation, useQueryClient } from '@tanstack/react-q
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthContext';
 import { toast } from '@/components/ui/sonner';
-// VIGILIA: removed — import { useImpulsusCapture } from './useImpulsusCapture';
+import { useImpulsusCapture } from './useImpulsusCapture';
 
 export interface AISuggestion {
   id: string;

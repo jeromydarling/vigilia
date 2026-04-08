@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { vigiliaToast } from '@/lib/vigiliaToast';
-// VIGILIA: removed — import { useImpulsusCapture } from './useImpulsusCapture';
+import { useImpulsusCapture } from './useImpulsusCapture';
 
 export interface Reflection {
   id: string;

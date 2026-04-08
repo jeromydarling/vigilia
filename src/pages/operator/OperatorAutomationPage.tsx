@@ -6,7 +6,7 @@
  * WHY: All workflow/run data belongs at operator level, not tenant admin.
  */
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-// VIGILIA: removed — import { WorkflowResultsPanel } from '@/components/admin/WorkflowResultsPanel';
+import { WorkflowResultsPanel } from '@/components/admin/WorkflowResultsPanel';
 import { UsageDashboardPanel } from '@/components/admin/UsageDashboardPanel';
 import { OpsControlsPanel } from '@/components/admin/OpsControlsPanel';
 import { OpsFeedPanel } from '@/components/admin/OpsFeedPanel';

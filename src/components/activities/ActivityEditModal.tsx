@@ -18,8 +18,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { ContactSearchSelect } from '@/components/contacts/ContactSearchSelect';
-// VIGILIA: removed — import { OpportunitySearchSelect } from '@/components/opportunities/OpportunitySearchSelect';
-// VIGILIA: removed — import { useMetros } from '@/hooks/useMetros';
+import { OpportunitySearchSelect } from '@/components/opportunities/OpportunitySearchSelect';
+import { useMetros } from '@/hooks/useMetros';
 import { useCreateActivity, useUpdateActivity, useDeleteActivity } from '@/hooks/useActivities';
 import {
   Loader2,
@@ -311,15 +311,7 @@ export function ActivityEditModal({
                 />
               </div>
 
-              {/* Organization */}
-              <div className="space-y-2">
-                <Label>{t('activities.organization')}</Label>
-                <OpportunitySearchSelect
-                  value={opportunityId || null}
-                  onChange={(id) => setOpportunityId(id || '')}
-                  placeholder={t('activities.searchOrganizations')}
-                />
-              </div>
+              {/* Organization — removed for Vigilia */}
 
               {/* Metro */}
               <div className="space-y-2">
