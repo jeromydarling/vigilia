@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import SeoHead from '@/components/seo/SeoHead';
+import { Sun, Music, Users, HandHeart, Heart } from 'lucide-react';
 
 /* ═══════════════════════════════════════════════════════════
    Vigilia.care — "A Liturgy of Attention"
@@ -22,11 +23,11 @@ const FAMILY_QUESTIONS = [
 ];
 
 const EXAMPLE_ENTRIES = [
-  { text: 'Today she seemed peaceful.', date: 'Monday' },
-  { text: 'She brightened when music from church was mentioned.', date: 'Tuesday' },
-  { text: 'A volunteer sat with her after lunch.', date: 'Wednesday' },
-  { text: 'She asked quietly for prayer.', date: 'Thursday' },
-  { text: 'Your brother visited this afternoon and she held his hand for a long time.', date: 'Friday' },
+  { text: 'Today she seemed peaceful.', date: 'Monday', icon: Sun },
+  { text: 'She brightened when music from church was mentioned.', date: 'Tuesday', icon: Music },
+  { text: 'A volunteer sat with her after lunch.', date: 'Wednesday', icon: Users },
+  { text: 'She asked quietly for prayer.', date: 'Thursday', icon: HandHeart },
+  { text: 'Your brother visited this afternoon and she held his hand for a long time.', date: 'Friday', icon: Heart },
 ];
 
 const VALUE_POINTS = [
@@ -318,15 +319,12 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           FAMILY QUESTIONS — asymmetric editorial
           ════════════════════════════════════════════════════════ */}
-      <section className="reveal-on-scroll relative overflow-hidden">
-        {/* Decorative rosary */}
-        <div className="absolute top-8 right-4 sm:top-12 sm:right-[8%] text-[hsl(var(--marketing-tan)/0.1)]">
-          <RosarySvg />
-        </div>
+      <section className="reveal-on-scroll">
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             {/* Left column — pull quote intro */}
             <div className="md:col-span-4">
+              <RosarySvg className="text-[hsl(var(--marketing-tan)/0.25)] mb-6" />
               <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
                 Every family carries these
               </p>
@@ -369,22 +367,28 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
 
           {/* Journal entries — two-column editorial */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
-            {EXAMPLE_ENTRIES.map((entry, i) => (
-              <div
-                key={i}
-                className={`py-6 border-b border-[hsl(var(--marketing-border)/0.6)] reveal-on-scroll ${
-                  i % 2 === 0 ? 'md:border-r md:border-[hsl(var(--marketing-border)/0.4)] md:pr-16' : ''
-                }`}
-                style={{ transitionDelay: `${i * 60}ms` }}
-              >
-                <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-[hsl(var(--marketing-tan))] mb-3">
-                  {entry.date}
-                </p>
-                <p className="font-serif-body text-lg text-[hsl(var(--marketing-deep))] leading-[1.7]">
-                  {entry.text}
-                </p>
-              </div>
-            ))}
+            {EXAMPLE_ENTRIES.map((entry, i) => {
+              const Icon = entry.icon;
+              return (
+                <div
+                  key={i}
+                  className={`py-6 border-b border-[hsl(var(--marketing-border)/0.6)] reveal-on-scroll ${
+                    i % 2 === 0 ? 'md:border-r md:border-[hsl(var(--marketing-border)/0.4)] md:pr-16' : ''
+                  }`}
+                  style={{ transitionDelay: `${i * 60}ms` }}
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <Icon className="h-3.5 w-3.5 text-[hsl(var(--marketing-gold)/0.6)]" />
+                    <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-[hsl(var(--marketing-tan))]">
+                      {entry.date}
+                    </p>
+                  </div>
+                  <p className="font-serif-body text-lg text-[hsl(var(--marketing-deep))] leading-[1.7]">
+                    {entry.text}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -394,15 +398,12 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           THE 30-SECOND RITUAL — two-column
           ════════════════════════════════════════════════════════ */}
-      <section className="reveal-on-scroll relative overflow-hidden" id="the-ritual">
-        {/* Decorative hands */}
-        <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-[5%] text-[hsl(var(--marketing-tan)/0.08)]">
-          <HandsSvg />
-        </div>
+      <section className="reveal-on-scroll" id="the-ritual">
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             {/* Left — text */}
             <div className="md:col-span-5">
+              <HandsSvg className="text-[hsl(var(--marketing-tan)/0.25)] mb-6" />
               <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
                 How it works
               </p>
@@ -593,12 +594,12 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           THE PRINTED JOURNAL — editorial spread with illustrations
           ════════════════════════════════════════════════════════ */}
-      <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute top-8 right-0 sm:top-16 text-[hsl(var(--marketing-tan)/0.12)]">
+      <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll relative">
+        {/* Background decorative elements — visible on all sizes */}
+        <div className="absolute top-8 right-2 sm:top-16 sm:right-4 text-[hsl(var(--marketing-tan)/0.2)]">
           <OliveBranchSvg />
         </div>
-        <div className="absolute bottom-12 left-0 sm:bottom-20 text-[hsl(var(--marketing-tan)/0.12)]">
+        <div className="absolute bottom-8 left-2 sm:bottom-20 sm:left-4 text-[hsl(var(--marketing-tan)/0.2)]">
           <OliveBranchSvg flip />
         </div>
 
@@ -678,12 +679,12 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           CONTINUITY + FORMATION — side by side, editorial
           ════════════════════════════════════════════════════════ */}
-      <section id="continuity" className="reveal-on-scroll relative overflow-hidden">
-        {/* Decorative open book */}
-        <div className="absolute top-8 right-4 sm:top-16 sm:right-[6%] text-[hsl(var(--marketing-tan)/0.08)]">
-          <OpenBookSvg />
-        </div>
+      <section id="continuity" className="reveal-on-scroll">
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
+          {/* Decorative open book — inline, visible on all screens */}
+          <div className="flex justify-center mb-10">
+            <OpenBookSvg className="text-[hsl(var(--marketing-tan)/0.25)]" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
             {/* Left — Continuity */}
             <div className="border-t-2 border-[hsl(var(--marketing-gold)/0.4)] pt-10">
@@ -901,16 +902,9 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           WORD OF MOUTH — full-bleed cream, large quote
           ════════════════════════════════════════════════════════ */}
-      <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll relative overflow-hidden">
-        {/* Decorative hands */}
-        <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-[10%] text-[hsl(var(--marketing-tan)/0.08)]">
-          <HandsSvg />
-        </div>
-        <div className="absolute top-8 right-4 sm:top-12 sm:right-[10%] text-[hsl(var(--marketing-tan)/0.08)]">
-          <RosarySvg />
-        </div>
+      <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
         <div className="max-w-[720px] mx-auto px-6 sm:px-8 py-16 sm:py-20 md:py-24 text-center">
-          <div className="w-16 h-px bg-[hsl(var(--marketing-tan))] mx-auto mb-12" />
+          <HandsSvg className="text-[hsl(var(--marketing-tan)/0.25)] mx-auto mb-8" />
           <p className="font-serif-body text-2xl sm:text-3xl italic text-[hsl(var(--marketing-brown))] leading-[1.5] mb-6">
             "This place has an app where every visit becomes part of my dad's story.
             I can actually feel what his days are like."
