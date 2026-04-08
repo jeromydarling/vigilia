@@ -41,28 +41,31 @@ export function buildReflectionPrompt(input: RawVisitInput): string {
   const needLabel = input.need.replace(/_/g, ' ');
   const concernLabel = input.concern.replace(/_/g, ' ');
 
-  return `You are writing a single entry for a family bedside journal about their elderly loved one in Catholic care. Write a brief, warm, honest reflection (40-90 words) that a family member would want to read and reread.
+  return `You are composing a single entry for a family bedside journal — a small book that will be printed, held, and kept. The family of an elderly person in Catholic care will read this entry, perhaps many times, perhaps years from now. It may be read at a funeral.
+
+YOUR VOICE: Write in the tradition of St. Augustine's Confessions — intimate, addressed to someone who loves this person, rendering small moments with spiritual weight. Honest about weariness and grief without despair. Concrete and bodily, never abstract. Grateful without sentimentality. Memory and the present braided together, as if the moment is still alive.
 
 RESIDENT: ${input.residentName}
 VISIT DATE: ${new Date(input.visitedAt).toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}
-OBSERVED MOOD: ${moodLabel}
+OBSERVED SPIRIT: ${moodLabel}
 PRIMARY NEED: ${needLabel}
 NOTABLE: ${concernLabel}
-${input.voiceTranscript ? `VISITOR'S VOICE NOTE: "${input.voiceTranscript}"` : ''}
-${input.voicePromptText ? `PROMPT ANSWERED: "${input.voicePromptText}"` : ''}
+${input.voiceTranscript ? `WHAT THE VISITOR NOTICED: "${input.voiceTranscript}"` : ''}
+${input.voicePromptText ? `THEY WERE ASKED: "${input.voicePromptText}"` : ''}
 
 RULES:
-- Write as if this entry will appear in a small printed prayer book
-- Use the resident's first name naturally
-- Capture one concrete moment, not a summary
-- No bullet points, no metadata labels, no clinical jargon
-- No mention of "taps," "prompts," "systems," or "apps"
-- Prefer gentle, honest language — as if a chaplain were writing in a notebook
-- Include the emotional and spiritual texture, not just facts
-- If there was a joyful moment, let it shine; if there was grief, honor it gently
-- Each entry should feel worth rereading months later
+- 40-90 words. Every word must earn its place.
+- Use the resident's first name naturally, as a person who knows them would.
+- One concrete moment, not a summary. A hand held. A hymn hummed. A name spoken.
+- No clinical language (patient, vitals, chart, assessment, intervention).
+- No technology language (app, system, dashboard, tap, prompt, voice note, algorithm).
+- No meta-language about the reflection itself (here is, the following, this entry).
+- No speculation or invention. Only what was observed. If unsure, stay silent.
+- Honest about hard days — fatigue, confusion, grief — without dramatizing.
+- If there was grace, let it appear naturally. Do not force it.
+- Write as if handing a small, true thing to someone who is far away and worried.
 
-Write only the reflection text, nothing else.`;
+Write only the reflection text. Nothing else.`;
 }
 
 /**
@@ -73,21 +76,23 @@ export function buildWeeklyChapterPrompt(
   weekReflections: string[],
   seasonLabel: string,
 ): string {
-  return `You are composing a weekly chapter for a family bedside journal about their elderly loved one, ${residentName}, during ${seasonLabel}.
+  return `You are composing a weekly chapter for a printed family journal — a small book about ${residentName}'s days during ${seasonLabel}. This chapter will be bound and kept.
 
-Below are the individual reflections from this week. Weave them into a single, flowing narrative paragraph (80-150 words) that captures the arc of the week — its emotional tone, recurring themes, moments of grace, and any shifts in spirit.
+Below are individual reflections from this week. Weave them into a single flowing paragraph (80-150 words) that captures the week's arc — what shifted, what held steady, who was present, where grace appeared or where it was hard to find.
+
+YOUR VOICE: Augustinian. Intimate. Addressed to people who love ${residentName.split(' ')[0]} and cannot be there. Small moments rendered with weight. Honest about hard days. Grateful without performance. The week as a living chapter, not a clinical summary.
 
 THIS WEEK'S REFLECTIONS:
 ${weekReflections.map((r, i) => `${i + 1}. ${r}`).join('\n')}
 
 RULES:
-- Write as a single flowing paragraph, not a list
-- The chapter should read like a page from a family devotional
-- Preserve named people, specific moments, and emotional texture
-- Note any patterns: "This week carried both tenderness and fatigue..."
-- No clinical language, no jargon, no system references
-- Should feel worth binding into a seasonal printed journal
-- 80-150 words
+- One flowing paragraph. Not a list. Not a summary.
+- Preserve named people, specific moments, emotional and spiritual texture.
+- Note patterns honestly: "This week carried both tenderness and fatigue..."
+- No clinical language, no technology references, no jargon.
+- Do not invent details not present in the reflections.
+- Write as if this page will be read aloud at a family gathering years from now.
+- 80-150 words.
 
 Write only the chapter text, nothing else.`;
 }
