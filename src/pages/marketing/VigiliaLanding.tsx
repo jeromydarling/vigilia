@@ -189,25 +189,19 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
 
   return (
     <div ref={ref} className="relative">
-      {/* Rosary background — winds alongside the content like a meditation */}
+      {/* Rosary — one massive image spanning the full page, no repeat.
+          Positioned on the right so only beads/chain peek from the edge.
+          The cross appears near the bottom of the page. */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.06] bg-repeat-y bg-[length:320px_auto] sm:bg-[length:420px_auto] lg:bg-[length:500px_auto]"
+        className="pointer-events-none absolute inset-0 z-0 bg-no-repeat opacity-[0.07]"
         style={{
           backgroundImage: `url(${rosaryBg})`,
-          backgroundPosition: 'right -60px top 80px',
+          backgroundSize: '2400px 2400px',
+          backgroundPosition: 'right -800px top 400px',
         }}
         aria-hidden
       />
-      <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.04] bg-repeat-y bg-[length:280px_auto] sm:bg-[length:360px_auto] lg:bg-[length:440px_auto] hidden sm:block"
-        style={{
-          backgroundImage: `url(${rosaryBg})`,
-          backgroundPosition: 'left -80px top 400px',
-          transform: 'scaleX(-1)',
-        }}
-        aria-hidden
-      />
-      {/* Content sits above the rosary */}
+      {/* Content sits above */}
       <div className="relative z-10">
       <SeoHead
         title="Vigilia.care — A Liturgy of Attention"
