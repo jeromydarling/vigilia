@@ -28,6 +28,8 @@ export interface SynthesizeReflectionParams {
   };
   voiceTranscript: string | null;
   visitorRole: string;
+  /** If provided, the voice_notes row will have its transcript cleared after synthesis */
+  voiceNoteId?: string | null;
 }
 
 /**
@@ -93,6 +95,23 @@ export async function synthesizeReflection(params: SynthesizeReflectionParams): 
     if (insertError) {
       console.error('[synthesizeReflection] Failed to save reflection:', insertError);
       return null;
+    }
+
+    // Clean up: delete the voice transcript now that the reflection is composed.
+    // The AI narrative is what persists — raw transcripts may contain PHI
+    // (medication mentions, diagnoses, clinical details) and should not be retained.
+    if (params.voiceNoteId) {
+      await supabase
+        .from('voice_notes')
+        .update({ transcript: null, transcript_status: 'purged' })
+        .eq('id', params.voiceNoteId)
+        .then(({ error: purgeErr }) => {
+          if (purgeErr) {
+            console.warn('[synthesizeReflection] Failed to purge transcript:', purgeErr);
+          } else {
+            console.info('[synthesizeReflection] Transcript purged after synthesis');
+          }
+        });
     }
 
     return reflectionText;

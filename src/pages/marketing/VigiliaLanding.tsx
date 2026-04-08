@@ -320,7 +320,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           ════════════════════════════════════════════════════════ */}
       <section className="reveal-on-scroll relative overflow-hidden">
         {/* Decorative rosary */}
-        <div className="absolute top-12 right-[8%] text-[hsl(var(--marketing-tan)/0.1)] hidden lg:block">
+        <div className="absolute top-8 right-4 sm:top-12 sm:right-[8%] text-[hsl(var(--marketing-tan)/0.1)]">
           <RosarySvg />
         </div>
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
@@ -396,7 +396,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           ════════════════════════════════════════════════════════ */}
       <section className="reveal-on-scroll relative overflow-hidden" id="the-ritual">
         {/* Decorative hands */}
-        <div className="absolute bottom-8 left-[5%] text-[hsl(var(--marketing-tan)/0.08)] hidden lg:block">
+        <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-[5%] text-[hsl(var(--marketing-tan)/0.08)]">
           <HandsSvg />
         </div>
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
@@ -595,10 +595,10 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           ════════════════════════════════════════════════════════ */}
       <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll relative overflow-hidden">
         {/* Background decorative elements */}
-        <div className="absolute top-16 right-0 text-[hsl(var(--marketing-tan)/0.15)] hidden lg:block">
+        <div className="absolute top-8 right-0 sm:top-16 text-[hsl(var(--marketing-tan)/0.12)]">
           <OliveBranchSvg />
         </div>
-        <div className="absolute bottom-20 left-0 text-[hsl(var(--marketing-tan)/0.15)] hidden lg:block">
+        <div className="absolute bottom-12 left-0 sm:bottom-20 text-[hsl(var(--marketing-tan)/0.12)]">
           <OliveBranchSvg flip />
         </div>
 
@@ -680,7 +680,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           ════════════════════════════════════════════════════════ */}
       <section id="continuity" className="reveal-on-scroll relative overflow-hidden">
         {/* Decorative open book */}
-        <div className="absolute top-16 right-[6%] text-[hsl(var(--marketing-tan)/0.08)] hidden lg:block">
+        <div className="absolute top-8 right-4 sm:top-16 sm:right-[6%] text-[hsl(var(--marketing-tan)/0.08)]">
           <OpenBookSvg />
         </div>
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
@@ -903,10 +903,10 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           ════════════════════════════════════════════════════════ */}
       <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll relative overflow-hidden">
         {/* Decorative hands */}
-        <div className="absolute bottom-8 left-[10%] text-[hsl(var(--marketing-tan)/0.08)] hidden lg:block">
+        <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-[10%] text-[hsl(var(--marketing-tan)/0.08)]">
           <HandsSvg />
         </div>
-        <div className="absolute top-12 right-[10%] text-[hsl(var(--marketing-tan)/0.08)] hidden lg:block">
+        <div className="absolute top-8 right-4 sm:top-12 sm:right-[10%] text-[hsl(var(--marketing-tan)/0.08)]">
           <RosarySvg />
         </div>
         <div className="max-w-[720px] mx-auto px-6 sm:px-8 py-16 sm:py-20 md:py-24 text-center">
