@@ -214,11 +214,18 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
                 Built from small acts of attention by staff, chaplains, volunteers, and parish companions —
                 so families never feel far away.
               </p>
-              <Link to="/signup">
-                <Button className="rounded-none border-2 border-[hsl(var(--marketing-deep))] bg-[hsl(var(--marketing-deep))] text-[hsl(var(--marketing-cream))] hover:bg-transparent hover:text-[hsl(var(--marketing-deep))] px-10 py-5 text-xs font-sans tracking-[0.18em] uppercase transition-colors duration-300 h-auto">
-                  Sign Up
-                </Button>
-              </Link>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/signup">
+                  <Button className="rounded-none border-2 border-[hsl(var(--marketing-deep))] bg-[hsl(var(--marketing-deep))] text-[hsl(var(--marketing-cream))] hover:bg-transparent hover:text-[hsl(var(--marketing-deep))] px-10 py-5 text-xs font-sans tracking-[0.18em] uppercase transition-colors duration-300 h-auto">
+                    Sign Up
+                  </Button>
+                </Link>
+                <Link to="/demo">
+                  <Button variant="outline" className="rounded-none border-2 border-[hsl(var(--marketing-deep))] bg-transparent text-[hsl(var(--marketing-deep))] hover:bg-[hsl(var(--marketing-deep))] hover:text-[hsl(var(--marketing-cream))] px-10 py-5 text-xs font-sans tracking-[0.18em] uppercase transition-colors duration-300 h-auto">
+                    Try It Out
+                  </Button>
+                </Link>
+              </div>
             </div>
             {/* Right column — journal page illustration */}
             <div className="hidden md:flex md:col-span-4 md:col-start-9 items-center justify-center">
@@ -511,11 +518,18 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
               Ready to give families a living journal of their loved one's days?
             </p>
           </div>
-          <Link to="/signup" className="shrink-0">
-            <Button className="rounded-none border-2 border-[hsl(var(--marketing-cream))] bg-[hsl(var(--marketing-cream))] text-[hsl(var(--marketing-deep))] hover:bg-transparent hover:text-[hsl(var(--marketing-cream))] px-8 py-4 text-xs font-sans tracking-[0.15em] uppercase transition-colors duration-300 h-auto">
-              Sign Up
-            </Button>
-          </Link>
+          <div className="flex gap-3 shrink-0">
+            <Link to="/demo">
+              <Button variant="outline" className="rounded-none border-2 border-[hsl(var(--marketing-cream))] bg-transparent text-[hsl(var(--marketing-cream))] hover:bg-[hsl(var(--marketing-cream))] hover:text-[hsl(var(--marketing-deep))] px-8 py-4 text-xs font-sans tracking-[0.15em] uppercase transition-colors duration-300 h-auto">
+                Try It Out
+              </Button>
+            </Link>
+            <Link to="/signup">
+              <Button className="rounded-none border-2 border-[hsl(var(--marketing-cream))] bg-[hsl(var(--marketing-cream))] text-[hsl(var(--marketing-deep))] hover:bg-transparent hover:text-[hsl(var(--marketing-cream))] px-8 py-4 text-xs font-sans tracking-[0.15em] uppercase transition-colors duration-300 h-auto">
+                Sign Up
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 

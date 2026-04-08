@@ -14,6 +14,7 @@ import { DemoModeProvider } from "@/contexts/DemoModeContext";
 import { AIChatButton } from "@/components/ai/AIChatButton";
 import { GlobalBundleReviewPanel } from "@/components/ai/GlobalBundleReviewPanel";
 import { DemoBanner } from "@/components/demo/DemoBanner";
+import DemoToolbar from "@/components/vigilia/DemoToolbar";
 import { DemoGuidedTour } from "@/components/demo/DemoGuidedTour";
 import { GlobalModals } from "@/components/modals/GlobalModals";
 import { GlobalEffects } from "@/components/GlobalEffects";
@@ -57,6 +58,7 @@ const App = () => (
           <GlobalModals />
           <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
             <DemoBanner />
+            <DemoToolbar />
             <DemoGuidedTour />
             <ScrollToTop />
             <AIChatButton />
