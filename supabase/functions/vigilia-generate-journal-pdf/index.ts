@@ -178,7 +178,15 @@ serve(async (req) => {
       .eq("resident_contact_id", job.resident_contact_id)
       .order("week_start", { ascending: true });
 
-    const selectedReflections = (reflections ?? []).slice(0, 28).map((r: any) => ({
+    // Print gate: server-side filter for anything that slipped through
+    const PRINT_BLOCKLIST = /\b(as an ai|language model|taps|dashboard|app|voice note|mood_observed|patient|chart|ehr)\b/i;
+    const filteredReflections = (reflections ?? []).filter((r: any) =>
+      r.reflection_text &&
+      r.reflection_text.split(/\s+/).length >= 20 &&
+      !PRINT_BLOCKLIST.test(r.reflection_text)
+    );
+
+    const selectedReflections = filteredReflections.slice(0, 28).map((r: any) => ({
       text: r.reflection_text,
       date: new Date(r.published_at).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }),
     }));

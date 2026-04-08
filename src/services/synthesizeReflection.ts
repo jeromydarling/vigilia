@@ -12,6 +12,7 @@
 
 import { supabase } from '@/integrations/supabase/client';
 import { buildReflectionPrompt, isPrintWorthy } from '@/lib/narrativeSynthesis';
+import { validateReflection, buildReviewPrompt } from '@/lib/reflectionValidator';
 import { getCurrentSeason } from '@/lib/liturgicalCalendar';
 import type { MoodObserved, NeedObserved, ConcernNoted } from '@/types/vigilia';
 
@@ -75,13 +76,67 @@ export async function synthesizeReflection(params: SynthesizeReflectionParams): 
       return null;
     }
 
-    // Determine liturgical season for tagging
+    // ── Quality validation (Layer 1 + 2: rule-based + consistency) ──
+    const validation = validateReflection({
+      reflectionText,
+      residentName,
+      mood: visitRitual.mood_observed,
+      need: visitRitual.need_observed,
+      concern: visitRitual.concern_noted,
+      voiceTranscript,
+    });
+
+    // If rule-based checks fail hard, hold the reflection
+    if (!validation.pass) {
+      console.warn('[synthesizeReflection] Validation HOLD:', validation.holdReason);
+      // Save as held — not published, flagged for review
+      await supabase.from('family_reflections').insert({
+        tenant_id: tenantId,
+        resident_contact_id: residentContactId,
+        reflection_text: reflectionText,
+        reflection_type: 'held',
+        season: getCurrentSeason(new Date(visitRitual.visited_at)).season,
+        is_print_candidate: false,
+        published_at: null,
+      });
+      return null;
+    }
+
+    // ── AI self-review (Layer 3) — second LLM pass ──
+    let aiReviewPass = true;
+    try {
+      const reviewPrompt = buildReviewPrompt(reflectionText, residentName.split(' ')[0]);
+      const { data: reviewData } = await supabase.functions.invoke('generate-text', {
+        body: { prompt: reviewPrompt, max_tokens: 50 },
+      });
+      const reviewResponse = (reviewData?.text ?? '').trim();
+      if (reviewResponse.startsWith('FLAG')) {
+        console.warn('[synthesizeReflection] AI review FLAG:', reviewResponse);
+        aiReviewPass = false;
+      }
+    } catch (reviewErr) {
+      // If the review call fails, don't block — proceed with rule-based result
+      console.warn('[synthesizeReflection] AI review failed, proceeding with rule-based result:', reviewErr);
+    }
+
+    // If AI review flags it, hold instead of publish
+    if (!aiReviewPass) {
+      await supabase.from('family_reflections').insert({
+        tenant_id: tenantId,
+        resident_contact_id: residentContactId,
+        reflection_text: reflectionText,
+        reflection_type: 'held',
+        season: getCurrentSeason(new Date(visitRitual.visited_at)).season,
+        is_print_candidate: false,
+        published_at: null,
+      });
+      return null;
+    }
+
+    // ── Passed all checks — publish ──
     const seasonInfo = getCurrentSeason(new Date(visitRitual.visited_at));
+    const printCandidate = isPrintWorthy(reflectionText) && validation.score >= 80;
 
-    // Check if this reflection meets print-quality standards
-    const printCandidate = isPrintWorthy(reflectionText);
-
-    // Write the reflection to the family_reflections table
     const { error: insertError } = await supabase.from('family_reflections').insert({
       tenant_id: tenantId,
       resident_contact_id: residentContactId,
@@ -90,6 +145,7 @@ export async function synthesizeReflection(params: SynthesizeReflectionParams): 
       season: seasonInfo.season,
       is_print_candidate: printCandidate,
       published_at: new Date().toISOString(),
+      validation_score: validation.score,
     });
 
     if (insertError) {

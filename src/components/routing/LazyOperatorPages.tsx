@@ -76,3 +76,4 @@ export const OperatorSynthesisPage = lazy(() => import('@/pages/operator/Operato
 export const OperatorFamilyAnalyticsPage = lazy(() => import('@/pages/operator/OperatorFamilyAnalyticsPage'));
 export const OperatorDioceseOverviewPage = lazy(() => import('@/pages/operator/OperatorDioceseOverviewPage'));
 export const OperatorVisitAdoptionPage = lazy(() => import('@/pages/operator/OperatorVisitAdoptionPage'));
+export const OperatorSynthesisBenchPage = lazy(() => import('@/pages/operator/OperatorSynthesisBenchPage'));
