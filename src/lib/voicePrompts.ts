@@ -11,11 +11,12 @@
  * SELECTION LOGIC:
  * - No prompt repeats within 7 days for the same visitor
  * - Category rotation ensures variety
- * - Liturgical season affinity (optional, future)
- * - Resident history awareness (e.g., "loss" prompts after a recent bereavement)
+ * - Liturgical season affinity — Lenten prompts during Lent, etc.
+ * - Resident history awareness — loss prompts weighted after bereavement
  */
 
 import type { VoicePromptCategory } from '@/types/vigilia';
+import type { LiturgicalSeason } from '@/lib/liturgicalCalendar';
 
 export type VisitorRole = 'nurse' | 'chaplain' | 'volunteer' | 'family' | 'any';
 
@@ -26,6 +27,8 @@ export interface SeedPrompt {
   best_when: string | null;
   /** Which roles this prompt is most appropriate for */
   role_affinity: VisitorRole;
+  /** Liturgical season this prompt is especially suited for (null = any season) */
+  liturgical_affinity?: LiturgicalSeason | null;
 }
 
 /** Voice note coaching cues — shown before recording to guide storytelling */
@@ -114,7 +117,33 @@ export const VOICE_PROMPTS: SeedPrompt[] = [
   { id: 'fam-01', category: 'memory', prompt_text: 'What memory did you share together today?', best_when: null, role_affinity: 'family' },
   { id: 'fam-02', category: 'joy', prompt_text: 'What brought them the most joy during your visit?', best_when: null, role_affinity: 'family' },
   { id: 'fam-03', category: 'family', prompt_text: 'How did they seem to you — compared to last time?', best_when: null, role_affinity: 'family' },
+
+  // ── Liturgical season-specific prompts ──
+  // Advent
+  { id: 'advent-01', category: 'spiritual', prompt_text: 'What are they waiting for — spoken or unspoken?', best_when: null, role_affinity: 'any', liturgical_affinity: 'advent' },
+  { id: 'advent-02', category: 'spiritual', prompt_text: 'Where did you see longing or hope today?', best_when: null, role_affinity: 'any', liturgical_affinity: 'advent' },
+  { id: 'advent-03', category: 'family', prompt_text: 'Who are they preparing their heart for this season?', best_when: null, role_affinity: 'any', liturgical_affinity: 'advent' },
+
+  // Lent
+  { id: 'lent-01', category: 'spiritual', prompt_text: 'What sacrifice is quietly present in their day?', best_when: null, role_affinity: 'any', liturgical_affinity: 'lent' },
+  { id: 'lent-02', category: 'loss', prompt_text: 'What are they carrying that they cannot put down?', best_when: null, role_affinity: 'any', liturgical_affinity: 'lent' },
+  { id: 'lent-03', category: 'accompaniment', prompt_text: 'How can you walk with them through this desert?', best_when: null, role_affinity: 'any', liturgical_affinity: 'lent' },
+
+  // Easter
+  { id: 'easter-01', category: 'joy', prompt_text: 'Where did new life show itself today — even small?', best_when: null, role_affinity: 'any', liturgical_affinity: 'easter' },
+  { id: 'easter-02', category: 'spiritual', prompt_text: 'What felt resurrected in this visit?', best_when: null, role_affinity: 'any', liturgical_affinity: 'easter' },
+  { id: 'easter-03', category: 'joy', prompt_text: 'What moment of unexpected joy did you witness?', best_when: null, role_affinity: 'any', liturgical_affinity: 'easter' },
 ];
+
+/** Context about the resident that influences prompt selection */
+export interface ResidentPromptContext {
+  /** Recent loss (bereavement) — weights loss/spiritual prompts */
+  hasRecentLoss?: boolean;
+  /** Recent family visit — weights family prompts */
+  hasRecentFamilyVisit?: boolean;
+  /** In vigil/hospice mode — use vigil prompts instead */
+  isVigilMode?: boolean;
+}
 
 /**
  * Select today's voice prompt for a given visitor.
@@ -122,13 +151,17 @@ export const VOICE_PROMPTS: SeedPrompt[] = [
  * Rules:
  * 1. No prompt repeats within the last 7 entries for this visitor
  * 2. Rotate across categories for variety
- * 3. Deterministic within a day (same visitor sees same prompt all day)
+ * 3. Liturgical season prompts are preferred during their season
+ * 4. Resident context (bereavement, family visit) weights relevant categories
+ * 5. Deterministic within a day (same visitor sees same prompt all day)
  */
 export function selectVoicePrompt(
   visitorId: string,
   recentPromptIds: string[],
   preferredCategory?: VoicePromptCategory,
   visitorRole?: VisitorRole,
+  currentSeason?: LiturgicalSeason | null,
+  residentContext?: ResidentPromptContext,
 ): SeedPrompt {
   const recentSet = new Set(recentPromptIds.slice(0, 7));
   let candidates = VOICE_PROMPTS.filter((p) => !recentSet.has(p.id));
@@ -141,6 +174,30 @@ export function selectVoicePrompt(
     if (roleCandidates.length > 0) candidates = roleCandidates;
   }
 
+  // Boost liturgical season-specific prompts: include them alongside general prompts
+  // by duplicating seasonal matches so they appear more frequently
+  if (currentSeason) {
+    const seasonalPrompts = candidates.filter((p) => p.liturgical_affinity === currentSeason);
+    if (seasonalPrompts.length > 0) {
+      // Add seasonal prompts twice to double their selection weight
+      candidates = [...candidates, ...seasonalPrompts, ...seasonalPrompts];
+    }
+  }
+
+  // Resident-specific weighting
+  if (residentContext?.hasRecentLoss) {
+    const lossPrompts = candidates.filter((p) => p.category === 'loss' || p.category === 'spiritual');
+    if (lossPrompts.length > 0) {
+      candidates = [...candidates, ...lossPrompts]; // Boost loss/spiritual
+    }
+  }
+  if (residentContext?.hasRecentFamilyVisit) {
+    const familyPrompts = candidates.filter((p) => p.category === 'family');
+    if (familyPrompts.length > 0) {
+      candidates = [...candidates, ...familyPrompts]; // Boost family
+    }
+  }
+
   if (preferredCategory) {
     const catCandidates = candidates.filter((p) => p.category === preferredCategory);
     if (catCandidates.length > 0) candidates = catCandidates;
@@ -148,6 +205,7 @@ export function selectVoicePrompt(
 
   if (candidates.length === 0) candidates = VOICE_PROMPTS;
 
+  // Deduplicate for deterministic selection (the weighting just increases probability)
   const today = new Date().toISOString().slice(0, 10);
   const seed = hashCode(`${today}-${visitorId}`);
   return candidates[Math.abs(seed) % candidates.length];

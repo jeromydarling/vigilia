@@ -13,12 +13,15 @@ import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Users, Calendar, Church, BarChart3, Plus } from 'lucide-react';
+import { Users, Calendar, Church, BarChart3, Plus, ShieldCheck } from 'lucide-react';
 import {
   useVolunteerSchedules, useCreateVolunteerSchedule, useDeleteVolunteerSchedule,
   useParishLinks, useCreateParishLink, useParishVolunteerStats,
 } from '@/hooks/useParishVolunteers';
+import { useVolunteers, type Volunteer } from '@/hooks/useVolunteers';
 import VolunteerScheduleGrid from '@/components/vigilia/VolunteerScheduleGrid';
+import VolunteerSearchSelect from '@/components/vigilia/VolunteerSearchSelect';
+import SafeEnvironmentCard from '@/components/vigilia/SafeEnvironmentCard';
 import BulletinSummaryGenerator from '@/components/vigilia/BulletinSummaryGenerator';
 
 function StatCard({ label, value }: { label: string; value: number }) {
@@ -40,22 +43,30 @@ export default function ParishVolunteerPortal() {
   const createParish = useCreateParishLink();
   const { data: stats } = useParishVolunteerStats();
 
+  const { data: allVolunteers } = useVolunteers('active');
+
   const [scheduleDialog, setScheduleDialog] = useState<{ day: number; slot: string } | null>(null);
   const [parishDialog, setParishDialog] = useState(false);
-  const [volunteerName, setVolunteerName] = useState('');
+  const [selectedVolunteer, setSelectedVolunteer] = useState<Volunteer | null>(null);
   const [parishName, setParishName] = useState('');
 
+  // Build a lookup map for volunteer names from IDs in schedules
+  const volunteerNameMap = new Map<string, string>();
+  for (const v of (allVolunteers ?? []) as Volunteer[]) {
+    volunteerNameMap.set(v.id, `${v.first_name} ${v.last_name}`);
+  }
+
   const handleAddSchedule = () => {
-    if (!scheduleDialog || !volunteerName.trim()) return;
+    if (!scheduleDialog || !selectedVolunteer) return;
     createSchedule.mutate({
-      volunteerContactId: volunteerName.trim(), // Would be a contact lookup in production
+      volunteerContactId: selectedVolunteer.id,
       facilityAnchorId: '',
       dayOfWeek: scheduleDialog.day,
       timeSlot: scheduleDialog.slot,
     }, {
       onSuccess: () => {
         setScheduleDialog(null);
-        setVolunteerName('');
+        setSelectedVolunteer(null);
       },
     });
   };
@@ -106,7 +117,7 @@ export default function ParishVolunteerPortal() {
               <VolunteerScheduleGrid
                 schedules={(schedules ?? []).map((s: any) => ({
                   ...s,
-                  volunteer_name: s.volunteer_contact_id?.slice(0, 8),
+                  volunteer_name: volunteerNameMap.get(s.volunteer_contact_id) ?? 'Volunteer',
                 }))}
                 onCellClick={(day, slot) => setScheduleDialog({ day, slot })}
                 onAssignmentClick={(s) => {
@@ -125,31 +136,37 @@ export default function ParishVolunteerPortal() {
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-base">Active Volunteers</CardTitle>
-                <Badge variant="outline">{stats?.activeVolunteers ?? 0} active</Badge>
+                <Badge variant="outline">{(allVolunteers as Volunteer[] ?? []).length} active</Badge>
               </div>
             </CardHeader>
             <CardContent>
-              {(schedules ?? []).length === 0 ? (
+              {(allVolunteers as Volunteer[] ?? []).length === 0 ? (
                 <p className="text-sm text-muted-foreground text-center py-8">
-                  No volunteers scheduled yet. Use the Schedule tab to assign volunteers.
+                  No active volunteers. Add volunteers from the main Volunteers page.
                 </p>
               ) : (
                 <div className="space-y-2">
-                  {(schedules ?? []).map((s: any) => (
-                    <div key={s.id} className="flex items-center justify-between py-2 border-b border-border/40 last:border-0">
+                  {(allVolunteers as Volunteer[] ?? []).map((v) => (
+                    <div key={v.id} className="flex items-center justify-between py-3 border-b border-border/40 last:border-0">
                       <div>
-                        <p className="text-sm font-medium">{s.volunteer_contact_id?.slice(0, 8) ?? 'Volunteer'}</p>
+                        <p className="text-sm font-medium">{v.first_name} {v.last_name}</p>
                         <p className="text-xs text-muted-foreground">
-                          {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][s.day_of_week]} &middot; {s.time_slot}
+                          {v.email ?? 'No email'}
+                          {v.phone && <span> &middot; {v.phone}</span>}
                         </p>
                       </div>
-                      <Badge variant="secondary" className="text-[10px]">Eucharistic Minister</Badge>
+                      <div className="flex items-center gap-2">
+                        <Badge variant={v.status === 'active' ? 'secondary' : 'outline'} className="text-[10px]">
+                          {v.status}
+                        </Badge>
+                      </div>
                     </div>
                   ))}
                 </div>
               )}
             </CardContent>
           </Card>
+          <SafeEnvironmentCard />
         </TabsContent>
 
         {/* Parishes Tab */}
@@ -201,14 +218,19 @@ export default function ParishVolunteerPortal() {
           <DialogHeader>
             <DialogTitle>Assign Volunteer</DialogTitle>
           </DialogHeader>
-          <Input
-            placeholder="Volunteer name or ID"
-            value={volunteerName}
-            onChange={(e) => setVolunteerName(e.target.value)}
+          <VolunteerSearchSelect
+            value=""
+            onSelect={(v) => setSelectedVolunteer(v)}
+            placeholder="Search by name or email..."
           />
+          {selectedVolunteer && (
+            <p className="text-sm text-muted-foreground">
+              Selected: <span className="font-medium text-foreground">{selectedVolunteer.first_name} {selectedVolunteer.last_name}</span>
+            </p>
+          )}
           <DialogFooter>
-            <Button variant="outline" onClick={() => setScheduleDialog(null)}>Cancel</Button>
-            <Button onClick={handleAddSchedule} disabled={!volunteerName.trim()}>Assign</Button>
+            <Button variant="outline" onClick={() => { setScheduleDialog(null); setSelectedVolunteer(null); }}>Cancel</Button>
+            <Button onClick={handleAddSchedule} disabled={!selectedVolunteer}>Assign</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
