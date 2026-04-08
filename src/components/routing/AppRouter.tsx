@@ -62,6 +62,7 @@ import FieldNotesPage from '@/components/fieldnotes/FieldNotesPage';
 import Visits from '@/pages/Visits';
 import DioceseReport from '@/pages/DioceseReport';
 import ParishVolunteerPortal from '@/pages/ParishVolunteerPortal';
+import HeldReflectionsReview from '@/components/vigilia/HeldReflectionsReview';
 import Projects from '@/pages/Projects';
 import ProjectDetail from '@/pages/ProjectDetail';
 import Testimonium from '@/pages/Testimonium';
@@ -326,6 +327,7 @@ export function AppRouter() {
           <Route path="testimonium/export" element={<FeatureGate featureKey="testimonium"><TestimoniumExports /></FeatureGate>} />
           <Route path="reports" element={<Reports />} />
           <Route path="reports/diocese" element={<ProtectedRoute requiredRoles={['admin', 'leadership']}><DioceseReport /></ProtectedRoute>} />
+          <Route path="review/reflections" element={<ProtectedRoute requiredRoles={['admin', 'leadership']}><HeldReflectionsReview /></ProtectedRoute>} />
 
           {/* Parish Volunteer Portal */}
           <Route path="volunteers/parish" element={<ParishVolunteerPortal />} />
