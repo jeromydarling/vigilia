@@ -100,6 +100,55 @@ function CandleSvg({ className = '', size = 48 }: { className?: string; size?: n
   );
 }
 
+/* Decorative SVG: a pair of hands cupped gently */
+function HandsSvg({ className = '' }: { className?: string }) {
+  return (
+    <svg width="120" height="60" viewBox="0 0 120 60" fill="none" className={className} aria-hidden>
+      <path d="M20 50 Q30 30 40 25 Q50 20 60 22 Q70 20 80 25 Q90 30 100 50" stroke="currentColor" strokeWidth="0.7" fill="none" />
+      <path d="M35 35 Q45 28 55 26" stroke="currentColor" strokeWidth="0.5" fill="none" />
+      <path d="M85 35 Q75 28 65 26" stroke="currentColor" strokeWidth="0.5" fill="none" />
+      <circle cx="60" cy="18" r="4" stroke="currentColor" strokeWidth="0.4" fill="none" />
+      <path d="M58 15 Q60 12 62 15" stroke="currentColor" strokeWidth="0.3" fill="none" />
+    </svg>
+  );
+}
+
+/* Decorative SVG: a rosary / prayer beads */
+function RosarySvg({ className = '' }: { className?: string }) {
+  return (
+    <svg width="40" height="80" viewBox="0 0 40 80" fill="none" className={className} aria-hidden>
+      <circle cx="20" cy="10" r="4" stroke="currentColor" strokeWidth="0.6" fill="none" />
+      <line x1="20" y1="14" x2="20" y2="20" stroke="currentColor" strokeWidth="0.5" />
+      {[24, 32, 40, 48, 56].map((y) => (
+        <g key={y}>
+          <circle cx="20" cy={y} r="2.5" stroke="currentColor" strokeWidth="0.4" fill="none" />
+          <line x1="20" y1={y + 2.5} x2="20" y2={y + 5.5} stroke="currentColor" strokeWidth="0.3" />
+        </g>
+      ))}
+      <line x1="18" y1="64" x2="22" y2="64" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="20" y1="62" x2="20" y2="72" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="17" y1="66" x2="23" y2="66" stroke="currentColor" strokeWidth="0.4" />
+    </svg>
+  );
+}
+
+/* Decorative SVG: an open book */
+function OpenBookSvg({ className = '' }: { className?: string }) {
+  return (
+    <svg width="80" height="50" viewBox="0 0 80 50" fill="none" className={className} aria-hidden>
+      <path d="M40 10 Q25 8 8 14 V42 Q25 36 40 38" stroke="currentColor" strokeWidth="0.7" fill="none" />
+      <path d="M40 10 Q55 8 72 14 V42 Q55 36 40 38" stroke="currentColor" strokeWidth="0.7" fill="none" />
+      <line x1="40" y1="10" x2="40" y2="38" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="15" y1="20" x2="34" y2="18" stroke="currentColor" strokeWidth="0.3" opacity="0.5" />
+      <line x1="15" y1="26" x2="34" y2="24" stroke="currentColor" strokeWidth="0.3" opacity="0.5" />
+      <line x1="15" y1="32" x2="34" y2="30" stroke="currentColor" strokeWidth="0.3" opacity="0.5" />
+      <line x1="46" y1="18" x2="65" y2="20" stroke="currentColor" strokeWidth="0.3" opacity="0.5" />
+      <line x1="46" y1="24" x2="65" y2="26" stroke="currentColor" strokeWidth="0.3" opacity="0.5" />
+      <line x1="46" y1="30" x2="65" y2="32" stroke="currentColor" strokeWidth="0.3" opacity="0.5" />
+    </svg>
+  );
+}
+
 function OliveBranchSvg({ className = '', flip = false }: { className?: string; flip?: boolean }) {
   return (
     <svg width="120" height="40" viewBox="0 0 120 40" fill="none" className={className} style={flip ? { transform: 'scaleX(-1)' } : undefined} aria-hidden>
@@ -269,7 +318,11 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           FAMILY QUESTIONS — asymmetric editorial
           ════════════════════════════════════════════════════════ */}
-      <section className="reveal-on-scroll">
+      <section className="reveal-on-scroll relative overflow-hidden">
+        {/* Decorative rosary */}
+        <div className="absolute top-12 right-[8%] text-[hsl(var(--marketing-tan)/0.1)] hidden lg:block">
+          <RosarySvg />
+        </div>
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             {/* Left column — pull quote intro */}
@@ -341,7 +394,11 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           THE 30-SECOND RITUAL — two-column
           ════════════════════════════════════════════════════════ */}
-      <section className="reveal-on-scroll" id="the-ritual">
+      <section className="reveal-on-scroll relative overflow-hidden" id="the-ritual">
+        {/* Decorative hands */}
+        <div className="absolute bottom-8 left-[5%] text-[hsl(var(--marketing-tan)/0.08)] hidden lg:block">
+          <HandsSvg />
+        </div>
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             {/* Left — text */}
@@ -621,7 +678,11 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           CONTINUITY + FORMATION — side by side, editorial
           ════════════════════════════════════════════════════════ */}
-      <section id="continuity" className="reveal-on-scroll">
+      <section id="continuity" className="reveal-on-scroll relative overflow-hidden">
+        {/* Decorative open book */}
+        <div className="absolute top-16 right-[6%] text-[hsl(var(--marketing-tan)/0.08)] hidden lg:block">
+          <OpenBookSvg />
+        </div>
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
             {/* Left — Continuity */}
@@ -840,7 +901,14 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           WORD OF MOUTH — full-bleed cream, large quote
           ════════════════════════════════════════════════════════ */}
-      <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
+      <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll relative overflow-hidden">
+        {/* Decorative hands */}
+        <div className="absolute bottom-8 left-[10%] text-[hsl(var(--marketing-tan)/0.08)] hidden lg:block">
+          <HandsSvg />
+        </div>
+        <div className="absolute top-12 right-[10%] text-[hsl(var(--marketing-tan)/0.08)] hidden lg:block">
+          <RosarySvg />
+        </div>
         <div className="max-w-[720px] mx-auto px-6 sm:px-8 py-16 sm:py-20 md:py-24 text-center">
           <div className="w-16 h-px bg-[hsl(var(--marketing-tan))] mx-auto mb-12" />
           <p className="font-serif-body text-2xl sm:text-3xl italic text-[hsl(var(--marketing-brown))] leading-[1.5] mb-6">
