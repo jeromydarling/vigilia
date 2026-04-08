@@ -188,19 +188,49 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
   }, []);
 
   return (
-    <div ref={ref} className="relative">
-      {/* Rosary — one massive image spanning the full page, no repeat.
-          Positioned on the right so only beads/chain peek from the edge.
-          The cross appears near the bottom of the page. */}
-      <div
-        className="pointer-events-none absolute inset-0 z-0 bg-no-repeat opacity-[0.07]"
-        style={{
-          backgroundImage: `url(${rosaryBg})`,
-          backgroundSize: '2400px 2400px',
-          backgroundPosition: 'right -800px top 400px',
-        }}
+    <div ref={ref} className="relative overflow-hidden">
+      {/* Rosary appears three times as you scroll — like stations of a meditation.
+          Each placement shows a different part of the rosary at a different angle. */}
+
+      {/* 1. Top-right: a few beads peeking from the right edge, near the hero/questions area */}
+      <img
+        src={rosaryBg}
+        alt=""
         aria-hidden
+        className="pointer-events-none absolute z-0 opacity-[0.07] w-[800px] sm:w-[1000px] lg:w-[1200px]"
+        style={{
+          top: '200px',
+          right: '-420px',
+          transform: 'rotate(-15deg)',
+        }}
       />
+
+      {/* 2. Mid-left: chain and beads curving from the left edge, near continuity/formation */}
+      <img
+        src={rosaryBg}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute z-0 opacity-[0.06] w-[900px] sm:w-[1100px] lg:w-[1300px]"
+        style={{
+          top: '52%',
+          left: '-500px',
+          transform: 'rotate(25deg) scaleX(-1)',
+        }}
+      />
+
+      {/* 3. Bottom-right: rotated so the cross comes into view near the final CTA */}
+      <img
+        src={rosaryBg}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute z-0 opacity-[0.08] w-[1000px] sm:w-[1200px] lg:w-[1400px]"
+        style={{
+          bottom: '-100px',
+          right: '-350px',
+          transform: 'rotate(40deg)',
+        }}
+      />
+
       {/* Content sits above */}
       <div className="relative z-10">
       <SeoHead
