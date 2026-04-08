@@ -104,7 +104,7 @@ function CandleSvg({ className = '', size = 48 }: { className?: string; size?: n
 /* Decorative SVG: a pair of hands cupped gently */
 function HandsSvg({ className = '' }: { className?: string }) {
   return (
-    <svg width="120" height="60" viewBox="0 0 120 60" fill="none" className={className} aria-hidden>
+    <svg width="240" height="120" viewBox="0 0 120 60" fill="none" className={className} aria-hidden>
       <path d="M20 50 Q30 30 40 25 Q50 20 60 22 Q70 20 80 25 Q90 30 100 50" stroke="currentColor" strokeWidth="0.7" fill="none" />
       <path d="M35 35 Q45 28 55 26" stroke="currentColor" strokeWidth="0.5" fill="none" />
       <path d="M85 35 Q75 28 65 26" stroke="currentColor" strokeWidth="0.5" fill="none" />
@@ -117,7 +117,7 @@ function HandsSvg({ className = '' }: { className?: string }) {
 /* Decorative SVG: a rosary / prayer beads */
 function RosarySvg({ className = '' }: { className?: string }) {
   return (
-    <svg width="40" height="80" viewBox="0 0 40 80" fill="none" className={className} aria-hidden>
+    <svg width="60" height="140" viewBox="0 0 40 80" fill="none" className={className} aria-hidden>
       <circle cx="20" cy="10" r="4" stroke="currentColor" strokeWidth="0.6" fill="none" />
       <line x1="20" y1="14" x2="20" y2="20" stroke="currentColor" strokeWidth="0.5" />
       {[24, 32, 40, 48, 56].map((y) => (
@@ -136,7 +136,7 @@ function RosarySvg({ className = '' }: { className?: string }) {
 /* Decorative SVG: an open book */
 function OpenBookSvg({ className = '' }: { className?: string }) {
   return (
-    <svg width="80" height="50" viewBox="0 0 80 50" fill="none" className={className} aria-hidden>
+    <svg width="200" height="120" viewBox="0 0 80 50" fill="none" className={className} aria-hidden>
       <path d="M40 10 Q25 8 8 14 V42 Q25 36 40 38" stroke="currentColor" strokeWidth="0.7" fill="none" />
       <path d="M40 10 Q55 8 72 14 V42 Q55 36 40 38" stroke="currentColor" strokeWidth="0.7" fill="none" />
       <line x1="40" y1="10" x2="40" y2="38" stroke="currentColor" strokeWidth="0.5" />
@@ -324,7 +324,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             {/* Left column — pull quote intro */}
             <div className="md:col-span-4">
-              <RosarySvg className="text-[hsl(var(--marketing-tan)/0.25)] mb-6" />
+              <RosarySvg className="text-[hsl(var(--marketing-tan)/0.4)] mb-6 mx-auto md:mx-0" />
               <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
                 Every family carries these
               </p>
@@ -403,7 +403,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             {/* Left — text */}
             <div className="md:col-span-5">
-              <HandsSvg className="text-[hsl(var(--marketing-tan)/0.25)] mb-6" />
+              <HandsSvg className="text-[hsl(var(--marketing-tan)/0.4)] mb-6 mx-auto md:mx-0" />
               <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
                 How it works
               </p>
@@ -596,10 +596,10 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           ════════════════════════════════════════════════════════ */}
       <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll relative">
         {/* Background decorative elements — visible on all sizes */}
-        <div className="absolute top-8 right-2 sm:top-16 sm:right-4 text-[hsl(var(--marketing-tan)/0.2)]">
+        <div className="absolute top-8 right-2 sm:top-16 sm:right-4 text-[hsl(var(--marketing-tan)/0.35)]">
           <OliveBranchSvg />
         </div>
-        <div className="absolute bottom-8 left-2 sm:bottom-20 sm:left-4 text-[hsl(var(--marketing-tan)/0.2)]">
+        <div className="absolute bottom-8 left-2 sm:bottom-20 sm:left-4 text-[hsl(var(--marketing-tan)/0.35)]">
           <OliveBranchSvg flip />
         </div>
 
@@ -683,7 +683,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           {/* Decorative open book — inline, visible on all screens */}
           <div className="flex justify-center mb-10">
-            <OpenBookSvg className="text-[hsl(var(--marketing-tan)/0.25)]" />
+            <OpenBookSvg className="text-[hsl(var(--marketing-tan)/0.4)]" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
             {/* Left — Continuity */}
@@ -904,7 +904,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           ════════════════════════════════════════════════════════ */}
       <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
         <div className="max-w-[720px] mx-auto px-6 sm:px-8 py-16 sm:py-20 md:py-24 text-center">
-          <HandsSvg className="text-[hsl(var(--marketing-tan)/0.25)] mx-auto mb-8" />
+          <HandsSvg className="text-[hsl(var(--marketing-tan)/0.4)] mx-auto mb-8" />
           <p className="font-serif-body text-2xl sm:text-3xl italic text-[hsl(var(--marketing-brown))] leading-[1.5] mb-6">
             "This place has an app where every visit becomes part of my dad's story.
             I can actually feel what his days are like."
