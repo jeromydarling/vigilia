@@ -114,6 +114,9 @@ import {
   OperatorAnalyticsPage, OperatorDiscoveryInsights, OperatorLivingLibrary,
   OperatorGardenPage, MorningExamenPage, EveningExamenPage,
   GardenPulsePage, GardenerStudioPage, GardenerInboxPage,
+  // Vigilia operator dashboards
+  OperatorPrintJobsPage, OperatorSynthesisPage, OperatorFamilyAnalyticsPage,
+  OperatorDioceseOverviewPage, OperatorVisitAdoptionPage,
 } from '@/components/routing/LazyOperatorPages';
 
 /**
@@ -271,6 +274,13 @@ export function AppRouter() {
         <Route path="/operator/nexus/garden-pulse" element={<OperatorShell><GardenPulsePage /></OperatorShell>} />
         <Route path="/operator/nexus/studio" element={<OperatorShell><GardenerStudioPage /></OperatorShell>} />
         <Route path="/operator/nexus/inbox" element={<OperatorShell><GardenerInboxPage /></OperatorShell>} />
+
+        {/* Vigilia operator dashboards */}
+        <Route path="/operator/print-jobs" element={<OperatorShell><OperatorPrintJobsPage /></OperatorShell>} />
+        <Route path="/operator/synthesis" element={<OperatorShell><OperatorSynthesisPage /></OperatorShell>} />
+        <Route path="/operator/family-analytics" element={<OperatorShell><OperatorFamilyAnalyticsPage /></OperatorShell>} />
+        <Route path="/operator/diocese" element={<OperatorShell><OperatorDioceseOverviewPage /></OperatorShell>} />
+        <Route path="/operator/visit-adoption" element={<OperatorShell><OperatorVisitAdoptionPage /></OperatorShell>} />
 
         {/* Tenant-scoped app routes: /:tenantSlug/... */}
         <Route path="/:tenantSlug" element={<ProtectedRoute><TenantRouteGuard /></ProtectedRoute>}>

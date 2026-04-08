@@ -69,3 +69,10 @@ export const GardenerStudioPage = lazy(() => import('@/pages/operator/nexus/Gard
 export const GardenerInboxPage = lazy(() => import('@/pages/operator/nexus/GardenerInboxPage'));
 export const AIObservatoryPage = lazy(() => import('@/pages/operator/AIObservatoryPage'));
 export const OrientationDebugPage = lazy(() => import('@/pages/operator/OrientationDebugPage'));
+
+// ── Vigilia operator dashboards ──
+export const OperatorPrintJobsPage = lazy(() => import('@/pages/operator/OperatorPrintJobsPage'));
+export const OperatorSynthesisPage = lazy(() => import('@/pages/operator/OperatorSynthesisPage'));
+export const OperatorFamilyAnalyticsPage = lazy(() => import('@/pages/operator/OperatorFamilyAnalyticsPage'));
+export const OperatorDioceseOverviewPage = lazy(() => import('@/pages/operator/OperatorDioceseOverviewPage'));
+export const OperatorVisitAdoptionPage = lazy(() => import('@/pages/operator/OperatorVisitAdoptionPage'));
