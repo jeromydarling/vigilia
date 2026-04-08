@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import SeoHead from '@/components/seo/SeoHead';
 import { Sun, Music, Users, HandHeart, Heart } from 'lucide-react';
+import rosaryBg from '@/assets/favpng_cc25f9f12bccfd7f3ea23547764b705f.png';
 
 /* ═══════════════════════════════════════════════════════════
    Vigilia.care — "A Liturgy of Attention"
@@ -101,55 +102,6 @@ function CandleSvg({ className = '', size = 48 }: { className?: string; size?: n
   );
 }
 
-/* Decorative SVG: a pair of hands cupped gently */
-function HandsSvg({ className = '' }: { className?: string }) {
-  return (
-    <svg width="240" height="120" viewBox="0 0 120 60" fill="none" className={className} aria-hidden>
-      <path d="M20 50 Q30 30 40 25 Q50 20 60 22 Q70 20 80 25 Q90 30 100 50" stroke="currentColor" strokeWidth="0.7" fill="none" />
-      <path d="M35 35 Q45 28 55 26" stroke="currentColor" strokeWidth="0.5" fill="none" />
-      <path d="M85 35 Q75 28 65 26" stroke="currentColor" strokeWidth="0.5" fill="none" />
-      <circle cx="60" cy="18" r="4" stroke="currentColor" strokeWidth="0.4" fill="none" />
-      <path d="M58 15 Q60 12 62 15" stroke="currentColor" strokeWidth="0.3" fill="none" />
-    </svg>
-  );
-}
-
-/* Decorative SVG: a rosary / prayer beads */
-function RosarySvg({ className = '' }: { className?: string }) {
-  return (
-    <svg width="60" height="140" viewBox="0 0 40 80" fill="none" className={className} aria-hidden>
-      <circle cx="20" cy="10" r="4" stroke="currentColor" strokeWidth="0.6" fill="none" />
-      <line x1="20" y1="14" x2="20" y2="20" stroke="currentColor" strokeWidth="0.5" />
-      {[24, 32, 40, 48, 56].map((y) => (
-        <g key={y}>
-          <circle cx="20" cy={y} r="2.5" stroke="currentColor" strokeWidth="0.4" fill="none" />
-          <line x1="20" y1={y + 2.5} x2="20" y2={y + 5.5} stroke="currentColor" strokeWidth="0.3" />
-        </g>
-      ))}
-      <line x1="18" y1="64" x2="22" y2="64" stroke="currentColor" strokeWidth="0.5" />
-      <line x1="20" y1="62" x2="20" y2="72" stroke="currentColor" strokeWidth="0.5" />
-      <line x1="17" y1="66" x2="23" y2="66" stroke="currentColor" strokeWidth="0.4" />
-    </svg>
-  );
-}
-
-/* Decorative SVG: an open book */
-function OpenBookSvg({ className = '' }: { className?: string }) {
-  return (
-    <svg width="200" height="120" viewBox="0 0 80 50" fill="none" className={className} aria-hidden>
-      <path d="M40 10 Q25 8 8 14 V42 Q25 36 40 38" stroke="currentColor" strokeWidth="0.7" fill="none" />
-      <path d="M40 10 Q55 8 72 14 V42 Q55 36 40 38" stroke="currentColor" strokeWidth="0.7" fill="none" />
-      <line x1="40" y1="10" x2="40" y2="38" stroke="currentColor" strokeWidth="0.5" />
-      <line x1="15" y1="20" x2="34" y2="18" stroke="currentColor" strokeWidth="0.3" opacity="0.5" />
-      <line x1="15" y1="26" x2="34" y2="24" stroke="currentColor" strokeWidth="0.3" opacity="0.5" />
-      <line x1="15" y1="32" x2="34" y2="30" stroke="currentColor" strokeWidth="0.3" opacity="0.5" />
-      <line x1="46" y1="18" x2="65" y2="20" stroke="currentColor" strokeWidth="0.3" opacity="0.5" />
-      <line x1="46" y1="24" x2="65" y2="26" stroke="currentColor" strokeWidth="0.3" opacity="0.5" />
-      <line x1="46" y1="30" x2="65" y2="32" stroke="currentColor" strokeWidth="0.3" opacity="0.5" />
-    </svg>
-  );
-}
-
 function OliveBranchSvg({ className = '', flip = false }: { className?: string; flip?: boolean }) {
   return (
     <svg width="120" height="40" viewBox="0 0 120 40" fill="none" className={className} style={flip ? { transform: 'scaleX(-1)' } : undefined} aria-hidden>
@@ -236,7 +188,27 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
   }, []);
 
   return (
-    <div ref={ref} className="bg-[hsl(var(--marketing-surface))]">
+    <div ref={ref} className="relative">
+      {/* Rosary background — winds alongside the content like a meditation */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.06] bg-repeat-y bg-[length:320px_auto] sm:bg-[length:420px_auto] lg:bg-[length:500px_auto]"
+        style={{
+          backgroundImage: `url(${rosaryBg})`,
+          backgroundPosition: 'right -60px top 80px',
+        }}
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.04] bg-repeat-y bg-[length:280px_auto] sm:bg-[length:360px_auto] lg:bg-[length:440px_auto] hidden sm:block"
+        style={{
+          backgroundImage: `url(${rosaryBg})`,
+          backgroundPosition: 'left -80px top 400px',
+          transform: 'scaleX(-1)',
+        }}
+        aria-hidden
+      />
+      {/* Content sits above the rosary */}
+      <div className="relative z-10">
       <SeoHead
         title="Vigilia.care — A Liturgy of Attention"
         description="A living bedside journal for Catholic eldercare. Families stay close to a loved one's daily reality through a journal built from small acts of attention by staff, chaplains, and volunteers."
@@ -324,7 +296,6 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             {/* Left column — pull quote intro */}
             <div className="md:col-span-4">
-              <RosarySvg className="text-[hsl(var(--marketing-tan)/0.4)] mb-6 mx-auto md:mx-0" />
               <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
                 Every family carries these
               </p>
@@ -357,7 +328,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           WHAT VIGILIA FEELS LIKE — journal entries
           ════════════════════════════════════════════════════════ */}
-      <section id="the-journal" className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
+      <section id="the-journal" className="bg-[hsl(var(--marketing-cream)/0.88)] reveal-on-scroll">
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           {/* Large pull quote */}
           <p className="font-serif-body text-2xl sm:text-3xl text-[hsl(var(--marketing-brown))] leading-[1.5] max-w-[720px] mb-20">
@@ -403,7 +374,6 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             {/* Left — text */}
             <div className="md:col-span-5">
-              <HandsSvg className="text-[hsl(var(--marketing-tan)/0.4)] mb-6 mx-auto md:mx-0" />
               <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
                 How it works
               </p>
@@ -445,7 +415,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           FEATURES — mini browser windows showing the app
           ════════════════════════════════════════════════════════ */}
-      <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
+      <section className="bg-[hsl(var(--marketing-cream)/0.88)] reveal-on-scroll">
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="text-center mb-16 sm:mb-20">
             <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
@@ -568,7 +538,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           MID-PAGE CTA — visual break with sign-up prompt
           ════════════════════════════════════════════════════════ */}
-      <section className="bg-[hsl(var(--marketing-deep))] reveal-on-scroll">
+      <section className="bg-[hsl(var(--marketing-deep)/0.92)] reveal-on-scroll">
         <div className="max-w-[900px] mx-auto px-6 sm:px-8 py-14 sm:py-16 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <CandleSvg className="text-[hsl(var(--marketing-gold)/0.6)] hidden sm:block" size={24} />
@@ -594,14 +564,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           THE PRINTED JOURNAL — editorial spread with illustrations
           ════════════════════════════════════════════════════════ */}
-      <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll relative">
-        {/* Background decorative elements — visible on all sizes */}
-        <div className="absolute top-8 right-2 sm:top-16 sm:right-4 text-[hsl(var(--marketing-tan)/0.35)]">
-          <OliveBranchSvg />
-        </div>
-        <div className="absolute bottom-8 left-2 sm:bottom-20 sm:left-4 text-[hsl(var(--marketing-tan)/0.35)]">
-          <OliveBranchSvg flip />
-        </div>
+      <section className="bg-[hsl(var(--marketing-cream)/0.88)] reveal-on-scroll relative">
 
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32 relative">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
@@ -681,10 +644,6 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           ════════════════════════════════════════════════════════ */}
       <section id="continuity" className="reveal-on-scroll">
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
-          {/* Decorative open book — inline, visible on all screens */}
-          <div className="flex justify-center mb-10">
-            <OpenBookSvg className="text-[hsl(var(--marketing-tan)/0.4)]" />
-          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
             {/* Left — Continuity */}
             <div className="border-t-2 border-[hsl(var(--marketing-gold)/0.4)] pt-10">
@@ -760,7 +719,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           THE FULL PLATFORM — feature showcase
           ════════════════════════════════════════════════════════ */}
-      <section id="platform" className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
+      <section id="platform" className="bg-[hsl(var(--marketing-cream)/0.88)] reveal-on-scroll">
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32">
           <div className="text-center mb-16">
             <p className="font-sans text-xs tracking-[0.25em] uppercase text-[hsl(var(--marketing-tan))] mb-6">
@@ -902,9 +861,9 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           WORD OF MOUTH — full-bleed cream, large quote
           ════════════════════════════════════════════════════════ */}
-      <section className="bg-[hsl(var(--marketing-cream))] reveal-on-scroll">
+      <section className="bg-[hsl(var(--marketing-cream)/0.88)] reveal-on-scroll">
         <div className="max-w-[720px] mx-auto px-6 sm:px-8 py-16 sm:py-20 md:py-24 text-center">
-          <HandsSvg className="text-[hsl(var(--marketing-tan)/0.4)] mx-auto mb-8" />
+          <div className="w-16 h-px bg-[hsl(var(--marketing-tan))] mx-auto mb-12" />
           <p className="font-serif-body text-2xl sm:text-3xl italic text-[hsl(var(--marketing-brown))] leading-[1.5] mb-6">
             "This place has an app where every visit becomes part of my dad's story.
             I can actually feel what his days are like."
@@ -919,7 +878,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
       {/* ════════════════════════════════════════════════════════
           FINAL CTA — inverted deep brown, book-end
           ════════════════════════════════════════════════════════ */}
-      <section className="bg-[hsl(var(--marketing-deep))] reveal-on-scroll">
+      <section className="bg-[hsl(var(--marketing-deep)/0.92)] reveal-on-scroll">
         <div className="max-w-[680px] mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-32 text-center">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-[2.75rem] font-normal text-[hsl(var(--marketing-cream))] mb-10 leading-[1.15] tracking-[-0.01em]">
             A liturgy of attention,<br />bound into memory.
@@ -936,6 +895,7 @@ const VigiliaLanding = React.forwardRef<HTMLDivElement>(function VigiliaLanding(
           </Link>
         </div>
       </section>
+      </div>{/* end content z-10 wrapper */}
     </div>
   );
 });
