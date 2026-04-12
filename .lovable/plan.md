@@ -1,241 +1,213 @@
-# CROS™ — Active Development Plan
+# Vigilia — Build Completion Specification
+
+**This document is the final authority on what "done" means.**
+Lovable: read this BEFORE writing any code. Read it AGAIN before marking any task complete.
 
 ---
 
-## Current Status (2026-02-21)
+## The Rule
 
-### Completed Today
+**Nothing is done until it works end-to-end in a browser.**
 
-1. ✅ **Bridge → Add-on migration**: Removed Bridge from 4-tier hierarchy. Now 3 tiers (Core/Insight/Story) + Bridge as $49/mo add-on. Updated brand, features, pricing, stripe, gates, admin UI, marketing pages.
+Not "compiles." Not "no errors." Not "the component renders." DONE means:
+- A user can click it
+- Data flows from the UI to the database and back
+- The feature works on mobile
+- Edge cases don't crash the page
+- The demo mode shows it working
 
-2. ✅ **À la carte add-on system**: Created `src/lib/addons.ts` with feature gating independent of plan tiers. Updated `canUse()` to check add-ons as fallback.
-
-3. ✅ **CROS type aliases**: `src/types/cros.ts` — Partner, Person, TouchPoint, Region, Chapter.
-
-4. ✅ **Communio Governance UI**: Review panel for data-boundary flags with approve/dismiss workflow.
-
-5. ✅ **Admin How-To refactor**: Role-gated documentation. Tenant admins vs operator workflows separated. Accordion Q&A format.
-
-6. ✅ **Shared section registry**: `src/lib/appSections.ts` — prevents content drift between Help and AdminHowTo.
-
-7. ✅ **PWA/Offline support**: Service worker with cache-first static + network-first navigation.
-
-8. ✅ **Visitor landing**: Warm empty state for the Visits page.
-
-9. ✅ **Edge function standards doc**: Defensive patterns checklist.
-
-10. ✅ **QA batch runner**: Full-suite sequential execution via GitHub Actions with consolidated email report.
+If you create a button that calls a function that calls a service that calls an edge function that writes to a table — ALL of those layers must exist, be imported, be wired, and produce a visible result. **If any layer is a stub, TODO, placeholder, or "will be implemented later," it is NOT done.**
 
 ---
 
-## Outstanding / Next Steps
+## Common Lovable Mistakes — DO NOT REPEAT
 
-### High Priority
+### 1. Commented imports with live usage
+NEVER comment out an import while leaving the symbol in use:
+```typescript
+// BAD — this crashes at runtime
+// import { useMetros } from '@/hooks/useMetros';
+const { data } = useMetros(); // ← ReferenceError
+```
+If you remove a feature, remove ALL references to it. Search the entire codebase for the symbol name before deleting the file.
 
-- [ ] **Archetype onboarding flow**: `archetypes` and `archetype_profiles` tables exist but no tenant-facing selection UI during onboarding.
-- [ ] **Dark mode audit**: Newer modules (Communio, Governance, Visitor landing) need dark mode pass.
-- [ ] **Communio governance workflow**: DB tables exist for governance flags but UI only has basic review — needs formal escalation/resolution workflow.
+### 2. Hooks that call Supabase tables that don't exist
+Every `supabase.from('table_name')` call must have a corresponding migration in `supabase/migrations/`. If you create a hook that queries `family_memories`, there must be a `CREATE TABLE family_memories` migration.
 
-### Medium Priority
+### 3. Edge functions referenced but not created
+If the client calls `supabase.functions.invoke('generate-text')`, the file `supabase/functions/generate-text/index.ts` must exist with a working Deno `serve()` handler.
 
-- [ ] **QA GitHub Actions workflow file**: The `qa.yml` workflow file needs to exist in the GitHub repo for batch runs to dispatch. Verify it's present and correctly configured.
-- [ ] **QA secrets verification**: Ensure `GITHUB_QA_PAT`, `QA_PASSWORD`, `GITHUB_REPO_OWNER`, `GITHUB_REPO_NAME` are set in edge function secrets.
-- [ ] **Stripe product alignment**: Bridge Stripe product (`prod_U0Zcx0zjAS2j3c`) moved to addons map — verify `create-checkout` edge function handles it correctly in the addons flow.
+### 4. Components that import from deleted files
+When removing legacy features, you MUST:
+1. Delete the file
+2. Search for ALL imports of that file across the codebase
+3. Remove or replace every import
+4. Remove every JSX usage of the deleted component
+5. Build and verify zero errors
 
-### Lower Priority
-
-- [ ] **Type migration**: Gradually replace raw `Opportunity`/`Contact` usage with CROS aliases (`Partner`/`Person`) across components.
-- [ ] **Documentation registry adoption**: Wire `appSections.ts` into both Help.tsx and AdminHowTo.tsx (currently only documented, not wired).
-
----
-
-## Operator CRM Expansion (Phase 7) — Prior Plan
-
-This plan transforms the Operator Console from an analytics dashboard into a full CRM workspace. The work is split into 8 parts delivered sequentially.
-
----
-
-## Part 1 -- Opportunity Table Extensions (Schema Migration)
-
-Add 9 operator-specific columns to the existing `opportunities` table. All columns are nullable, so no existing queries or tenant workflows break.
-
-New columns:
-
-- `subscription_status text`
-- `plan_tier text`
-- `stripe_customer_id text`
-- `tenant_slug text`
-- `onboarding_state text`
-- `seats_allocated integer`
-- `seats_used integer`
-- `last_activity_at timestamptz`
-- `conversion_source text`
-
-Single additive `ALTER TABLE` migration -- no column removals or renames.
+### 5. "Scaffold now, wire later"
+**Never.** Do not create a UI component that shows fake data with a comment "// TODO: wire to real data." Either wire it or don't build it. Half-built features are worse than no features — they give the impression something works when it doesn't.
 
 ---
 
-## Part 2 -- Operator Metros
+## What "Wired" Means — The Checklist
 
-**Route:** `/operator/metros`
+For every feature, verify ALL layers:
 
-Create `src/pages/operator/OperatorMetrosPage.tsx` that reuses the existing `useMetrosWithComputed`, `useCreateMetro`, `useUpdateMetro`, `useDeleteMetro` hooks. The page will be a near-identical port of the tenant `Metros.tsx` page but without `MainLayout` wrapping (uses `OperatorLayout` via the route shell).
+### UI Layer
+- [ ] Component renders without errors
+- [ ] Component renders on mobile (375px viewport)
+- [ ] All buttons/links have working click handlers
+- [ ] Loading states show while data fetches
+- [ ] Empty states show when no data exists
+- [ ] Error states show when queries fail
+- [ ] No console errors in browser dev tools
 
-Full CRUD: list with search/filter, create dialog, edit, delete with confirmation.
+### Data Layer
+- [ ] Hook imports are real (not commented out)
+- [ ] Hook queries correct Supabase table
+- [ ] Table exists in a migration file
+- [ ] RLS policies exist for the table
+- [ ] Mutations call real Supabase insert/update/delete
+- [ ] Mutations invalidate correct query keys after success
+- [ ] Toast notifications confirm actions to the user
 
-Add the route to `AppRouter.tsx` and the "Metros" nav item to `OperatorLayout.tsx` sidebar (with `MapPin` icon).
+### Edge Function Layer (if applicable)
+- [ ] Edge function file exists in `supabase/functions/`
+- [ ] Function handles CORS preflight (OPTIONS)
+- [ ] Function validates authorization header
+- [ ] Function uses service role key for privileged operations
+- [ ] Function returns proper JSON responses with status codes
+- [ ] Function handles errors gracefully (try/catch, error response)
 
----
+### Route Layer
+- [ ] Page is imported in `AppRouter.tsx`
+- [ ] Route is defined with correct path
+- [ ] Route has appropriate role protection (`ProtectedRoute`)
+- [ ] Navigation links/buttons point to the correct route
+- [ ] Page is accessible from sidebar/menu
 
-## Part 3 -- Partners (Operator Opportunities)
-
-**Routes:** `/operator/partners` and `/operator/partners/:slug`
-
-Create two pages:
-
-- `src/pages/operator/OperatorPartnersPage.tsx` -- List/filter/search all opportunities (reusing `useOpportunities` hook). Labeled "Partners" in the sidebar.
-- `src/pages/operator/OperatorPartnerDetailPage.tsx` -- Full opportunity detail view including:
-  - Existing tabs (reflections, contacts, activities, journey)
-  - New "Subscription" info block showing the new operator columns (subscription_status, plan_tier, stripe_customer_id, seats, onboarding_state)
-  - Communio status badge (read from existing communio data if linked)
-
-These will reuse existing hooks (`useOpportunities`, `useUpdateOpportunity`, `useContacts`, `useActivities`) and existing sub-components where possible (e.g., inline edits, signal badges).
-
-Add routes to `AppRouter.tsx` and "Partners" nav item to `OperatorLayout.tsx` (with `Building2` icon).
-
----
-
-## Part 4 -- Operator Scheduling
-
-**Route:** `/operator/scheduling`
-
-Create `src/pages/operator/OperatorSchedulingPage.tsx` that reuses the existing calendar/events system (`useCalendarData`, `useEvents`, `useCreateEvent`, `useUpdateEvent`).
-
-Since `event_type` is a plain `text` column (not an enum), no migration is needed to support new values. The three new event types will be added as selectable options in the operator scheduling UI:
-
-- `outreach_meeting`
-- `demo_session`
-- `onboarding_call`
-
-The page will display a calendar view filtered to operator-created events (using `owner_id` or a new operator scope filter). Reuses the existing `CalendarPage` patterns.
-
-Add route to `AppRouter.tsx` and "Scheduling" nav item to `OperatorLayout.tsx` (with `Calendar` icon).
+### Demo Mode
+- [ ] Feature works in demo mode (`/demo?bypass=vigilia`)
+- [ ] Write operations are intercepted (no real data written)
+- [ ] Demo toast shows on write attempts
+- [ ] No crashes when demo write proxy intercepts mutations
 
 ---
 
-## Part 5 -- Outreach Campaigns + Tracking Links
+## The Build Order
 
-### Schema Migration
+When building a new feature, follow this EXACT order:
 
-Create new table:
+1. **Migration** — Create the database table first
+2. **Types** — Define TypeScript interfaces
+3. **Hook** — Create the React Query hook with real Supabase queries
+4. **Edge Function** — If the feature needs server-side logic
+5. **Component** — Build the UI that uses the hook
+6. **Route** — Add to AppRouter.tsx with protection
+7. **Navigation** — Add to sidebar/menu
+8. **Test** — Verify in browser (demo mode)
 
-```text
-operator_signup_links
-  id            uuid PK default gen_random_uuid()
-  slug          text unique not null
-  campaign_name text not null
-  created_by    uuid references auth.users(id)
-  default_archetype text
-  created_at    timestamptz default now()
+Do NOT skip steps. Do NOT build step 5 before step 1.
+
+---
+
+## API Keys & Secrets — LAST
+
+Environment variables and API keys are the LAST thing to configure. Everything else must work first:
+
+- `LOVABLE_API_KEY` — For AI gateway (LLM calls)
+- `RESEND_API_KEY` — For email sending
+- `LULU_API_KEY` / `LULU_API_SECRET` — For print fulfillment
+- `SUPABASE_SERVICE_ROLE_KEY` — For edge functions
+
+**The app must gracefully handle missing keys.** Every edge function should check for its required key and return a clear error message if it's missing — not crash silently.
+
+---
+
+## Vigilia-Specific Architecture
+
+### Core Tables (must exist in migrations)
+- `visit_rituals` — The 30-second visit capture
+- `family_reflections` — AI-composed narrative reflections
+- `weekly_chapters` — Weekly narrative summaries
+- `sacramental_records` — Communion, confession, anointing, etc.
+- `loneliness_scores` — Daily drift detection scores
+- `print_jobs` — Lulu print fulfillment tracking
+- `family_memories` — Family-contributed photos/stories
+- `catholic_health_knowledge` — CHA/ERD reference content
+- `voice_notes` — Audio recordings with transcripts
+- `eucharistic_minister_schedules` — Volunteer scheduling
+- `parish_facility_links` — Parish-facility relationships
+- `chaplain_assignments` — Chaplain facility assignments
+- `contact_household_members` — Family circle relationships
+
+### Core Edge Functions (must exist in supabase/functions/)
+- `generate-text` — LLM proxy for narrative synthesis
+- `vigilia-generate-journal-pdf` — Seasonal journal PDF
+- `vigilia-lulu-webhook` — Print order status updates
+- `vigilia-family-invite` — Magic link family invitations
+- `vigilia-send-family-digest` — Weekly email digests
+- `vigilia-compute-loneliness` — Daily isolation scoring
+- `vigilia-drift-alerts` — Drift notification dispatch
+- `voice-transcribe` — Audio transcription
+
+### Core Hooks (must exist and import correctly)
+- `useVisitRituals` — Visit CRUD + synthesis trigger
+- `useFamilyReflections` — Family journal data
+- `useVigilMode` — End-of-life care mode
+- `useSacramentalRecords` — Sacrament tracking
+- `useLonelinessWatch` — Drift detection
+- `useDioceseReport` — Mission report aggregation
+- `useParishVolunteers` — Volunteer scheduling
+- `useFamilyDigest` — Email digest preferences
+- `useHeldReflections` — Flagged reflection review
+- `useFamilyMemories` — Family contributions
+- `useCatholicKnowledge` — CHA/ERD knowledge base
+- `useNarrativeSynthesis` — AI reflection generation
+
+### Quality System (must be wired)
+- `reflectionValidator.ts` — 3-layer validation (rules + consistency + AI review)
+- Held reflections route to facility admin at `/:slug/review/reflections`
+- Print gate filters in `vigilia-generate-journal-pdf`
+- Validation score saved on every reflection
+
+---
+
+## Validation: How to Verify Completion
+
+Before declaring ANY work complete, run these checks:
+
+```bash
+# 1. TypeScript compiles
+npx tsc --noEmit
+
+# 2. Vite builds for production
+npx vite build
+
+# 3. Marketing tests pass (50 tests)
+npx playwright test tests/comprehensive.spec.ts
+
+# 4. In-app tests pass (35 tests)
+npx playwright test tests/in-app.spec.ts
+
+# 5. No runtime crashes in demo mode
+# Navigate to /demo?bypass=vigilia and click through:
+# - Dashboard
+# - Today's Visits
+# - People/Residents
+# - Family Journal
+# - Diocese Report
+# - Parish Volunteers
+# - Settings
 ```
 
-RLS: Enable RLS, admin-only read/write policy using `has_role(auth.uid(), 'admin')`.
-
-### Edge Function: `operator-signup-track`
-
-Accepts a `slug` query parameter, looks up the `operator_signup_links` row, creates a lead opportunity with `conversion_source` set to the campaign name, and redirects to `/pricing`.
-
-### UI
-
-Create `src/pages/operator/OperatorOutreachPage.tsx` with:
-
-- List of signup links with copy-to-clipboard
-- Create new link form (slug, campaign name, archetype)
-- Link performance stats (count of opportunities with matching conversion_source)
-
-Add route `/operator/outreach` and "Outreach" nav item to sidebar (with `Mail` icon).
+If ANY of these fail, the work is not done.
 
 ---
 
-## Part 6 -- Customer Conversion Flow
+## The Standard
 
-When an operator sets an opportunity's stage to a "customer" equivalent (we will use `"Agreement Signed"` or add a dedicated `"Customer"` value -- keeping with existing enum values, `"Agreement Signed"` is the closest fit):
+This app generates text that will be printed in physical books, held by families at funerals, and kept on shelves for decades. The code must be as careful as the words it produces. No shortcuts. No scaffolding. No "good enough." Every feature wired front to back, every edge function handling errors, every page rendering on mobile, every write protected in demo mode.
 
-### Edge Function: `operator-convert-customer`
-
-Triggered from the Partner detail page via a "Convert to Customer" button. The function will:
-
-1. Call the existing `tenant-bootstrap` edge function logic to create a tenant
-2. Write `tenant_slug` back to the opportunity record
-3. Populate `subscription_status`, `plan_tier`, `seats_allocated` from inputs
-4. Return the new tenant slug
-
-### UI Changes
-
-- Add a "Convert to Customer" action button on the Partner detail page (visible only when the opportunity has no `tenant_slug`)
-- Once converted, show tenant info inline with a "View Tenant" link to `/operator/tenants/:id`
-- Tenant overview page (`OperatorTenantDetailPage`) becomes a read-only mirror that links back to the Partner profile as the source of truth
-
----
-
-## Part 7 -- Sidebar Reorganization
-
-Update `OperatorLayout.tsx` sidebar to the new hierarchy:
-
-
-| Label       | Route                  | Icon         |
-| ----------- | ---------------------- | ------------ |
-| Dashboard   | /operator              | Activity     |
-| Partners    | /operator/partners     | Building2    |
-| Metros      | /operator/metros       | MapPin       |
-| Scheduling  | /operator/scheduling   | Calendar     |
-| Outreach    | /operator/outreach     | Mail         |
-| Tenants     | /operator/tenants      | Users        |
-| Demo Lab    | /operator/scenario-lab | FlaskConical |
-| Testimonium | /operator/testimonium  | BookOpen     |
-| Communio    | /operator/communio     | Shield       |
-
-
-Remove or collapse less-used items (Intake, Automation, System, Integrations, Platform, Sweeps, Tour, How-To) into a collapsible "System" group at the bottom.
-
-All layouts remain mobile-first with the existing hamburger menu pattern.
-
----
-
-## Part 8 -- Safety / RLS
-
-All new tables and queries enforce operator-only access:
-
-- `operator_signup_links`: RLS policy requires `has_role(auth.uid(), 'admin')`
-- Opportunity operator columns are plain nullable text/int fields on an existing table -- existing RLS policies already govern access
-- The `operator-signup-track` edge function uses service-role key for writes (creating lead opportunities) and validates the slug input
-- The `operator-convert-customer` edge function validates admin JWT before performing any mutations
-- No changes to tenant-scoped RLS policies or workflows
-
----
-
-## Technical Summary of File Changes
-
-**New files (7):**
-
-- `src/pages/operator/OperatorMetrosPage.tsx`
-- `src/pages/operator/OperatorPartnersPage.tsx`
-- `src/pages/operator/OperatorPartnerDetailPage.tsx`
-- `src/pages/operator/OperatorSchedulingPage.tsx`
-- `src/pages/operator/OperatorOutreachPage.tsx`
-- `supabase/functions/operator-signup-track/index.ts`
-- `supabase/functions/operator-convert-customer/index.ts`
-
-**Modified files (3):**
-
-- `src/components/layout/OperatorLayout.tsx` (sidebar nav restructure)
-- `src/components/routing/AppRouter.tsx` (5 new routes)
-- `supabase/config.toml` (2 new edge function entries with `verify_jwt = false`)
-
-**Database migrations (2):**
-
-1. Add 9 columns to `opportunities`
-2. Create `operator_signup_links` table with RLS
-3. This is Profunda, exactly as it exists, for the Operator 
-
-This plan remains valid for the Operator Console workspace expansion. See CHANGELOG.md for incremental progress.
+**Ship it like someone's grandmother will hold the result in her hands.**
