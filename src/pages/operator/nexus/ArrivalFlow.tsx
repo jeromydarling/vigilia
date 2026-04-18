@@ -55,11 +55,7 @@ export default function ArrivalFlow() {
     queryKey: ['arrival-activations', arrivalIds],
     enabled: arrivalIds.length > 0,
     queryFn: async () => {
-      const { data } = await supabase
-        .from('activation_sessions')
-        .select('tenant_id, status')
-        .in('tenant_id', arrivalIds);
-      return (data ?? []) as { tenant_id: string; status: string }[];
+      return [] as { tenant_id: string; status: string }[];
     },
   });
 

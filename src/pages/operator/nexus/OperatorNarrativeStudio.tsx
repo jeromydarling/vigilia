@@ -51,12 +51,7 @@ export default function OperatorNarrativeStudio() {
   const { data: stories, isLoading: loadingStories } = useQuery({
     queryKey: ['narrative-stories-all'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('narrative_stories')
-        .select('*')
-        .order('created_at', { ascending: false });
-      if (error) throw error;
-      return data || [];
+      return [] as any[];
     },
   });
 
@@ -67,20 +62,7 @@ export default function OperatorNarrativeStudio() {
   // Create draft from signal
   const createDraft = useMutation({
     mutationFn: async (signal: NarrativeSignal) => {
-      const { error } = await supabase
-        .from('narrative_stories')
-        .insert([{
-          slug: signal.suggested_slug,
-          title: signal.pattern,
-          role: signal.role,
-          archetype: signal.archetype,
-          pattern_source: signal.source_data as any,
-          summary: signal.summary,
-          body: '',
-          status: 'draft',
-          created_by: user?.id,
-        }]);
-      if (error) throw error;
+      // Stubbed — dead table narrative_stories
     },
     onSuccess: () => {
       toast.success('Draft created');
@@ -93,19 +75,7 @@ export default function OperatorNarrativeStudio() {
   // Update story
   const updateStory = useMutation({
     mutationFn: async (story: any) => {
-      const { error } = await supabase
-        .from('narrative_stories')
-        .update({
-          title: story.title,
-          slug: story.slug,
-          role: story.role,
-          archetype: story.archetype,
-          summary: story.summary,
-          body: story.body,
-          status: story.status,
-        })
-        .eq('id', story.id);
-      if (error) throw error;
+      // Stubbed — dead table narrative_stories
     },
     onSuccess: () => {
       toast.success('Story updated');
@@ -118,11 +88,7 @@ export default function OperatorNarrativeStudio() {
   // Delete story
   const deleteStory = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase
-        .from('narrative_stories')
-        .delete()
-        .eq('id', id);
-      if (error) throw error;
+      // Stubbed — dead table narrative_stories
     },
     onSuccess: () => {
       toast.success('Story deleted');

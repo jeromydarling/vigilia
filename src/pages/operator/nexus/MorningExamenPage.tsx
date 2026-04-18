@@ -29,53 +29,28 @@ function NoticingSection() {
   const { data: lumenSignals, isLoading: l1 } = useQuery({
     queryKey: ['examen-morning-lumen'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('lumen_signals')
-        .select('signal_type, severity, source_summary, first_detected_at')
-        .eq('resolved', false)
-        .order('first_detected_at', { ascending: false })
-        .limit(5);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const { data: livingSignals, isLoading: l2 } = useQuery({
     queryKey: ['examen-morning-living'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('living_system_signals')
-        .select('signal_type, anonymized_summary, created_at')
-        .order('created_at', { ascending: false })
-        .limit(6);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const { data: drafts } = useQuery({
     queryKey: ['examen-morning-drafts'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('operator_content_drafts')
-        .select('id, title')
-        .eq('status', 'draft')
-        .limit(3);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const { data: communioEvents } = useQuery({
     queryKey: ['examen-morning-communio'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('communio_activity_log')
-        .select('action_type, created_at')
-        .order('created_at', { ascending: false })
-        .limit(5);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
@@ -118,26 +93,14 @@ function GratitudeSection() {
   const { data: testimoniumEvents } = useQuery({
     queryKey: ['examen-morning-gratitude'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('testimonium_events')
-        .select('event_kind, summary, created_at')
-        .order('created_at', { ascending: false })
-        .limit(5);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const { data: resonance } = useQuery({
     queryKey: ['examen-morning-resonance'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('communio_resonance_snapshots')
-        .select('tenant_count, signal_count, computed_at')
-        .order('computed_at', { ascending: false })
-        .limit(1);
-      if (error) throw error;
-      return data?.[0] ?? null;
+      return null as any;
     },
   });
 
@@ -168,15 +131,7 @@ function AttentionSection() {
   const { data: frictionInsights } = useQuery({
     queryKey: ['examen-morning-friction'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('nri_design_suggestions')
-        .select('suggestion_summary, pattern_key, severity')
-        .in('status', ['open', 'reviewed'])
-        .neq('severity', 'high') // exclude error-like
-        .order('created_at', { ascending: false })
-        .limit(3);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
@@ -203,26 +158,14 @@ function InvitationSection() {
   const { data: drafts } = useQuery({
     queryKey: ['examen-morning-invite-drafts'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('operator_content_drafts')
-        .select('id')
-        .eq('status', 'draft')
-        .limit(1);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const { data: playbooks } = useQuery({
     queryKey: ['examen-morning-invite-playbooks'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('nri_playbook_drafts')
-        .select('id')
-        .eq('status', 'draft')
-        .limit(1);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 

@@ -39,30 +39,13 @@ export default function OperatorSupportInbox() {
   const { data: threads, isLoading } = useQuery({
     queryKey: ['nexus-support-threads', activeTab],
     queryFn: async () => {
-      let query = supabase
-        .from('feedback_requests')
-        .select('*, profiles:user_id(display_name, email)')
-        .order('created_at', { ascending: false })
-        .limit(100);
-
-      if (activeTab === 'open') {
-        query = query.in('status', ['open', 'in_progress']);
-      } else if (activeTab === 'resolved') {
-        query = query.in('status', ['resolved', 'declined']);
-      }
-
-      const { data, error } = await query;
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const updateStatusMutation = useMutation({
     mutationFn: async ({ id, status, notes }: { id: string; status: string; notes?: string }) => {
-      const update: Record<string, any> = { status };
-      if (notes) update.admin_notes = notes;
-      const { error } = await supabase.from('feedback_requests').update(update).eq('id', id);
-      if (error) throw error;
+      // Stubbed — dead table feedback_requests
     },
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['nexus-support-threads'] });

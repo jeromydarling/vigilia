@@ -37,25 +37,13 @@ export default function OperatorDiscoveryInsights() {
   const { data: insights, isLoading } = useQuery({
     queryKey: ['gardener-insights'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('gardener_insights')
-        .select('*')
-        .is('dismissed_at', null)
-        .or('snoozed_until.is.null,snoozed_until.lt.' + new Date().toISOString())
-        .order('created_at', { ascending: false })
-        .limit(20);
-      if (error) throw error;
-      return data as any[];
+      return [] as any[];
     },
   });
 
   const dismissMutation = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase
-        .from('gardener_insights')
-        .update({ dismissed_at: new Date().toISOString() })
-        .eq('id', id);
-      if (error) throw error;
+      // Stubbed — dead table gardener_insights
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['gardener-insights'] });
@@ -64,13 +52,7 @@ export default function OperatorDiscoveryInsights() {
 
   const snoozeMutation = useMutation({
     mutationFn: async (id: string) => {
-      const snoozeUntil = new Date();
-      snoozeUntil.setDate(snoozeUntil.getDate() + 7);
-      const { error } = await supabase
-        .from('gardener_insights')
-        .update({ snoozed_until: snoozeUntil.toISOString() })
-        .eq('id', id);
-      if (error) throw error;
+      // Stubbed — dead table gardener_insights
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['gardener-insights'] });
