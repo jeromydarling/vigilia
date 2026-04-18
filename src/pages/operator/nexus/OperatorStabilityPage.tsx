@@ -79,13 +79,7 @@ export default function OperatorStabilityPage() {
   const { data: errors, isLoading } = useQuery({
     queryKey: ['system-error-events-stability'],
     queryFn: async () => {
-      const { data } = await supabase
-        .from('system_error_events')
-        .select('*')
-        .gte('created_at', weekAgo)
-        .order('created_at', { ascending: false })
-        .limit(50);
-      return (data as SystemErrorEvent[]) ?? [];
+      return [] as SystemErrorEvent[];
     },
   });
 

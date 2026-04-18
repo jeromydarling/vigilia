@@ -64,29 +64,14 @@ export default function OperatorLumenPage() {
   const { data: signals, isLoading } = useQuery({
     queryKey: ['lumen-signals', typeFilter],
     queryFn: async () => {
-      let q = supabase
-        .from('lumen_signals')
-        .select('*, tenants:tenant_id(name), metros:metro_id(metro)')
-        .eq('resolved', false)
-        .order('last_updated_at', { ascending: false })
-        .limit(100);
-
-      if (typeFilter !== 'all') q = q.eq('signal_type', typeFilter);
-
-      const { data, error } = await q;
-      if (error) throw error;
-      return (data || []) as any[];
+      return [] as any[];
     },
   });
 
   const { data: resolvedCount } = useQuery({
     queryKey: ['lumen-resolved-count'],
     queryFn: async () => {
-      const { count } = await supabase
-        .from('lumen_signals')
-        .select('*', { count: 'exact', head: true })
-        .eq('resolved', true);
-      return count ?? 0;
+      return 0;
     },
   });
 

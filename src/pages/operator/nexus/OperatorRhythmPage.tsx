@@ -94,15 +94,7 @@ export default function OperatorRhythmPage() {
   const { data: todayActivations, isLoading: la } = useQuery({
     queryKey: ['rhythm-activations-today'],
     queryFn: async () => {
-      const { data } = await supabase
-        .from('activation_sessions')
-        .select('id, session_type, scheduled_at, status, tenant_id')
-        .eq('status', 'scheduled')
-        .gte('scheduled_at', todayISO)
-        .lt('scheduled_at', tomorrowISO)
-        .order('scheduled_at')
-        .limit(5);
-      return data ?? [];
+      return [] as any[];
     },
   });
 
@@ -135,13 +127,7 @@ export default function OperatorRhythmPage() {
   const { data: quietSignals, isLoading: ls } = useQuery({
     queryKey: ['rhythm-quiet-signals'],
     queryFn: async () => {
-      const { data } = await supabase
-        .from('communio_shared_signals')
-        .select('id, signal_type, signal_summary, metro_id, created_at')
-        .gte('created_at', weekAgoISO)
-        .order('created_at', { ascending: false })
-        .limit(6);
-      return data ?? [];
+      return [] as any[];
     },
   });
 
@@ -149,14 +135,7 @@ export default function OperatorRhythmPage() {
   const { data: upcomingSessions, isLoading: lu } = useQuery({
     queryKey: ['rhythm-upcoming-sessions'],
     queryFn: async () => {
-      const { data } = await supabase
-        .from('activation_sessions')
-        .select('id, session_type, scheduled_at, status, tenant_id, meet_link')
-        .eq('status', 'scheduled')
-        .gte('scheduled_at', todayISO)
-        .order('scheduled_at')
-        .limit(8);
-      return data ?? [];
+      return [] as any[];
     },
   });
 
@@ -164,13 +143,7 @@ export default function OperatorRhythmPage() {
   const { data: openSupport, isLoading: lc } = useQuery({
     queryKey: ['rhythm-support-open'],
     queryFn: async () => {
-      const { data } = await supabase
-        .from('feedback_requests')
-        .select('id, title, type, status, created_at')
-        .eq('status', 'open')
-        .order('created_at', { ascending: false })
-        .limit(5);
-      return data ?? [];
+      return [] as any[];
     },
   });
 
@@ -203,23 +176,14 @@ export default function OperatorRhythmPage() {
   const { data: automationErrors, isLoading: lae } = useQuery({
     queryKey: ['rhythm-automation-errors'],
     queryFn: async () => {
-      const { count } = await supabase
-        .from('automation_runs')
-        .select('*', { count: 'exact', head: true })
-        .eq('status', 'error')
-        .gte('created_at', dayAgoISO);
-      return count ?? 0;
+      return 0;
     },
   });
 
   const { data: frictionCount, isLoading: lf } = useQuery({
     queryKey: ['rhythm-system-friction'],
     queryFn: async () => {
-      const { count } = await supabase
-        .from('system_error_events')
-        .select('*', { count: 'exact', head: true })
-        .gte('created_at', dayAgoISO);
-      return count ?? 0;
+      return 0;
     },
   });
 

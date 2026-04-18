@@ -32,13 +32,7 @@ function ConnectorSyncSummary() {
   const { data: events, isLoading } = useQuery({
     queryKey: ['sim-connector-syncs'],
     queryFn: async () => {
-      const { data, error } = await supabase.from('simulation_events')
-        .select('id, occurred_at, action, internal_refs, outcome')
-        .like('action', 'connector_sync:%')
-        .order('occurred_at', { ascending: false })
-        .limit(20);
-      if (error) throw error;
-      return data || [];
+      return [] as any[];
     },
   });
 
@@ -79,52 +73,27 @@ export default function OperatorSimulationPage() {
   const { data: settings, isLoading: settingsLoading } = useQuery({
     queryKey: ['simulation-settings'],
     queryFn: async () => {
-      const { data, error } = await supabase.from('operator_simulation_settings').select('*').limit(1).maybeSingle();
-      if (error) throw error;
-      return data;
+      return null as any;
     },
   });
 
   const { data: runs } = useQuery({
     queryKey: ['simulation-runs-recent'],
     queryFn: async () => {
-      const { data, error } = await supabase.from('simulation_runs')
-        .select('*').order('started_at', { ascending: false }).limit(10);
-      if (error) throw error;
-      return data || [];
+      return [] as any[];
     },
   });
 
   const { data: tenants } = useQuery({
     queryKey: ['demo-tenants-list'],
     queryFn: async () => {
-      const { data, error } = await supabase.from('demo_tenants')
-        .select('id, tenant_id, name, seed_profile');
-      if (error) throw error;
-      return data || [];
+      return [] as any[];
     },
   });
 
   const toggleMutation = useMutation({
     mutationFn: async (enabled: boolean) => {
-      // Auto-populate allowed_tenant_ids from demo_tenants when enabling
-      const tenantIds = tenants?.map((t: any) => t.tenant_id) || [];
-      if (settings) {
-        const updates: any = { enabled, updated_at: new Date().toISOString() };
-        if (enabled && tenantIds.length && (!settings.allowed_tenant_ids?.length)) {
-          updates.allowed_tenant_ids = tenantIds;
-        }
-        await supabase.from('operator_simulation_settings')
-          .update(updates as any).eq('id', settings.id);
-      } else {
-        const { data: { user } } = await supabase.auth.getUser();
-        await supabase.from('operator_simulation_settings').insert({
-          enabled,
-          created_by: user!.id,
-          allowed_tenant_ids: tenantIds,
-          intensity: 'low',
-        });
-      }
+      // Stubbed — dead table operator_simulation_settings
     },
     onSuccess: () => { qc.invalidateQueries({ queryKey: ['simulation-settings'] }); toast.success('Settings updated'); },
     onError: (e) => toast.error(e.message),

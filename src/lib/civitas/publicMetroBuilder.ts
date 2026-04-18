@@ -28,18 +28,13 @@ export interface PublicMetroSummary {
 export async function buildPublicMetroSummaries(): Promise<PublicMetroSummary[]> {
   const summaries: PublicMetroSummary[] = [];
 
-  // Fetch momentum signals
-  const { data: momentum } = await supabase
-    .from('metro_momentum_signals')
-    .select('metro_id, metro_name, momentum_status, normalized_momentum, anchors_90d, events_this_quarter')
-    .order('normalized_momentum', { ascending: false });
+  // STUB: metro_momentum_signals table does not exist
+  const { data: momentum } = { data: [] as any[] };
 
-  if (!momentum) return [];
+  if (!momentum || momentum.length === 0) return [];
 
-  // Fetch existing public pages to determine readiness
-  const { data: existingPages } = await supabase
-    .from('public_metro_pages')
-    .select('metro_id, slug, status');
+  // STUB: public_metro_pages table does not exist
+  const { data: existingPages } = { data: [] as any[] };
 
   const pageMap = new Map<string, { slug: string; status: string }>();
   if (existingPages) {

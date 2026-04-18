@@ -55,13 +55,7 @@ export default function OperatorExpansionWatch() {
   const { data: plans, isLoading: plansLoading } = useQuery({
     queryKey: ['nexus-expansion-plans'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('metro_expansion_plans')
-        .select('*, tenants:tenant_id(name), metros:metro_id(metro)')
-        .order('created_at', { ascending: false })
-        .limit(50);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
@@ -69,15 +63,7 @@ export default function OperatorExpansionWatch() {
   const { data: signals, isLoading: signalsLoading } = useQuery({
     queryKey: ['nexus-expansion-signals'],
     queryFn: async () => {
-      const weekAgo = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString();
-      const { data, error } = await supabase
-        .from('expansion_signals')
-        .select('*, tenants:tenant_id(name), metros:metro_id(metro)')
-        .gte('created_at', weekAgo)
-        .order('created_at', { ascending: false })
-        .limit(50);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 

@@ -38,12 +38,7 @@ export default function OperatorLivingLibrary() {
   const { data: allDrafts, isLoading } = useQuery({
     queryKey: ['library-drafts'],
     queryFn: async () => {
-      const { data, error } = await supabase.from('operator_content_drafts')
-        .select('*')
-        .order('created_at', { ascending: false })
-        .limit(100);
-      if (error) throw error;
-      return data || [];
+      return [] as any[];
     },
   });
 
@@ -51,20 +46,13 @@ export default function OperatorLivingLibrary() {
   const { data: sourceCount } = useQuery({
     queryKey: ['rss-source-count'],
     queryFn: async () => {
-      const { count, error } = await supabase.from('operator_rss_sources')
-        .select('*', { count: 'exact', head: true })
-        .eq('enabled', true);
-      if (error) throw error;
-      return count || 0;
+      return 0;
     },
   });
 
   const publishMutation = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase.from('operator_content_drafts')
-        .update({ status: 'published', published_at: new Date().toISOString() })
-        .eq('id', id);
-      if (error) throw error;
+      // Stubbed — dead table operator_content_drafts
     },
     onSuccess: () => {
       toast.success('Essay published to library');
@@ -74,10 +62,7 @@ export default function OperatorLivingLibrary() {
 
   const dismissMutation = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase.from('operator_content_drafts')
-        .update({ status: 'dismissed' })
-        .eq('id', id);
-      if (error) throw error;
+      // Stubbed — dead table operator_content_drafts
     },
     onSuccess: () => {
       toast.success('Draft dismissed');

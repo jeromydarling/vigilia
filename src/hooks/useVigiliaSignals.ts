@@ -30,13 +30,8 @@ export function useVigiliaSignals(limit = 3) {
     enabled: !!tenantId,
     staleTime: 5 * 60 * 1000,
     queryFn: async (): Promise<VigiliaSignal[]> => {
-      const { data, error } = await supabase
-        .from('vigilia_signals')
-        .select('*')
-        .eq('tenant_id', tenantId!)
-        .eq('status', 'open')
-        .order('created_at', { ascending: false })
-        .limit(limit);
+      // STUB: vigilia_signals table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data ?? [];
     },
@@ -48,10 +43,8 @@ export function useVigiliaAction() {
 
   return useMutation({
     mutationFn: async ({ signalId, action }: { signalId: string; action: 'acted' | 'dismissed' }) => {
-      const { error } = await supabase
-        .from('vigilia_signals')
-        .update({ status: action })
-        .eq('id', signalId);
+      // STUB: vigilia_signals table does not exist
+      const { error } = { error: null };
       if (error) throw error;
     },
     onSuccess: () => {

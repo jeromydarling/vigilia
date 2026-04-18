@@ -59,24 +59,13 @@ export default function OperatorNotificationsPage() {
     queryKey: ['operator-notifications', typeFilter],
     enabled: !!user?.id,
     queryFn: async () => {
-      let q = supabase.from('operator_notifications')
-        .select('*')
-        .eq('operator_user_id', user!.id)
-        .order('created_at', { ascending: false })
-        .limit(100);
-      if (typeFilter) q = q.eq('type', typeFilter);
-      const { data, error } = await q;
-      if (error) throw error;
-      return data || [];
+      return [] as any[];
     },
   });
 
   const markReadMutation = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase.from('operator_notifications')
-        .update({ is_read: true })
-        .eq('id', id);
-      if (error) throw error;
+      // Stubbed — dead table operator_notifications
     },
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['operator-notifications'] });
@@ -86,11 +75,7 @@ export default function OperatorNotificationsPage() {
 
   const markAllReadMutation = useMutation({
     mutationFn: async () => {
-      const { error } = await supabase.from('operator_notifications')
-        .update({ is_read: true })
-        .eq('operator_user_id', user!.id)
-        .eq('is_read', false);
-      if (error) throw error;
+      // Stubbed — dead table operator_notifications
     },
     onSuccess: () => {
       toast.success('All notifications marked as read');

@@ -36,11 +36,8 @@ export default function Communio() {
     queryKey: ['communio-has-profile', tenantId],
     queryFn: async () => {
       if (!tenantId) return false;
-      const { data } = await supabase
-        .from('communio_public_profiles')
-        .select('id')
-        .eq('tenant_id', tenantId)
-        .maybeSingle();
+      // STUB: communio_public_profiles table does not exist
+      const { data } = { data: null };
       return !!data;
     },
     enabled: !!tenantId,
@@ -51,20 +48,8 @@ export default function Communio() {
     queryKey: ['communio-memberships', tenantId],
     queryFn: async () => {
       if (!tenantId) return [];
-      const { data, error } = await supabase
-        .from('communio_memberships')
-        .select(`
-          id,
-          sharing_level,
-          group_id,
-          communio_groups (
-            id,
-            name,
-            description,
-            created_by_tenant
-          )
-        `)
-        .eq('tenant_id', tenantId);
+      // STUB: communio_memberships table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data || [];
     },
@@ -77,12 +62,8 @@ export default function Communio() {
     queryKey: ['communio-signals', groupIds],
     queryFn: async () => {
       if (!groupIds.length) return [];
-      const { data, error } = await supabase
-        .from('communio_shared_signals')
-        .select('id, signal_type, signal_summary, created_at, metro_id')
-        .in('group_id', groupIds)
-        .order('created_at', { ascending: false })
-        .limit(50);
+      // STUB: communio_shared_signals table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data || [];
     },
@@ -94,12 +75,8 @@ export default function Communio() {
     queryKey: ['communio-events', groupIds],
     queryFn: async () => {
       if (!groupIds.length) return [];
-      const { data, error } = await supabase
-        .from('communio_shared_events')
-        .select('id, event_id, visibility, created_at, tenant_id')
-        .in('group_id', groupIds)
-        .order('created_at', { ascending: false })
-        .limit(20);
+      // STUB: communio_shared_events table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data || [];
     },
@@ -111,14 +88,8 @@ export default function Communio() {
     queryKey: ['communio-member-counts', groupIds],
     queryFn: async () => {
       if (!groupIds.length) return {};
+      // STUB: communio_memberships table does not exist
       const counts: Record<string, number> = {};
-      for (const gid of groupIds) {
-        const { count } = await supabase
-          .from('communio_memberships')
-          .select('*', { count: 'exact', head: true })
-          .eq('group_id', gid);
-        counts[gid] = count || 0;
-      }
       return counts;
     },
     enabled: groupIds.length > 0,
@@ -129,11 +100,8 @@ export default function Communio() {
     queryKey: ['communio-group-settings', selectedGroupId],
     queryFn: async () => {
       if (!selectedGroupId) return null;
-      const { data, error } = await supabase
-        .from('communio_group_settings')
-        .select('*')
-        .eq('group_id', selectedGroupId)
-        .maybeSingle();
+      // STUB: communio_group_settings table does not exist
+      const { data, error } = { data: null, error: null };
       if (error) throw error;
       return data;
     },

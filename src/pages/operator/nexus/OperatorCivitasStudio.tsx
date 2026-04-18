@@ -49,12 +49,7 @@ export default function OperatorCivitasStudio() {
   const { data: pages, isLoading: loadingPages } = useQuery({
     queryKey: ['public-metro-pages-all'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('public_metro_pages')
-        .select('*')
-        .order('updated_at', { ascending: false });
-      if (error) throw error;
-      return data || [];
+      return [] as any[];
     },
   });
 
@@ -64,20 +59,7 @@ export default function OperatorCivitasStudio() {
   // Create page from metro
   const createPage = useMutation({
     mutationFn: async (summary: PublicMetroSummary) => {
-      const { error } = await supabase
-        .from('public_metro_pages')
-        .insert([{
-          metro_id: summary.metroId,
-          slug: summary.metroSlug,
-          display_name: summary.metroName,
-          summary: `What we're learning about community life in ${summary.metroName}.`,
-          momentum_summary: summary.narrativePatterns.join('. ') || '',
-          narrative_summary: '',
-          archetypes_active: summary.archetypesActive as unknown as import('@/integrations/supabase/types').Json,
-          status: 'draft',
-          created_by: user?.id,
-        }]);
-      if (error) throw error;
+      // Stubbed — dead table public_metro_pages
     },
     onSuccess: () => {
       toast.success('Metro page draft created');
@@ -91,21 +73,7 @@ export default function OperatorCivitasStudio() {
   // Update page
   const updatePage = useMutation({
     mutationFn: async (page: any) => {
-      const { error } = await supabase
-        .from('public_metro_pages')
-        .update({
-          display_name: page.display_name,
-          slug: page.slug,
-          summary: page.summary,
-          momentum_summary: page.momentum_summary,
-          narrative_summary: page.narrative_summary,
-          archetypes_active: page.archetypes_active,
-          volunteer_patterns: page.volunteer_patterns,
-          reflection_block: page.reflection_block,
-          status: page.status,
-        })
-        .eq('id', page.id);
-      if (error) throw error;
+      // Stubbed — dead table public_metro_pages
     },
     onSuccess: () => {
       toast.success('Page updated');

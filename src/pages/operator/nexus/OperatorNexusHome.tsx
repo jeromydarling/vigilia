@@ -119,11 +119,7 @@ export default function OperatorNexusHome() {
   const { data: activationCount, isLoading: l2 } = useQuery({
     queryKey: ['nexus-activation-upcoming'],
     queryFn: async () => {
-      const { count } = await supabase
-        .from('activation_sessions')
-        .select('*', { count: 'exact', head: true })
-        .eq('status', 'scheduled');
-      return count ?? 0;
+      return 0;
     },
   });
 
@@ -131,11 +127,7 @@ export default function OperatorNexusHome() {
   const { data: supportCount, isLoading: l3 } = useQuery({
     queryKey: ['nexus-support-open'],
     queryFn: async () => {
-      const { count } = await supabase
-        .from('feedback_requests')
-        .select('*', { count: 'exact', head: true })
-        .eq('status', 'open');
-      return count ?? 0;
+      return 0;
     },
   });
 

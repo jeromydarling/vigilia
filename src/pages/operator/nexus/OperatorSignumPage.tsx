@@ -28,20 +28,13 @@ function FrictionOverviewCard() {
   const { data, isLoading } = useQuery({
     queryKey: ['signum-overview'],
     queryFn: async () => {
-      const [idle, repeat, abandon, help, interventions] = await Promise.all([
-        supabase.from('testimonium_events').select('*', { count: 'exact', head: true }).eq('event_kind', 'friction_idle').gte('occurred_at', now7d),
-        supabase.from('testimonium_events').select('*', { count: 'exact', head: true }).eq('event_kind', 'friction_repeat_nav').gte('occurred_at', now7d),
-        supabase.from('testimonium_events').select('*', { count: 'exact', head: true }).eq('event_kind', 'friction_abandon_flow').gte('occurred_at', now7d),
-        supabase.from('testimonium_events').select('*', { count: 'exact', head: true }).eq('event_kind', 'friction_help_open').gte('occurred_at', now7d),
-        supabase.from('testimonium_events').select('*', { count: 'exact', head: true }).eq('event_kind', 'assistant_intervention').gte('occurred_at', now7d),
-      ]);
       return {
-        idle: idle.count ?? 0,
-        repeat: repeat.count ?? 0,
-        abandon: abandon.count ?? 0,
-        help: help.count ?? 0,
-        interventions: interventions.count ?? 0,
-        total: (idle.count ?? 0) + (repeat.count ?? 0) + (abandon.count ?? 0) + (help.count ?? 0),
+        idle: 0,
+        repeat: 0,
+        abandon: 0,
+        help: 0,
+        interventions: 0,
+        total: 0,
       };
     },
   });
@@ -79,12 +72,7 @@ function ArchetypeFrictionCard() {
   const { data, isLoading } = useQuery({
     queryKey: ['signum-archetype-friction'],
     queryFn: async () => {
-      const { data: metrics } = await supabase
-        .from('operator_narrative_metrics')
-        .select('tenant_id, friction_idle_count, friction_repeat_nav_count, friction_abandon_count, top_friction_pages')
-        .order('friction_idle_count', { ascending: false })
-        .limit(10);
-      return metrics ?? [];
+      return [] as any[];
     },
   });
 
@@ -128,24 +116,7 @@ function SystemWeightCard() {
   const { data, isLoading } = useQuery({
     queryKey: ['signum-system-weight'],
     queryFn: async () => {
-      const { data: events } = await supabase
-        .from('testimonium_events')
-        .select('event_kind, metadata')
-        .in('event_kind', ['friction_abandon_flow', 'friction_repeat_nav'])
-        .gte('occurred_at', now7d)
-        .limit(200);
-
-      // Aggregate top pages
-      const pageCounts: Record<string, number> = {};
-      for (const ev of events ?? []) {
-        const page = (ev as any).metadata?.page || 'unknown';
-        pageCounts[page] = (pageCounts[page] || 0) + 1;
-      }
-      const sorted = Object.entries(pageCounts)
-        .sort(([, a], [, b]) => b - a)
-        .slice(0, 5);
-
-      return { topPages: sorted, total: events?.length ?? 0 };
+      return { topPages: [] as [string, number][], total: 0 };
     },
   });
 
@@ -186,16 +157,10 @@ function ResolutionCard() {
   const { data, isLoading } = useQuery({
     queryKey: ['signum-resolution'],
     queryFn: async () => {
-      const [interventions, resolutions] = await Promise.all([
-        supabase.from('testimonium_events').select('*', { count: 'exact', head: true }).eq('event_kind', 'assistant_intervention').gte('occurred_at', now7d),
-        supabase.from('testimonium_events').select('*', { count: 'exact', head: true }).eq('event_kind', 'assistant_resolution').gte('occurred_at', now7d),
-      ]);
-      const intv = interventions.count ?? 0;
-      const res = resolutions.count ?? 0;
       return {
-        interventions: intv,
-        resolutions: res,
-        rate: intv > 0 ? Math.round((res / intv) * 100) : 0,
+        interventions: 0,
+        resolutions: 0,
+        rate: 0,
       };
     },
   });

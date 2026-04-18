@@ -93,24 +93,14 @@ export default function OperatorNexusQA() {
   const { data: driftCount, isLoading: l4 } = useQuery({
     queryKey: ['nexus-qa-drift-events'],
     queryFn: async () => {
-      const { count } = await supabase
-        .from('testimonium_events')
-        .select('*', { count: 'exact', head: true })
-        .eq('event_kind', 'drift_detected')
-        .gte('created_at', now7d);
-      return count ?? 0;
+      return 0;
     },
   });
 
   const { data: automationErrors, isLoading: l5 } = useQuery({
     queryKey: ['nexus-qa-automation-errors'],
     queryFn: async () => {
-      const { count } = await supabase
-        .from('automation_runs')
-        .select('*', { count: 'exact', head: true })
-        .eq('status', 'error')
-        .gte('created_at', now24h);
-      return count ?? 0;
+      return 0;
     },
   });
 

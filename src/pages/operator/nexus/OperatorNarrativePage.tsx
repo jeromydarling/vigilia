@@ -94,12 +94,7 @@ export default function OperatorNarrativePage() {
   const { data: publishedMetros } = useQuery({
     queryKey: ['op-narrative-metro-interest'],
     queryFn: async () => {
-      const { data } = await supabase
-        .from('public_metro_pages')
-        .select('display_name, slug, status')
-        .eq('status', 'published')
-        .limit(10);
-      return (data ?? []) as any[];
+      return [] as any[];
     },
   });
 

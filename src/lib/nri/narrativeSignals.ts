@@ -88,11 +88,8 @@ export async function aggregateNarrativeSignals(): Promise<NarrativeSignal[]> {
     }
   }
 
-  // 3. Check metro momentum for growth stories — metro_momentum_signals is a VIEW, use as any
-  const { data: momentum } = await supabase
-    .from('metro_momentum_signals')
-    .select('metro_id, metro_name, momentum_status, normalized_momentum, anchors_90d, events_this_quarter')
-    .in('momentum_status', ['accelerating', 'steady']);
+  // STUB: metro_momentum_signals table does not exist
+  const { data: momentum } = { data: [] as any[] };
 
   if (momentum) {
     for (const m of momentum) {
@@ -128,11 +125,8 @@ export async function aggregateNarrativeSignals(): Promise<NarrativeSignal[]> {
       .select('*', { count: 'exact', head: true })
       .in('parent_activity_id', projectIds);
 
-    // Get impact data
-    const { data: impacts } = await supabase
-      .from('activity_impact')
-      .select('people_helped')
-      .in('activity_id', projectIds);
+    // STUB: activity_impact table does not exist
+    const { data: impacts } = { data: [] as any[] };
 
     const totalHelped = (impacts || []).reduce((s: number, i) => s + (i.people_helped || 0), 0);
 
@@ -159,11 +153,8 @@ export async function aggregateNarrativeSignals(): Promise<NarrativeSignal[]> {
     });
   }
 
-  // 5. Check value moments for concentration patterns
-  const { data: moments } = await supabase
-    .from('narrative_value_moments')
-    .select('moment_type, source, summary')
-    .gte('occurred_at', monthAgo);
+  // STUB: narrative_value_moments table does not exist
+  const { data: moments } = { data: [] as any[] };
 
   if (moments && moments.length > 0) {
     const byType = new Map<string, number>();

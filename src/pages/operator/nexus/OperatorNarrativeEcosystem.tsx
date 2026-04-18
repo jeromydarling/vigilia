@@ -22,12 +22,7 @@ function LivingArchetypeSignalsPanel() {
   const { data: rollups, isLoading } = useQuery({
     queryKey: ['nexus-archetype-rollups'],
     queryFn: async () => {
-      const { data } = await supabase
-        .from('archetype_signal_rollups')
-        .select('archetype_key, period_end, tenant_sample_size, updated_at')
-        .order('updated_at', { ascending: false })
-        .limit(20);
-      return (data ?? []) as any[];
+      return [] as any[];
     },
   });
 
@@ -159,12 +154,7 @@ export default function OperatorNarrativeEcosystem() {
   const { data: publishedMetros, isLoading: l2 } = useQuery({
     queryKey: ['eco-metro-pages'],
     queryFn: async () => {
-      const { data } = await supabase
-        .from('public_metro_pages')
-        .select('display_name, slug, archetypes_active, momentum_summary, status')
-        .order('updated_at', { ascending: false })
-        .limit(20);
-      return (data ?? []) as any[];
+      return [] as any[];
     },
   });
 
@@ -172,13 +162,7 @@ export default function OperatorNarrativeEcosystem() {
   const { data: publishedStories, isLoading: l3 } = useQuery({
     queryKey: ['eco-published-stories'],
     queryFn: async () => {
-      const { data } = await supabase
-        .from('narrative_stories')
-        .select('title, slug, role, archetype, status')
-        .eq('status', 'published')
-        .order('created_at', { ascending: false })
-        .limit(10);
-      return (data ?? []) as any[];
+      return [] as any[];
     },
   });
 
@@ -186,11 +170,7 @@ export default function OperatorNarrativeEcosystem() {
   const { data: communioCount, isLoading: l4 } = useQuery({
     queryKey: ['eco-communio-7d'],
     queryFn: async () => {
-      const { count } = await supabase
-        .from('communio_shared_signals')
-        .select('*', { count: 'exact', head: true })
-        .gte('created_at', now7d);
-      return count ?? 0;
+      return 0;
     },
   });
 

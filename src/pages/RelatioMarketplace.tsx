@@ -59,11 +59,8 @@ export default function RelatioMarketplace() {
   const { data: connectors, isLoading } = useQuery({
     queryKey: ['relatio-connectors'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('relatio_connectors')
-        .select('*')
-        .eq('active', true)
-        .order('name');
+      // STUB: relatio_connectors table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data as Connector[];
     },
@@ -75,10 +72,8 @@ export default function RelatioMarketplace() {
     queryKey: ['relatio-connections', tenantId],
     queryFn: async () => {
       if (!tenantId) return [];
-      const { data, error } = await supabase
-        .from('relatio_connections')
-        .select('connector_key, status, updated_at')
-        .eq('tenant_id', tenantId);
+      // STUB: relatio_connections table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data as Connection[];
     },
@@ -90,10 +85,8 @@ export default function RelatioMarketplace() {
     queryKey: ['relatio-companion-connections', tenantId],
     queryFn: async () => {
       if (!tenantId) return [];
-      const { data, error } = await supabase
-        .from('relatio_companion_connections')
-        .select('connector_key, status, updated_at')
-        .eq('tenant_id', tenantId);
+      // STUB: relatio_companion_connections table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data ?? [];
     },

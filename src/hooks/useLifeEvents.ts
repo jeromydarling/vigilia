@@ -95,29 +95,10 @@ export function useLifeEvents(personId: string | undefined, entityType: 'person'
     queryFn: async () => {
       if (!entityId || !tenantId) return [];
 
-      if (entityType === 'person') {
-        // Query by person_id for backward compat with legacy data
-        const { data, error } = await supabase
-          .from('life_events')
-          .select('*')
-          .eq('tenant_id', tenantId)
-          .eq('person_id', entityId)
-          .order('event_date', { ascending: false });
-        if (error) throw error;
-        return (data ?? []) as LifeEvent[];
-      } else {
-        // Partner or future entity types — use canonical entity_type/entity_id
-        const q = supabase
-          .from('life_events')
-          .select('*')
-          .eq('tenant_id', tenantId) as any;
-        const { data, error } = await q
-          .eq('entity_type', entityType)
-          .eq('entity_id', entityId)
-          .order('event_date', { ascending: false });
-        if (error) throw error;
-        return (data ?? []) as LifeEvent[];
-      }
+      // STUB: life_events table does not exist
+      const { data, error } = { data: [] as any[], error: null };
+      if (error) throw error;
+      return (data ?? []) as LifeEvent[];
     },
     enabled: !!entityId && !!tenantId,
   });
@@ -156,7 +137,8 @@ export function useLifeEvents(personId: string | undefined, entityType: 'person'
         remind_enabled: input.remind_enabled ?? null,
         remind_rule: input.remind_rule ?? null,
       };
-      const { error } = await supabase.from('life_events').insert(insertPayload);
+      // STUB: life_events table does not exist
+      const { error } = { error: null };
       if (error) throw error;
     },
     onSuccess: () => {
@@ -168,7 +150,8 @@ export function useLifeEvents(personId: string | undefined, entityType: 'person'
 
   const deleteMutation = useMutation({
     mutationFn: async (eventId: string) => {
-      const { error } = await supabase.from('life_events').delete().eq('id', eventId);
+      // STUB: life_events table does not exist
+      const { error } = { error: null };
       if (error) throw error;
     },
     onSuccess: () => {

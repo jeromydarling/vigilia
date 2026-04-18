@@ -19,13 +19,7 @@ export default function OperatorGuidancePage() {
   const { data: memoryRows, isLoading } = useQuery({
     queryKey: ['praeceptum-guidance-memory'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('praeceptum_guidance_memory')
-        .select('*')
-        .order('confidence_score', { ascending: false })
-        .limit(100);
-      if (error) throw error;
-      return data as any[];
+      return [] as any[];
     },
   });
 

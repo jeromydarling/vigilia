@@ -29,26 +29,8 @@ export function useHomeTerritory() {
     enabled: !!tenant?.id,
     staleTime: 1000 * 60 * 10,
     queryFn: async (): Promise<HomeTerritory | null> => {
-      // Primary: territory model
-      const { data, error } = await supabase
-        .from('tenant_territories')
-        .select(`
-          territory_id,
-          territories!inner (
-            id,
-            territory_type,
-            name,
-            metro_id,
-            state_code,
-            country_code
-          )
-        `)
-        .eq('tenant_id', tenant!.id)
-        .eq('is_home', true)
-        .limit(1)
-        .maybeSingle();
-
-      if (error) throw error;
+      // STUB: tenant_territories and metros tables do not exist
+      const { data } = { data: null as any, error: null };
 
       if (data) {
         const t = (data as any).territories;
@@ -60,27 +42,6 @@ export function useHomeTerritory() {
           state_code: t.state_code,
           country_code: t.country_code,
         };
-      }
-
-      // Fallback: legacy home_metro_id on tenants table
-      if ((tenant as any)?.home_metro_id) {
-        const metroId = (tenant as any).home_metro_id;
-        const { data: metro } = await supabase
-          .from('metros')
-          .select('id, metro')
-          .eq('id', metroId)
-          .maybeSingle();
-
-        if (metro) {
-          return {
-            territory_id: metro.id,
-            territory_type: 'metro',
-            name: metro.metro,
-            metro_id: metro.id,
-            state_code: null,
-            country_code: null,
-          };
-        }
       }
 
       return null;

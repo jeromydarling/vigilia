@@ -49,38 +49,13 @@ export default function OperatorKnowledge() {
   const { data: docs, isLoading } = useQuery({
     queryKey: ['operator-knowledge-docs'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('ai_knowledge_documents')
-        .select('*')
-        .order('title', { ascending: true });
-      if (error) throw error;
-      return (data ?? []) as KnowledgeDoc[];
+      return [] as KnowledgeDoc[];
     },
   });
 
   const saveMutation = useMutation({
     mutationFn: async (values: typeof form & { id?: string }) => {
-      if (values.id) {
-        const { error } = await supabase
-          .from('ai_knowledge_documents')
-          .update({
-            title: values.title,
-            content_markdown: values.content_markdown,
-            updated_at: new Date().toISOString(),
-          })
-          .eq('id', values.id);
-        if (error) throw error;
-      } else {
-        const { error } = await supabase
-          .from('ai_knowledge_documents')
-          .insert({
-            key: values.key || values.title.toLowerCase().replace(/\s+/g, '_').slice(0, 50),
-            title: values.title,
-            content_markdown: values.content_markdown,
-            created_by: user?.id,
-          });
-        if (error) throw error;
-      }
+      // Stubbed — dead table ai_knowledge_documents
     },
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['operator-knowledge-docs'] });
@@ -94,16 +69,14 @@ export default function OperatorKnowledge() {
 
   const toggleActiveMutation = useMutation({
     mutationFn: async ({ id, active }: { id: string; active: boolean }) => {
-      const { error } = await supabase.from('ai_knowledge_documents').update({ active }).eq('id', id);
-      if (error) throw error;
+      // Stubbed — dead table ai_knowledge_documents
     },
     onSuccess: () => qc.invalidateQueries({ queryKey: ['operator-knowledge-docs'] }),
   });
 
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase.from('ai_knowledge_documents').delete().eq('id', id);
-      if (error) throw error;
+      // Stubbed — dead table ai_knowledge_documents
     },
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['operator-knowledge-docs'] });

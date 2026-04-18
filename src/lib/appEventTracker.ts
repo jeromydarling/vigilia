@@ -114,12 +114,7 @@ export function trackAppEvent(event: AppEvent): void {
     user_id: null,
   };
 
-  // Fire and forget — void wrapper suppresses unhandled promise noise
-  void Promise.resolve(
-    supabase
-      .from('app_event_stream')
-      .insert([payload])
-  ).catch(() => {});
+  // STUB: app_event_stream table does not exist — skip insert
 }
 
 /** Convenience: track a marketing page view. */

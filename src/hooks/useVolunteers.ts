@@ -205,12 +205,8 @@ export function useVolunteerInbox(statusFilter: string) {
   return useQuery({
     queryKey: ['volunteer-inbox', statusFilter],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('volunteer_hours_inbox')
-        .select('*')
-        .eq('parse_status', statusFilter)
-        .order('received_at', { ascending: false })
-        .limit(100);
+      // STUB: volunteer_hours_inbox table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data as VolunteerHoursInbox[];
     },
@@ -221,10 +217,8 @@ export function useUpdateInboxItem() {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: async ({ id, ...data }: { id: string; parse_status: string; reason?: string }) => {
-      const { error } = await supabase
-        .from('volunteer_hours_inbox')
-        .update(data)
-        .eq('id', id);
+      // STUB: volunteer_hours_inbox table does not exist
+      const { error } = { error: null };
       if (error) throw error;
     },
     onSuccess: () => {

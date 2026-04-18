@@ -32,28 +32,14 @@ function LifeMovedSection() {
   const { data: testimoniumEvents, isLoading } = useQuery({
     queryKey: ['examen-evening-life'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('testimonium_events')
-        .select('event_kind, summary, created_at')
-        .gte('created_at', todayStart)
-        .order('created_at', { ascending: false })
-        .limit(8);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const { data: livingSignals } = useQuery({
     queryKey: ['examen-evening-living'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('living_system_signals')
-        .select('signal_type, anonymized_summary, created_at')
-        .gte('created_at', todayStart)
-        .order('created_at', { ascending: false })
-        .limit(6);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
@@ -96,16 +82,7 @@ function ResistanceSection() {
   const { data: frictionInsights } = useQuery({
     queryKey: ['examen-evening-resistance'],
     queryFn: async () => {
-      const todayStart = startOfDay(new Date()).toISOString();
-      const { data, error } = await supabase
-        .from('nri_design_suggestions')
-        .select('suggestion_summary, pattern_key')
-        .in('status', ['open', 'reviewed'])
-        .gte('created_at', todayStart)
-        .order('created_at', { ascending: false })
-        .limit(3);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
@@ -130,27 +107,14 @@ function QuietGrowthSection() {
   const { data: communioActivity } = useQuery({
     queryKey: ['examen-evening-growth'],
     queryFn: async () => {
-      const todayStart = startOfDay(new Date()).toISOString();
-      const { data, error } = await supabase
-        .from('communio_activity_log')
-        .select('action_type, created_at')
-        .gte('created_at', todayStart)
-        .limit(5);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const { data: resonance } = useQuery({
     queryKey: ['examen-evening-resonance'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('communio_resonance_snapshots')
-        .select('tenant_count, signal_count')
-        .order('computed_at', { ascending: false })
-        .limit(1);
-      if (error) throw error;
-      return data?.[0] ?? null;
+      return null as any;
     },
   });
 
@@ -179,14 +143,7 @@ function NRILearningSection() {
   const { data: playbooks } = useQuery({
     queryKey: ['examen-evening-nri'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('nri_playbook_drafts')
-        .select('id, title, status')
-        .eq('status', 'draft')
-        .order('created_at', { ascending: false })
-        .limit(2);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 

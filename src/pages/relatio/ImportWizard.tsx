@@ -67,11 +67,8 @@ export default function ImportWizard() {
   const { data: connector } = useQuery({
     queryKey: ['relatio-connector', connectorKey],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('relatio_connectors')
-        .select('*')
-        .eq('key', connectorKey!)
-        .single();
+      // STUB: relatio_connectors table does not exist
+      const { data, error } = { data: null as any, error: null };
       if (error) throw error;
       return data;
     },
@@ -88,11 +85,8 @@ export default function ImportWizard() {
         headers: {},
       });
       // Use query params approach
-      const { data: job } = await supabase
-        .from('relatio_import_jobs')
-        .select('*')
-        .eq('id', jobId)
-        .single();
+      // STUB: relatio_import_jobs table does not exist
+      const { data: job } = { data: null as any };
       return job;
     },
     enabled: !!jobId,

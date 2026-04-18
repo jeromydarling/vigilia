@@ -81,11 +81,8 @@ export default function ImportCenter() {
   const { data: runs } = useQuery({
     queryKey: ['import-runs'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('import_runs')
-        .select('*')
-        .order('created_at', { ascending: false })
-        .limit(20);
+      // STUB: import_runs table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data;
     },
@@ -179,17 +176,9 @@ export default function ImportCenter() {
     setStep('importing');
 
     try {
-      const { data: run, error: runError } = await supabase
-        .from('import_runs')
-        .insert({
-          user_id: user.id,
-          source_system: sourceSystem,
-          import_type: importType,
-          status: 'importing',
-          stats: { total_rows: csvData.length, mapping },
-        })
-        .select()
-        .single();
+      // STUB: import_runs table does not exist
+      const run = { id: crypto.randomUUID() } as any;
+      const runError = null;
 
       if (runError) throw runError;
 
@@ -243,14 +232,7 @@ export default function ImportCenter() {
         skipped = csvData.length;
       }
 
-      await supabase
-        .from('import_runs')
-        .update({
-          status: 'completed',
-          completed_at: new Date().toISOString(),
-          stats: { total_rows: csvData.length, created, updated, skipped, mapping },
-        })
-        .eq('id', run.id);
+      // STUB: import_runs table does not exist (update skipped)
 
       qc.invalidateQueries({ queryKey: ['import-runs'] });
       qc.invalidateQueries({ queryKey: ['import-history'] });

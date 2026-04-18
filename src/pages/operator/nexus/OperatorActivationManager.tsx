@@ -22,13 +22,7 @@ export default function OperatorActivationManager() {
   const { data: sessions, isLoading: sessionsLoading } = useQuery({
     queryKey: ['nexus-activation-sessions'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('activation_sessions')
-        .select('*, tenants:tenant_id(name)')
-        .order('scheduled_at', { ascending: true })
-        .limit(50);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
@@ -36,13 +30,7 @@ export default function OperatorActivationManager() {
   const { data: checklists, isLoading: checklistsLoading } = useQuery({
     queryKey: ['nexus-activation-checklists'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('activation_checklists')
-        .select('*, tenants:tenant_id(name)')
-        .order('updated_at', { ascending: false })
-        .limit(50);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
@@ -50,13 +38,7 @@ export default function OperatorActivationManager() {
   const { data: offers, isLoading: offersLoading } = useQuery({
     queryKey: ['nexus-activation-offers'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('activation_offers')
-        .select('*, tenants:tenant_id(name)')
-        .order('created_at', { ascending: false })
-        .limit(50);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 

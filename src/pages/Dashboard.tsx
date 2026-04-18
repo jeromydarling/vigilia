@@ -69,22 +69,22 @@ function useThisWeekCounts(metroId: string | null) {
     enabled: !!tenantId,
     staleTime: 60_000,
     queryFn: async (): Promise<WeeklyCount> => {
-      const [acts, visits, refs, evts, vols, provs] = await Promise.all([
+      const [acts, visits, evts, vols] = await Promise.all([
         supabase.from('activities').select('id', { count: 'exact', head: true })
           .gte('activity_date_time', weekStart),
         supabase.from('activities').select('id', { count: 'exact', head: true })
           .gte('activity_date_time', weekStart)
           .in('activity_type', ['Site Visit', 'Visit']),
-        supabase.from('opportunity_reflections').select('id', { count: 'exact', head: true })
-          .gte('created_at', weekStart),
         supabase.from('events').select('id', { count: 'exact', head: true })
           .eq('is_local_pulse', false)
           .gte('created_at', weekStart),
         supabase.from('volunteers').select('id', { count: 'exact', head: true })
           .gte('created_at', weekStart),
-        supabase.from('provisions').select('id', { count: 'exact', head: true })
-          .gte('created_at', weekStart),
       ]);
+
+      // STUB: opportunity_reflections and provisions tables do not exist
+      const refs = { count: 0 };
+      const provs = { count: 0 };
 
       return {
         activities: acts.count ?? 0,

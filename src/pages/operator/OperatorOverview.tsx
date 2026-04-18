@@ -39,10 +39,8 @@ export default function OperatorOverview() {
   const { data: tenantStats, isLoading: loadingTenants, refetch: refetchTenants } = useQuery({
     queryKey: ['operator-tenant-stats'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('operator_tenant_stats')
-        .select('*')
-        .order('updated_at', { ascending: false });
+      // STUB: operator_tenant_stats table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data ?? [];
     },
@@ -51,10 +49,8 @@ export default function OperatorOverview() {
   const { data: archetypeMetrics, isLoading: loadingArch, refetch: refetchArch } = useQuery({
     queryKey: ['operator-archetype-metrics'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('operator_archetype_metrics')
-        .select('*')
-        .order('tenant_count', { ascending: false });
+      // STUB: operator_archetype_metrics table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data ?? [];
     },
@@ -63,10 +59,8 @@ export default function OperatorOverview() {
   const { data: narrativeMetrics, isLoading: loadingNarr, refetch: refetchNarr } = useQuery({
     queryKey: ['operator-narrative-metrics'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('operator_narrative_metrics')
-        .select('*')
-        .order('updated_at', { ascending: false });
+      // STUB: operator_narrative_metrics table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data ?? [];
     },
@@ -75,10 +69,8 @@ export default function OperatorOverview() {
   const { data: integrationHealth, isLoading: loadingInt, refetch: refetchInt } = useQuery({
     queryKey: ['operator-integration-health'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('operator_integration_health')
-        .select('*')
-        .order('updated_at', { ascending: false });
+      // STUB: operator_integration_health table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data ?? [];
     },

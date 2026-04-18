@@ -24,11 +24,8 @@ export default function ImportJobDetail() {
   const { data: job, isLoading } = useQuery({
     queryKey: ['relatio-job', id],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('relatio_import_jobs')
-        .select('*')
-        .eq('id', id!)
-        .single();
+      // STUB: relatio_import_jobs table does not exist
+      const { data, error } = { data: null as any, error: null };
       if (error) throw error;
       return data;
     },
@@ -42,12 +39,8 @@ export default function ImportJobDetail() {
   const { data: events } = useQuery({
     queryKey: ['relatio-job-events', id],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('relatio_import_events')
-        .select('*')
-        .eq('job_id', id!)
-        .order('created_at', { ascending: false })
-        .limit(100);
+      // STUB: relatio_import_events table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data;
     },

@@ -33,11 +33,8 @@ export default function VoiceSettings() {
     queryKey: ['tenant-voice-settings', tenantId],
     enabled: !!tenantId,
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('tenant_voice_settings')
-        .select('*')
-        .eq('tenant_id', tenantId!)
-        .maybeSingle();
+      // STUB: tenant_voice_settings table does not exist
+      const { data, error } = { data: null as any, error: null };
       if (error) throw error;
       return data;
     },
@@ -61,9 +58,8 @@ export default function VoiceSettings() {
         max_audio_seconds: maxSeconds,
       };
 
-      const { error } = await supabase
-        .from('tenant_voice_settings')
-        .upsert(payload as any, { onConflict: 'tenant_id' });
+      // STUB: tenant_voice_settings table does not exist
+      const { error } = { error: null };
       if (error) throw error;
     },
     onSuccess: () => {

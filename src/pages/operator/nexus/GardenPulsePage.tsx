@@ -51,11 +51,7 @@ function useEcosystemPulse() {
   return useQuery({
     queryKey: ['garden-pulse-ecosystem'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('ecosystem_garden_pulse_view')
-        .select('*');
-      if (error) throw error;
-      return (data ?? []) as PulseNode[];
+      return [] as PulseNode[];
     },
   });
 }
@@ -65,24 +61,9 @@ function useRecentTimeline() {
     queryKey: ['garden-pulse-nri-timeline'],
     queryFn: async () => {
       // Pull from three NRI narrative sources — never private tenant reflections
-      const [rollups, signals, essays] = await Promise.all([
-        supabase
-          .from('archetype_signal_rollups')
-          .select('id, archetype_key, generated_story, period_end, tenant_sample_size, reflection_volume, visit_activity, event_presence, momentum_growth, updated_at')
-          .order('updated_at', { ascending: false })
-          .limit(15),
-        supabase
-          .from('living_system_signals')
-          .select('id, signal_type, anonymized_summary, confidence_score, context_json, created_at')
-          .order('created_at', { ascending: false })
-          .limit(15),
-        supabase
-          .from('operator_content_drafts')
-          .select('id, title, editorial_mode, status, created_at')
-          .eq('status', 'published')
-          .order('created_at', { ascending: false })
-          .limit(10),
-      ]);
+      const rollups = { data: [] as any[] };
+      const signals = { data: [] as any[] };
+      const essays = { data: [] as any[] };
 
       const items: Array<{
         id: string;
@@ -160,14 +141,7 @@ function useLibraryDrafts() {
   return useQuery({
     queryKey: ['garden-pulse-library'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('operator_content_drafts')
-        .select('id, title, slug, body, status, editorial_mode, voice_origin, gravity_score, collection, created_at, published_at')
-        .in('status', ['draft', 'published'])
-        .order('created_at', { ascending: false })
-        .limit(20);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 }

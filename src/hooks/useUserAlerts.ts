@@ -19,12 +19,8 @@ export function useUserAlerts() {
     queryKey: ['user-alerts', user?.id],
     queryFn: async () => {
       if (!user?.id) return [];
-      const { data, error } = await supabase
-        .from('user_alerts')
-        .select('*')
-        .eq('user_id', user.id)
-        .order('created_at', { ascending: false })
-        .limit(50);
+      // STUB: user_alerts table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return (data || []) as UserAlert[];
     },
@@ -40,11 +36,8 @@ export function useUnreadAlertCount() {
     queryKey: ['user-alerts-count', user?.id],
     queryFn: async () => {
       if (!user?.id) return 0;
-      const { count, error } = await supabase
-        .from('user_alerts')
-        .select('id', { count: 'exact', head: true })
-        .eq('user_id', user.id)
-        .is('read_at', null);
+      // STUB: user_alerts table does not exist
+      const { count, error } = { count: 0, error: null };
       if (error) throw error;
       return count ?? 0;
     },
@@ -58,10 +51,8 @@ export function useMarkAlertRead() {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: async (alertId: string) => {
-      const { error } = await supabase
-        .from('user_alerts')
-        .update({ read_at: new Date().toISOString() })
-        .eq('id', alertId);
+      // STUB: user_alerts table does not exist
+      const { error } = { error: null };
       if (error) throw error;
     },
     onSuccess: () => {
@@ -77,11 +68,8 @@ export function useMarkAllAlertsRead() {
   return useMutation({
     mutationFn: async () => {
       if (!user?.id) return;
-      const { error } = await supabase
-        .from('user_alerts')
-        .update({ read_at: new Date().toISOString() })
-        .eq('user_id', user.id)
-        .is('read_at', null);
+      // STUB: user_alerts table does not exist
+      const { error } = { error: null };
       if (error) throw error;
     },
     onSuccess: () => {

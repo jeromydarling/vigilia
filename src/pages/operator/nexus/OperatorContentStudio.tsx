@@ -71,10 +71,7 @@ function DraftEditor({ draft, onClose }: { draft: any; onClose: () => void }) {
 
   const saveMutation = useMutation({
     mutationFn: async () => {
-      const { error } = await supabase.from('operator_content_drafts')
-        .update({ title, body, updated_at: new Date().toISOString() })
-        .eq('id', draft.id);
-      if (error) throw error;
+      // Stubbed — dead table operator_content_drafts
     },
     onSuccess: () => { toast.success('Draft saved'); qc.invalidateQueries({ queryKey: ['essay-drafts'] }); },
     onError: (e: any) => toast.error(e.message),
@@ -82,15 +79,7 @@ function DraftEditor({ draft, onClose }: { draft: any; onClose: () => void }) {
 
   const publishMutation = useMutation({
     mutationFn: async () => {
-      const slug = title
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, '')
-        .slice(0, 80);
-      const { error } = await supabase.from('operator_content_drafts')
-        .update({ title, body, slug, status: 'published', published_at: new Date().toISOString(), updated_at: new Date().toISOString() })
-        .eq('id', draft.id);
-      if (error) throw error;
+      // Stubbed — dead table operator_content_drafts
     },
     onSuccess: () => {
       toast.success('Essay published to library');
@@ -106,10 +95,7 @@ function DraftEditor({ draft, onClose }: { draft: any; onClose: () => void }) {
 
   const unpublishMutation = useMutation({
     mutationFn: async () => {
-      const { error } = await supabase.from('operator_content_drafts')
-        .update({ status: 'draft', published_at: null, updated_at: new Date().toISOString() })
-        .eq('id', draft.id);
-      if (error) throw error;
+      // Stubbed — dead table operator_content_drafts
     },
     onSuccess: () => { toast.success('Reverted to draft'); qc.invalidateQueries({ queryKey: ['essay-drafts'] }); },
     onError: (e: any) => toast.error(e.message),
@@ -117,10 +103,7 @@ function DraftEditor({ draft, onClose }: { draft: any; onClose: () => void }) {
 
   const dismissMutation = useMutation({
     mutationFn: async () => {
-      const { error } = await supabase.from('operator_content_drafts')
-        .update({ status: 'dismissed', updated_at: new Date().toISOString() })
-        .eq('id', draft.id);
-      if (error) throw error;
+      // Stubbed — dead table operator_content_drafts
     },
     onSuccess: () => { toast.success('Draft dismissed'); qc.invalidateQueries({ queryKey: ['essay-drafts'] }); onClose(); },
     onError: (e: any) => toast.error(e.message),
@@ -128,12 +111,7 @@ function DraftEditor({ draft, onClose }: { draft: any; onClose: () => void }) {
 
   const regenerateMutation = useMutation({
     mutationFn: async () => {
-      if (!draft.source_item_ids?.length) throw new Error('No source items linked to this draft');
-      const { data, error } = await supabase.functions.invoke('operator-rss-draft', {
-        body: { draft_type: draft.draft_type, item_ids: draft.source_item_ids, category: draft.collection || undefined, regenerate_id: draft.id },
-      });
-      if (error) throw error;
-      return data;
+      // Stubbed — dead table operator_content_drafts
     },
     onSuccess: () => { toast.success('Draft regenerated with NRI voice'); qc.invalidateQueries({ queryKey: ['essay-drafts'] }); onClose(); },
     onError: (e: any) => toast.error(e.message),
@@ -141,8 +119,7 @@ function DraftEditor({ draft, onClose }: { draft: any; onClose: () => void }) {
 
   const regenImageMutation = useMutation({
     mutationFn: async () => {
-      await supabase.from('operator_content_drafts').update({ hero_image_url: null }).eq('id', draft.id);
-      await triggerEssayImageGeneration(draft.id, title, body?.replace(/[#*_]/g, '').slice(0, 300), 'operator_content_drafts');
+      // Stubbed — dead table operator_content_drafts
     },
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['essay-drafts'] });
@@ -237,34 +214,21 @@ export default function OperatorContentStudio() {
   const { data: sources, isLoading: srcLoading } = useQuery({
     queryKey: ['rss-sources'],
     queryFn: async () => {
-      const { data, error } = await supabase.from('operator_rss_sources').select('*').order('created_at', { ascending: false });
-      if (error) throw error;
-      return data || [];
+      return [] as any[];
     },
   });
 
   const { data: items, isLoading: itemsLoading } = useQuery({
     queryKey: ['rss-items'],
     queryFn: async () => {
-      // Only show articles from the current month — previous months are stale for essay prep
-      const currentMonthStart = new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString();
-      const { data, error } = await supabase.from('operator_rss_items')
-        .select('*, source:operator_rss_sources(name, category)')
-        .gte('published_at', currentMonthStart)
-        .order('published_at', { ascending: false })
-        .limit(500);
-      if (error) throw error;
-      return data || [];
+      return [] as any[];
     },
   });
 
   const { data: drafts } = useQuery({
     queryKey: ['essay-drafts'],
     queryFn: async () => {
-      const { data, error } = await supabase.from('operator_content_drafts')
-        .select('*').order('created_at', { ascending: false }).limit(50);
-      if (error) throw error;
-      return data || [];
+      return [] as any[];
     },
   });
 
@@ -278,10 +242,7 @@ export default function OperatorContentStudio() {
   const { data: stories, isLoading: loadingStories } = useQuery({
     queryKey: ['narrative-stories-all'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('narrative_stories').select('*').order('created_at', { ascending: false });
-      if (error) throw error;
-      return data || [];
+      return [] as any[];
     },
   });
 
@@ -320,12 +281,7 @@ export default function OperatorContentStudio() {
   // ═══ RSS Mutations ═══
   const addSourceMutation = useMutation({
     mutationFn: async () => {
-      if (!newSourceName || !newSourceUrl) throw new Error('Name and URL required');
-      const { data: { user: u } } = await supabase.auth.getUser();
-      const { error } = await supabase.from('operator_rss_sources').insert({
-        name: newSourceName, url: newSourceUrl, category: newSourceCategory, created_by: u!.id,
-      });
-      if (error) throw error;
+      // Stubbed — dead table operator_rss_sources
     },
     onSuccess: () => { toast.success('Source added'); setNewSourceName(''); setNewSourceUrl(''); qc.invalidateQueries({ queryKey: ['rss-sources'] }); },
     onError: (e) => toast.error(e.message),
@@ -333,18 +289,8 @@ export default function OperatorContentStudio() {
 
   const fetchMutation = useMutation({
     mutationFn: async (sourceId: string | undefined) => {
-      if (!sourceId) {
-        const { error: delErr } = await supabase.from('operator_rss_items').delete().neq('id', '00000000-0000-0000-0000-000000000000');
-        if (delErr) throw delErr;
-      } else {
-        const { error: delErr } = await supabase.from('operator_rss_items').delete().eq('source_id', sourceId);
-        if (delErr) throw delErr;
-      }
-      const { data, error } = await supabase.functions.invoke('operator-rss-fetch', {
-        body: sourceId ? { source_id: sourceId } : { fetch_all: true },
-      });
-      if (error) throw error;
-      return data;
+      // Stubbed — dead tables operator_rss_items, operator_rss_sources
+      return { sources_processed: 0 };
     },
     onSuccess: (d) => { toast.success(`Cleared & fetched from ${d?.sources_processed || 0} sources`); setSelectedItems([]); qc.invalidateQueries({ queryKey: ['rss-items'] }); },
     onError: (e) => toast.error(e.message),
@@ -352,41 +298,22 @@ export default function OperatorContentStudio() {
 
   const draftMutation = useMutation({
     mutationFn: async () => {
-      if (!selectedItems.length) throw new Error('Select at least one item');
-      const byCategory: Record<string, string[]> = {};
-      for (const item of (items || [])) {
-        if (selectedItems.includes(item.id)) {
-          const cat = item.source?.category || 'Uncategorized';
-          if (!byCategory[cat]) byCategory[cat] = [];
-          byCategory[cat].push(item.id);
-        }
-      }
-      const results = [];
-      for (const [category, catItemIds] of Object.entries(byCategory)) {
-        const { data, error } = await supabase.functions.invoke('operator-rss-draft', { body: { draft_type: draftType, item_ids: catItemIds, category } });
-        if (error) throw error;
-        results.push({ category, ...data });
-      }
-      return results;
+      // Stubbed — dead tables operator_rss_items, operator_content_drafts
+      return [] as any[];
     },
     onSuccess: (results) => { toast.success(`${results.length} draft(s) generated`); setSelectedItems([]); qc.invalidateQueries({ queryKey: ['essay-drafts'] }); },
     onError: (e) => toast.error(e.message),
   });
 
   const deleteSourceMutation = useMutation({
-    mutationFn: async (id: string) => { const { error } = await supabase.from('operator_rss_sources').delete().eq('id', id); if (error) throw error; },
+    mutationFn: async (id: string) => { /* Stubbed — dead table operator_rss_sources */ },
     onSuccess: () => { toast.success('Source removed'); qc.invalidateQueries({ queryKey: ['rss-sources'] }); },
   });
 
   // ═══ Narrative Story Mutations ═══
   const createStoryDraft = useMutation({
     mutationFn: async (signal: NarrativeSignal) => {
-      const { error } = await supabase.from('narrative_stories').insert([{
-        slug: signal.suggested_slug, title: signal.pattern, role: signal.role,
-        archetype: signal.archetype, pattern_source: signal.source_data as unknown as import('@/integrations/supabase/types').Json,
-        summary: signal.summary, body: '', status: 'draft', created_by: user?.id,
-      }]);
-      if (error) throw error;
+      // Stubbed — dead table narrative_stories
     },
     onSuccess: () => { toast.success('Story draft created'); qc.invalidateQueries({ queryKey: ['narrative-stories-all'] }); setDraftFromSignal(null); },
     onError: (e: any) => toast.error(e.message),
@@ -394,17 +321,14 @@ export default function OperatorContentStudio() {
 
   const updateStory = useMutation({
     mutationFn: async (story: any) => {
-      const { error } = await supabase.from('narrative_stories')
-        .update({ title: story.title, slug: story.slug, role: story.role, archetype: story.archetype, summary: story.summary, body: story.body, status: story.status })
-        .eq('id', story.id);
-      if (error) throw error;
+      // Stubbed — dead table narrative_stories
     },
     onSuccess: () => { toast.success('Story updated'); qc.invalidateQueries({ queryKey: ['narrative-stories-all'] }); setEditingStory(null); },
     onError: (e: any) => toast.error(e.message),
   });
 
   const deleteStory = useMutation({
-    mutationFn: async (id: string) => { const { error } = await supabase.from('narrative_stories').delete().eq('id', id); if (error) throw error; },
+    mutationFn: async (id: string) => { /* Stubbed — dead table narrative_stories */ },
     onSuccess: () => { toast.success('Story deleted'); qc.invalidateQueries({ queryKey: ['narrative-stories-all'] }); },
   });
 

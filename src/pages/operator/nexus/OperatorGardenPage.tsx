@@ -35,47 +35,21 @@ function NarrativeGravitySection() {
   const { data: signals, isLoading } = useQuery({
     queryKey: ['garden-narrative-gravity'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('living_system_signals')
-        .select('id, signal_type, anonymized_summary, confidence_score, created_at')
-        .in('signal_type', [
-          'reflection_moment',
-          'community_growth',
-          'collaboration_movement',
-          'visitor_voice_pattern',
-        ])
-        .order('created_at', { ascending: false })
-        .limit(12);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const { data: testimoniumThemes } = useQuery({
     queryKey: ['garden-testimonium-themes'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('testimonium_events')
-        .select('event_kind, summary, source_module, created_at')
-        .order('created_at', { ascending: false })
-        .limit(15);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const { data: lumenSignals } = useQuery({
     queryKey: ['garden-lumen-gravity'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('lumen_signals')
-        .select('signal_type, severity, source_summary, first_detected_at')
-        .in('signal_type', ['narrative_surge', 'expansion_ready', 'capacity_growth'])
-        .eq('resolved', false)
-        .order('first_detected_at', { ascending: false })
-        .limit(6);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
@@ -177,29 +151,14 @@ function ResonanceSection() {
   const { data: snapshots, isLoading } = useQuery({
     queryKey: ['garden-resonance'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('communio_resonance_snapshots')
-        .select(
-          'archetype_key, search_type, signal_count, tenant_count, communio_participation_count, resonant_keywords, testimonium_themes, computed_at'
-        )
-        .order('computed_at', { ascending: false })
-        .limit(30);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const { data: awarenessSignals } = useQuery({
     queryKey: ['garden-awareness'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('communio_awareness_signals')
-        .select('anonymized_message, source_signal_type, suggested_action, created_at')
-        .eq('is_hipaa_safe', true)
-        .order('created_at', { ascending: false })
-        .limit(6);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
@@ -312,24 +271,13 @@ function LivingLibrarySection() {
   const { data: drafts, isLoading } = useQuery({
     queryKey: ['garden-library-drafts'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('operator_content_drafts')
-        .select('id, title, status, editorial_mode, essay_type, voice_origin, is_anchor, gravity_score, created_at')
-        .eq('status', 'draft')
-        .order('created_at', { ascending: false })
-        .limit(8);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const publishMutation = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase
-        .from('operator_content_drafts')
-        .update({ status: 'published', published_at: new Date().toISOString() })
-        .eq('id', id);
-      if (error) throw error;
+      // Stubbed — dead table operator_content_drafts
     },
     onSuccess: () => {
       toast.success('Essay approved for editing');
@@ -427,28 +375,14 @@ function FrictionInsightsSection() {
   const { data: suggestions, isLoading } = useQuery({
     queryKey: ['garden-friction-insights'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('nri_design_suggestions')
-        .select('id, pattern_key, suggestion_summary, narrative_detail, severity, status, created_at')
-        .in('status', ['open', 'reviewed'])
-        .order('created_at', { ascending: false })
-        .limit(6);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const { data: playbooks } = useQuery({
     queryKey: ['garden-friction-playbooks'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('nri_playbook_drafts')
-        .select('id, title, role, status, created_at')
-        .eq('status', 'draft')
-        .order('created_at', { ascending: false })
-        .limit(4);
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 

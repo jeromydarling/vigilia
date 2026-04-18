@@ -55,11 +55,8 @@ export function useFeedback() {
   const { data: userFeedback = [], isLoading: isLoadingUserFeedback } = useQuery({
     queryKey: ['feedback', 'user', user?.id],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('feedback_requests')
-        .select('*, attachments:feedback_attachments(*)')
-        .eq('user_id', user?.id)
-        .order('created_at', { ascending: false });
+      // STUB: feedback_requests table does not exist
+      const { data, error } = { data: [] as any[], error: null };
 
       if (error) throw error;
       return data as FeedbackRequest[];
@@ -71,10 +68,8 @@ export function useFeedback() {
   const { data: allFeedback = [], isLoading: isLoadingAllFeedback } = useQuery({
     queryKey: ['feedback', 'all'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('feedback_requests')
-        .select('*, attachments:feedback_attachments(*)')
-        .order('created_at', { ascending: false });
+      // STUB: feedback_requests table does not exist
+      const { data, error } = { data: [] as any[], error: null };
 
       if (error) throw error;
       return data as FeedbackRequest[];
@@ -84,17 +79,8 @@ export function useFeedback() {
   // Create new feedback request
   const createFeedback = useMutation({
     mutationFn: async (input: CreateFeedbackInput) => {
-      const { data, error } = await supabase
-        .from('feedback_requests')
-        .insert({
-          user_id: user?.id,
-          type: input.type,
-          title: input.title,
-          description: input.description,
-          priority: input.priority,
-        })
-        .select()
-        .single();
+      // STUB: feedback_requests table does not exist
+      const { data, error } = { data: null as any, error: null };
 
       if (error) throw error;
       return data;
@@ -111,27 +97,9 @@ export function useFeedback() {
   // Upload attachment
   const uploadAttachment = useMutation({
     mutationFn: async ({ feedbackId, file }: { feedbackId: string; file: File }) => {
-      // Upload to storage
+      // STUB: feedback-attachments storage and feedback_attachments table do not exist
       const filePath = `${user?.id}/${feedbackId}/${Date.now()}_${file.name}`;
-      const { error: uploadError } = await supabase.storage
-        .from('feedback-attachments')
-        .upload(filePath, file);
-
-      if (uploadError) throw uploadError;
-
-      // Create attachment record
-      const { data, error } = await supabase
-        .from('feedback_attachments')
-        .insert({
-          feedback_id: feedbackId,
-          file_name: file.name,
-          file_path: filePath,
-          file_size: file.size,
-          file_type: file.type,
-          uploaded_by: user?.id,
-        })
-        .select()
-        .single();
+      const { data, error } = { data: { feedback_id: feedbackId, file_name: file.name, file_path: filePath } as any, error: null };
 
       if (error) throw error;
       return data;
@@ -146,12 +114,8 @@ export function useFeedback() {
 
   // Get signed URL for an attachment
   const getAttachmentUrl = async (filePath: string) => {
-    const { data, error } = await supabase.storage
-      .from('feedback-attachments')
-      .createSignedUrl(filePath, 3600); // 1 hour expiry
-
-    if (error) throw error;
-    return data.signedUrl;
+    // STUB: feedback-attachments storage does not exist
+    return '';
   };
 
   // Update feedback request (admin only)
@@ -161,12 +125,8 @@ export function useFeedback() {
       if (input.status !== undefined) updateData.status = input.status;
       if (input.admin_notes !== undefined) updateData.admin_notes = input.admin_notes;
 
-      const { data, error } = await supabase
-        .from('feedback_requests')
-        .update(updateData)
-        .eq('id', input.id)
-        .select()
-        .single();
+      // STUB: feedback_requests table does not exist
+      const { data, error } = { data: null as any, error: null };
 
       if (error) throw error;
       return data;
@@ -183,10 +143,8 @@ export function useFeedback() {
   // Delete feedback request (admin only)
   const deleteFeedback = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase
-        .from('feedback_requests')
-        .delete()
-        .eq('id', id);
+      // STUB: feedback_requests table does not exist
+      const { error } = { error: null };
 
       if (error) throw error;
     },

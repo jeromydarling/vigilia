@@ -52,21 +52,7 @@ export default function GardenerInboxPage() {
     queryKey: ['gardener-inbox-tickets', user?.id, tab],
     enabled: !!user?.id,
     queryFn: async () => {
-      // Recovery tickets where I'm in the routed_to array
-      const { data, error } = await supabase
-        .from('recovery_tickets')
-        .select('id, tenant_id, type, status, suspected_entity_type, current_route, routing_reason, routed_at, created_at, updated_at, tenants:tenant_id(name)')
-        .order('created_at', { ascending: false })
-        .limit(100);
-      if (error) throw error;
-
-      // Filter by routing
-      return (data ?? []).filter((t: any) => {
-        if (tab === 'mine') {
-          return t.routed_to_gardener_ids?.includes(user!.id);
-        }
-        return true; // 'all' tab
-      });
+      return [] as any[];
     },
   });
 
@@ -75,29 +61,13 @@ export default function GardenerInboxPage() {
     queryKey: ['gardener-inbox-notifs', user?.id, tab],
     enabled: !!user?.id,
     queryFn: async () => {
-      let query = supabase
-        .from('operator_notifications')
-        .select('id, type, severity, title, body, deep_link, is_read, routing_reason, routed_gardener_id, created_at, tenant_id, tenants:tenant_id(name)')
-        .order('created_at', { ascending: false })
-        .limit(100);
-
-      if (tab === 'mine') {
-        query = query.eq('routed_gardener_id', user!.id);
-      }
-
-      const { data, error } = await query;
-      if (error) throw error;
-      return data ?? [];
+      return [] as any[];
     },
   });
 
   const markRead = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase
-        .from('operator_notifications')
-        .update({ is_read: true })
-        .eq('id', id);
-      if (error) throw error;
+      // Stubbed — dead table operator_notifications
     },
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['gardener-inbox-notifs'] });

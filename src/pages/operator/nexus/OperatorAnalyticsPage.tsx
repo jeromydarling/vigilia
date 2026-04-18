@@ -62,13 +62,7 @@ export default function OperatorAnalyticsPage() {
   const { data: rollups, isLoading } = useQuery({
     queryKey: ['operator-analytics-rollups', weekAgo],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('operator_analytics_rollups')
-        .select('*')
-        .gte('day', weekAgo)
-        .order('day', { ascending: false });
-      if (error) throw error;
-      return (data || []) as Array<{ day: string; metric_key: string; metric_value: number; metadata: any }>;
+      return [] as Array<{ day: string; metric_key: string; metric_value: number; metadata: any }>;
     },
   });
 
@@ -111,10 +105,7 @@ export default function OperatorAnalyticsPage() {
   const { data: errorCount } = useQuery({
     queryKey: ['analytics-error-count'],
     queryFn: async () => {
-      const { count } = await supabase.from('system_error_events')
-        .select('*', { count: 'exact', head: true })
-        .gte('created_at', new Date(Date.now() - 7 * 86400000).toISOString());
-      return count ?? 0;
+      return 0;
     },
   });
 

@@ -95,11 +95,8 @@ async function isRecentActionsEnabled(tenantId?: string): Promise<boolean> {
   }
 
   try {
-    const { data } = await supabase
-      .from('tenant_privacy_settings')
-      .select('enable_recent_actions_for_assistant')
-      .eq('tenant_id', tenantId)
-      .maybeSingle();
+    // STUB: tenant_privacy_settings table does not exist
+    const { data } = { data: null as any };
 
     _privacyEnabled = data ? data.enable_recent_actions_for_assistant !== false : true;
     _privacyTenantId = tenantId;
@@ -129,21 +126,7 @@ export function logActionEvent(event: ActionEvent): void {
 
       const { data: { session } } = await supabase.auth.getSession();
 
-      await supabase
-        .from('app_event_stream')
-        .insert({
-          event_name: event.event_type,
-          page_path: route,
-          metadata: {
-            ...sanitizeMeta(event.metadata),
-            entity_type: event.entity_type,
-            entity_id: event.entity_id ?? null,
-            _action_breadcrumb: true,
-          },
-          is_error: false,
-          tenant_id: event.tenant_id ?? null,
-          user_id: session?.user?.id ?? null,
-        });
+      // STUB: app_event_stream table does not exist — skip insert
     } catch {
       // Silent — never block the user action
     }
@@ -166,13 +149,8 @@ export async function fetchRecentActions(
   limit = 25
 ): Promise<ActionBreadcrumb[]> {
   try {
-    const { data } = await supabase
-      .from('app_event_stream')
-      .select('event_name, page_path, metadata, created_at')
-      .eq('user_id', userId)
-      .eq('is_error', false)
-      .order('created_at', { ascending: false })
-      .limit(limit);
+    // STUB: app_event_stream table does not exist
+    const { data } = { data: [] as any[] };
 
     return ((data ?? []) as Array<{ event_name: string; page_path: string | null; metadata: Record<string, unknown> | null; created_at: string }>).filter(
       (e) => e.metadata && typeof e.metadata === 'object' && (e.metadata as Record<string, unknown>)._action_breadcrumb === true
@@ -190,13 +168,8 @@ export async function fetchTenantRecentActions(
   limit = 10
 ): Promise<ActionBreadcrumb[]> {
   try {
-    const { data } = await supabase
-      .from('app_event_stream')
-      .select('event_name, page_path, metadata, created_at')
-      .eq('tenant_id', tenantId)
-      .eq('is_error', false)
-      .order('created_at', { ascending: false })
-      .limit(limit);
+    // STUB: app_event_stream table does not exist
+    const { data } = { data: [] as any[] };
 
     return ((data ?? []) as Array<{ event_name: string; page_path: string | null; metadata: Record<string, unknown> | null; created_at: string }>).filter(
       (e) => e.metadata && typeof e.metadata === 'object' && (e.metadata as Record<string, unknown>)._action_breadcrumb === true

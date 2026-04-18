@@ -36,12 +36,8 @@ export default function Testimonium() {
     queryKey: ['testimonium-reports', tenant?.id],
     queryFn: async () => {
       if (!tenant?.id) return [];
-      const { data, error } = await supabase
-        .from('testimonium_reports')
-        .select('*')
-        .eq('tenant_id', tenant.id)
-        .order('created_at', { ascending: false })
-        .limit(20);
+      // STUB: testimonium_reports table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data || [];
     },

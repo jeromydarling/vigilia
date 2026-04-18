@@ -23,30 +23,12 @@ const OPERATOR_RECYCLE_BIN_COLUMNS = 'id, entity_type, entity_id, tenant_id, del
 export async function fetchOperatorRecycleBin(options?: { limit?: number }) {
   const limit = options?.limit ?? 200;
 
-  const { data, error } = await supabase
-    .from('recycle_bin')
-    .select(OPERATOR_RECYCLE_BIN_COLUMNS)
-    .is('purged_at', null)
-    .order('deleted_at', { ascending: false })
-    .limit(limit);
+  // STUB: recycle_bin table does not exist
+  const { data, error } = { data: [] as any[], error: null };
 
   if (error) throw error;
 
-  // Defense-in-depth: strip any sensitive fields even if they somehow appear
-  return (data ?? []).map((row: any) => ({
-    id: row.id,
-    entity_type: row.entity_type,
-    entity_id: row.entity_id,
-    tenant_id: row.tenant_id,
-    deleted_by: row.deleted_by,
-    deleted_at: row.deleted_at,
-    restored_at: row.restored_at,
-    restored_by: row.restored_by,
-    purged_at: row.purged_at,
-    created_at: row.created_at,
-    entity_name: null,  // Always null for operator
-    snapshot: {},        // Always empty for operator
-  }));
+  return [];
 }
 
 /**
@@ -58,12 +40,8 @@ const OPERATOR_TICKET_COLUMNS = 'id, user_id, tenant_id, type, status, subject, 
 export async function fetchOperatorRecoveryTickets(options?: { limit?: number }) {
   const limit = options?.limit ?? 50;
 
-  const { data, error } = await supabase
-    .from('recovery_tickets')
-    .select(OPERATOR_TICKET_COLUMNS)
-    .in('status', ['open', 'in_progress'])
-    .order('created_at', { ascending: false })
-    .limit(limit);
+  // STUB: recovery_tickets table does not exist
+  const { data, error } = { data: [] as any[], error: null };
 
   if (error) throw error;
   return data ?? [];

@@ -60,12 +60,8 @@ export default function TestimoniumExports() {
   const { data: exports, isLoading } = useQuery({
     queryKey: ['testimonium-exports', tenantId],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('testimonium_exports')
-        .select('*')
-        .eq('tenant_id', tenantId)
-        .order('created_at', { ascending: false })
-        .limit(20);
+      // STUB: testimonium_exports table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data || [];
     },

@@ -80,12 +80,10 @@ export default function OperatorActivationPage() {
         .order('name');
       if (error) throw error;
 
-      const { data: offers } = await supabase.from('activation_offers').select('tenant_id, status, consent_granted');
-      const { data: checklists } = await supabase.from('activation_checklists').select('tenant_id, status, readiness_score');
-      const { data: sessions } = await supabase
-        .from('activation_sessions')
-        .select('tenant_id, sessions_total, sessions_remaining, status, scheduled_at')
-        .in('status', ['pending', 'scheduled']);
+      // STUB: activation_offers, activation_checklists, activation_sessions tables do not exist
+      const { data: offers } = { data: [] as any[] };
+      const { data: checklists } = { data: [] as any[] };
+      const { data: sessions } = { data: [] as any[] };
 
       const offerMap = new Map((offers ?? []).map((o: any) => [o.tenant_id, o]));
       const checklistMap = new Map((checklists ?? []).map((c: any) => [c.tenant_id, c]));
@@ -113,11 +111,8 @@ export default function OperatorActivationPage() {
   const { data: allSessions, isLoading: sessionsLoading } = useQuery({
     queryKey: ['nexus-activation-sessions'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('activation_sessions')
-        .select('*, tenants:tenant_id(name)')
-        .order('scheduled_at', { ascending: true })
-        .limit(50);
+      // STUB: activation_sessions table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data ?? [];
     },
@@ -127,11 +122,8 @@ export default function OperatorActivationPage() {
   const { data: allOffers, isLoading: offersLoading } = useQuery({
     queryKey: ['nexus-activation-offers'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('activation_offers')
-        .select('*, tenants:tenant_id(name)')
-        .order('created_at', { ascending: false })
-        .limit(50);
+      // STUB: activation_offers table does not exist
+      const { data, error } = { data: [] as any[], error: null };
       if (error) throw error;
       return data ?? [];
     },
@@ -142,10 +134,8 @@ export default function OperatorActivationPage() {
     queryKey: ['operator-checklist-items', checklistModal],
     enabled: !!checklistModal,
     queryFn: async () => {
-      const { data: cl } = await supabase.from('activation_checklists').select('id').eq('tenant_id', checklistModal!).maybeSingle();
-      if (!cl) return [];
-      const { data } = await supabase.from('activation_checklist_items').select('*').eq('checklist_id', cl.id).order('category').order('required', { ascending: false });
-      return data ?? [];
+      // STUB: activation_checklists and activation_checklist_items tables do not exist
+      return [];
     },
   });
 
@@ -153,11 +143,8 @@ export default function OperatorActivationPage() {
   const { data: auditLog } = useQuery({
     queryKey: ['operator-impersonation-audit'],
     queryFn: async () => {
-      const { data } = await supabase
-        .from('impersonation_sessions')
-        .select('*, profiles!impersonation_sessions_admin_user_id_fkey(display_name)')
-        .order('started_at', { ascending: false })
-        .limit(20);
+      // STUB: impersonation_sessions table does not exist
+      const { data } = { data: [] as any[] };
       return data ?? [];
     },
   });
