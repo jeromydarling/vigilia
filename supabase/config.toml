@@ -97,3 +97,6 @@ project_id = "zmeawjhxbgvtcfcfcygf"
     verify_jwt = false
   [functions.unsubscribe]
     verify_jwt = false
+
+[functions.health]
+verify_jwt = false
