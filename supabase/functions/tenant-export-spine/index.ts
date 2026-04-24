@@ -5,7 +5,7 @@
  * WHERE: Tenant Settings → Data & Trust → "Export My Relationships".
  * WHY: Customers must feel safe to leave anytime — data portability is trust.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

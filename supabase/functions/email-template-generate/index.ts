@@ -1,4 +1,4 @@
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { getCompanyKbContext, buildCompanyKbSystemBlock } from "../_shared/companyKbContext.ts";
 
 const corsHeaders = {

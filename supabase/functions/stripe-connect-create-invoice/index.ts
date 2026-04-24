@@ -5,7 +5,7 @@
  * WHERE: Person detail → Send Invoice action
  * WHY: Enables tenants to send invoices with funds going directly to them.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import Stripe from "https://esm.sh/stripe@18.5.0";
 
 const corsHeaders = {

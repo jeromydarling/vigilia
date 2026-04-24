@@ -5,7 +5,7 @@
  * WHERE: Admin Migration Harness.
  * WHY: Safe undo for demo/sandbox testing.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

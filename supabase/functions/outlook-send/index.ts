@@ -8,7 +8,7 @@
  * AUTH: Authenticated users with outreach_campaigns feature enabled.
  */
 
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { evaluateSendLimit } from "../_shared/sendLimitGuard.ts";
 
 const corsHeaders = {

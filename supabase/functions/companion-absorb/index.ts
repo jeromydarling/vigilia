@@ -7,7 +7,7 @@
  * WHY: Companions must explicitly choose how to handle existing relationships
  *       when joining an organization — never auto-transferred.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

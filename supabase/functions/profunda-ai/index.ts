@@ -14,7 +14,7 @@
  * - stats: Get suggestion stats (requires settings)
  */
 
-import { createClient } from "npm:@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { getCompanyKbContext, buildCompanyKbSystemBlock } from "../_shared/companyKbContext.ts";
 import { getIndolesContext, buildIndolesSystemBlock } from "../_shared/indolesContext.ts";
 import { recordWorkflowUsage, classifyIntelligenceMode, checkDeepAllowance, type GovernanceResult } from "../_shared/intelligenceGovernance.ts";

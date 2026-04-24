@@ -1,4 +1,4 @@
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 /** Time-bounded fetch — prevents hanging on external API calls */
 async function timedFetch(url: string, opts: RequestInit = {}, timeoutMs = 15000): Promise<Response> {

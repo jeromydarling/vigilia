@@ -5,7 +5,7 @@
  * WHERE: Called by discovery-dispatch instead of n8n webhook.
  * WHY: Eliminates n8n dependency for discovery-people workflow.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { authenticateWorkerRequest, jsonOk, jsonError, corsHeaders } from "../_shared/workerAuth.ts";
 import { callLlm } from "../_shared/llmGateway.ts";
 import { firecrawlSearch } from "../_shared/firecrawlClient.ts";

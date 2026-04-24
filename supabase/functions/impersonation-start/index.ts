@@ -8,7 +8,7 @@
  * Implementation: Path B — no token minting. Returns session descriptor for client-side "acting as" mode.
  */
 
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

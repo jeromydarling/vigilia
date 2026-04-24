@@ -5,7 +5,7 @@
  * OAuth is STUBBED until HUBSPOT_CLIENT_ID / HUBSPOT_CLIENT_SECRET are configured.
  * All other operations (status, disconnect) work immediately.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

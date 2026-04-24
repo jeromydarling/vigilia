@@ -5,7 +5,7 @@
  * WHERE: Called via pg_cron (every 30 min) or manually.
  * WHY: Gardener receives actionable error alerts with copy-paste Lovable fix prompts.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

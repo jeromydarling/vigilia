@@ -8,7 +8,7 @@
  * Input: { run_id, entity_id, entity_type?, org_name?, context? }
  * Output: Writes to prospect_packs table.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { authenticateWorkerRequest, jsonOk, jsonError, corsHeaders } from "../_shared/workerAuth.ts";
 import { callLlm } from "../_shared/llmGateway.ts";
 

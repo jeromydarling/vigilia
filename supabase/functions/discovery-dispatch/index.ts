@@ -8,7 +8,7 @@
  * REWIRED: Now calls discovery-events-worker, discovery-grants-worker, discovery-people-worker
  *          directly instead of n8n webhooks.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

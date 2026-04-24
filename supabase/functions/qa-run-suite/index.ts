@@ -7,7 +7,7 @@
  *       needing Playwright binaries in the Edge Function runtime.
  * VERSION: 3 — tenant_id now optional for tenant-less tests (e.g. checkout E2E)
  */
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',

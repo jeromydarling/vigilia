@@ -6,7 +6,7 @@
  * WHERE: Called by Stripe webhook endpoint.
  * WHY: Updates financial events, creates timeline entries, confirms event participation.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import Stripe from "https://esm.sh/stripe@18.5.0";
 
 const corsHeaders = {

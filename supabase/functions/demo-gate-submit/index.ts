@@ -11,7 +11,7 @@
  * SEC-007: Uses shared error envelope + CORS utilities.
  */
 
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { getCorsHeaders, handleCorsPreflightResponse } from "../_shared/cors.ts";
 import { guardPublicEndpoint } from "../_shared/rateLimitPublic.ts";
 import { withErrorEnvelope, successResponse, errorResponse, ERROR_CODES } from "../_shared/errorEnvelope.ts";

@@ -5,7 +5,7 @@
  * WHERE: Admin Migration Harness.
  * WHY: Safety — see before you commit.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { getSimulationProfile, buildSimulatedSourcePayload } from "../_shared/connectorSim.ts";
 
 const corsHeaders = {

@@ -8,7 +8,7 @@
  * Input: { run_id, metro_id, horizon_days, opportunities[], recent_signals[], org_facts[], watchlist_signals[] }
  * Output: Writes to ai_recommendations table, returns recommendation_id.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { authenticateWorkerRequest, jsonOk, jsonError, corsHeaders } from "../_shared/workerAuth.ts";
 import { callLlm } from "../_shared/llmGateway.ts";
 

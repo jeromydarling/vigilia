@@ -6,7 +6,7 @@
  * WHY: Separates browser execution (GitHub) from data storage (Supabase) and enables
  *       self-healing prompts visible in Operator Console.
  */
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
