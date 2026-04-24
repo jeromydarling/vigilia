@@ -5,7 +5,7 @@
  * SEC-002: Origin-aware CORS via shared module.
  */
 
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { isAllowedOrigin } from '../_shared/cors.ts';
 
 /** Safe redirect paths/origins for post-auth redirect */

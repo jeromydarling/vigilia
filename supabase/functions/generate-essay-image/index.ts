@@ -5,7 +5,7 @@
  * WHERE: Called from useEssayPublish hook on publish/ready_for_review.
  * WHY: Each essay gets a unique, thematically appropriate hero image matching CROS aesthetic.
  */
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',

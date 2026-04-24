@@ -5,7 +5,7 @@
  * WHERE: Settings → Payments
  * WHY: After onboarding, we need to verify charges_enabled/payouts_enabled.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import Stripe from "https://esm.sh/stripe@18.5.0";
 
 const corsHeaders = {

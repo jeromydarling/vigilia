@@ -5,7 +5,7 @@
  * No AI, no side effects, purely derived from org_action_outcomes.
  */
 
-import { SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 export interface InsightPattern {
   insight_type: string;

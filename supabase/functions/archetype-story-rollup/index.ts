@@ -5,7 +5,7 @@
  * WHERE: Runs nightly after testimonium-public-rollup.
  * WHY: Powers the Living Signals section on public archetype pages without exposing tenant data.
  */
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',

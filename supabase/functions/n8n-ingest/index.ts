@@ -1,4 +1,4 @@
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { normalizeDomain } from "../_shared/domainNormalize.ts";
 import { evaluateEscalation } from "../_shared/escalation.ts";
 import { emitUsageEvents, type UsageEvent } from "../_shared/usageEvents.ts";

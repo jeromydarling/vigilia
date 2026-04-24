@@ -36,7 +36,7 @@ Deno.test("automation-maintenance-run returns ok", async () => {
 // ─── Test 2: archive_old_automation_runs only deletes eligible rows ───
 
 Deno.test("archive function skips recent and non-terminal runs", async () => {
-  const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2");
+  const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2.57.2");
   const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
   // Insert a recent processed run (should NOT be deleted)
@@ -68,7 +68,7 @@ Deno.test("archive function skips recent and non-terminal runs", async () => {
 // ─── Test 3: refresh_story_events_cache function exists and runs ───
 
 Deno.test("refresh_story_events_cache executes without error", async () => {
-  const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2");
+  const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2.57.2");
   const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
   const { error } = await supabase.rpc("refresh_story_events_cache");
@@ -78,7 +78,7 @@ Deno.test("refresh_story_events_cache executes without error", async () => {
 // ─── Test 4: story_events_view returns expected columns ───
 
 Deno.test("story_events_view has correct schema", async () => {
-  const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2");
+  const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2.57.2");
   const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
   const { data, error } = await supabase
@@ -94,7 +94,7 @@ Deno.test("story_events_view has correct schema", async () => {
 // ─── Test 5: get_system_health returns all sections ───
 
 Deno.test("get_system_health returns automation, pulse, narrative, drift", async () => {
-  const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2");
+  const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2.57.2");
   // This function requires admin role, so use service role
   const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
@@ -125,7 +125,7 @@ Deno.test("get_system_health returns automation, pulse, narrative, drift", async
 // ─── Test 6: pulse retry columns exist ───
 
 Deno.test("local_pulse_sources has retry_after and last_retry_at columns", async () => {
-  const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2");
+  const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2.57.2");
   const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
   const { data, error } = await supabase

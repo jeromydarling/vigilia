@@ -6,7 +6,7 @@
  * WHERE: Operator Console → QA Employee → "Run All Suites" button.
  * WHY: Enables safe, sequential full-suite execution with a consolidated email report.
  */
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',

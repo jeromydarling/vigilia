@@ -10,7 +10,7 @@
  * - voice_notes: source_activity_id (FK → activities.id), user_id, audio_path, tenant_id
  * - tenant_voice_settings: tenant_id, store_audio (boolean)
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

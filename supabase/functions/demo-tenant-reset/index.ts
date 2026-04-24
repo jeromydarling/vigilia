@@ -5,7 +5,7 @@
  * WHERE: Admin Demo Lab.
  * WHY: Clean slate for re-testing migrations.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

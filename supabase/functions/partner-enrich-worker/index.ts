@@ -8,7 +8,7 @@
  * Input: { run_id, org_id, org_name, website_url }
  * Output: extraction_id, enrichment_id
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { authenticateWorkerRequest, jsonOk, jsonError, corsHeaders } from "../_shared/workerAuth.ts";
 import { callLlm } from "../_shared/llmGateway.ts";
 import { firecrawlScrape, normalizeFirecrawlUrl } from "../_shared/firecrawlClient.ts";

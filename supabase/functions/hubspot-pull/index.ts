@@ -8,7 +8,7 @@
  * source of truth for partner progression and relationship narrative:
  *   - stage, status, partner_tier, best_partnership_angle, notes
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

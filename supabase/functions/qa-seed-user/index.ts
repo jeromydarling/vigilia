@@ -5,7 +5,7 @@
  * WHERE: Operator Console → QA Employee → "Seed QA User" button.
  * WHY: Automated tests need a real auth user with known credentials.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

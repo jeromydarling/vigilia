@@ -6,7 +6,7 @@
  * WHY: Eliminates the need to share service-role credentials with external systems.
  *       All privileged DB access stays inside edge functions.
  */
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',

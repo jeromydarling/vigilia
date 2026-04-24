@@ -6,7 +6,7 @@
  * WHERE: Called from Gardener Studio → Atlas tab.
  * WHY: Automates atlas content generation while keeping Gardener in the review loop.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

@@ -9,7 +9,7 @@
  *   import { logOperatorError } from '../_shared/operator-error.ts';
  *   try { ... } catch (e) { await logOperatorError(supabaseClient, { ... }); }
  */
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 interface EdgeErrorPayload {
   functionName: string;

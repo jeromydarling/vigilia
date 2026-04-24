@@ -16,7 +16,7 @@
  * - Source-level caching: Skips re-scrape if source was checked recently and had status 'ok'.
  * - Frequency adapts to metro activity: active metros (many sources) crawl more often.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { FirecrawlCreditTracker, recordWorkflowUsage } from "../_shared/intelligenceGovernance.ts";
 import {
   isLikelyUsefulDomain,

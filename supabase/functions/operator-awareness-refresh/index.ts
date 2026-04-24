@@ -6,7 +6,7 @@
  * WHERE: Called on-demand or via cron from Operator Nexus.
  * WHY: Surfaces ecosystem movement without requiring the operator to read multiple dashboards.
  */
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',

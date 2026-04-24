@@ -5,7 +5,7 @@
  * WHERE: Called on-demand or via cron from operator console.
  * WHY: Silent automation first — system attempts retries before creating work items.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

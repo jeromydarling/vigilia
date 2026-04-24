@@ -6,7 +6,7 @@
  * WHY: Ensures each tenant has a tailored preparation checklist for onboarding.
  */
 
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

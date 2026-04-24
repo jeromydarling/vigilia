@@ -5,7 +5,7 @@
  * WHERE: Scheduled nightly or triggered manually by admin.
  * WHY: Catch mapping/contract regressions without vendor accounts.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { getSimulationProfile, simulateConnectorFetch } from "../_shared/connectorSim.ts";
 
 const corsHeaders = {

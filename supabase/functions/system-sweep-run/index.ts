@@ -5,7 +5,7 @@
  * WHERE: Admin System Sweeps page.
  * WHY: Proves the entire platform pipeline works end-to-end.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

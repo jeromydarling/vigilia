@@ -3,7 +3,7 @@
  * Runs on cron (daily). Iterates active connections, pushes changed entities.
  * Batches max 50 per connection. Logs summary to hubspot_sync_log + system_job_runs.
  */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

@@ -8,7 +8,7 @@
  * ENGINE: Uses Perplexity (sonar-pro) for URL research, Lovable AI for PDF extraction.
  */
 
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

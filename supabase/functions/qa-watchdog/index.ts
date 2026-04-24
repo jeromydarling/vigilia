@@ -6,7 +6,7 @@
  * WHY: Prevents QA runs from staying in "running" state forever when
  *       GitHub Actions dispatch fails silently or the callback never arrives.
  */
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
